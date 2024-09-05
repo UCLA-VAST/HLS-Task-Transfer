@@ -1,0 +1,87 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t180" [label="  %t180 = alloca %class.ap_uint.1*, align 8"]
+"t181" [label="  %t181 = alloca %class.ap_uint.1*, align 8"]
+"t182" [label="  %t182 = alloca %struct.xf_Mat_4_256_256_1_*, align 8"]
+"t183" [label="  %t183 = alloca %struct.xf_Mat_4_256_256_1_*, align 8"]
+"t184" [label="  %t184 = alloca i32, align 4"]
+"t185" [label="  %t185 = alloca i32, align 4"]
+"t186" [label="  %t186 = alloca i32, align 4"]
+"_1" [label="  store %class.ap_uint.1* %frame0, %class.ap_uint.1** %t180, align 8"]
+"_2" [label="  store %class.ap_uint.1* %frame1, %class.ap_uint.1** %t181, align 8"]
+"_3" [label="  store %struct.xf_Mat_4_256_256_1_* %flowx, %struct.xf_Mat_4_256_256_1_** %t182, align 8"]
+"_4" [label="  store %struct.xf_Mat_4_256_256_1_* %flowy, %struct.xf_Mat_4_256_256_1_** %t183, align 8"]
+"_5" [label="  store i32 %rows, i32* %t184, align 4"]
+"_6" [label="  store i32 %cols, i32* %t185, align 4"]
+"_7" [label="  store i32 %size, i32* %t186, align 4"]
+"t187" [label="  %t187 = load %class.ap_uint.1** %t180, align 8"]
+"t188" [label="  %t188 = load %class.ap_uint.1** %t181, align 8"]
+"t189" [label="  %t189 = load %struct.xf_Mat_4_256_256_1_** %t182, align 8"]
+"t190" [label="  %t190 = load %struct.xf_Mat_4_256_256_1_** %t183, align 8"]
+"t191" [label="  %t191 = load i32* %t184, align 4"]
+"t192" [label="  %t192 = load i32* %t185, align 4"]
+"t193" [label="  %t193 = load i32* %t186, align 4"]
+"_8" [label="  call void @_ZL131p_ZN2xf8flowWrapILi256ELi256ELi1ELi25ELb0EEEP7ap_uintILi8EEP7ap_uintILi8EER3MatILi4ELi256ELi256ELi1EER3MatILi4ELi256ELi256ELi1EEiiiP7ap_uintILi8EES1_R19xf_Mat_4_256_256_1_S3_iii(%class.ap_uint.1* %t187, %class.ap_uint.1* %t188, %struct.xf_Mat_4_256_256_1_* %t189, %struct.xf_Mat_4_256_256_1_* %t190, i32 %t191, i32 %t192, i32 %t193)"]
+"_9" [label="  ret void"]
+"unk_block_1" -> "t180"[color=red]
+"i32 1" -> "t180"
+"t180" -> "t181"[color=red weight=2]
+"i32 1" -> "t181"
+"t181" -> "t182"[color=red weight=2]
+"i32 1" -> "t182"
+"t182" -> "t183"[color=red weight=2]
+"i32 1" -> "t183"
+"t183" -> "t184"[color=red weight=2]
+"i32 1" -> "t184"
+"t184" -> "t185"[color=red weight=2]
+"i32 1" -> "t185"
+"t185" -> "t186"[color=red weight=2]
+"i32 1" -> "t186"
+"t186" -> "_1"[color=red weight=2]
+"frame0" -> "_1"
+"t180" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"frame1" -> "_2"
+"t181" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"flowx" -> "_3"
+"t182" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"flowy" -> "_4"
+"t183" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"rows" -> "_5"
+"t184" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"cols" -> "_6"
+"t185" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"size" -> "_7"
+"t186" -> "_7"
+"_7" -> "t187"[color=red weight=2]
+"t180" -> "t187"
+"t187" -> "t188"[color=red weight=2]
+"t181" -> "t188"
+"t188" -> "t189"[color=red weight=2]
+"t182" -> "t189"
+"t189" -> "t190"[color=red weight=2]
+"t183" -> "t190"
+"t190" -> "t191"[color=red weight=2]
+"t184" -> "t191"
+"t191" -> "t192"[color=red weight=2]
+"t185" -> "t192"
+"t192" -> "t193"[color=red weight=2]
+"t186" -> "t193"
+"t193" -> "_8"[color=red weight=2]
+"t187" -> "_8"
+"t188" -> "_8"
+"t189" -> "_8"
+"t190" -> "_8"
+"t191" -> "_8"
+"t192" -> "_8"
+"t193" -> "_8"
+"_ZL131p_ZN2xf8flowWrapILi256ELi256ELi1ELi25ELb0EEEP7ap_uintILi8EEP7ap_uintILi8EER3MatILi4ELi256ELi256ELi1EER3MatILi4ELi256ELi256ELi1EEiiiP7ap_uintILi8EES1_R19xf_Mat_4_256_256_1_S3_iii" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+
+}

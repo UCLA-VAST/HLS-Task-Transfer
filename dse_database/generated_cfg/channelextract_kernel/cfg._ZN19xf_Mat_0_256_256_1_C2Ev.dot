@@ -1,0 +1,10 @@
+digraph "CFG for '_ZN19xf_Mat_0_256_256_1_C2Ev' function" {
+	label="CFG for '_ZN19xf_Mat_0_256_256_1_C2Ev' function";
+
+	Node0x21200e0 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  store %struct.xf_Mat_0_256_256_1_* %this, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %2 = load %struct.xf_Mat_0_256_256_1_** %1\l  %3 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %2, i32 0, i32 4\l  %4 = getelementptr inbounds [65536 x %class.ap_uint.1]* %3, i32 0, i32 0\l  %5 = getelementptr inbounds %class.ap_uint.1* %4, i64 65536\l  br label %6\l}"];
+	Node0x21200e0 -> Node0x215bd50;
+	Node0x215bd50 [shape=record,label="{%6:\l\l  %7 = phi %class.ap_uint.1* [ %4, %0 ], [ %8, %6 ]\l  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.1* %7)\l  %8 = getelementptr inbounds %class.ap_uint.1* %7, i64 1\l  %9 = icmp eq %class.ap_uint.1* %8, %5\l  br i1 %9, label %10, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x215bd50:s0 -> Node0x215c120;
+	Node0x215bd50:s1 -> Node0x215bd50;
+	Node0x215c120 [shape=record,label="{%10:\l\l  ret void\l}"];
+}

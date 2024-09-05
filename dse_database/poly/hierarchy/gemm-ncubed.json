@@ -1,0 +1,464 @@
+[
+    {
+        "src_line": 3,
+        "src_col": 1,
+        "src_filename": "gemm-ncubed.c",
+        "src_topo_id": "F_0_1_0_1",
+        "type": "kernel",
+        "name": "gemm",
+        "global_variables": [],
+        "interfaces": [
+            {
+                "src_line": 3,
+                "src_col": 18,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_0_0",
+                "type": "interface",
+                "name": "m1",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 34,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_0_1",
+                "type": "interface",
+                "name": "m2",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 50,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_0_2",
+                "type": "interface",
+                "name": "prod",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            }
+        ],
+        "arrays": [],
+        "var_refs": [
+            {
+                "src_line": 34,
+                "src_col": 16,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3_1_0_1_0_0",
+                "type": "var_ref",
+                "name": "m1"
+            },
+            {
+                "src_line": 34,
+                "src_col": 32,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3_1_0_1_1_0",
+                "type": "var_ref",
+                "name": "m2"
+            },
+            {
+                "src_line": 37,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_4_0_0_0",
+                "type": "var_ref",
+                "name": "prod"
+            }
+        ],
+        "var_defs": [
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_0_1",
+                "type": "var_def",
+                "name": "i"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_1_1",
+                "type": "var_def",
+                "name": "j"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_2_1",
+                "type": "var_def",
+                "name": "k"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_3_1",
+                "type": "var_def",
+                "name": "k_col"
+            },
+            {
+                "src_line": 9,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_4_1",
+                "type": "var_def",
+                "name": "i_col"
+            },
+            {
+                "src_line": 10,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_5_1",
+                "type": "var_def",
+                "name": "mult"
+            },
+            {
+                "src_line": 28,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_1_1",
+                "type": "var_def",
+                "name": "sum"
+            }
+        ],
+        "stmts": [
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "F_0_1_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "F_0_1_0_1_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 9,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 10,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_5",
+                "type": "stmt"
+            },
+            {
+                "src_line": 12,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6",
+                "type": "stmt"
+            },
+            {
+                "src_line": 14,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_8",
+                "type": "stmt"
+            },
+            {
+                "src_line": 17,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "L_0_1_0_1_2_0_9_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 8,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 8,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 15,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 28,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_9_0"
+            },
+            {
+                "src_line": 20,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 24,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 25,
+                "src_col": 5,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 5,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "L_0_1_0_1_2_0_9_0_3_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 10,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 10,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 17,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 30,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_9_0_3_3_0"
+            },
+            {
+                "src_line": 27,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "V_0_1_0_1_2_0_9_0_3_3_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 30,
+                "src_col": 1,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 31,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 32,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "L_0_1_0_1_2_0_9_0_3_3_0_3_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 32,
+                "src_col": 12,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 32,
+                "src_col": 12,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 32,
+                "src_col": 19,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 32,
+                "src_col": 32,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_9_0_3_3_0_3_3_0"
+            },
+            {
+                "src_line": 33,
+                "src_col": 9,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 34,
+                "src_col": 9,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 35,
+                "src_col": 9,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_3_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 7,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9_0_3_3_0_3_4",
+                "type": "stmt"
+            }
+        ],
+        "childs": [
+            {
+                "src_line": 18,
+                "src_col": 3,
+                "src_filename": "gemm-ncubed.c",
+                "src_topo_id": "L_0_1_0_1_2_0_9_0",
+                "type": "loop",
+                "name": "outer",
+                "trip-count": "64",
+                "loop_label": "outer",
+                "src_func_name": "gemm",
+                "childs": [
+                    {
+                        "src_line": 26,
+                        "src_col": 5,
+                        "src_filename": "gemm-ncubed.c",
+                        "src_topo_id": "L_0_1_0_1_2_0_9_0_3_3_0",
+                        "type": "loop",
+                        "name": "middle",
+                        "trip-count": "64",
+                        "parent_loop": "L_0_1_0_1_2_0_9_0",
+                        "loop_label": "middle",
+                        "src_func_name": "gemm",
+                        "childs": [
+                            {
+                                "src_line": 32,
+                                "src_col": 7,
+                                "src_filename": "gemm-ncubed.c",
+                                "src_topo_id": "L_0_1_0_1_2_0_9_0_3_3_0_3_3_0",
+                                "type": "loop",
+                                "name": "inner",
+                                "trip-count": "64",
+                                "parent_loop": "L_0_1_0_1_2_0_9_0_3_3_0",
+                                "loop_label": "inner",
+                                "src_func_name": "gemm",
+                                "childs": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "sub_functions": [],
+        "call_functions": []
+    }
+]

@@ -1,0 +1,69 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t308" [label="  %t308 = alloca %class.ap_uint.0, align 1"]
+"t309" [label="  %t309 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t310" [label="  %t310 = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t309, align 8"]
+"_2" [label="  store i32 %index, i32* %t310, align 4"]
+"t311" [label="  %t311 = load i32* %t310, align 4"]
+"t312" [label="  %t312 = sext i32 %t311 to i64"]
+"t313" [label="  %t313 = load %struct.xf_Mat_0_256_256_1_** %t309, align 8"]
+"t314" [label="  %t314 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t313, i32 0, i32 4"]
+"t315" [label="  %t315 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t314, i32 0, i64 %t312"]
+"t316" [label="  %t316 = bitcast %class.ap_uint.0* %t308 to i8*"]
+"t317" [label="  %t317 = bitcast %class.ap_uint.0* %t315 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t316, i8* %t317, i64 1, i32 1, i1 false)"]
+"t318" [label="  %t318 = getelementptr %class.ap_uint.0* %t308, i32 0, i32 0"]
+"t319" [label="  %t319 = bitcast [1 x i8]* %t318 to i8*"]
+"t320" [label="  %t320 = load i8* %t319, align 1"]
+"_4" [label="  ret i8 %t320"]
+"unk_block_1" -> "t308"[color=red]
+"i32 1" -> "t308"
+"t308" -> "t309"[color=red weight=2]
+"i32 1" -> "t309"
+"t309" -> "t310"[color=red weight=2]
+"i32 1" -> "t310"
+"t310" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t309" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t310" -> "_2"
+"_2" -> "t311"[color=red weight=2]
+"t310" -> "t311"
+"t311" -> "t312"[color=red weight=2]
+"t311" -> "t312"
+"t312" -> "t313"[color=red weight=2]
+"t309" -> "t313"
+"t313" -> "t314"[color=red weight=2]
+"t313" -> "t314"
+"i32 0" -> "t314"
+"i32 4" -> "t314"
+"t314" -> "t315"[color=red weight=2]
+"t314" -> "t315"
+"i32 0" -> "t315"
+"t312" -> "t315"
+"t315" -> "t316"[color=red weight=2]
+"t308" -> "t316"
+"t316" -> "t317"[color=red weight=2]
+"t315" -> "t317"
+"t317" -> "_3"[color=red weight=2]
+"t316" -> "_3"
+"t317" -> "_3"
+"i64 1" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t318"[color=red weight=2]
+"t308" -> "t318"
+"i32 0" -> "t318"
+"i32 0" -> "t318"
+"t318" -> "t319"[color=red weight=2]
+"t318" -> "t319"
+"t319" -> "t320"[color=red weight=2]
+"t319" -> "t320"
+"t320" -> "_4"[color=red weight=2]
+"t320" -> "_4"
+
+}

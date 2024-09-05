@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t558" [label="  %t558 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this, %struct.xf_Mat_0_256_256_1_** %t558, align 8"]
+"t559" [label="  %t559 = load %struct.xf_Mat_0_256_256_1_** %t558"]
+"t560" [label="  %t560 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t559, i32 0, i32 4"]
+"t561" [label="  %t561 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t560, i32 0, i32 0"]
+"t562" [label="  %t562 = getelementptr inbounds %class.ap_uint.0* %t561, i64 65536"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t558"[color=red]
+"i32 1" -> "t558"
+"t558" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t558" -> "_1"
+"_1" -> "t559"[color=red weight=2]
+"t558" -> "t559"
+"t559" -> "t560"[color=red weight=2]
+"t559" -> "t560"
+"i32 0" -> "t560"
+"i32 4" -> "t560"
+"t560" -> "t561"[color=red weight=2]
+"t560" -> "t561"
+"i32 0" -> "t561"
+"i32 0" -> "t561"
+"t561" -> "t562"[color=red weight=2]
+"t561" -> "t562"
+"i64 65536" -> "t562"
+"t562" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t563" [label="  %t563 = phi %class.ap_uint.0* [ %t561, %0 ], [ %t564, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %t563)"]
+"t564" [label="  %t564 = getelementptr inbounds %class.ap_uint.0* %t563, i64 1"]
+"t565" [label="  %t565 = icmp eq %class.ap_uint.0* %t564, %t562"]
+"_4" [label="  br i1 %t565, label %2, label %1"]
+"unk_block_2" -> "t563"[color=red]
+"t561" -> "t563"
+"t564" -> "t563"
+"t563" -> "_3"[color=red weight=2]
+"t563" -> "_3"
+"_ZN7ap_uintILi8EEC1Ev" -> "_3"
+"_3" -> "t564"[color=red weight=2]
+"t563" -> "t564"
+"i64 1" -> "t564"
+"t564" -> "t565"[color=red weight=2]
+"t564" -> "t565"
+"t562" -> "t565"
+"t565" -> "_4"[color=red weight=2]
+"t565" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

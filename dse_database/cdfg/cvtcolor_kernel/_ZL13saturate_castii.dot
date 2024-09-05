@@ -1,0 +1,113 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t409" [label="  %t409 = alloca i32, align 4"]
+"t410" [label="  %t410 = alloca i32, align 4"]
+"Value_int" [label="  %Value_int = alloca i32, align 4"]
+"Value_uchar" [label="  %Value_uchar = alloca i8, align 1"]
+"_1" [label="  store i32 %Value, i32* %t409, align 4"]
+"_2" [label="  store i32 %offset, i32* %t410, align 4"]
+"t411" [label="  %t411 = load i32* %t409, align 4"]
+"t412" [label="  %t412 = ashr i32 %t411, 15"]
+"t413" [label="  %t413 = load i32* %t410, align 4"]
+"t414" [label="  %t414 = add nsw i32 %t412, %t413"]
+"_3" [label="  store i32 %t414, i32* %Value_int, align 4"]
+"_4" [label="  store i8 0, i8* %Value_uchar, align 1"]
+"t415" [label="  %t415 = load i32* %Value_int, align 4"]
+"t416" [label="  %t416 = icmp sgt i32 %t415, 255"]
+"_5" [label="  br i1 %t416, label %1, label %2"]
+"unk_block_1" -> "t409"[color=red]
+"i32 1" -> "t409"
+"t409" -> "t410"[color=red weight=2]
+"i32 1" -> "t410"
+"t410" -> "Value_int"[color=red weight=2]
+"i32 1" -> "Value_int"
+"Value_int" -> "Value_uchar"[color=red weight=2]
+"i32 1" -> "Value_uchar"
+"Value_uchar" -> "_1"[color=red weight=2]
+"Value" -> "_1"
+"t409" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"offset" -> "_2"
+"t410" -> "_2"
+"_2" -> "t411"[color=red weight=2]
+"t409" -> "t411"
+"t411" -> "t412"[color=red weight=2]
+"t411" -> "t412"
+"i32 15" -> "t412"
+"t412" -> "t413"[color=red weight=2]
+"t410" -> "t413"
+"t413" -> "t414"[color=red weight=2]
+"t412" -> "t414"
+"t413" -> "t414"
+"t414" -> "_3"[color=red weight=2]
+"t414" -> "_3"
+"Value_int" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"i8 0" -> "_4"
+"Value_uchar" -> "_4"
+"_4" -> "t415"[color=red weight=2]
+"Value_int" -> "t415"
+"t415" -> "t416"[color=red weight=2]
+"t415" -> "t416"
+"i32 255" -> "t416"
+"t416" -> "_5"[color=red weight=2]
+"t416" -> "_5"
+"_5" -> ""[color=red]
+"_5" -> ""[color=red]
+
+"_6" [label="  store i8 -1, i8* %Value_uchar, align 1"]
+"_7" [label="  br label %6"]
+"unk_block_2" -> "_6"[color=red]
+"i8 -1" -> "_6"
+"Value_uchar" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"_7" -> ""[color=red]
+
+"t417" [label="  %t417 = load i32* %Value_int, align 4"]
+"t418" [label="  %t418 = icmp slt i32 %t417, 0"]
+"_8" [label="  br i1 %t418, label %3, label %4"]
+"unk_block_3" -> "t417"[color=red]
+"Value_int" -> "t417"
+"t417" -> "t418"[color=red weight=2]
+"t417" -> "t418"
+"i32 0" -> "t418"
+"t418" -> "_8"[color=red weight=2]
+"t418" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"_9" [label="  store i8 0, i8* %Value_uchar, align 1"]
+"_10" [label="  br label %5"]
+"unk_block_4" -> "_9"[color=red]
+"i8 0" -> "_9"
+"Value_uchar" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+"_10" -> ""[color=red]
+
+"t419" [label="  %t419 = load i32* %Value_int, align 4"]
+"t420" [label="  %t420 = trunc i32 %t419 to i8"]
+"_11" [label="  store i8 %t420, i8* %Value_uchar, align 1"]
+"_12" [label="  br label %5"]
+"unk_block_5" -> "t419"[color=red]
+"Value_int" -> "t419"
+"t419" -> "t420"[color=red weight=2]
+"t419" -> "t420"
+"t420" -> "_11"[color=red weight=2]
+"t420" -> "_11"
+"Value_uchar" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+"_12" -> ""[color=red]
+
+"_13" [label="  br label %6"]
+"unk_block_6" -> "_13"[color=red]
+"_13" -> ""[color=red]
+
+"t421" [label="  %t421 = load i8* %Value_uchar, align 1"]
+"_14" [label="  ret i8 %t421"]
+"unk_block_7" -> "t421"[color=red]
+"Value_uchar" -> "t421"
+"t421" -> "_14"[color=red weight=2]
+"t421" -> "_14"
+
+}

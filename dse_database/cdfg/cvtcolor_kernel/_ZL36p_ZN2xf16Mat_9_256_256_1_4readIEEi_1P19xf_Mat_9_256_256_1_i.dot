@@ -1,0 +1,79 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t339" [label="  %t339 = alloca %class.ap_uint.0, align 1"]
+"t340" [label="  %t340 = alloca %struct.xf_Mat_9_256_256_1_*, align 8"]
+"t341" [label="  %t341 = alloca i32, align 4"]
+"t342" [label="  %t342 = alloca i24"]
+"_1" [label="  store %struct.xf_Mat_9_256_256_1_* %this_, %struct.xf_Mat_9_256_256_1_** %t340, align 8"]
+"_2" [label="  store i32 %index, i32* %t341, align 4"]
+"t343" [label="  %t343 = load i32* %t341, align 4"]
+"t344" [label="  %t344 = sext i32 %t343 to i64"]
+"t345" [label="  %t345 = load %struct.xf_Mat_9_256_256_1_** %t340, align 8"]
+"t346" [label="  %t346 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %t345, i32 0, i32 4"]
+"t347" [label="  %t347 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t346, i32 0, i64 %t344"]
+"t348" [label="  %t348 = bitcast %class.ap_uint.0* %t339 to i8*"]
+"t349" [label="  %t349 = bitcast %class.ap_uint.0* %t347 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t348, i8* %t349, i64 3, i32 1, i1 false)"]
+"t350" [label="  %t350 = getelementptr %class.ap_uint.0* %t339, i32 0, i32 0"]
+"t351" [label="  %t351 = bitcast i24* %t342 to [3 x i8]*"]
+"t352" [label="  %t352 = load [3 x i8]* %t350"]
+"_4" [label="  store [3 x i8] %t352, [3 x i8]* %t351, align 1"]
+"t353" [label="  %t353 = load i24* %t342"]
+"_5" [label="  ret i24 %t353"]
+"unk_block_1" -> "t339"[color=red]
+"i32 1" -> "t339"
+"t339" -> "t340"[color=red weight=2]
+"i32 1" -> "t340"
+"t340" -> "t341"[color=red weight=2]
+"i32 1" -> "t341"
+"t341" -> "t342"[color=red weight=2]
+"i32 1" -> "t342"
+"t342" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t340" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t341" -> "_2"
+"_2" -> "t343"[color=red weight=2]
+"t341" -> "t343"
+"t343" -> "t344"[color=red weight=2]
+"t343" -> "t344"
+"t344" -> "t345"[color=red weight=2]
+"t340" -> "t345"
+"t345" -> "t346"[color=red weight=2]
+"t345" -> "t346"
+"i32 0" -> "t346"
+"i32 4" -> "t346"
+"t346" -> "t347"[color=red weight=2]
+"t346" -> "t347"
+"i32 0" -> "t347"
+"t344" -> "t347"
+"t347" -> "t348"[color=red weight=2]
+"t339" -> "t348"
+"t348" -> "t349"[color=red weight=2]
+"t347" -> "t349"
+"t349" -> "_3"[color=red weight=2]
+"t348" -> "_3"
+"t349" -> "_3"
+"i64 3" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t350"[color=red weight=2]
+"t339" -> "t350"
+"i32 0" -> "t350"
+"i32 0" -> "t350"
+"t350" -> "t351"[color=red weight=2]
+"t342" -> "t351"
+"t351" -> "t352"[color=red weight=2]
+"t350" -> "t352"
+"t352" -> "_4"[color=red weight=2]
+"t352" -> "_4"
+"t351" -> "_4"
+"_4" -> "t353"[color=red weight=2]
+"t342" -> "t353"
+"t353" -> "_5"[color=red weight=2]
+"t353" -> "_5"
+
+}

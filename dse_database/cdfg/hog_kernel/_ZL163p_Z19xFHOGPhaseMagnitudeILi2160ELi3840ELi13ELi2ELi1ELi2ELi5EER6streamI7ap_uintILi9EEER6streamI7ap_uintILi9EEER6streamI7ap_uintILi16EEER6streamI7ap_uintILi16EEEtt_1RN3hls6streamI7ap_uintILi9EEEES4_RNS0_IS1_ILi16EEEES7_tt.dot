@@ -1,0 +1,76 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t344" [label="  %t344 = alloca %\"class.hls::stream.6\"*, align 8"]
+"t345" [label="  %t345 = alloca %\"class.hls::stream.6\"*, align 8"]
+"t346" [label="  %t346 = alloca %\"class.hls::stream.8\"*, align 8"]
+"t347" [label="  %t347 = alloca %\"class.hls::stream.8\"*, align 8"]
+"t348" [label="  %t348 = alloca i16, align 2"]
+"t349" [label="  %t349 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.6\"* %_grad_x, %\"class.hls::stream.6\"** %t344, align 8"]
+"_2" [label="  store %\"class.hls::stream.6\"* %_grad_y, %\"class.hls::stream.6\"** %t345, align 8"]
+"_3" [label="  store %\"class.hls::stream.8\"* %_phase_stream, %\"class.hls::stream.8\"** %t346, align 8"]
+"_4" [label="  store %\"class.hls::stream.8\"* %_mag_stream, %\"class.hls::stream.8\"** %t347, align 8"]
+"_5" [label="  store i16 %height, i16* %t348, align 2"]
+"_6" [label="  store i16 %width, i16* %t349, align 2"]
+"t350" [label="  %t350 = load %\"class.hls::stream.6\"** %t344, align 8"]
+"t351" [label="  %t351 = load %\"class.hls::stream.6\"** %t345, align 8"]
+"t352" [label="  %t352 = load %\"class.hls::stream.8\"** %t346, align 8"]
+"t353" [label="  %t353 = load %\"class.hls::stream.8\"** %t347, align 8"]
+"t354" [label="  %t354 = load i16* %t348, align 2"]
+"t355" [label="  %t355 = load i16* %t349, align 2"]
+"_7" [label="  call void @_ZL176p_Z25xFHOGPhaseMagnitudeKernelILi2160ELi3840ELi13ELi2ELi1ELi2ELi5ELi3840EER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi16EEER6streamI7ap_uintILi16EEEtt_1RN3hls6streamI7ap_uintILi9EEEES4_RNS0_IS1_ILi16EEEES7_tt(%\"class.hls::stream.6\"* %t350, %\"class.hls::stream.6\"* %t351, %\"class.hls::stream.8\"* %t352, %\"class.hls::stream.8\"* %t353, i16 zeroext %t354, i16 zeroext %t355)"]
+"_8" [label="  ret void"]
+"unk_block_1" -> "t344"[color=red]
+"i32 1" -> "t344"
+"t344" -> "t345"[color=red weight=2]
+"i32 1" -> "t345"
+"t345" -> "t346"[color=red weight=2]
+"i32 1" -> "t346"
+"t346" -> "t347"[color=red weight=2]
+"i32 1" -> "t347"
+"t347" -> "t348"[color=red weight=2]
+"i32 1" -> "t348"
+"t348" -> "t349"[color=red weight=2]
+"i32 1" -> "t349"
+"t349" -> "_1"[color=red weight=2]
+"_grad_x" -> "_1"
+"t344" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_grad_y" -> "_2"
+"t345" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_phase_stream" -> "_3"
+"t346" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_mag_stream" -> "_4"
+"t347" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"height" -> "_5"
+"t348" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"width" -> "_6"
+"t349" -> "_6"
+"_6" -> "t350"[color=red weight=2]
+"t344" -> "t350"
+"t350" -> "t351"[color=red weight=2]
+"t345" -> "t351"
+"t351" -> "t352"[color=red weight=2]
+"t346" -> "t352"
+"t352" -> "t353"[color=red weight=2]
+"t347" -> "t353"
+"t353" -> "t354"[color=red weight=2]
+"t348" -> "t354"
+"t354" -> "t355"[color=red weight=2]
+"t349" -> "t355"
+"t355" -> "_7"[color=red weight=2]
+"t350" -> "_7"
+"t351" -> "_7"
+"t352" -> "_7"
+"t353" -> "_7"
+"t354" -> "_7"
+"t355" -> "_7"
+"_ZL176p_Z25xFHOGPhaseMagnitudeKernelILi2160ELi3840ELi13ELi2ELi1ELi2ELi5ELi3840EER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi16EEER6streamI7ap_uintILi16EEEtt_1RN3hls6streamI7ap_uintILi9EEEES4_RNS0_IS1_ILi16EEEES7_tt" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+
+}

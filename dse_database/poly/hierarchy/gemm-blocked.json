@@ -1,0 +1,666 @@
+[
+    {
+        "src_line": 3,
+        "src_col": 1,
+        "src_filename": "gemm-blocked.c",
+        "src_topo_id": "F_0_1_0_1",
+        "type": "kernel",
+        "name": "bbgemm",
+        "global_variables": [],
+        "interfaces": [
+            {
+                "src_line": 3,
+                "src_col": 20,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_0_0",
+                "type": "interface",
+                "name": "m1",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 36,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_0_1",
+                "type": "interface",
+                "name": "m2",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 52,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_0_2",
+                "type": "interface",
+                "name": "prod",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            }
+        ],
+        "arrays": [],
+        "var_refs": [
+            {
+                "src_line": 46,
+                "src_col": 20,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_2_0_1_0",
+                "type": "var_ref",
+                "name": "m1"
+            },
+            {
+                "src_line": 49,
+                "src_col": 28,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_3_0_0_1_1_0",
+                "type": "var_ref",
+                "name": "m2"
+            },
+            {
+                "src_line": 50,
+                "src_col": 13,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_3_1_0_0_0",
+                "type": "var_ref",
+                "name": "prod"
+            }
+        ],
+        "var_defs": [
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_0_1",
+                "type": "var_def",
+                "name": "i"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_1_1",
+                "type": "var_def",
+                "name": "k"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_2_1",
+                "type": "var_def",
+                "name": "j"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_3_1",
+                "type": "var_def",
+                "name": "jj"
+            },
+            {
+                "src_line": 9,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_4_1",
+                "type": "var_def",
+                "name": "kk"
+            },
+            {
+                "src_line": 10,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_5_1",
+                "type": "var_def",
+                "name": "i_row"
+            },
+            {
+                "src_line": 11,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_1",
+                "type": "var_def",
+                "name": "k_row"
+            },
+            {
+                "src_line": 12,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_1",
+                "type": "var_def",
+                "name": "temp_x"
+            },
+            {
+                "src_line": 13,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_8_1",
+                "type": "var_def",
+                "name": "mul"
+            },
+            {
+                "src_line": 21,
+                "src_col": 5,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_0_1",
+                "type": "var_def",
+                "name": "_in_jj"
+            },
+            {
+                "src_line": 29,
+                "src_col": 7,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_0_1",
+                "type": "var_def",
+                "name": "_in_kk"
+            }
+        ],
+        "stmts": [
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "F_0_1_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "F_0_1_0_1_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 9,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 10,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_5",
+                "type": "stmt"
+            },
+            {
+                "src_line": 11,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_6",
+                "type": "stmt"
+            },
+            {
+                "src_line": 12,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_7",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_8",
+                "type": "stmt"
+            },
+            {
+                "src_line": 15,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_9",
+                "type": "stmt"
+            },
+            {
+                "src_line": 17,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_10",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 8,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 8,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 16,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 31,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_11_0"
+            },
+            {
+                "src_line": 21,
+                "src_col": 5,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_11_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 23,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 25,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 5,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 5,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 10,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 10,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 18,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 28,
+                "src_col": 33,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_11_0_3_3_0"
+            },
+            {
+                "src_line": 29,
+                "src_col": 7,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "V_0_1_0_1_2_0_11_0_3_3_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 31,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 33,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 35,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 36,
+                "src_col": 7,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 7,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 12,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 12,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 19,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 37,
+                "src_col": 32,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0"
+            },
+            {
+                "src_line": 39,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 41,
+                "src_col": 1,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 42,
+                "src_col": 9,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 43,
+                "src_col": 9,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 43,
+                "src_col": 14,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 43,
+                "src_col": 14,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 43,
+                "src_col": 21,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 43,
+                "src_col": 33,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0"
+            },
+            {
+                "src_line": 44,
+                "src_col": 11,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 45,
+                "src_col": 11,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 46,
+                "src_col": 11,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 47,
+                "src_col": 11,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 48,
+                "src_col": 11,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 48,
+                "src_col": 16,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 48,
+                "src_col": 16,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 48,
+                "src_col": 23,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 48,
+                "src_col": 35,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0"
+            },
+            {
+                "src_line": 49,
+                "src_col": 13,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 50,
+                "src_col": 13,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 55,
+                "src_col": 5,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_11_0_3_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 57,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "X_0_1_0_1_2_0_12",
+                "type": "stmt"
+            }
+        ],
+        "childs": [
+            {
+                "src_line": 20,
+                "src_col": 3,
+                "src_filename": "gemm-blocked.c",
+                "src_topo_id": "L_0_1_0_1_2_0_11_0",
+                "type": "loop",
+                "name": "loopjj",
+                "trip-count": "8",
+                "loop_label": "loopjj",
+                "src_func_name": "bbgemm",
+                "childs": [
+                    {
+                        "src_line": 28,
+                        "src_col": 5,
+                        "src_filename": "gemm-blocked.c",
+                        "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0",
+                        "type": "loop",
+                        "name": "loopkk",
+                        "trip-count": "8",
+                        "parent_loop": "L_0_1_0_1_2_0_11_0",
+                        "loop_label": "loopkk",
+                        "src_func_name": "bbgemm",
+                        "childs": [
+                            {
+                                "src_line": 37,
+                                "src_col": 7,
+                                "src_filename": "gemm-blocked.c",
+                                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0",
+                                "type": "loop",
+                                "name": "loopi",
+                                "trip-count": "64",
+                                "parent_loop": "L_0_1_0_1_2_0_11_0_3_3_0",
+                                "loop_label": "loopi",
+                                "src_func_name": "bbgemm",
+                                "childs": [
+                                    {
+                                        "src_line": 43,
+                                        "src_col": 9,
+                                        "src_filename": "gemm-blocked.c",
+                                        "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0",
+                                        "type": "loop",
+                                        "name": "loopk",
+                                        "trip-count": "8",
+                                        "parent_loop": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0",
+                                        "loop_label": "loopk",
+                                        "src_func_name": "bbgemm",
+                                        "childs": [
+                                            {
+                                                "src_line": 48,
+                                                "src_col": 11,
+                                                "src_filename": "gemm-blocked.c",
+                                                "src_topo_id": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0_3_3_0",
+                                                "type": "loop",
+                                                "name": "loopj",
+                                                "trip-count": "8",
+                                                "parent_loop": "L_0_1_0_1_2_0_11_0_3_3_0_3_4_0_3_2_0",
+                                                "loop_label": "loopj",
+                                                "src_func_name": "bbgemm",
+                                                "childs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "sub_functions": [],
+        "call_functions": []
+    }
+]

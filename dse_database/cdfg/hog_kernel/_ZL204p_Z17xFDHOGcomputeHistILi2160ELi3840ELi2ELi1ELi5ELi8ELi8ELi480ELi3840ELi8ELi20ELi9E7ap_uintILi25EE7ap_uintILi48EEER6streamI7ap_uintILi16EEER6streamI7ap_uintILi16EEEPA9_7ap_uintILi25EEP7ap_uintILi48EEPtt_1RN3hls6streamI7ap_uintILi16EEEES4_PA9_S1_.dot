@@ -1,0 +1,76 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t581" [label="  %t581 = alloca %\"class.hls::stream.8\"*, align 8"]
+"t582" [label="  %t582 = alloca %\"class.hls::stream.8\"*, align 8"]
+"t583" [label="  %t583 = alloca [9 x %class.ap_uint.10]*, align 8"]
+"t584" [label="  %t584 = alloca %class.ap_uint.11*, align 8"]
+"t585" [label="  %t585 = alloca i16*, align 8"]
+"t586" [label="  %t586 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.8\"* %_phase_strm, %\"class.hls::stream.8\"** %t581, align 8"]
+"_2" [label="  store %\"class.hls::stream.8\"* %_mag_strm, %\"class.hls::stream.8\"** %t582, align 8"]
+"_3" [label="  store [9 x %class.ap_uint.10]* %HA, [9 x %class.ap_uint.10]** %t583, align 8"]
+"_4" [label="  store %class.ap_uint.11* %ssv, %class.ap_uint.11** %t584, align 8"]
+"_5" [label="  store i16* %bin_center, i16** %t585, align 8"]
+"_6" [label="  store i16 %nohc, i16* %t586, align 2"]
+"t587" [label="  %t587 = load %\"class.hls::stream.8\"** %t581, align 8"]
+"t588" [label="  %t588 = load %\"class.hls::stream.8\"** %t582, align 8"]
+"t589" [label="  %t589 = load [9 x %class.ap_uint.10]** %t583, align 8"]
+"t590" [label="  %t590 = load %class.ap_uint.11** %t584, align 8"]
+"t591" [label="  %t591 = load i16** %t585, align 8"]
+"t592" [label="  %t592 = load i16* %t586, align 2"]
+"_7" [label="  call void @_ZL206p_Z19xFDHOGcomputeHistNOILi2160ELi3840ELi2ELi1ELi5ELi8ELi8ELi480ELi3840ELi8ELi20E7ap_uintILi25EELi9E7ap_uintILi48EEER6streamI7ap_uintILi16EEER6streamI7ap_uintILi16EEEPA9_7ap_uintILi25EEP7ap_uintILi48EEPtt_1RN3hls6streamI7ap_uintILi16EEEES4_PA9_S1_ILi25EEPS1_ILi48EEPtt(%\"class.hls::stream.8\"* %t587, %\"class.hls::stream.8\"* %t588, [9 x %class.ap_uint.10]* %t589, %class.ap_uint.11* %t590, i16* %t591, i16 zeroext %t592)"]
+"_8" [label="  ret void"]
+"unk_block_1" -> "t581"[color=red]
+"i32 1" -> "t581"
+"t581" -> "t582"[color=red weight=2]
+"i32 1" -> "t582"
+"t582" -> "t583"[color=red weight=2]
+"i32 1" -> "t583"
+"t583" -> "t584"[color=red weight=2]
+"i32 1" -> "t584"
+"t584" -> "t585"[color=red weight=2]
+"i32 1" -> "t585"
+"t585" -> "t586"[color=red weight=2]
+"i32 1" -> "t586"
+"t586" -> "_1"[color=red weight=2]
+"_phase_strm" -> "_1"
+"t581" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_mag_strm" -> "_2"
+"t582" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"HA" -> "_3"
+"t583" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"ssv" -> "_4"
+"t584" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"bin_center" -> "_5"
+"t585" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"nohc" -> "_6"
+"t586" -> "_6"
+"_6" -> "t587"[color=red weight=2]
+"t581" -> "t587"
+"t587" -> "t588"[color=red weight=2]
+"t582" -> "t588"
+"t588" -> "t589"[color=red weight=2]
+"t583" -> "t589"
+"t589" -> "t590"[color=red weight=2]
+"t584" -> "t590"
+"t590" -> "t591"[color=red weight=2]
+"t585" -> "t591"
+"t591" -> "t592"[color=red weight=2]
+"t586" -> "t592"
+"t592" -> "_7"[color=red weight=2]
+"t587" -> "_7"
+"t588" -> "_7"
+"t589" -> "_7"
+"t590" -> "_7"
+"t591" -> "_7"
+"t592" -> "_7"
+"_ZL206p_Z19xFDHOGcomputeHistNOILi2160ELi3840ELi2ELi1ELi5ELi8ELi8ELi480ELi3840ELi8ELi20E7ap_uintILi25EELi9E7ap_uintILi48EEER6streamI7ap_uintILi16EEER6streamI7ap_uintILi16EEEPA9_7ap_uintILi25EEP7ap_uintILi48EEPtt_1RN3hls6streamI7ap_uintILi16EEEES4_PA9_S1_ILi25EEPS1_ILi48EEPtt" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+
+}

@@ -1,0 +1,79 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t732" [label="  %t732 = alloca %class.ap_uint.1, align 1"]
+"t733" [label="  %t733 = alloca %struct.xf_Mat_9_256_256_1_*, align 8"]
+"t734" [label="  %t734 = alloca i32, align 4"]
+"t735" [label="  %t735 = alloca i24"]
+"_1" [label="  store %struct.xf_Mat_9_256_256_1_* %this_, %struct.xf_Mat_9_256_256_1_** %t733, align 8"]
+"_2" [label="  store i32 %index, i32* %t734, align 4"]
+"t736" [label="  %t736 = load i32* %t734, align 4"]
+"t737" [label="  %t737 = sext i32 %t736 to i64"]
+"t738" [label="  %t738 = load %struct.xf_Mat_9_256_256_1_** %t733, align 8"]
+"t739" [label="  %t739 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %t738, i32 0, i32 4"]
+"t740" [label="  %t740 = getelementptr inbounds [65536 x %class.ap_uint.1]* %t739, i32 0, i64 %t737"]
+"t741" [label="  %t741 = bitcast %class.ap_uint.1* %t732 to i8*"]
+"t742" [label="  %t742 = bitcast %class.ap_uint.1* %t740 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t741, i8* %t742, i64 3, i32 1, i1 false)"]
+"t743" [label="  %t743 = getelementptr %class.ap_uint.1* %t732, i32 0, i32 0"]
+"t744" [label="  %t744 = bitcast i24* %t735 to [3 x i8]*"]
+"t745" [label="  %t745 = load [3 x i8]* %t743"]
+"_4" [label="  store [3 x i8] %t745, [3 x i8]* %t744, align 1"]
+"t746" [label="  %t746 = load i24* %t735"]
+"_5" [label="  ret i24 %t746"]
+"unk_block_1" -> "t732"[color=red]
+"i32 1" -> "t732"
+"t732" -> "t733"[color=red weight=2]
+"i32 1" -> "t733"
+"t733" -> "t734"[color=red weight=2]
+"i32 1" -> "t734"
+"t734" -> "t735"[color=red weight=2]
+"i32 1" -> "t735"
+"t735" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t733" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t734" -> "_2"
+"_2" -> "t736"[color=red weight=2]
+"t734" -> "t736"
+"t736" -> "t737"[color=red weight=2]
+"t736" -> "t737"
+"t737" -> "t738"[color=red weight=2]
+"t733" -> "t738"
+"t738" -> "t739"[color=red weight=2]
+"t738" -> "t739"
+"i32 0" -> "t739"
+"i32 4" -> "t739"
+"t739" -> "t740"[color=red weight=2]
+"t739" -> "t740"
+"i32 0" -> "t740"
+"t737" -> "t740"
+"t740" -> "t741"[color=red weight=2]
+"t732" -> "t741"
+"t741" -> "t742"[color=red weight=2]
+"t740" -> "t742"
+"t742" -> "_3"[color=red weight=2]
+"t741" -> "_3"
+"t742" -> "_3"
+"i64 3" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t743"[color=red weight=2]
+"t732" -> "t743"
+"i32 0" -> "t743"
+"i32 0" -> "t743"
+"t743" -> "t744"[color=red weight=2]
+"t735" -> "t744"
+"t744" -> "t745"[color=red weight=2]
+"t743" -> "t745"
+"t745" -> "_4"[color=red weight=2]
+"t745" -> "_4"
+"t744" -> "_4"
+"_4" -> "t746"[color=red weight=2]
+"t735" -> "t746"
+"t746" -> "_5"[color=red weight=2]
+"t746" -> "_5"
+
+}

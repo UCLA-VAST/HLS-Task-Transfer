@@ -1,0 +1,261 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t49" [label="  %t49 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t50" [label="  %t50 = alloca i32*, align 8"]
+"t51" [label="  %t51 = alloca i32*, align 8"]
+"t52" [label="  %t52 = alloca i16*, align 8"]
+"t53" [label="  %t53 = alloca i16*, align 8"]
+"t54" [label="  %t54 = alloca i16*, align 8"]
+"t55" [label="  %t55 = alloca i16*, align 8"]
+"_min_locx" [label="  %_min_locx = alloca i16, align 2"]
+"_min_locy" [label="  %_min_locy = alloca i16, align 2"]
+"_max_locx" [label="  %_max_locx = alloca i16, align 2"]
+"_max_locy" [label="  %_max_locy = alloca i16, align 2"]
+"_min_val" [label="  %_min_val = alloca i32, align 4"]
+"_max_val" [label="  %_max_val = alloca i32, align 4"]
+"height" [label="  %height = alloca i16, align 2"]
+"width" [label="  %width = alloca i16, align 2"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %_src, %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"_2" [label="  store i32* %min_value, i32** %t50, align 8"]
+"_3" [label="  store i32* %max_value, i32** %t51, align 8"]
+"_4" [label="  store i16* %_minlocx, i16** %t52, align 8"]
+"_5" [label="  store i16* %_minlocy, i16** %t53, align 8"]
+"_6" [label="  store i16* %_maxlocx, i16** %t54, align 8"]
+"_7" [label="  store i16* %_maxlocy, i16** %t55, align 8"]
+"t56" [label="  %t56 = load %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"t57" [label="  %t57 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t56, i32 0, i32 1"]
+"t58" [label="  %t58 = load i32* %t57, align 4"]
+"t59" [label="  %t59 = icmp sle i32 %t58, 256"]
+"_8" [label="  br i1 %t59, label %1, label %3"]
+"unk_block_1" -> "t49"[color=red]
+"i32 1" -> "t49"
+"t49" -> "t50"[color=red weight=2]
+"i32 1" -> "t50"
+"t50" -> "t51"[color=red weight=2]
+"i32 1" -> "t51"
+"t51" -> "t52"[color=red weight=2]
+"i32 1" -> "t52"
+"t52" -> "t53"[color=red weight=2]
+"i32 1" -> "t53"
+"t53" -> "t54"[color=red weight=2]
+"i32 1" -> "t54"
+"t54" -> "t55"[color=red weight=2]
+"i32 1" -> "t55"
+"t55" -> "_min_locx"[color=red weight=2]
+"i32 1" -> "_min_locx"
+"_min_locx" -> "_min_locy"[color=red weight=2]
+"i32 1" -> "_min_locy"
+"_min_locy" -> "_max_locx"[color=red weight=2]
+"i32 1" -> "_max_locx"
+"_max_locx" -> "_max_locy"[color=red weight=2]
+"i32 1" -> "_max_locy"
+"_max_locy" -> "_min_val"[color=red weight=2]
+"i32 1" -> "_min_val"
+"_min_val" -> "_max_val"[color=red weight=2]
+"i32 1" -> "_max_val"
+"_max_val" -> "height"[color=red weight=2]
+"i32 1" -> "height"
+"height" -> "width"[color=red weight=2]
+"i32 1" -> "width"
+"width" -> "_1"[color=red weight=2]
+"_src" -> "_1"
+"t49" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"min_value" -> "_2"
+"t50" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"max_value" -> "_3"
+"t51" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_minlocx" -> "_4"
+"t52" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"_minlocy" -> "_5"
+"t53" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"_maxlocx" -> "_6"
+"t54" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"_maxlocy" -> "_7"
+"t55" -> "_7"
+"_7" -> "t56"[color=red weight=2]
+"t49" -> "t56"
+"t56" -> "t57"[color=red weight=2]
+"t56" -> "t57"
+"i32 0" -> "t57"
+"i32 1" -> "t57"
+"t57" -> "t58"[color=red weight=2]
+"t57" -> "t58"
+"t58" -> "t59"[color=red weight=2]
+"t58" -> "t59"
+"i32 256" -> "t59"
+"t59" -> "_8"[color=red weight=2]
+"t59" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"t60" [label="  %t60 = load %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"t61" [label="  %t61 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t60, i32 0, i32 2"]
+"t62" [label="  %t62 = load i32* %t61, align 4"]
+"t63" [label="  %t63 = icmp sle i32 %t62, 256"]
+"_9" [label="  br i1 %t63, label %2, label %3"]
+"unk_block_2" -> "t60"[color=red]
+"t49" -> "t60"
+"t60" -> "t61"[color=red weight=2]
+"t60" -> "t61"
+"i32 0" -> "t61"
+"i32 2" -> "t61"
+"t61" -> "t62"[color=red weight=2]
+"t61" -> "t62"
+"t62" -> "t63"[color=red weight=2]
+"t62" -> "t63"
+"i32 256" -> "t63"
+"t63" -> "_9"[color=red weight=2]
+"t63" -> "_9"
+"_9" -> ""[color=red]
+"_9" -> ""[color=red]
+
+"_10" [label="  br label %5"]
+"unk_block_3" -> "_10"[color=red]
+"_10" -> ""[color=red]
+
+"_11" [label="  call void @__assert_fail(i8* getelementptr inbounds ([100 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8]* @.str1, i32 0, i32 0), i32 252, i8* getelementptr inbounds ([203 x i8]* @__PRETTY_FUNCTION__._ZL81p_ZN2xf9minMaxLocILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPiPiPtPtPtPt_1R19xf_Mat_0_256_256_1_PiS1_PtS2_S2_S2_, i32 0, i32 0)) noreturn nounwind"]
+"_12" [label="  unreachable"]
+"unk_block_4" -> "_11"[color=red]
+"i8* getelementptr inbounds ([100 x i8]* @.str, i32 0, i32 0)" -> "_11"
+"i8* getelementptr inbounds ([19 x i8]* @.str1, i32 0, i32 0)" -> "_11"
+"i32 252" -> "_11"
+"i8* getelementptr inbounds ([203 x i8]* @__PRETTY_FUNCTION__._ZL81p_ZN2xf9minMaxLocILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPiPiPtPtPtPt_1R19xf_Mat_0_256_256_1_PiS1_PtS2_S2_S2_, i32 0, i32 0)" -> "_11"
+"__assert_fail" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+
+"_13" [label="  br label %5"]
+"unk_block_5" -> "_13"[color=red]
+"_13" -> ""[color=red]
+
+"t64" [label="  %t64 = load %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"t65" [label="  %t65 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t64, i32 0, i32 1"]
+"t66" [label="  %t66 = load i32* %t65, align 4"]
+"t67" [label="  %t67 = trunc i32 %t66 to i16"]
+"_14" [label="  store i16 %t67, i16* %height, align 2"]
+"t68" [label="  %t68 = load %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"t69" [label="  %t69 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t68, i32 0, i32 2"]
+"t70" [label="  %t70 = load i32* %t69, align 4"]
+"t71" [label="  %t71 = ashr i32 %t70, 0"]
+"t72" [label="  %t72 = trunc i32 %t71 to i16"]
+"_15" [label="  store i16 %t72, i16* %width, align 2"]
+"t73" [label="  %t73 = load %struct.xf_Mat_0_256_256_1_** %t49, align 8"]
+"t74" [label="  %t74 = load i16* %height, align 2"]
+"t75" [label="  %t75 = load i16* %width, align 2"]
+"_16" [label="  call void @_ZL106p_ZN2xf17xFMinMaxLocKernelILi0ELi256ELi256ELi0ELi1ELi1ELi256EEER3MatILi0ELi256ELi256ELi1EERiRiRtRtRtRttt_1R19xf_Mat_0_256_256_1_RiS1_RtS2_S2_S2_tt(%struct.xf_Mat_0_256_256_1_* %t73, i32* %_min_val, i32* %_max_val, i16* %_min_locx, i16* %_min_locy, i16* %_max_locx, i16* %_max_locy, i16 zeroext %t74, i16 zeroext %t75)"]
+"t76" [label="  %t76 = load i32* %_min_val, align 4"]
+"t77" [label="  %t77 = load i32** %t50, align 8"]
+"_17" [label="  store i32 %t76, i32* %t77, align 4"]
+"t78" [label="  %t78 = load i32* %_max_val, align 4"]
+"t79" [label="  %t79 = load i32** %t51, align 8"]
+"_18" [label="  store i32 %t78, i32* %t79, align 4"]
+"t80" [label="  %t80 = load i16* %_min_locx, align 2"]
+"t81" [label="  %t81 = load i16** %t52, align 8"]
+"_19" [label="  store i16 %t80, i16* %t81, align 2"]
+"t82" [label="  %t82 = load i16* %_min_locy, align 2"]
+"t83" [label="  %t83 = load i16** %t53, align 8"]
+"_20" [label="  store i16 %t82, i16* %t83, align 2"]
+"t84" [label="  %t84 = load i16* %_max_locx, align 2"]
+"t85" [label="  %t85 = load i16** %t54, align 8"]
+"_21" [label="  store i16 %t84, i16* %t85, align 2"]
+"t86" [label="  %t86 = load i16* %_max_locy, align 2"]
+"t87" [label="  %t87 = load i16** %t55, align 8"]
+"_22" [label="  store i16 %t86, i16* %t87, align 2"]
+"_23" [label="  ret void"]
+"unk_block_6" -> "t64"[color=red]
+"t49" -> "t64"
+"t64" -> "t65"[color=red weight=2]
+"t64" -> "t65"
+"i32 0" -> "t65"
+"i32 1" -> "t65"
+"t65" -> "t66"[color=red weight=2]
+"t65" -> "t66"
+"t66" -> "t67"[color=red weight=2]
+"t66" -> "t67"
+"t67" -> "_14"[color=red weight=2]
+"t67" -> "_14"
+"height" -> "_14"
+"_14" -> "t68"[color=red weight=2]
+"t49" -> "t68"
+"t68" -> "t69"[color=red weight=2]
+"t68" -> "t69"
+"i32 0" -> "t69"
+"i32 2" -> "t69"
+"t69" -> "t70"[color=red weight=2]
+"t69" -> "t70"
+"t70" -> "t71"[color=red weight=2]
+"t70" -> "t71"
+"i32 0" -> "t71"
+"t71" -> "t72"[color=red weight=2]
+"t71" -> "t72"
+"t72" -> "_15"[color=red weight=2]
+"t72" -> "_15"
+"width" -> "_15"
+"_15" -> "t73"[color=red weight=2]
+"t49" -> "t73"
+"t73" -> "t74"[color=red weight=2]
+"height" -> "t74"
+"t74" -> "t75"[color=red weight=2]
+"width" -> "t75"
+"t75" -> "_16"[color=red weight=2]
+"t73" -> "_16"
+"_min_val" -> "_16"
+"_max_val" -> "_16"
+"_min_locx" -> "_16"
+"_min_locy" -> "_16"
+"_max_locx" -> "_16"
+"_max_locy" -> "_16"
+"t74" -> "_16"
+"t75" -> "_16"
+"_ZL106p_ZN2xf17xFMinMaxLocKernelILi0ELi256ELi256ELi0ELi1ELi1ELi256EEER3MatILi0ELi256ELi256ELi1EERiRiRtRtRtRttt_1R19xf_Mat_0_256_256_1_RiS1_RtS2_S2_S2_tt" -> "_16"
+"_16" -> "t76"[color=red weight=2]
+"_min_val" -> "t76"
+"t76" -> "t77"[color=red weight=2]
+"t50" -> "t77"
+"t77" -> "_17"[color=red weight=2]
+"t76" -> "_17"
+"t77" -> "_17"
+"_17" -> "t78"[color=red weight=2]
+"_max_val" -> "t78"
+"t78" -> "t79"[color=red weight=2]
+"t51" -> "t79"
+"t79" -> "_18"[color=red weight=2]
+"t78" -> "_18"
+"t79" -> "_18"
+"_18" -> "t80"[color=red weight=2]
+"_min_locx" -> "t80"
+"t80" -> "t81"[color=red weight=2]
+"t52" -> "t81"
+"t81" -> "_19"[color=red weight=2]
+"t80" -> "_19"
+"t81" -> "_19"
+"_19" -> "t82"[color=red weight=2]
+"_min_locy" -> "t82"
+"t82" -> "t83"[color=red weight=2]
+"t53" -> "t83"
+"t83" -> "_20"[color=red weight=2]
+"t82" -> "_20"
+"t83" -> "_20"
+"_20" -> "t84"[color=red weight=2]
+"_max_locx" -> "t84"
+"t84" -> "t85"[color=red weight=2]
+"t54" -> "t85"
+"t85" -> "_21"[color=red weight=2]
+"t84" -> "_21"
+"t85" -> "_21"
+"_21" -> "t86"[color=red weight=2]
+"_max_locy" -> "t86"
+"t86" -> "t87"[color=red weight=2]
+"t55" -> "t87"
+"t87" -> "_22"[color=red weight=2]
+"t86" -> "_22"
+"t87" -> "_22"
+"_22" -> "_23"[color=red weight=2]
+
+}

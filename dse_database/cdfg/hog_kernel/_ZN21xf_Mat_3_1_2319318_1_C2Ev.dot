@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t3694" [label="  %t3694 = alloca %struct.xf_Mat_3_1_2319318_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_3_1_2319318_1_* %this, %struct.xf_Mat_3_1_2319318_1_** %t3694, align 8"]
+"t3695" [label="  %t3695 = load %struct.xf_Mat_3_1_2319318_1_** %t3694"]
+"t3696" [label="  %t3696 = getelementptr inbounds %struct.xf_Mat_3_1_2319318_1_* %t3695, i32 0, i32 4"]
+"t3697" [label="  %t3697 = getelementptr inbounds [2319318 x %class.ap_uint.1]* %t3696, i32 0, i32 0"]
+"t3698" [label="  %t3698 = getelementptr inbounds %class.ap_uint.1* %t3697, i64 2319318"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t3694"[color=red]
+"i32 1" -> "t3694"
+"t3694" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t3694" -> "_1"
+"_1" -> "t3695"[color=red weight=2]
+"t3694" -> "t3695"
+"t3695" -> "t3696"[color=red weight=2]
+"t3695" -> "t3696"
+"i32 0" -> "t3696"
+"i32 4" -> "t3696"
+"t3696" -> "t3697"[color=red weight=2]
+"t3696" -> "t3697"
+"i32 0" -> "t3697"
+"i32 0" -> "t3697"
+"t3697" -> "t3698"[color=red weight=2]
+"t3697" -> "t3698"
+"i64 2319318" -> "t3698"
+"t3698" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t3699" [label="  %t3699 = phi %class.ap_uint.1* [ %t3697, %0 ], [ %t3700, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %t3699)"]
+"t3700" [label="  %t3700 = getelementptr inbounds %class.ap_uint.1* %t3699, i64 1"]
+"t3701" [label="  %t3701 = icmp eq %class.ap_uint.1* %t3700, %t3698"]
+"_4" [label="  br i1 %t3701, label %2, label %1"]
+"unk_block_2" -> "t3699"[color=red]
+"t3697" -> "t3699"
+"t3700" -> "t3699"
+"t3699" -> "_3"[color=red weight=2]
+"t3699" -> "_3"
+"_ZN7ap_uintILi32EEC1Ev" -> "_3"
+"_3" -> "t3700"[color=red weight=2]
+"t3699" -> "t3700"
+"i64 1" -> "t3700"
+"t3700" -> "t3701"[color=red weight=2]
+"t3700" -> "t3701"
+"t3698" -> "t3701"
+"t3701" -> "_4"[color=red weight=2]
+"t3701" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

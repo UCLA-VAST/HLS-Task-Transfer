@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL51p_ZN2xf16Mat_0_256_256_1_5writeIEEi7ap_uintILi8EE_1P19xf_Mat_0_256_256_1_i7ap_uintILi8EE' function" {
+	label="CFG for '_ZL51p_ZN2xf16Mat_0_256_256_1_5writeIEEi7ap_uintILi8EE_1P19xf_Mat_0_256_256_1_i7ap_uintILi8EE' function";
+
+	Node0x182c170 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %2 = alloca i32, align 4\l  %val = alloca %class.ap_uint.0, align 1\l  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  store i32 %index, i32* %2, align 4\l  %3 = getelementptr %class.ap_uint.0* %val, i32 0, i32 0\l  %4 = bitcast [1 x i8]* %3 to i8*\l  store i8 %val.coerce, i8* %4, align 1\l  %5 = load i32* %2, align 4\l  %6 = sext i32 %5 to i64\l  %7 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %8 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %7, i32 0, i32 4\l  %9 = getelementptr inbounds [65536 x %class.ap_uint.0]* %8, i32 0, i64 %6\l  %10 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSERKS0_(%class.ap_uint.0* %9, %class.ap_uint.0* %val)\l  ret void\l}"];
+}

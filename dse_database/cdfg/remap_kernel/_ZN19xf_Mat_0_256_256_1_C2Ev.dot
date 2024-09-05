@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1188" [label="  %t1188 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this, %struct.xf_Mat_0_256_256_1_** %t1188, align 8"]
+"t1189" [label="  %t1189 = load %struct.xf_Mat_0_256_256_1_** %t1188"]
+"t1190" [label="  %t1190 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t1189, i32 0, i32 4"]
+"t1191" [label="  %t1191 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t1190, i32 0, i32 0"]
+"t1192" [label="  %t1192 = getelementptr inbounds %class.ap_uint.0* %t1191, i64 65536"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t1188"[color=red]
+"i32 1" -> "t1188"
+"t1188" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t1188" -> "_1"
+"_1" -> "t1189"[color=red weight=2]
+"t1188" -> "t1189"
+"t1189" -> "t1190"[color=red weight=2]
+"t1189" -> "t1190"
+"i32 0" -> "t1190"
+"i32 4" -> "t1190"
+"t1190" -> "t1191"[color=red weight=2]
+"t1190" -> "t1191"
+"i32 0" -> "t1191"
+"i32 0" -> "t1191"
+"t1191" -> "t1192"[color=red weight=2]
+"t1191" -> "t1192"
+"i64 65536" -> "t1192"
+"t1192" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t1193" [label="  %t1193 = phi %class.ap_uint.0* [ %t1191, %0 ], [ %t1194, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %t1193)"]
+"t1194" [label="  %t1194 = getelementptr inbounds %class.ap_uint.0* %t1193, i64 1"]
+"t1195" [label="  %t1195 = icmp eq %class.ap_uint.0* %t1194, %t1192"]
+"_4" [label="  br i1 %t1195, label %2, label %1"]
+"unk_block_2" -> "t1193"[color=red]
+"t1191" -> "t1193"
+"t1194" -> "t1193"
+"t1193" -> "_3"[color=red weight=2]
+"t1193" -> "_3"
+"_ZN7ap_uintILi8EEC1Ev" -> "_3"
+"_3" -> "t1194"[color=red weight=2]
+"t1193" -> "t1194"
+"i64 1" -> "t1194"
+"t1194" -> "t1195"[color=red weight=2]
+"t1194" -> "t1195"
+"t1192" -> "t1195"
+"t1195" -> "_4"[color=red weight=2]
+"t1195" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

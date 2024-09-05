@@ -1,0 +1,213 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t2603" [label="  %t2603 = alloca i8, align 1"]
+"t2604" [label="  %t2604 = alloca i8, align 1"]
+"t2605" [label="  %t2605 = alloca i32, align 4"]
+"t2606" [label="  %t2606 = alloca i32, align 4"]
+"t2607" [label="  %t2607 = alloca i8*, align 8"]
+"t2608" [label="  %t2608 = alloca i8*, align 8"]
+"div_val" [label="  %div_val = alloca i32, align 4"]
+"MOut" [label="  %MOut = alloca i8, align 1"]
+"NOut" [label="  %NOut = alloca i8, align 1"]
+"x_inv" [label="  %x_inv = alloca i16, align 2"]
+"_1" [label="  store i8 %x, i8* %t2603, align 1"]
+"_2" [label="  store i8 %y, i8* %t2604, align 1"]
+"_3" [label="  store i32 %M1, i32* %t2605, align 4"]
+"_4" [label="  store i32 %M2, i32* %t2606, align 4"]
+"_5" [label="  store i8* %out_M, i8** %t2607, align 8"]
+"_6" [label="  store i8* %out_N, i8** %t2608, align 8"]
+"t2609" [label="  %t2609 = load i32* %t2605, align 4"]
+"t2610" [label="  %t2610 = icmp eq i32 %t2609, 8"]
+"_7" [label="  br i1 %t2610, label %1, label %3"]
+"unk_block_1" -> "t2603"[color=red]
+"i32 1" -> "t2603"
+"t2603" -> "t2604"[color=red weight=2]
+"i32 1" -> "t2604"
+"t2604" -> "t2605"[color=red weight=2]
+"i32 1" -> "t2605"
+"t2605" -> "t2606"[color=red weight=2]
+"i32 1" -> "t2606"
+"t2606" -> "t2607"[color=red weight=2]
+"i32 1" -> "t2607"
+"t2607" -> "t2608"[color=red weight=2]
+"i32 1" -> "t2608"
+"t2608" -> "div_val"[color=red weight=2]
+"i32 1" -> "div_val"
+"div_val" -> "MOut"[color=red weight=2]
+"i32 1" -> "MOut"
+"MOut" -> "NOut"[color=red weight=2]
+"i32 1" -> "NOut"
+"NOut" -> "x_inv"[color=red weight=2]
+"i32 1" -> "x_inv"
+"x_inv" -> "_1"[color=red weight=2]
+"x" -> "_1"
+"t2603" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"y" -> "_2"
+"t2604" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"M1" -> "_3"
+"t2605" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"M2" -> "_4"
+"t2606" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"out_M" -> "_5"
+"t2607" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"out_N" -> "_6"
+"t2608" -> "_6"
+"_6" -> "t2609"[color=red weight=2]
+"t2605" -> "t2609"
+"t2609" -> "t2610"[color=red weight=2]
+"t2609" -> "t2610"
+"i32 8" -> "t2610"
+"t2610" -> "_7"[color=red weight=2]
+"t2610" -> "_7"
+"_7" -> ""[color=red]
+"_7" -> ""[color=red]
+
+"t2611" [label="  %t2611 = load i32* %t2606, align 4"]
+"t2612" [label="  %t2612 = icmp eq i32 %t2611, 8"]
+"_8" [label="  br i1 %t2612, label %2, label %3"]
+"unk_block_2" -> "t2611"[color=red]
+"t2606" -> "t2611"
+"t2611" -> "t2612"[color=red weight=2]
+"t2611" -> "t2612"
+"i32 8" -> "t2612"
+"t2612" -> "_8"[color=red weight=2]
+"t2612" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"_9" [label="  br label %5"]
+"unk_block_3" -> "_9"[color=red]
+"_9" -> ""[color=red]
+
+"_10" [label="  call void @__assert_fail(i8* getelementptr inbounds ([58 x i8]* @.str10, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str8, i32 0, i32 0), i32 420, i8* getelementptr inbounds ([99 x i8]* @__PRETTY_FUNCTION__._ZL29p_ZN2xf11DivideYByX8EhhiiPcPchhiiPcS_, i32 0, i32 0)) noreturn nounwind"]
+"_11" [label="  unreachable"]
+"unk_block_4" -> "_10"[color=red]
+"i8* getelementptr inbounds ([58 x i8]* @.str10, i32 0, i32 0)" -> "_10"
+"i8* getelementptr inbounds ([10 x i8]* @.str8, i32 0, i32 0)" -> "_10"
+"i32 420" -> "_10"
+"i8* getelementptr inbounds ([99 x i8]* @__PRETTY_FUNCTION__._ZL29p_ZN2xf11DivideYByX8EhhiiPcPchhiiPcS_, i32 0, i32 0)" -> "_10"
+"__assert_fail" -> "_10"
+"_10" -> "_11"[color=red weight=2]
+
+"_12" [label="  br label %5"]
+"unk_block_5" -> "_12"[color=red]
+"_12" -> ""[color=red]
+
+"t2613" [label="  %t2613 = load i8* %t2603, align 1"]
+"t2614" [label="  %t2614 = load i32* %t2605, align 4"]
+"t2615" [label="  %t2615 = call zeroext i16 @_ZL21p_ZN2xf8Inverse8EhiPchiPc(i8 zeroext %t2613, i32 %t2614, i8* %NOut)"]
+"_13" [label="  store i16 %t2615, i16* %x_inv, align 2"]
+"t2616" [label="  %t2616 = load i8* %NOut, align 1"]
+"t2617" [label="  %t2617 = sext i8 %t2616 to i32"]
+"t2618" [label="  %t2618 = sub nsw i32 16, %t2617"]
+"t2619" [label="  %t2619 = load i32* %t2606, align 4"]
+"t2620" [label="  %t2620 = add nsw i32 %t2618, %t2619"]
+"t2621" [label="  %t2621 = trunc i32 %t2620 to i8"]
+"_14" [label="  store i8 %t2621, i8* %MOut, align 1"]
+"t2622" [label="  %t2622 = load i8* %NOut, align 1"]
+"t2623" [label="  %t2623 = sext i8 %t2622 to i32"]
+"t2624" [label="  %t2624 = load i32* %t2606, align 4"]
+"t2625" [label="  %t2625 = sub nsw i32 8, %t2624"]
+"t2626" [label="  %t2626 = add nsw i32 %t2623, %t2625"]
+"t2627" [label="  %t2627 = trunc i32 %t2626 to i8"]
+"_15" [label="  store i8 %t2627, i8* %NOut, align 1"]
+"t2628" [label="  %t2628 = load i8* %t2604, align 1"]
+"t2629" [label="  %t2629 = zext i8 %t2628 to i32"]
+"t2630" [label="  %t2630 = load i16* %x_inv, align 2"]
+"t2631" [label="  %t2631 = zext i16 %t2630 to i32"]
+"t2632" [label="  %t2632 = mul nsw i32 %t2629, %t2631"]
+"_16" [label="  store i32 %t2632, i32* %div_val, align 4"]
+"t2633" [label="  %t2633 = load i8* %MOut, align 1"]
+"t2634" [label="  %t2634 = load i8** %t2607, align 8"]
+"_17" [label="  store i8 %t2633, i8* %t2634, align 1"]
+"t2635" [label="  %t2635 = load i8* %NOut, align 1"]
+"t2636" [label="  %t2636 = load i8** %t2608, align 8"]
+"_18" [label="  store i8 %t2635, i8* %t2636, align 1"]
+"t2637" [label="  %t2637 = load i32* %div_val, align 4"]
+"_19" [label="  ret i32 %t2637"]
+"unk_block_6" -> "t2613"[color=red]
+"t2603" -> "t2613"
+"t2613" -> "t2614"[color=red weight=2]
+"t2605" -> "t2614"
+"t2614" -> "t2615"[color=red weight=2]
+"t2613" -> "t2615"
+"t2614" -> "t2615"
+"NOut" -> "t2615"
+"_ZL21p_ZN2xf8Inverse8EhiPchiPc" -> "t2615"
+"t2615" -> "_13"[color=red weight=2]
+"t2615" -> "_13"
+"x_inv" -> "_13"
+"_13" -> "t2616"[color=red weight=2]
+"NOut" -> "t2616"
+"t2616" -> "t2617"[color=red weight=2]
+"t2616" -> "t2617"
+"t2617" -> "t2618"[color=red weight=2]
+"i32 16" -> "t2618"
+"t2617" -> "t2618"
+"t2618" -> "t2619"[color=red weight=2]
+"t2606" -> "t2619"
+"t2619" -> "t2620"[color=red weight=2]
+"t2618" -> "t2620"
+"t2619" -> "t2620"
+"t2620" -> "t2621"[color=red weight=2]
+"t2620" -> "t2621"
+"t2621" -> "_14"[color=red weight=2]
+"t2621" -> "_14"
+"MOut" -> "_14"
+"_14" -> "t2622"[color=red weight=2]
+"NOut" -> "t2622"
+"t2622" -> "t2623"[color=red weight=2]
+"t2622" -> "t2623"
+"t2623" -> "t2624"[color=red weight=2]
+"t2606" -> "t2624"
+"t2624" -> "t2625"[color=red weight=2]
+"i32 8" -> "t2625"
+"t2624" -> "t2625"
+"t2625" -> "t2626"[color=red weight=2]
+"t2623" -> "t2626"
+"t2625" -> "t2626"
+"t2626" -> "t2627"[color=red weight=2]
+"t2626" -> "t2627"
+"t2627" -> "_15"[color=red weight=2]
+"t2627" -> "_15"
+"NOut" -> "_15"
+"_15" -> "t2628"[color=red weight=2]
+"t2604" -> "t2628"
+"t2628" -> "t2629"[color=red weight=2]
+"t2628" -> "t2629"
+"t2629" -> "t2630"[color=red weight=2]
+"x_inv" -> "t2630"
+"t2630" -> "t2631"[color=red weight=2]
+"t2630" -> "t2631"
+"t2631" -> "t2632"[color=red weight=2]
+"t2629" -> "t2632"
+"t2631" -> "t2632"
+"t2632" -> "_16"[color=red weight=2]
+"t2632" -> "_16"
+"div_val" -> "_16"
+"_16" -> "t2633"[color=red weight=2]
+"MOut" -> "t2633"
+"t2633" -> "t2634"[color=red weight=2]
+"t2607" -> "t2634"
+"t2634" -> "_17"[color=red weight=2]
+"t2633" -> "_17"
+"t2634" -> "_17"
+"_17" -> "t2635"[color=red weight=2]
+"NOut" -> "t2635"
+"t2635" -> "t2636"[color=red weight=2]
+"t2608" -> "t2636"
+"t2636" -> "_18"[color=red weight=2]
+"t2635" -> "_18"
+"t2636" -> "_18"
+"_18" -> "t2637"[color=red weight=2]
+"div_val" -> "t2637"
+"t2637" -> "_19"[color=red weight=2]
+"t2637" -> "_19"
+
+}

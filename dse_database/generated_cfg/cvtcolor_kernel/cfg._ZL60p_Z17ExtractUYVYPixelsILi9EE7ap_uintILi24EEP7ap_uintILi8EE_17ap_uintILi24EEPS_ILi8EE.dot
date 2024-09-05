@@ -1,0 +1,14 @@
+digraph "CFG for '_ZL60p_Z17ExtractUYVYPixelsILi9EE7ap_uintILi24EEP7ap_uintILi8EE_17ap_uintILi24EEPS_ILi8EE' function" {
+	label="CFG for '_ZL60p_Z17ExtractUYVYPixelsILi9EE7ap_uintILi24EEP7ap_uintILi8EE_17ap_uintILi24EEPS_ILi8EE' function";
+
+	Node0x1601ef0 [shape=record,label="{%0:\l  %pix = alloca %class.ap_uint.0, align 4\l  %1 = alloca i24\l  %2 = alloca %class.ap_uint.1*, align 8\l  %k = alloca i32, align 4\l  %val = alloca %class.ap_uint.0, align 1\l  %pos = alloca i32, align 4\l  %_in_k = alloca i32, align 4\l  %p = alloca i8, align 1\l  %3 = getelementptr %class.ap_uint.0* %pix, i32 0, i32 0\l  store i24 %pix.coerce, i24* %1\l  %4 = bitcast i24* %1 to [3 x i8]*\l  %5 = load [3 x i8]* %4, align 1\l  store [3 x i8] %5, [3 x i8]* %3\l  store %class.ap_uint.1* %buf, %class.ap_uint.1** %2, align 8\l  call void @_ZN7ap_uintILi24EEC1Ev(%class.ap_uint.0* %val)\l  store i32 0, i32* %pos, align 4\l  %6 = call %class.ap_uint.0* @_ZN7ap_uintILi24EEaSERKS0_(%class.ap_uint.0* %val, %class.ap_uint.0* %pix)\l  store i32 0, i32* %k, align 4\l  br label %7\l}"];
+	Node0x1601ef0 -> Node0x15f96f0;
+	Node0x15f96f0 [shape=record,label="{%7:\l\l  %8 = load i32* %k, align 4\l  %9 = icmp sle i32 %8, 2\l  br i1 %9, label %10, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x15f96f0:s0 -> Node0x15f9fb0;
+	Node0x15f96f0:s1 -> Node0x1602eb0;
+	Node0x15f9fb0 [shape=record,label="{%10:\l\l  %11 = load i32* %k, align 4\l  %12 = sext i32 %11 to i64\l  %13 = mul nsw i64 8, %12\l  %14 = add nsw i64 0, %13\l  %15 = trunc i64 %14 to i32\l  store i32 %15, i32* %_in_k, align 4\l  %16 = load i32* %_in_k, align 4\l  %17 = add nsw i32 %16, 7\l  %18 = load i32* %_in_k, align 4\l  %19 = call i64* @_ZN7ap_uintILi24EE5rangeEii(%class.ap_uint.0* %val, i32 %17, i32 %18)\l  %20 = load i64* %19\l  %21 = trunc i64 %20 to i8\l  store i8 %21, i8* %p, align 1\l  %22 = load i32* %pos, align 4\l  %23 = add nsw i32 %22, 1\l  store i32 %23, i32* %pos, align 4\l  %24 = sext i32 %22 to i64\l  %25 = load %class.ap_uint.1** %2, align 8\l  %26 = getelementptr inbounds %class.ap_uint.1* %25, i64 %24\l  %27 = load i8* %p, align 1\l  %28 = call %class.ap_uint.1* @_ZN7ap_uintILi8EEaSEh(%class.ap_uint.1* %26, i8 zeroext %27)\l  br label %29\l}"];
+	Node0x15f9fb0 -> Node0x1603b90;
+	Node0x1603b90 [shape=record,label="{%29:\l\l  %30 = load i32* %k, align 4\l  %31 = add nsw i32 %30, 1\l  store i32 %31, i32* %k, align 4\l  br label %7\l}"];
+	Node0x1603b90 -> Node0x15f96f0;
+	Node0x1602eb0 [shape=record,label="{%32:\l\l  store i32 24, i32* %k, align 4\l  ret void\l}"];
+}

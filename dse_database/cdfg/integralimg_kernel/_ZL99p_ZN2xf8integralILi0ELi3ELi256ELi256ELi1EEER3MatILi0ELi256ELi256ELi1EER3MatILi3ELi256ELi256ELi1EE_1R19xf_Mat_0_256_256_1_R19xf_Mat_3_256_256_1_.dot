@@ -1,0 +1,122 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t27" [label="  %t27 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t28" [label="  %t28 = alloca %struct.xf_Mat_3_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %_src_mat, %struct.xf_Mat_0_256_256_1_** %t27, align 8"]
+"_2" [label="  store %struct.xf_Mat_3_256_256_1_* %_dst_mat, %struct.xf_Mat_3_256_256_1_** %t28, align 8"]
+"t29" [label="  %t29 = load %struct.xf_Mat_0_256_256_1_** %t27, align 8"]
+"t30" [label="  %t30 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t29, i32 0, i32 1"]
+"t31" [label="  %t31 = load i32* %t30, align 4"]
+"t32" [label="  %t32 = icmp sle i32 %t31, 256"]
+"_3" [label="  br i1 %t32, label %1, label %3"]
+"unk_block_1" -> "t27"[color=red]
+"i32 1" -> "t27"
+"t27" -> "t28"[color=red weight=2]
+"i32 1" -> "t28"
+"t28" -> "_1"[color=red weight=2]
+"_src_mat" -> "_1"
+"t27" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_dst_mat" -> "_2"
+"t28" -> "_2"
+"_2" -> "t29"[color=red weight=2]
+"t27" -> "t29"
+"t29" -> "t30"[color=red weight=2]
+"t29" -> "t30"
+"i32 0" -> "t30"
+"i32 1" -> "t30"
+"t30" -> "t31"[color=red weight=2]
+"t30" -> "t31"
+"t31" -> "t32"[color=red weight=2]
+"t31" -> "t32"
+"i32 256" -> "t32"
+"t32" -> "_3"[color=red weight=2]
+"t32" -> "_3"
+"_3" -> ""[color=red]
+"_3" -> ""[color=red]
+
+"t33" [label="  %t33 = load %struct.xf_Mat_3_256_256_1_** %t28, align 8"]
+"t34" [label="  %t34 = getelementptr inbounds %struct.xf_Mat_3_256_256_1_* %t33, i32 0, i32 2"]
+"t35" [label="  %t35 = load i32* %t34, align 4"]
+"t36" [label="  %t36 = icmp sle i32 %t35, 256"]
+"_4" [label="  br i1 %t36, label %2, label %3"]
+"unk_block_2" -> "t33"[color=red]
+"t28" -> "t33"
+"t33" -> "t34"[color=red weight=2]
+"t33" -> "t34"
+"i32 0" -> "t34"
+"i32 2" -> "t34"
+"t34" -> "t35"[color=red weight=2]
+"t34" -> "t35"
+"t35" -> "t36"[color=red weight=2]
+"t35" -> "t36"
+"i32 256" -> "t36"
+"t36" -> "_4"[color=red weight=2]
+"t36" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  br label %5"]
+"unk_block_3" -> "_5"[color=red]
+"_5" -> ""[color=red]
+
+"_6" [label="  call void @__assert_fail(i8* getelementptr inbounds ([125 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([22 x i8]* @.str1, i32 0, i32 0), i32 109, i8* getelementptr inbounds ([165 x i8]* @__PRETTY_FUNCTION__._ZL99p_ZN2xf8integralILi0ELi3ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi3ELi256ELi256ELi1EE_1R19xf_Mat_0_256_256_1_R19xf_Mat_3_256_256_1_, i32 0, i32 0)) noreturn nounwind"]
+"_7" [label="  unreachable"]
+"unk_block_4" -> "_6"[color=red]
+"i8* getelementptr inbounds ([125 x i8]* @.str, i32 0, i32 0)" -> "_6"
+"i8* getelementptr inbounds ([22 x i8]* @.str1, i32 0, i32 0)" -> "_6"
+"i32 109" -> "_6"
+"i8* getelementptr inbounds ([165 x i8]* @__PRETTY_FUNCTION__._ZL99p_ZN2xf8integralILi0ELi3ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi3ELi256ELi256ELi1EE_1R19xf_Mat_0_256_256_1_R19xf_Mat_3_256_256_1_, i32 0, i32 0)" -> "_6"
+"__assert_fail" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+
+"_8" [label="  br label %5"]
+"unk_block_5" -> "_8"[color=red]
+"_8" -> ""[color=red]
+
+"t37" [label="  %t37 = load %struct.xf_Mat_0_256_256_1_** %t27, align 8"]
+"t38" [label="  %t38 = load %struct.xf_Mat_3_256_256_1_** %t28, align 8"]
+"t39" [label="  %t39 = load %struct.xf_Mat_0_256_256_1_** %t27, align 8"]
+"t40" [label="  %t40 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t39, i32 0, i32 1"]
+"t41" [label="  %t41 = load i32* %t40, align 4"]
+"t42" [label="  %t42 = trunc i32 %t41 to i16"]
+"t43" [label="  %t43 = load %struct.xf_Mat_0_256_256_1_** %t27, align 8"]
+"t44" [label="  %t44 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t43, i32 0, i32 2"]
+"t45" [label="  %t45 = load i32* %t44, align 4"]
+"t46" [label="  %t46 = trunc i32 %t45 to i16"]
+"_9" [label="  call void @_ZL130p_ZN2xf21XFIntegralImageKernelILi0ELi3ELi256ELi256ELi1ELi1ELi12ELi256EEER3MatILi0ELi256ELi256ELi1EER3MatILi3ELi256ELi256ELi1EEtt_1R19xf_Mat_0_256_256_1_R19xf_Mat_3_256_256_1_tt(%struct.xf_Mat_0_256_256_1_* %t37, %struct.xf_Mat_3_256_256_1_* %t38, i16 zeroext %t42, i16 zeroext %t46)"]
+"_10" [label="  ret void"]
+"unk_block_6" -> "t37"[color=red]
+"t27" -> "t37"
+"t37" -> "t38"[color=red weight=2]
+"t28" -> "t38"
+"t38" -> "t39"[color=red weight=2]
+"t27" -> "t39"
+"t39" -> "t40"[color=red weight=2]
+"t39" -> "t40"
+"i32 0" -> "t40"
+"i32 1" -> "t40"
+"t40" -> "t41"[color=red weight=2]
+"t40" -> "t41"
+"t41" -> "t42"[color=red weight=2]
+"t41" -> "t42"
+"t42" -> "t43"[color=red weight=2]
+"t27" -> "t43"
+"t43" -> "t44"[color=red weight=2]
+"t43" -> "t44"
+"i32 0" -> "t44"
+"i32 2" -> "t44"
+"t44" -> "t45"[color=red weight=2]
+"t44" -> "t45"
+"t45" -> "t46"[color=red weight=2]
+"t45" -> "t46"
+"t46" -> "_9"[color=red weight=2]
+"t37" -> "_9"
+"t38" -> "_9"
+"t42" -> "_9"
+"t46" -> "_9"
+"_ZL130p_ZN2xf21XFIntegralImageKernelILi0ELi3ELi256ELi256ELi1ELi1ELi12ELi256EEER3MatILi0ELi256ELi256ELi1EER3MatILi3ELi256ELi256ELi1EEtt_1R19xf_Mat_0_256_256_1_R19xf_Mat_3_256_256_1_tt" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+
+}

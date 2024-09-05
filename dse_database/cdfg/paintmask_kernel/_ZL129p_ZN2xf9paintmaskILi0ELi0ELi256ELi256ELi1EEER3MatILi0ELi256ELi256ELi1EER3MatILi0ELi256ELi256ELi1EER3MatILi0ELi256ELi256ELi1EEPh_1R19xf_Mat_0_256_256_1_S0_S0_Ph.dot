@@ -1,0 +1,241 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t31" [label="  %t31 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t32" [label="  %t32 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t33" [label="  %t33 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t34" [label="  %t34 = alloca i8*, align 8"]
+"width" [label="  %width = alloca i16, align 2"]
+"height" [label="  %height = alloca i16, align 2"]
+"color" [label="  %color = alloca %struct.xf_Scalar_1_unsigned_char_, align 1"]
+"i" [label="  %i = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %_src_mat, %struct.xf_Mat_0_256_256_1_** %t31, align 8"]
+"_2" [label="  store %struct.xf_Mat_0_256_256_1_* %in_mask, %struct.xf_Mat_0_256_256_1_** %t32, align 8"]
+"_3" [label="  store %struct.xf_Mat_0_256_256_1_* %_dst_mat, %struct.xf_Mat_0_256_256_1_** %t33, align 8"]
+"_4" [label="  store i8* %_color, i8** %t34, align 8"]
+"t35" [label="  %t35 = load %struct.xf_Mat_0_256_256_1_** %t31, align 8"]
+"t36" [label="  %t36 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t35, i32 0, i32 2"]
+"t37" [label="  %t37 = load i32* %t36, align 4"]
+"t38" [label="  %t38 = ashr i32 %t37, 0"]
+"t39" [label="  %t39 = trunc i32 %t38 to i16"]
+"_5" [label="  store i16 %t39, i16* %width, align 2"]
+"t40" [label="  %t40 = load %struct.xf_Mat_0_256_256_1_** %t31, align 8"]
+"t41" [label="  %t41 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t40, i32 0, i32 1"]
+"t42" [label="  %t42 = load i32* %t41, align 4"]
+"t43" [label="  %t43 = trunc i32 %t42 to i16"]
+"_6" [label="  store i16 %t43, i16* %height, align 2"]
+"_7" [label="  call void @_ZL40p_ZN2xf23Scalar_1_unsigned_char_C2IEEv_1P26xf_Scalar_1_unsigned_char_(%struct.xf_Scalar_1_unsigned_char_* %color)"]
+"_8" [label="  store i32 0, i32* %i, align 4"]
+"_9" [label="  br label %1"]
+"unk_block_1" -> "t31"[color=red]
+"i32 1" -> "t31"
+"t31" -> "t32"[color=red weight=2]
+"i32 1" -> "t32"
+"t32" -> "t33"[color=red weight=2]
+"i32 1" -> "t33"
+"t33" -> "t34"[color=red weight=2]
+"i32 1" -> "t34"
+"t34" -> "width"[color=red weight=2]
+"i32 1" -> "width"
+"width" -> "height"[color=red weight=2]
+"i32 1" -> "height"
+"height" -> "color"[color=red weight=2]
+"i32 1" -> "color"
+"color" -> "i"[color=red weight=2]
+"i32 1" -> "i"
+"i" -> "_1"[color=red weight=2]
+"_src_mat" -> "_1"
+"t31" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"in_mask" -> "_2"
+"t32" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_dst_mat" -> "_3"
+"t33" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_color" -> "_4"
+"t34" -> "_4"
+"_4" -> "t35"[color=red weight=2]
+"t31" -> "t35"
+"t35" -> "t36"[color=red weight=2]
+"t35" -> "t36"
+"i32 0" -> "t36"
+"i32 2" -> "t36"
+"t36" -> "t37"[color=red weight=2]
+"t36" -> "t37"
+"t37" -> "t38"[color=red weight=2]
+"t37" -> "t38"
+"i32 0" -> "t38"
+"t38" -> "t39"[color=red weight=2]
+"t38" -> "t39"
+"t39" -> "_5"[color=red weight=2]
+"t39" -> "_5"
+"width" -> "_5"
+"_5" -> "t40"[color=red weight=2]
+"t31" -> "t40"
+"t40" -> "t41"[color=red weight=2]
+"t40" -> "t41"
+"i32 0" -> "t41"
+"i32 1" -> "t41"
+"t41" -> "t42"[color=red weight=2]
+"t41" -> "t42"
+"t42" -> "t43"[color=red weight=2]
+"t42" -> "t43"
+"t43" -> "_6"[color=red weight=2]
+"t43" -> "_6"
+"height" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"color" -> "_7"
+"_ZL40p_ZN2xf23Scalar_1_unsigned_char_C2IEEv_1P26xf_Scalar_1_unsigned_char_" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"i32 0" -> "_8"
+"i" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"_9" -> ""[color=red]
+
+"t44" [label="  %t44 = load i32* %i, align 4"]
+"t45" [label="  %t45 = icmp slt i32 %t44, 1"]
+"_10" [label="  br i1 %t45, label %2, label %4"]
+"unk_block_2" -> "t44"[color=red]
+"i" -> "t44"
+"t44" -> "t45"[color=red weight=2]
+"t44" -> "t45"
+"i32 1" -> "t45"
+"t45" -> "_10"[color=red weight=2]
+"t45" -> "_10"
+"_10" -> ""[color=red]
+"_10" -> ""[color=red]
+
+"t46" [label="  %t46 = load i32* %i, align 4"]
+"t47" [label="  %t47 = sext i32 %t46 to i64"]
+"t48" [label="  %t48 = load i8** %t34, align 8"]
+"t49" [label="  %t49 = getelementptr inbounds i8* %t48, i64 %t47"]
+"t50" [label="  %t50 = load i8* %t49, align 1"]
+"t51" [label="  %t51 = load i32* %i, align 4"]
+"t52" [label="  %t52 = sext i32 %t51 to i64"]
+"t53" [label="  %t53 = getelementptr inbounds %struct.xf_Scalar_1_unsigned_char_* %color, i32 0, i32 0"]
+"t54" [label="  %t54 = getelementptr inbounds [1 x i8]* %t53, i32 0, i64 %t52"]
+"_11" [label="  store i8 %t50, i8* %t54, align 1"]
+"_12" [label="  br label %3"]
+"unk_block_3" -> "t46"[color=red]
+"i" -> "t46"
+"t46" -> "t47"[color=red weight=2]
+"t46" -> "t47"
+"t47" -> "t48"[color=red weight=2]
+"t34" -> "t48"
+"t48" -> "t49"[color=red weight=2]
+"t48" -> "t49"
+"t47" -> "t49"
+"t49" -> "t50"[color=red weight=2]
+"t49" -> "t50"
+"t50" -> "t51"[color=red weight=2]
+"i" -> "t51"
+"t51" -> "t52"[color=red weight=2]
+"t51" -> "t52"
+"t52" -> "t53"[color=red weight=2]
+"color" -> "t53"
+"i32 0" -> "t53"
+"i32 0" -> "t53"
+"t53" -> "t54"[color=red weight=2]
+"t53" -> "t54"
+"i32 0" -> "t54"
+"t52" -> "t54"
+"t54" -> "_11"[color=red weight=2]
+"t50" -> "_11"
+"t54" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+"_12" -> ""[color=red]
+
+"t55" [label="  %t55 = load i32* %i, align 4"]
+"t56" [label="  %t56 = add nsw i32 %t55, 1"]
+"_13" [label="  store i32 %t56, i32* %i, align 4"]
+"_14" [label="  br label %1"]
+"unk_block_4" -> "t55"[color=red]
+"i" -> "t55"
+"t55" -> "t56"[color=red weight=2]
+"t55" -> "t56"
+"i32 1" -> "t56"
+"t56" -> "_13"[color=red weight=2]
+"t56" -> "_13"
+"i" -> "_13"
+"_13" -> "_14"[color=red weight=2]
+"_14" -> ""[color=red]
+
+"t57" [label="  %t57 = load i16* %height, align 2"]
+"t58" [label="  %t58 = zext i16 %t57 to i32"]
+"t59" [label="  %t59 = icmp sle i32 %t58, 256"]
+"_15" [label="  br i1 %t59, label %5, label %7"]
+"unk_block_5" -> "t57"[color=red]
+"height" -> "t57"
+"t57" -> "t58"[color=red weight=2]
+"t57" -> "t58"
+"t58" -> "t59"[color=red weight=2]
+"t58" -> "t59"
+"i32 256" -> "t59"
+"t59" -> "_15"[color=red weight=2]
+"t59" -> "_15"
+"_15" -> ""[color=red]
+"_15" -> ""[color=red]
+
+"t60" [label="  %t60 = load i16* %width, align 2"]
+"t61" [label="  %t61 = zext i16 %t60 to i32"]
+"t62" [label="  %t62 = icmp sle i32 %t61, 256"]
+"_16" [label="  br i1 %t62, label %6, label %7"]
+"unk_block_6" -> "t60"[color=red]
+"width" -> "t60"
+"t60" -> "t61"[color=red weight=2]
+"t60" -> "t61"
+"t61" -> "t62"[color=red weight=2]
+"t61" -> "t62"
+"i32 256" -> "t62"
+"t62" -> "_16"[color=red weight=2]
+"t62" -> "_16"
+"_16" -> ""[color=red]
+"_16" -> ""[color=red]
+
+"_17" [label="  br label %9"]
+"unk_block_7" -> "_17"[color=red]
+"_17" -> ""[color=red]
+
+"_18" [label="  call void @__assert_fail(i8* getelementptr inbounds ([93 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8]* @.str1, i32 0, i32 0), i32 132, i8* getelementptr inbounds ([242 x i8]* @__PRETTY_FUNCTION__._ZL129p_ZN2xf9paintmaskILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEPh_1R19xf_Mat_0_256_256_1_S0_S0_Ph, i32 0, i32 0)) noreturn nounwind"]
+"_19" [label="  unreachable"]
+"unk_block_8" -> "_18"[color=red]
+"i8* getelementptr inbounds ([93 x i8]* @.str, i32 0, i32 0)" -> "_18"
+"i8* getelementptr inbounds ([17 x i8]* @.str1, i32 0, i32 0)" -> "_18"
+"i32 132" -> "_18"
+"i8* getelementptr inbounds ([242 x i8]* @__PRETTY_FUNCTION__._ZL129p_ZN2xf9paintmaskILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEPh_1R19xf_Mat_0_256_256_1_S0_S0_Ph, i32 0, i32 0)" -> "_18"
+"__assert_fail" -> "_18"
+"_18" -> "_19"[color=red weight=2]
+
+"_20" [label="  br label %9"]
+"unk_block_9" -> "_20"[color=red]
+"_20" -> ""[color=red]
+
+"t63" [label="  %t63 = load %struct.xf_Mat_0_256_256_1_** %t31, align 8"]
+"t64" [label="  %t64 = load %struct.xf_Mat_0_256_256_1_** %t32, align 8"]
+"t65" [label="  %t65 = load %struct.xf_Mat_0_256_256_1_** %t33, align 8"]
+"t66" [label="  %t66 = load i16* %height, align 2"]
+"t67" [label="  %t67 = load i16* %width, align 2"]
+"_21" [label="  call void @_ZL175p_ZN2xf17xFpaintmaskKernelILi0ELi0ELi256ELi256ELi0ELi1ELi1ELi1ELi1ELi256EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER6ScalarILi1EhEtt_1R19xf_Mat_0_256_256_1_S0_S0_R26xf_Scalar_1_unsigned_char_tt(%struct.xf_Mat_0_256_256_1_* %t63, %struct.xf_Mat_0_256_256_1_* %t64, %struct.xf_Mat_0_256_256_1_* %t65, %struct.xf_Scalar_1_unsigned_char_* %color, i16 zeroext %t66, i16 zeroext %t67)"]
+"_22" [label="  ret void"]
+"unk_block_10" -> "t63"[color=red]
+"t31" -> "t63"
+"t63" -> "t64"[color=red weight=2]
+"t32" -> "t64"
+"t64" -> "t65"[color=red weight=2]
+"t33" -> "t65"
+"t65" -> "t66"[color=red weight=2]
+"height" -> "t66"
+"t66" -> "t67"[color=red weight=2]
+"width" -> "t67"
+"t67" -> "_21"[color=red weight=2]
+"t63" -> "_21"
+"t64" -> "_21"
+"t65" -> "_21"
+"color" -> "_21"
+"t66" -> "_21"
+"t67" -> "_21"
+"_ZL175p_ZN2xf17xFpaintmaskKernelILi0ELi0ELi256ELi256ELi0ELi1ELi1ELi1ELi1ELi256EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER6ScalarILi1EhEtt_1R19xf_Mat_0_256_256_1_S0_S0_R26xf_Scalar_1_unsigned_char_tt" -> "_21"
+"_21" -> "_22"[color=red weight=2]
+
+}

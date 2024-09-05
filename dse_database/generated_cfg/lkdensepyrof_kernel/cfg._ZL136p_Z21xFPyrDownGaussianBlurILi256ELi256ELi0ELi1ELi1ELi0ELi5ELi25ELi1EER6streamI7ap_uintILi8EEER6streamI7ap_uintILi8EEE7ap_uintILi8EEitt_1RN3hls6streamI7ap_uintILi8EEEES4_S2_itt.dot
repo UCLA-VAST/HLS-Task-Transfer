@@ -1,0 +1,24 @@
+digraph "CFG for '_ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt' function" {
+	label="CFG for '_ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt' function";
+
+	Node0x30e6080 [shape=record,label="{%0:\l  %1 = alloca %\"class.hls::stream.1\"*, align 8\l  %2 = alloca %\"class.hls::stream.1\"*, align 8\l  %win_size = alloca %class.ap_uint.0, align 1\l  %3 = alloca i32, align 4\l  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  %6 = alloca %class.ap_uint.0, align 1\l  %7 = alloca %class.ap_uint.0, align 1\l  store %\"class.hls::stream.1\"* %_src, %\"class.hls::stream.1\"** %1, align 8\l  store %\"class.hls::stream.1\"* %_dst, %\"class.hls::stream.1\"** %2, align 8\l  %8 = getelementptr %class.ap_uint.0* %win_size, i32 0, i32 0\l  %9 = bitcast [1 x i8]* %8 to i8*\l  store i8 %win_size.coerce, i8* %9, align 1\l  store i32 %_border_type, i32* %3, align 4\l  store i16 %imgheight, i16* %4, align 2\l  store i16 %imgwidth, i16* %5, align 2\l  %10 = load i16* %4, align 2\l  %11 = zext i16 %10 to i32\l  %12 = icmp sle i32 %11, 256\l  br i1 %12, label %13, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x30e6080:s0 -> Node0x30ea410;
+	Node0x30e6080:s1 -> Node0x30e4e00;
+	Node0x30ea410 [shape=record,label="{%13:\l\l  %14 = load i16* %5, align 2\l  %15 = zext i16 %14 to i32\l  %16 = icmp sle i32 %15, 256\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x30ea410:s0 -> Node0x30eb800;
+	Node0x30ea410:s1 -> Node0x30e4e00;
+	Node0x30eb800 [shape=record,label="{%17:\l\l  br label %20\l}"];
+	Node0x30eb800 -> Node0x30eb910;
+	Node0x30e4e00 [shape=record,label="{%18:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([99 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0), i32 301, i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x30ebed0 [shape=record,label="{%19:                                                  \l  br label %20\l}"];
+	Node0x30ebed0 -> Node0x30eb910;
+	Node0x30eb910 [shape=record,label="{%20:\l\l  %21 = bitcast %class.ap_uint.0* %6 to i8*\l  %22 = bitcast %class.ap_uint.0* %win_size to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %21, i8* %22, i64 1, i32 1, i1 false)\l  %23 = getelementptr %class.ap_uint.0* %6, i32 0, i32 0\l  %24 = bitcast [1 x i8]* %23 to i8*\l  %25 = load i8* %24, align 1\l  %26 = call zeroext i1 @_ZleILi8EEb7ap_uintIXT_EEi(i8 %25, i32 5)\l  br i1 %26, label %27, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x30eb910:s0 -> Node0x30ec560;
+	Node0x30eb910:s1 -> Node0x30ec5c0;
+	Node0x30ec560 [shape=record,label="{%27:\l\l  br label %30\l}"];
+	Node0x30ec560 -> Node0x30ec6d0;
+	Node0x30ec5c0 [shape=record,label="{%28:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([67 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0), i32 303, i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x30ec9c0 [shape=record,label="{%29:                                                  \l  br label %30\l}"];
+	Node0x30ec9c0 -> Node0x30ec6d0;
+	Node0x30ec6d0 [shape=record,label="{%30:\l\l  %31 = load i16* %5, align 2\l  %32 = zext i16 %31 to i32\l  %33 = ashr i32 %32, 0\l  %34 = trunc i32 %33 to i16\l  store i16 %34, i16* %5, align 2\l  %35 = load %\"class.hls::stream.1\"** %1, align 8\l  %36 = load %\"class.hls::stream.1\"** %2, align 8\l  call void @_ZN7ap_uintILi8EEC1Ei(%class.ap_uint.0* %7, i32 5)\l  %37 = load i16* %4, align 2\l  %38 = load i16* %5, align 2\l  %39 = getelementptr %class.ap_uint.0* %7, i32 0, i32 0\l  %40 = bitcast [1 x i8]* %39 to i8*\l  %41 = load i8* %40, align 1\l  call void @_ZL139p_Z23xf_pyrdown_gaussian_nxnILi256ELi256ELi0ELi1ELi1ELi258ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEtt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_tt(%\"class.hls::stream.1\"* %35, %\"class.hls::stream.1\"* %36, i8 %41, i16 zeroext %37, i16 zeroext %38)\l  ret void\l}"];
+}

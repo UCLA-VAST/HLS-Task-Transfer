@@ -1,0 +1,70 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t853" [label="  %t853 = alloca %struct.xf_Mat_9_256_256_1_*, align 8"]
+"t854" [label="  %t854 = alloca i32, align 4"]
+"val" [label="  %val = alloca %class.ap_uint.1, align 4"]
+"t855" [label="  %t855 = alloca i24"]
+"_1" [label="  store %struct.xf_Mat_9_256_256_1_* %this_, %struct.xf_Mat_9_256_256_1_** %t853, align 8"]
+"_2" [label="  store i32 %index, i32* %t854, align 4"]
+"t856" [label="  %t856 = getelementptr %class.ap_uint.1* %val, i32 0, i32 0"]
+"_3" [label="  store i24 %val.coerce, i24* %t855"]
+"t857" [label="  %t857 = bitcast i24* %t855 to [3 x i8]*"]
+"t858" [label="  %t858 = load [3 x i8]* %t857, align 1"]
+"_4" [label="  store [3 x i8] %t858, [3 x i8]* %t856"]
+"t859" [label="  %t859 = load i32* %t854, align 4"]
+"t860" [label="  %t860 = sext i32 %t859 to i64"]
+"t861" [label="  %t861 = load %struct.xf_Mat_9_256_256_1_** %t853, align 8"]
+"t862" [label="  %t862 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %t861, i32 0, i32 4"]
+"t863" [label="  %t863 = getelementptr inbounds [65536 x %class.ap_uint.1]* %t862, i32 0, i64 %t860"]
+"t864" [label="  %t864 = call %class.ap_uint.1* @_ZN7ap_uintILi24EEaSERKS0_(%class.ap_uint.1* %t863, %class.ap_uint.1* %val)"]
+"_5" [label="  ret void"]
+"unk_block_1" -> "t853"[color=red]
+"i32 1" -> "t853"
+"t853" -> "t854"[color=red weight=2]
+"i32 1" -> "t854"
+"t854" -> "val"[color=red weight=2]
+"i32 1" -> "val"
+"val" -> "t855"[color=red weight=2]
+"i32 1" -> "t855"
+"t855" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t853" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t854" -> "_2"
+"_2" -> "t856"[color=red weight=2]
+"val" -> "t856"
+"i32 0" -> "t856"
+"i32 0" -> "t856"
+"t856" -> "_3"[color=red weight=2]
+"val.coerce" -> "_3"
+"t855" -> "_3"
+"_3" -> "t857"[color=red weight=2]
+"t855" -> "t857"
+"t857" -> "t858"[color=red weight=2]
+"t857" -> "t858"
+"t858" -> "_4"[color=red weight=2]
+"t858" -> "_4"
+"t856" -> "_4"
+"_4" -> "t859"[color=red weight=2]
+"t854" -> "t859"
+"t859" -> "t860"[color=red weight=2]
+"t859" -> "t860"
+"t860" -> "t861"[color=red weight=2]
+"t853" -> "t861"
+"t861" -> "t862"[color=red weight=2]
+"t861" -> "t862"
+"i32 0" -> "t862"
+"i32 4" -> "t862"
+"t862" -> "t863"[color=red weight=2]
+"t862" -> "t863"
+"i32 0" -> "t863"
+"t860" -> "t863"
+"t863" -> "t864"[color=red weight=2]
+"t863" -> "t864"
+"val" -> "t864"
+"_ZN7ap_uintILi24EEaSERKS0_" -> "t864"
+"t864" -> "_5"[color=red weight=2]
+
+}

@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=autodse_batch
+#SBATCH -o %x.%J.out
+#SBATCH -e %x.%J.err
+#SBATCH -N1 --ntasks 1
+#SBATCH --cpus-per-task 64
+#SBATCH --gpus 1
+#SBATCH --mem 200G
+#SBATCH -p batch
+
+srun -N1 -n1 bash /home/zijd/dse/software-gnn/scripts/run_multi_autodse.sh
+
+wait

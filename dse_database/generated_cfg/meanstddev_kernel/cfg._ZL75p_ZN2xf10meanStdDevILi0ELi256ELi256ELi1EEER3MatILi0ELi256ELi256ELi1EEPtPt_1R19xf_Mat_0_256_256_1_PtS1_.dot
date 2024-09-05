@@ -1,0 +1,16 @@
+digraph "CFG for '_ZL75p_ZN2xf10meanStdDevILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPtPt_1R19xf_Mat_0_256_256_1_PtS1_' function" {
+	label="CFG for '_ZL75p_ZN2xf10meanStdDevILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPtPt_1R19xf_Mat_0_256_256_1_PtS1_' function";
+
+	Node0x1939580 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %2 = alloca i16*, align 8\l  %3 = alloca i16*, align 8\l  store %struct.xf_Mat_0_256_256_1_* %_src, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  store i16* %_mean, i16** %2, align 8\l  store i16* %_stddev, i16** %3, align 8\l  %4 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %5 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %4, i32 0, i32 1\l  %6 = load i32* %5, align 4\l  %7 = icmp sle i32 %6, 256\l  br i1 %7, label %8, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x1939580:s0 -> Node0x1939a10;
+	Node0x1939580:s1 -> Node0x1939a70;
+	Node0x1939a10 [shape=record,label="{%8:\l\l  %9 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %10 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %9, i32 0, i32 2\l  %11 = load i32* %10, align 4\l  %12 = icmp sle i32 %11, 256\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x1939a10:s0 -> Node0x1939de0;
+	Node0x1939a10:s1 -> Node0x1939a70;
+	Node0x1939de0 [shape=record,label="{%13:\l\l  br label %16\l}"];
+	Node0x1939de0 -> Node0x1939ef0;
+	Node0x1939a70 [shape=record,label="{%14:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([100 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8]* @.str1, i32 0, i32 0), i32 183, i8* getelementptr inbounds ([147 x i8]* @__PRETTY_FUNCTION__._ZL75p_ZN2xf10meanStdDevILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPtPt_1R19xf_Mat_0_256_256_1_PtS1_, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x193a5e0 [shape=record,label="{%15:                                                  \l  br label %16\l}"];
+	Node0x193a5e0 -> Node0x1939ef0;
+	Node0x1939ef0 [shape=record,label="{%16:\l\l  %17 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %18 = load i16** %2, align 8\l  %19 = load i16** %3, align 8\l  %20 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %21 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %20, i32 0, i32 1\l  %22 = load i32* %21, align 4\l  %23 = trunc i32 %22 to i16\l  %24 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %25 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %24, i32 0, i32 2\l  %26 = load i32* %25, align 4\l  %27 = trunc i32 %26 to i16\l  call void @_ZL85p_ZN2xf14xFStddevkernelILi0ELi256ELi256ELi1ELi1EEER3MatILi0ELi256ELi256ELi1EEPtPttt_1R19xf_Mat_0_256_256_1_PtS1_tt(%struct.xf_Mat_0_256_256_1_* %17, i16* %18, i16* %19, i16 zeroext %23, i16 zeroext %27)\l  ret void\l}"];
+}

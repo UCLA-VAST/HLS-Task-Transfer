@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL34p_ZN2xf14Mat_2_1_200_1_C2IEEiiPv_1P17xf_Mat_2_1_200_1_iiPv' function" {
+	label="CFG for '_ZL34p_ZN2xf14Mat_2_1_200_1_C2IEEiiPv_1P17xf_Mat_2_1_200_1_iiPv' function";
+
+	Node0x2e249b0 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_2_1_200_1_*, align 8\l  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i8*, align 8\l  store %struct.xf_Mat_2_1_200_1_* %this_, %struct.xf_Mat_2_1_200_1_** %1, align 8\l  store i32 %_rows, i32* %2, align 4\l  store i32 %_cols, i32* %3, align 4\l  store i8* %_data, i8** %4, align 8\l  %5 = load %struct.xf_Mat_2_1_200_1_** %1, align 8\l  %6 = load i32* %2, align 4\l  %7 = load i32* %3, align 4\l  call void @_ZL36p_ZN2xf14Mat_2_1_200_1_4initIEEiib_1P17xf_Mat_2_1_200_1_iib(%struct.xf_Mat_2_1_200_1_* %5, i32 %6, i32 %7, i1 zeroext true)\l  %8 = load i8** %4, align 8\l  %9 = bitcast i8* %8 to %class.ap_uint*\l  %10 = load %struct.xf_Mat_2_1_200_1_** %1, align 8\l  %11 = getelementptr inbounds %struct.xf_Mat_2_1_200_1_* %10, i32 0, i32 4\l  store %class.ap_uint* %9, %class.ap_uint** %11, align 8\l  ret void\l}"];
+}

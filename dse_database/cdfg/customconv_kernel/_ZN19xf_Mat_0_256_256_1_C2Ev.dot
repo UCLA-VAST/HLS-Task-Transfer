@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t880" [label="  %t880 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this, %struct.xf_Mat_0_256_256_1_** %t880, align 8"]
+"t881" [label="  %t881 = load %struct.xf_Mat_0_256_256_1_** %t880"]
+"t882" [label="  %t882 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t881, i32 0, i32 4"]
+"t883" [label="  %t883 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t882, i32 0, i32 0"]
+"t884" [label="  %t884 = getelementptr inbounds %class.ap_uint.0* %t883, i64 65536"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t880"[color=red]
+"i32 1" -> "t880"
+"t880" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t880" -> "_1"
+"_1" -> "t881"[color=red weight=2]
+"t880" -> "t881"
+"t881" -> "t882"[color=red weight=2]
+"t881" -> "t882"
+"i32 0" -> "t882"
+"i32 4" -> "t882"
+"t882" -> "t883"[color=red weight=2]
+"t882" -> "t883"
+"i32 0" -> "t883"
+"i32 0" -> "t883"
+"t883" -> "t884"[color=red weight=2]
+"t883" -> "t884"
+"i64 65536" -> "t884"
+"t884" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t885" [label="  %t885 = phi %class.ap_uint.0* [ %t883, %0 ], [ %t886, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %t885)"]
+"t886" [label="  %t886 = getelementptr inbounds %class.ap_uint.0* %t885, i64 1"]
+"t887" [label="  %t887 = icmp eq %class.ap_uint.0* %t886, %t884"]
+"_4" [label="  br i1 %t887, label %2, label %1"]
+"unk_block_2" -> "t885"[color=red]
+"t883" -> "t885"
+"t886" -> "t885"
+"t885" -> "_3"[color=red weight=2]
+"t885" -> "_3"
+"_ZN7ap_uintILi8EEC1Ev" -> "_3"
+"_3" -> "t886"[color=red weight=2]
+"t885" -> "t886"
+"i64 1" -> "t886"
+"t886" -> "t887"[color=red weight=2]
+"t886" -> "t887"
+"t884" -> "t887"
+"t887" -> "_4"[color=red weight=2]
+"t887" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

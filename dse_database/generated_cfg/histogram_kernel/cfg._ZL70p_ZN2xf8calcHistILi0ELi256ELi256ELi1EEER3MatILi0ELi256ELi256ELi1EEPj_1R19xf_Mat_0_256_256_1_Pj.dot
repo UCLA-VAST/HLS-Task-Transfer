@@ -1,0 +1,34 @@
+digraph "CFG for '_ZL70p_ZN2xf8calcHistILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPj_1R19xf_Mat_0_256_256_1_Pj' function" {
+	label="CFG for '_ZL70p_ZN2xf8calcHistILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPj_1R19xf_Mat_0_256_256_1_Pj' function";
+
+	Node0x23db110 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %2 = alloca i32*, align 8\l  %hist_array = alloca [1 x [256 x i32]], align 16\l  %width = alloca i16, align 2\l  %height = alloca i16, align 2\l  %i = alloca i32, align 4\l  %j = alloca i32, align 4\l  store %struct.xf_Mat_0_256_256_1_* %_src, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  store i32* %histogram, i32** %2, align 8\l  %3 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %4 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %3, i32 0, i32 1\l  %5 = load i32* %4, align 4\l  %6 = icmp sle i32 %5, 256\l  br i1 %6, label %7, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x23db110:s0 -> Node0x23db7c0;
+	Node0x23db110:s1 -> Node0x23db820;
+	Node0x23db7c0 [shape=record,label="{%7:\l\l  %8 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %9 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %8, i32 0, i32 2\l  %10 = load i32* %9, align 4\l  %11 = icmp sle i32 %10, 256\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x23db7c0:s0 -> Node0x23dbb90;
+	Node0x23db7c0:s1 -> Node0x23db820;
+	Node0x23dbb90 [shape=record,label="{%12:\l\l  br label %15\l}"];
+	Node0x23dbb90 -> Node0x23dbca0;
+	Node0x23db820 [shape=record,label="{%13:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([100 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8]* @.str1, i32 0, i32 0), i32 174, i8* getelementptr inbounds ([122 x i8]* @__PRETTY_FUNCTION__._ZL70p_ZN2xf8calcHistILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPj_1R19xf_Mat_0_256_256_1_Pj, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x23dc3d0 [shape=record,label="{%14:                                                  \l  br label %15\l}"];
+	Node0x23dc3d0 -> Node0x23dbca0;
+	Node0x23dbca0 [shape=record,label="{%15:\l\l  %16 = bitcast [1 x [256 x i32]]* %hist_array to i8*\l  call void @llvm.memset.p0i8.i64(i8* %16, i8 0, i64 1024, i32 16, i1 false)\l  %17 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %18 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %17, i32 0, i32 2\l  %19 = load i32* %18, align 4\l  %20 = ashr i32 %19, 0\l  %21 = trunc i32 %20 to i16\l  store i16 %21, i16* %width, align 2\l  %22 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %23 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %22, i32 0, i32 1\l  %24 = load i32* %23, align 4\l  %25 = trunc i32 %24 to i16\l  store i16 %25, i16* %height, align 2\l  %26 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %27 = getelementptr inbounds [1 x [256 x i32]]* %hist_array, i32 0, i32 0\l  call void @_ZL107p_ZN2xf17xFHistogramKernelILi0ELi256ELi256ELi0ELi1ELi1ELi128ELi1EEER3MatILi0ELi256ELi256ELi1EEPA256_jRtRt_1R19xf_Mat_0_256_256_1_PA256_jRtS3_(%struct.xf_Mat_0_256_256_1_* %26, [256 x i32]* %27, i16* %height, i16* %width)\l  store i32 0, i32* %i, align 4\l  br label %28\l}"];
+	Node0x23dbca0 -> Node0x23dd220;
+	Node0x23dd220 [shape=record,label="{%28:\l\l  %29 = load i32* %i, align 4\l  %30 = icmp slt i32 %29, 1\l  br i1 %30, label %31, label %57\l|{<s0>T|<s1>F}}"];
+	Node0x23dd220:s0 -> Node0x23dd450;
+	Node0x23dd220:s1 -> Node0x23dd4b0;
+	Node0x23dd450 [shape=record,label="{%31:\l\l  store i32 0, i32* %j, align 4\l  br label %32\l}"];
+	Node0x23dd450 -> Node0x23dd690;
+	Node0x23dd690 [shape=record,label="{%32:\l\l  %33 = load i32* %j, align 4\l  %34 = icmp slt i32 %33, 256\l  br i1 %34, label %35, label %53\l|{<s0>T|<s1>F}}"];
+	Node0x23dd690:s0 -> Node0x23dd880;
+	Node0x23dd690:s1 -> Node0x23dd8e0;
+	Node0x23dd880 [shape=record,label="{%35:\l\l  %36 = load i32* %j, align 4\l  %37 = sext i32 %36 to i64\l  %38 = load i32* %i, align 4\l  %39 = sext i32 %38 to i64\l  %40 = getelementptr inbounds [1 x [256 x i32]]* %hist_array, i32 0, i64 %39\l  %41 = getelementptr inbounds [256 x i32]* %40, i32 0, i64 %37\l  %42 = load i32* %41, align 4\l  %43 = load i32* %i, align 4\l  %44 = mul nsw i32 %43, 256\l  %45 = load i32* %j, align 4\l  %46 = add nsw i32 %44, %45\l  %47 = sext i32 %46 to i64\l  %48 = load i32** %2, align 8\l  %49 = getelementptr inbounds i32* %48, i64 %47\l  store i32 %42, i32* %49, align 4\l  br label %50\l}"];
+	Node0x23dd880 -> Node0x23de250;
+	Node0x23de250 [shape=record,label="{%50:\l\l  %51 = load i32* %j, align 4\l  %52 = add nsw i32 %51, 1\l  store i32 %52, i32* %j, align 4\l  br label %32\l}"];
+	Node0x23de250 -> Node0x23dd690;
+	Node0x23dd8e0 [shape=record,label="{%53:\l\l  br label %54\l}"];
+	Node0x23dd8e0 -> Node0x23de550;
+	Node0x23de550 [shape=record,label="{%54:\l\l  %55 = load i32* %i, align 4\l  %56 = add nsw i32 %55, 1\l  store i32 %56, i32* %i, align 4\l  br label %28\l}"];
+	Node0x23de550 -> Node0x23dd220;
+	Node0x23dd4b0 [shape=record,label="{%57:\l\l  ret void\l}"];
+}

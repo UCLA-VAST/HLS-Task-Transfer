@@ -1,0 +1,33 @@
+digraph "CFG for '_ZL127p_ZN2xf8multiplyILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEf_1R19xf_Mat_0_256_256_1_S0_S0_f' function" {
+	label="CFG for '_ZL127p_ZN2xf8multiplyILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEf_1R19xf_Mat_0_256_256_1_S0_S0_f' function";
+
+	Node0x2139e80 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %2 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %3 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %4 = alloca float, align 4\l  %image_width = alloca i16, align 2\l  store %struct.xf_Mat_0_256_256_1_* %src1, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  store %struct.xf_Mat_0_256_256_1_* %src2, %struct.xf_Mat_0_256_256_1_** %2, align 8\l  store %struct.xf_Mat_0_256_256_1_* %dst, %struct.xf_Mat_0_256_256_1_** %3, align 8\l  store float %scale, float* %4, align 4\l  %5 = load float* %4, align 4\l  %6 = fcmp oge float %5, 0.000000e+00\l  br i1 %6, label %7, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x2139e80:s0 -> Node0x213a5a0;
+	Node0x2139e80:s1 -> Node0x213a600;
+	Node0x213a5a0 [shape=record,label="{%7:\l\l  %8 = load float* %4, align 4\l  %9 = fcmp ole float %8, 1.000000e+00\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x213a5a0:s0 -> Node0x213a860;
+	Node0x213a5a0:s1 -> Node0x213a600;
+	Node0x213a860 [shape=record,label="{%10:\l\l  br label %13\l}"];
+	Node0x213a860 -> Node0x213a8c0;
+	Node0x213a600 [shape=record,label="{%11:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([82 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0), i32 749, i8* getelementptr inbounds ([230 x i8]* @__PRETTY_FUNCTION__._ZL127p_ZN2xf8multiplyILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEf_1R19xf_Mat_0_256_256_1_S0_S0_f, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x213af40 [shape=record,label="{%12:                                                  \l  br label %13\l}"];
+	Node0x213af40 -> Node0x213a8c0;
+	Node0x213a8c0 [shape=record,label="{%13:\l\l  %14 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %15 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %14, i32 0, i32 1\l  %16 = load i32* %15, align 4\l  %17 = icmp sle i32 %16, 256\l  br i1 %17, label %18, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x213a8c0:s0 -> Node0x213b1d0;
+	Node0x213a8c0:s1 -> Node0x213b230;
+	Node0x213b1d0 [shape=record,label="{%18:\l\l  %19 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %20 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %19, i32 0, i32 2\l  %21 = load i32* %20, align 4\l  %22 = icmp sle i32 %21, 256\l  br i1 %22, label %23, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x213b1d0:s0 -> Node0x213b580;
+	Node0x213b1d0:s1 -> Node0x213b230;
+	Node0x213b580 [shape=record,label="{%23:\l\l  %24 = load %struct.xf_Mat_0_256_256_1_** %2, align 8\l  %25 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %24, i32 0, i32 1\l  %26 = load i32* %25, align 4\l  %27 = icmp sle i32 %26, 256\l  br i1 %27, label %28, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x213b580:s0 -> Node0x213b8d0;
+	Node0x213b580:s1 -> Node0x213b230;
+	Node0x213b8d0 [shape=record,label="{%28:\l\l  %29 = load %struct.xf_Mat_0_256_256_1_** %2, align 8\l  %30 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %29, i32 0, i32 2\l  %31 = load i32* %30, align 4\l  %32 = icmp sle i32 %31, 256\l  br i1 %32, label %33, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x213b8d0:s0 -> Node0x213bc20;
+	Node0x213b8d0:s1 -> Node0x213b230;
+	Node0x213bc20 [shape=record,label="{%33:\l\l  br label %36\l}"];
+	Node0x213bc20 -> Node0x213bd30;
+	Node0x213b230 [shape=record,label="{%34:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([147 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0), i32 750, i8* getelementptr inbounds ([230 x i8]* @__PRETTY_FUNCTION__._ZL127p_ZN2xf8multiplyILi0ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEf_1R19xf_Mat_0_256_256_1_S0_S0_f, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x213c120 [shape=record,label="{%35:                                                  \l  br label %36\l}"];
+	Node0x213c120 -> Node0x213bd30;
+	Node0x213bd30 [shape=record,label="{%36:\l\l  %37 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %38 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %37, i32 0, i32 2\l  %39 = load i32* %38, align 4\l  %40 = ashr i32 %39, 0\l  %41 = trunc i32 %40 to i16\l  store i16 %41, i16* %image_width, align 2\l  %42 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %43 = load %struct.xf_Mat_0_256_256_1_** %2, align 8\l  %44 = load %struct.xf_Mat_0_256_256_1_** %3, align 8\l  %45 = load float* %4, align 4\l  %46 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %47 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %46, i32 0, i32 1\l  %48 = load i32* %47, align 4\l  %49 = trunc i32 %48 to i16\l  %50 = load i16* %image_width, align 2\l  call void @_ZL152p_ZN2xf11xFMulKernelILi0ELi256ELi256ELi1ELi0ELi1ELi1ELi1ELi256EEER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EER3MatILi0ELi256ELi256ELi1EEiftt_1R19xf_Mat_0_256_256_1_S0_S0_iftt(%struct.xf_Mat_0_256_256_1_* %42, %struct.xf_Mat_0_256_256_1_* %43, %struct.xf_Mat_0_256_256_1_* %44, i32 0, float %45, i16 zeroext %49, i16 zeroext %50)\l  ret void\l}"];
+}

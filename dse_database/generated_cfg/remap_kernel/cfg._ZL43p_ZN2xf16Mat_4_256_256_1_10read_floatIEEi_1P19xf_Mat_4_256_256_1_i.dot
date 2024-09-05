@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL43p_ZN2xf16Mat_4_256_256_1_10read_floatIEEi_1P19xf_Mat_4_256_256_1_i' function" {
+	label="CFG for '_ZL43p_ZN2xf16Mat_4_256_256_1_10read_floatIEEi_1P19xf_Mat_4_256_256_1_i' function";
+
+	Node0x2894860 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_4_256_256_1_*, align 8\l  %2 = alloca i32, align 4\l  %val = alloca %class.ap_uint.1, align 1\l  %val_out = alloca float*, align 8\l  store %struct.xf_Mat_4_256_256_1_* %this_, %struct.xf_Mat_4_256_256_1_** %1, align 8\l  store i32 %index, i32* %2, align 4\l  %3 = load %struct.xf_Mat_4_256_256_1_** %1, align 8\l  %4 = load i32* %2, align 4\l  %5 = call i32 @_ZL36p_ZN2xf16Mat_4_256_256_1_4readIEEi_1P19xf_Mat_4_256_256_1_i(%struct.xf_Mat_4_256_256_1_* %3, i32 %4)\l  %6 = getelementptr %class.ap_uint.1* %val, i32 0, i32 0\l  %7 = bitcast [4 x i8]* %6 to i32*\l  store i32 %5, i32* %7, align 1\l  %8 = bitcast %class.ap_uint.1* %val to float*\l  store float* %8, float** %val_out, align 8\l  %9 = load float** %val_out, align 8\l  %10 = load float* %9, align 4\l  ret float %10\l}"];
+}

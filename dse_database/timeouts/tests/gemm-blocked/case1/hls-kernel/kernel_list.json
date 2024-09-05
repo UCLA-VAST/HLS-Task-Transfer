@@ -1,0 +1,5 @@
+{
+    "bbgemm": {
+        "bbgemm": "subkernel"
+    }
+}

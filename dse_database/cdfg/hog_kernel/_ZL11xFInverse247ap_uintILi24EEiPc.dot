@@ -1,0 +1,160 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"in_val" [label="  %in_val = alloca %class.ap_uint.20, align 4"]
+"t1474" [label="  %t1474 = alloca i24"]
+"t1475" [label="  %t1475 = alloca i32, align 4"]
+"t1476" [label="  %t1476 = alloca i8*, align 8"]
+"out_val" [label="  %out_val = alloca i32, align 4"]
+"s" [label="  %s = alloca i8, align 1"]
+"t1477" [label="  %t1477 = alloca %class.ap_uint.20, align 1"]
+"t1478" [label="  %t1478 = alloca i24"]
+"t1479" [label="  %t1479 = alloca %class.ap_uint.20, align 1"]
+"t1480" [label="  %t1480 = alloca i24"]
+"t1481" [label="  %t1481 = getelementptr %class.ap_uint.20* %in_val, i32 0, i32 0"]
+"_1" [label="  store i24 %in_val.coerce, i24* %t1474"]
+"t1482" [label="  %t1482 = bitcast i24* %t1474 to [3 x i8]*"]
+"t1483" [label="  %t1483 = load [3 x i8]* %t1482, align 1"]
+"_2" [label="  store [3 x i8] %t1483, [3 x i8]* %t1481"]
+"_3" [label="  store i32 %m, i32* %t1475, align 4"]
+"_4" [label="  store i8* %n, i8** %t1476, align 8"]
+"t1484" [label="  %t1484 = bitcast %class.ap_uint.20* %t1477 to i8*"]
+"t1485" [label="  %t1485 = bitcast %class.ap_uint.20* %in_val to i8*"]
+"_5" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t1484, i8* %t1485, i64 3, i32 1, i1 false)"]
+"t1486" [label="  %t1486 = getelementptr %class.ap_uint.20* %t1477, i32 0, i32 0"]
+"t1487" [label="  %t1487 = bitcast i24* %t1478 to [3 x i8]*"]
+"t1488" [label="  %t1488 = load [3 x i8]* %t1486"]
+"_6" [label="  store [3 x i8] %t1488, [3 x i8]* %t1487, align 1"]
+"t1489" [label="  %t1489 = load i24* %t1478"]
+"t1490" [label="  %t1490 = call signext i8 @_ZL18xFIdentifySignBits7ap_uintILi24EE(i24 %t1489)"]
+"_7" [label="  store i8 %t1490, i8* %s, align 1"]
+"t1491" [label="  %t1491 = bitcast %class.ap_uint.20* %t1479 to i8*"]
+"t1492" [label="  %t1492 = bitcast %class.ap_uint.20* %in_val to i8*"]
+"_8" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t1491, i8* %t1492, i64 3, i32 1, i1 false)"]
+"t1493" [label="  %t1493 = load i32* %t1475, align 4"]
+"t1494" [label="  %t1494 = load i8* %s, align 1"]
+"t1495" [label="  %t1495 = load i8** %t1476, align 8"]
+"t1496" [label="  %t1496 = getelementptr %class.ap_uint.20* %t1479, i32 0, i32 0"]
+"t1497" [label="  %t1497 = bitcast i24* %t1480 to [3 x i8]*"]
+"t1498" [label="  %t1498 = load [3 x i8]* %t1496"]
+"_9" [label="  store [3 x i8] %t1498, [3 x i8]* %t1497, align 1"]
+"t1499" [label="  %t1499 = load i24* %t1480"]
+"t1500" [label="  %t1500 = call i32 @_ZL17xFInverse24Kernel7ap_uintILi24EEicPc(i24 %t1499, i32 %t1493, i8 signext %t1494, i8* %t1495)"]
+"_10" [label="  store i32 %t1500, i32* %out_val, align 4"]
+"t1501" [label="  %t1501 = load i32* %out_val, align 4"]
+"_11" [label="  ret i32 %t1501"]
+"unk_block_1" -> "in_val"[color=red]
+"i32 1" -> "in_val"
+"in_val" -> "t1474"[color=red weight=2]
+"i32 1" -> "t1474"
+"t1474" -> "t1475"[color=red weight=2]
+"i32 1" -> "t1475"
+"t1475" -> "t1476"[color=red weight=2]
+"i32 1" -> "t1476"
+"t1476" -> "out_val"[color=red weight=2]
+"i32 1" -> "out_val"
+"out_val" -> "s"[color=red weight=2]
+"i32 1" -> "s"
+"s" -> "t1477"[color=red weight=2]
+"i32 1" -> "t1477"
+"t1477" -> "t1478"[color=red weight=2]
+"i32 1" -> "t1478"
+"t1478" -> "t1479"[color=red weight=2]
+"i32 1" -> "t1479"
+"t1479" -> "t1480"[color=red weight=2]
+"i32 1" -> "t1480"
+"t1480" -> "t1481"[color=red weight=2]
+"in_val" -> "t1481"
+"i32 0" -> "t1481"
+"i32 0" -> "t1481"
+"t1481" -> "_1"[color=red weight=2]
+"in_val.coerce" -> "_1"
+"t1474" -> "_1"
+"_1" -> "t1482"[color=red weight=2]
+"t1474" -> "t1482"
+"t1482" -> "t1483"[color=red weight=2]
+"t1482" -> "t1483"
+"t1483" -> "_2"[color=red weight=2]
+"t1483" -> "_2"
+"t1481" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"m" -> "_3"
+"t1475" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"n" -> "_4"
+"t1476" -> "_4"
+"_4" -> "t1484"[color=red weight=2]
+"t1477" -> "t1484"
+"t1484" -> "t1485"[color=red weight=2]
+"in_val" -> "t1485"
+"t1485" -> "_5"[color=red weight=2]
+"t1484" -> "_5"
+"t1485" -> "_5"
+"i64 3" -> "_5"
+"i32 1" -> "_5"
+"i1 false" -> "_5"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_5"
+"_5" -> "t1486"[color=red weight=2]
+"t1477" -> "t1486"
+"i32 0" -> "t1486"
+"i32 0" -> "t1486"
+"t1486" -> "t1487"[color=red weight=2]
+"t1478" -> "t1487"
+"t1487" -> "t1488"[color=red weight=2]
+"t1486" -> "t1488"
+"t1488" -> "_6"[color=red weight=2]
+"t1488" -> "_6"
+"t1487" -> "_6"
+"_6" -> "t1489"[color=red weight=2]
+"t1478" -> "t1489"
+"t1489" -> "t1490"[color=red weight=2]
+"t1489" -> "t1490"
+"_ZL18xFIdentifySignBits7ap_uintILi24EE" -> "t1490"
+"t1490" -> "_7"[color=red weight=2]
+"t1490" -> "_7"
+"s" -> "_7"
+"_7" -> "t1491"[color=red weight=2]
+"t1479" -> "t1491"
+"t1491" -> "t1492"[color=red weight=2]
+"in_val" -> "t1492"
+"t1492" -> "_8"[color=red weight=2]
+"t1491" -> "_8"
+"t1492" -> "_8"
+"i64 3" -> "_8"
+"i32 1" -> "_8"
+"i1 false" -> "_8"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_8"
+"_8" -> "t1493"[color=red weight=2]
+"t1475" -> "t1493"
+"t1493" -> "t1494"[color=red weight=2]
+"s" -> "t1494"
+"t1494" -> "t1495"[color=red weight=2]
+"t1476" -> "t1495"
+"t1495" -> "t1496"[color=red weight=2]
+"t1479" -> "t1496"
+"i32 0" -> "t1496"
+"i32 0" -> "t1496"
+"t1496" -> "t1497"[color=red weight=2]
+"t1480" -> "t1497"
+"t1497" -> "t1498"[color=red weight=2]
+"t1496" -> "t1498"
+"t1498" -> "_9"[color=red weight=2]
+"t1498" -> "_9"
+"t1497" -> "_9"
+"_9" -> "t1499"[color=red weight=2]
+"t1480" -> "t1499"
+"t1499" -> "t1500"[color=red weight=2]
+"t1499" -> "t1500"
+"t1493" -> "t1500"
+"t1494" -> "t1500"
+"t1495" -> "t1500"
+"_ZL17xFInverse24Kernel7ap_uintILi24EEicPc" -> "t1500"
+"t1500" -> "_10"[color=red weight=2]
+"t1500" -> "_10"
+"out_val" -> "_10"
+"_10" -> "t1501"[color=red weight=2]
+"out_val" -> "t1501"
+"t1501" -> "_11"[color=red weight=2]
+"t1501" -> "_11"
+
+}

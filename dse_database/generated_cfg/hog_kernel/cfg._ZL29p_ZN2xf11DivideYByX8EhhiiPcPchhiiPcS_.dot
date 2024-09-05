@@ -1,0 +1,16 @@
+digraph "CFG for '_ZL29p_ZN2xf11DivideYByX8EhhiiPcPchhiiPcS_' function" {
+	label="CFG for '_ZL29p_ZN2xf11DivideYByX8EhhiiPcPchhiiPcS_' function";
+
+	Node0x33c2bc0 [shape=record,label="{%0:\l  %1 = alloca i8, align 1\l  %2 = alloca i8, align 1\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i8*, align 8\l  %6 = alloca i8*, align 8\l  %div_val = alloca i32, align 4\l  %MOut = alloca i8, align 1\l  %NOut = alloca i8, align 1\l  %x_inv = alloca i16, align 2\l  store i8 %x, i8* %1, align 1\l  store i8 %y, i8* %2, align 1\l  store i32 %M1, i32* %3, align 4\l  store i32 %M2, i32* %4, align 4\l  store i8* %out_M, i8** %5, align 8\l  store i8* %out_N, i8** %6, align 8\l  %7 = load i32* %3, align 4\l  %8 = icmp eq i32 %7, 8\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x33c2bc0:s0 -> Node0x33c2050;
+	Node0x33c2bc0:s1 -> Node0x33c0f60;
+	Node0x33c2050 [shape=record,label="{%9:\l\l  %10 = load i32* %4, align 4\l  %11 = icmp eq i32 %10, 8\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x33c2050:s0 -> Node0x33bbcd0;
+	Node0x33c2050:s1 -> Node0x33c0f60;
+	Node0x33bbcd0 [shape=record,label="{%12:\l\l  br label %15\l}"];
+	Node0x33bbcd0 -> Node0x33bb910;
+	Node0x33c0f60 [shape=record,label="{%13:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([58 x i8]* @.str10, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str8, i32 0, i32 0), i32 420, i8* getelementptr inbounds ([99 x i8]* @__PRETTY_FUNCTION__._ZL29p_ZN2xf11DivideYByX8EhhiiPcPchhiiPcS_, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x33b2680 [shape=record,label="{%14:                                                  \l  br label %15\l}"];
+	Node0x33b2680 -> Node0x33bb910;
+	Node0x33bb910 [shape=record,label="{%15:\l\l  %16 = load i8* %1, align 1\l  %17 = load i32* %3, align 4\l  %18 = call zeroext i16 @_ZL21p_ZN2xf8Inverse8EhiPchiPc(i8 zeroext %16, i32 %17, i8* %NOut)\l  store i16 %18, i16* %x_inv, align 2\l  %19 = load i8* %NOut, align 1\l  %20 = sext i8 %19 to i32\l  %21 = sub nsw i32 16, %20\l  %22 = load i32* %4, align 4\l  %23 = add nsw i32 %21, %22\l  %24 = trunc i32 %23 to i8\l  store i8 %24, i8* %MOut, align 1\l  %25 = load i8* %NOut, align 1\l  %26 = sext i8 %25 to i32\l  %27 = load i32* %4, align 4\l  %28 = sub nsw i32 8, %27\l  %29 = add nsw i32 %26, %28\l  %30 = trunc i32 %29 to i8\l  store i8 %30, i8* %NOut, align 1\l  %31 = load i8* %2, align 1\l  %32 = zext i8 %31 to i32\l  %33 = load i16* %x_inv, align 2\l  %34 = zext i16 %33 to i32\l  %35 = mul nsw i32 %32, %34\l  store i32 %35, i32* %div_val, align 4\l  %36 = load i8* %MOut, align 1\l  %37 = load i8** %5, align 8\l  store i8 %36, i8* %37, align 1\l  %38 = load i8* %NOut, align 1\l  %39 = load i8** %6, align 8\l  store i8 %38, i8* %39, align 1\l  %40 = load i32* %div_val, align 4\l  ret i32 %40\l}"];
+}

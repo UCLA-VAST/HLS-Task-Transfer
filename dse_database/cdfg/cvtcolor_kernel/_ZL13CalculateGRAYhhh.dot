@@ -1,0 +1,92 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t382" [label="  %t382 = alloca i8, align 1"]
+"t383" [label="  %t383 = alloca i8, align 1"]
+"t384" [label="  %t384 = alloca i8, align 1"]
+"GRAY" [label="  %GRAY = alloca i32, align 4"]
+"sat_GRAY" [label="  %sat_GRAY = alloca i8, align 1"]
+"_1" [label="  store i8 %R, i8* %t382, align 1"]
+"_2" [label="  store i8 %G, i8* %t383, align 1"]
+"_3" [label="  store i8 %B, i8* %t384, align 1"]
+"t385" [label="  %t385 = load i8* %t382, align 1"]
+"t386" [label="  %t386 = zext i8 %t385 to i32"]
+"t387" [label="  %t387 = mul nsw i32 %t386, 9798"]
+"t388" [label="  %t388 = load i8* %t383, align 1"]
+"t389" [label="  %t389 = zext i8 %t388 to i32"]
+"t390" [label="  %t390 = mul nsw i32 %t389, 19235"]
+"t391" [label="  %t391 = add nsw i32 %t387, %t390"]
+"t392" [label="  %t392 = load i8* %t384, align 1"]
+"t393" [label="  %t393 = zext i8 %t392 to i32"]
+"t394" [label="  %t394 = mul nsw i32 %t393, 3736"]
+"t395" [label="  %t395 = add nsw i32 %t391, %t394"]
+"_4" [label="  store i32 %t395, i32* %GRAY, align 4"]
+"t396" [label="  %t396 = load i32* %GRAY, align 4"]
+"t397" [label="  %t397 = call zeroext i8 @_ZL13saturate_castii(i32 %t396, i32 0)"]
+"_5" [label="  store i8 %t397, i8* %sat_GRAY, align 1"]
+"t398" [label="  %t398 = load i8* %sat_GRAY, align 1"]
+"_6" [label="  ret i8 %t398"]
+"unk_block_1" -> "t382"[color=red]
+"i32 1" -> "t382"
+"t382" -> "t383"[color=red weight=2]
+"i32 1" -> "t383"
+"t383" -> "t384"[color=red weight=2]
+"i32 1" -> "t384"
+"t384" -> "GRAY"[color=red weight=2]
+"i32 1" -> "GRAY"
+"GRAY" -> "sat_GRAY"[color=red weight=2]
+"i32 1" -> "sat_GRAY"
+"sat_GRAY" -> "_1"[color=red weight=2]
+"R" -> "_1"
+"t382" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"G" -> "_2"
+"t383" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"B" -> "_3"
+"t384" -> "_3"
+"_3" -> "t385"[color=red weight=2]
+"t382" -> "t385"
+"t385" -> "t386"[color=red weight=2]
+"t385" -> "t386"
+"t386" -> "t387"[color=red weight=2]
+"t386" -> "t387"
+"i32 9798" -> "t387"
+"t387" -> "t388"[color=red weight=2]
+"t383" -> "t388"
+"t388" -> "t389"[color=red weight=2]
+"t388" -> "t389"
+"t389" -> "t390"[color=red weight=2]
+"t389" -> "t390"
+"i32 19235" -> "t390"
+"t390" -> "t391"[color=red weight=2]
+"t387" -> "t391"
+"t390" -> "t391"
+"t391" -> "t392"[color=red weight=2]
+"t384" -> "t392"
+"t392" -> "t393"[color=red weight=2]
+"t392" -> "t393"
+"t393" -> "t394"[color=red weight=2]
+"t393" -> "t394"
+"i32 3736" -> "t394"
+"t394" -> "t395"[color=red weight=2]
+"t391" -> "t395"
+"t394" -> "t395"
+"t395" -> "_4"[color=red weight=2]
+"t395" -> "_4"
+"GRAY" -> "_4"
+"_4" -> "t396"[color=red weight=2]
+"GRAY" -> "t396"
+"t396" -> "t397"[color=red weight=2]
+"t396" -> "t397"
+"i32 0" -> "t397"
+"_ZL13saturate_castii" -> "t397"
+"t397" -> "_5"[color=red weight=2]
+"t397" -> "_5"
+"sat_GRAY" -> "_5"
+"_5" -> "t398"[color=red weight=2]
+"sat_GRAY" -> "t398"
+"t398" -> "_6"[color=red weight=2]
+"t398" -> "_6"
+
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL36p_ZN2xf16Mat_3_256_256_1_4readIEEi_1P19xf_Mat_3_256_256_1_i' function" {
+	label="CFG for '_ZL36p_ZN2xf16Mat_3_256_256_1_4readIEEi_1P19xf_Mat_3_256_256_1_i' function";
+
+	Node0x16c33d0 [shape=record,label="{%0:\l  %1 = alloca %class.ap_uint.1, align 1\l  %2 = alloca %struct.xf_Mat_3_256_256_1_*, align 8\l  %3 = alloca i32, align 4\l  store %struct.xf_Mat_3_256_256_1_* %this_, %struct.xf_Mat_3_256_256_1_** %2, align 8\l  store i32 %index, i32* %3, align 4\l  %4 = load i32* %3, align 4\l  %5 = sext i32 %4 to i64\l  %6 = load %struct.xf_Mat_3_256_256_1_** %2, align 8\l  %7 = getelementptr inbounds %struct.xf_Mat_3_256_256_1_* %6, i32 0, i32 4\l  %8 = getelementptr inbounds [65536 x %class.ap_uint.1]* %7, i32 0, i64 %5\l  %9 = bitcast %class.ap_uint.1* %1 to i8*\l  %10 = bitcast %class.ap_uint.1* %8 to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %9, i8* %10, i64 4, i32 1, i1 false)\l  %11 = getelementptr %class.ap_uint.1* %1, i32 0, i32 0\l  %12 = bitcast [4 x i8]* %11 to i32*\l  %13 = load i32* %12, align 1\l  ret i32 %13\l}"];
+}

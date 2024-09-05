@@ -1,0 +1,13 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"_1" [label="  call void @__cxx_global_var_init()"]
+"_2" [label="  call void @__cxx_global_var_init1()"]
+"_3" [label="  ret void"]
+"unk_block_1" -> "_1"[color=red]
+"__cxx_global_var_init" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"__cxx_global_var_init1" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+
+}

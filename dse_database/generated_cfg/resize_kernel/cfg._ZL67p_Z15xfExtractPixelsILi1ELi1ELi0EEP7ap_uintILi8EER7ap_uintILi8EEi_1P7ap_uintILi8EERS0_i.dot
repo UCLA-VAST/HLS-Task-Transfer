@@ -1,0 +1,16 @@
+digraph "CFG for '_ZL67p_Z15xfExtractPixelsILi1ELi1ELi0EEP7ap_uintILi8EER7ap_uintILi8EEi_1P7ap_uintILi8EERS0_i' function" {
+	label="CFG for '_ZL67p_Z15xfExtractPixelsILi1ELi1ELi0EEP7ap_uintILi8EER7ap_uintILi8EEi_1P7ap_uintILi8EERS0_i' function";
+
+	Node0x1918650 [shape=record,label="{%0:\l  %1 = alloca %class.ap_uint.0*, align 8\l  %2 = alloca %class.ap_uint.0*, align 8\l  %3 = alloca i32, align 4\l  %v = alloca %class.ap_uint.0, align 1\l  %shift = alloca i32, align 4\l  %STEP = alloca i32, align 4\l  %i = alloca i32, align 4\l  store %class.ap_uint.0* %tmp_buf, %class.ap_uint.0** %1, align 8\l  store %class.ap_uint.0* %val1, %class.ap_uint.0** %2, align 8\l  store i32 %pos, i32* %3, align 4\l  %4 = load %class.ap_uint.0** %2, align 8\l  %5 = bitcast %class.ap_uint.0* %v to i8*\l  %6 = bitcast %class.ap_uint.0* %4 to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %5, i8* %6, i64 1, i32 1, i1 false)\l  store i32 0, i32* %shift, align 4\l  store i32 8, i32* %STEP, align 4\l  br label %7\l}"];
+	Node0x1918650 -> Node0x1918e90;
+	Node0x1918e90 [shape=record,label="{%7:\l\l  store i32 0, i32* %i, align 4\l  br label %8\l}"];
+	Node0x1918e90 -> Node0x1919000;
+	Node0x1919000 [shape=record,label="{%8:\l\l  %9 = load i32* %i, align 4\l  %10 = icmp slt i32 %9, 1\l  br i1 %10, label %11, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x1919000:s0 -> Node0x1919280;
+	Node0x1919000:s1 -> Node0x19192e0;
+	Node0x1919280 [shape=record,label="{%11:\l\l  %12 = load i32* %3, align 4\l  %13 = load i32* %i, align 4\l  %14 = add nsw i32 %12, %13\l  %15 = sext i32 %14 to i64\l  %16 = load %class.ap_uint.0** %1, align 8\l  %17 = getelementptr inbounds %class.ap_uint.0* %16, i64 %15\l  %18 = load i32* %shift, align 4\l  %19 = load i32* %STEP, align 4\l  %20 = add nsw i32 %18, %19\l  %21 = sub nsw i32 %20, 1\l  %22 = load i32* %shift, align 4\l  %23 = call i64* @_ZN7ap_uintILi8EE5rangeEii(%class.ap_uint.0* %v, i32 %21, i32 %22)\l  %24 = load i64* %23\l  %25 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSEm(%class.ap_uint.0* %17, i64 %24)\l  %26 = load i32* %shift, align 4\l  %27 = load i32* %STEP, align 4\l  %28 = add nsw i32 %26, %27\l  store i32 %28, i32* %shift, align 4\l  br label %29\l}"];
+	Node0x1919280 -> Node0x1919dd0;
+	Node0x1919dd0 [shape=record,label="{%29:\l\l  %30 = load i32* %i, align 4\l  %31 = add nsw i32 %30, 1\l  store i32 %31, i32* %i, align 4\l  br label %8\l}"];
+	Node0x1919dd0 -> Node0x1919000;
+	Node0x19192e0 [shape=record,label="{%32:\l\l  ret void\l}"];
+}

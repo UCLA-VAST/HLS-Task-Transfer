@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1287" [label="  %t1287 = alloca %struct.xf_Mat_0_512_512_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_512_512_1_* %this, %struct.xf_Mat_0_512_512_1_** %t1287, align 8"]
+"t1288" [label="  %t1288 = load %struct.xf_Mat_0_512_512_1_** %t1287"]
+"t1289" [label="  %t1289 = getelementptr inbounds %struct.xf_Mat_0_512_512_1_* %t1288, i32 0, i32 4"]
+"t1290" [label="  %t1290 = getelementptr inbounds [262144 x %class.ap_uint.0]* %t1289, i32 0, i32 0"]
+"t1291" [label="  %t1291 = getelementptr inbounds %class.ap_uint.0* %t1290, i64 262144"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t1287"[color=red]
+"i32 1" -> "t1287"
+"t1287" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t1287" -> "_1"
+"_1" -> "t1288"[color=red weight=2]
+"t1287" -> "t1288"
+"t1288" -> "t1289"[color=red weight=2]
+"t1288" -> "t1289"
+"i32 0" -> "t1289"
+"i32 4" -> "t1289"
+"t1289" -> "t1290"[color=red weight=2]
+"t1289" -> "t1290"
+"i32 0" -> "t1290"
+"i32 0" -> "t1290"
+"t1290" -> "t1291"[color=red weight=2]
+"t1290" -> "t1291"
+"i64 262144" -> "t1291"
+"t1291" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t1292" [label="  %t1292 = phi %class.ap_uint.0* [ %t1290, %0 ], [ %t1293, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %t1292)"]
+"t1293" [label="  %t1293 = getelementptr inbounds %class.ap_uint.0* %t1292, i64 1"]
+"t1294" [label="  %t1294 = icmp eq %class.ap_uint.0* %t1293, %t1291"]
+"_4" [label="  br i1 %t1294, label %2, label %1"]
+"unk_block_2" -> "t1292"[color=red]
+"t1290" -> "t1292"
+"t1293" -> "t1292"
+"t1292" -> "_3"[color=red weight=2]
+"t1292" -> "_3"
+"_ZN7ap_uintILi8EEC1Ev" -> "_3"
+"_3" -> "t1293"[color=red weight=2]
+"t1292" -> "t1293"
+"i64 1" -> "t1293"
+"t1293" -> "t1294"[color=red weight=2]
+"t1293" -> "t1294"
+"t1291" -> "t1294"
+"t1294" -> "_4"[color=red weight=2]
+"t1294" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

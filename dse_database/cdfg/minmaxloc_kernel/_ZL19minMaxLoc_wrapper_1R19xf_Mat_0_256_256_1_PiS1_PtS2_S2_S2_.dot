@@ -1,0 +1,147 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t29" [label="  %t29 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t30" [label="  %t30 = alloca i32*, align 8"]
+"t31" [label="  %t31 = alloca i32*, align 8"]
+"t32" [label="  %t32 = alloca i16*, align 8"]
+"t33" [label="  %t33 = alloca i16*, align 8"]
+"t34" [label="  %t34 = alloca i16*, align 8"]
+"t35" [label="  %t35 = alloca i16*, align 8"]
+"min_value_local" [label="  %min_value_local = alloca i32, align 4"]
+"max_value_local" [label="  %max_value_local = alloca i32, align 4"]
+"_min_locx_local" [label="  %_min_locx_local = alloca i16, align 2"]
+"_min_locy_local" [label="  %_min_locy_local = alloca i16, align 2"]
+"_max_locx_local" [label="  %_max_locx_local = alloca i16, align 2"]
+"_max_locy_local" [label="  %_max_locy_local = alloca i16, align 2"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %imgInput, %struct.xf_Mat_0_256_256_1_** %t29, align 8"]
+"_2" [label="  store i32* %min_value, i32** %t30, align 8"]
+"_3" [label="  store i32* %max_value, i32** %t31, align 8"]
+"_4" [label="  store i16* %_min_locx, i16** %t32, align 8"]
+"_5" [label="  store i16* %_min_locy, i16** %t33, align 8"]
+"_6" [label="  store i16* %_max_locx, i16** %t34, align 8"]
+"_7" [label="  store i16* %_max_locy, i16** %t35, align 8"]
+"t36" [label="  %t36 = load %struct.xf_Mat_0_256_256_1_** %t29, align 8"]
+"_8" [label="  call void @_ZL81p_ZN2xf9minMaxLocILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPiPiPtPtPtPt_1R19xf_Mat_0_256_256_1_PiS1_PtS2_S2_S2_(%struct.xf_Mat_0_256_256_1_* %t36, i32* %min_value_local, i32* %max_value_local, i16* %_min_locx_local, i16* %_min_locy_local, i16* %_max_locx_local, i16* %_max_locy_local)"]
+"t37" [label="  %t37 = load i32* %min_value_local, align 4"]
+"t38" [label="  %t38 = load i32** %t30, align 8"]
+"_9" [label="  store i32 %t37, i32* %t38, align 4"]
+"t39" [label="  %t39 = load i32* %max_value_local, align 4"]
+"t40" [label="  %t40 = load i32** %t31, align 8"]
+"_10" [label="  store i32 %t39, i32* %t40, align 4"]
+"t41" [label="  %t41 = load i16* %_min_locx_local, align 2"]
+"t42" [label="  %t42 = load i16** %t32, align 8"]
+"_11" [label="  store i16 %t41, i16* %t42, align 2"]
+"t43" [label="  %t43 = load i16* %_min_locy_local, align 2"]
+"t44" [label="  %t44 = load i16** %t33, align 8"]
+"_12" [label="  store i16 %t43, i16* %t44, align 2"]
+"t45" [label="  %t45 = load i16* %_max_locx_local, align 2"]
+"t46" [label="  %t46 = load i16** %t34, align 8"]
+"_13" [label="  store i16 %t45, i16* %t46, align 2"]
+"t47" [label="  %t47 = load i16* %_max_locy_local, align 2"]
+"t48" [label="  %t48 = load i16** %t35, align 8"]
+"_14" [label="  store i16 %t47, i16* %t48, align 2"]
+"_15" [label="  ret void"]
+"unk_block_1" -> "t29"[color=red]
+"i32 1" -> "t29"
+"t29" -> "t30"[color=red weight=2]
+"i32 1" -> "t30"
+"t30" -> "t31"[color=red weight=2]
+"i32 1" -> "t31"
+"t31" -> "t32"[color=red weight=2]
+"i32 1" -> "t32"
+"t32" -> "t33"[color=red weight=2]
+"i32 1" -> "t33"
+"t33" -> "t34"[color=red weight=2]
+"i32 1" -> "t34"
+"t34" -> "t35"[color=red weight=2]
+"i32 1" -> "t35"
+"t35" -> "min_value_local"[color=red weight=2]
+"i32 1" -> "min_value_local"
+"min_value_local" -> "max_value_local"[color=red weight=2]
+"i32 1" -> "max_value_local"
+"max_value_local" -> "_min_locx_local"[color=red weight=2]
+"i32 1" -> "_min_locx_local"
+"_min_locx_local" -> "_min_locy_local"[color=red weight=2]
+"i32 1" -> "_min_locy_local"
+"_min_locy_local" -> "_max_locx_local"[color=red weight=2]
+"i32 1" -> "_max_locx_local"
+"_max_locx_local" -> "_max_locy_local"[color=red weight=2]
+"i32 1" -> "_max_locy_local"
+"_max_locy_local" -> "_1"[color=red weight=2]
+"imgInput" -> "_1"
+"t29" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"min_value" -> "_2"
+"t30" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"max_value" -> "_3"
+"t31" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_min_locx" -> "_4"
+"t32" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"_min_locy" -> "_5"
+"t33" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"_max_locx" -> "_6"
+"t34" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"_max_locy" -> "_7"
+"t35" -> "_7"
+"_7" -> "t36"[color=red weight=2]
+"t29" -> "t36"
+"t36" -> "_8"[color=red weight=2]
+"t36" -> "_8"
+"min_value_local" -> "_8"
+"max_value_local" -> "_8"
+"_min_locx_local" -> "_8"
+"_min_locy_local" -> "_8"
+"_max_locx_local" -> "_8"
+"_max_locy_local" -> "_8"
+"_ZL81p_ZN2xf9minMaxLocILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPiPiPtPtPtPt_1R19xf_Mat_0_256_256_1_PiS1_PtS2_S2_S2_" -> "_8"
+"_8" -> "t37"[color=red weight=2]
+"min_value_local" -> "t37"
+"t37" -> "t38"[color=red weight=2]
+"t30" -> "t38"
+"t38" -> "_9"[color=red weight=2]
+"t37" -> "_9"
+"t38" -> "_9"
+"_9" -> "t39"[color=red weight=2]
+"max_value_local" -> "t39"
+"t39" -> "t40"[color=red weight=2]
+"t31" -> "t40"
+"t40" -> "_10"[color=red weight=2]
+"t39" -> "_10"
+"t40" -> "_10"
+"_10" -> "t41"[color=red weight=2]
+"_min_locx_local" -> "t41"
+"t41" -> "t42"[color=red weight=2]
+"t32" -> "t42"
+"t42" -> "_11"[color=red weight=2]
+"t41" -> "_11"
+"t42" -> "_11"
+"_11" -> "t43"[color=red weight=2]
+"_min_locy_local" -> "t43"
+"t43" -> "t44"[color=red weight=2]
+"t33" -> "t44"
+"t44" -> "_12"[color=red weight=2]
+"t43" -> "_12"
+"t44" -> "_12"
+"_12" -> "t45"[color=red weight=2]
+"_max_locx_local" -> "t45"
+"t45" -> "t46"[color=red weight=2]
+"t34" -> "t46"
+"t46" -> "_13"[color=red weight=2]
+"t45" -> "_13"
+"t46" -> "_13"
+"_13" -> "t47"[color=red weight=2]
+"_max_locy_local" -> "t47"
+"t47" -> "t48"[color=red weight=2]
+"t35" -> "t48"
+"t48" -> "_14"[color=red weight=2]
+"t47" -> "_14"
+"t48" -> "_14"
+"_14" -> "_15"[color=red weight=2]
+
+}

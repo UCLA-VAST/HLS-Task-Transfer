@@ -1,0 +1,220 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t217" [label="  %t217 = alloca %\"class.hls::stream.1\"*, align 8"]
+"t218" [label="  %t218 = alloca %\"class.hls::stream.1\"*, align 8"]
+"win_size" [label="  %win_size = alloca %class.ap_uint.0, align 1"]
+"t219" [label="  %t219 = alloca i32, align 4"]
+"t220" [label="  %t220 = alloca i16, align 2"]
+"t221" [label="  %t221 = alloca i16, align 2"]
+"t222" [label="  %t222 = alloca %class.ap_uint.0, align 1"]
+"t223" [label="  %t223 = alloca %class.ap_uint.0, align 1"]
+"_1" [label="  store %\"class.hls::stream.1\"* %_src, %\"class.hls::stream.1\"** %t217, align 8"]
+"_2" [label="  store %\"class.hls::stream.1\"* %_dst, %\"class.hls::stream.1\"** %t218, align 8"]
+"t224" [label="  %t224 = getelementptr %class.ap_uint.0* %win_size, i32 0, i32 0"]
+"t225" [label="  %t225 = bitcast [1 x i8]* %t224 to i8*"]
+"_3" [label="  store i8 %win_size.coerce, i8* %t225, align 1"]
+"_4" [label="  store i32 %_border_type, i32* %t219, align 4"]
+"_5" [label="  store i16 %imgheight, i16* %t220, align 2"]
+"_6" [label="  store i16 %imgwidth, i16* %t221, align 2"]
+"t226" [label="  %t226 = load i16* %t220, align 2"]
+"t227" [label="  %t227 = zext i16 %t226 to i32"]
+"t228" [label="  %t228 = icmp sle i32 %t227, 256"]
+"_7" [label="  br i1 %t228, label %1, label %3"]
+"unk_block_1" -> "t217"[color=red]
+"i32 1" -> "t217"
+"t217" -> "t218"[color=red weight=2]
+"i32 1" -> "t218"
+"t218" -> "win_size"[color=red weight=2]
+"i32 1" -> "win_size"
+"win_size" -> "t219"[color=red weight=2]
+"i32 1" -> "t219"
+"t219" -> "t220"[color=red weight=2]
+"i32 1" -> "t220"
+"t220" -> "t221"[color=red weight=2]
+"i32 1" -> "t221"
+"t221" -> "t222"[color=red weight=2]
+"i32 1" -> "t222"
+"t222" -> "t223"[color=red weight=2]
+"i32 1" -> "t223"
+"t223" -> "_1"[color=red weight=2]
+"_src" -> "_1"
+"t217" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_dst" -> "_2"
+"t218" -> "_2"
+"_2" -> "t224"[color=red weight=2]
+"win_size" -> "t224"
+"i32 0" -> "t224"
+"i32 0" -> "t224"
+"t224" -> "t225"[color=red weight=2]
+"t224" -> "t225"
+"t225" -> "_3"[color=red weight=2]
+"win_size.coerce" -> "_3"
+"t225" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_border_type" -> "_4"
+"t219" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"imgheight" -> "_5"
+"t220" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"imgwidth" -> "_6"
+"t221" -> "_6"
+"_6" -> "t226"[color=red weight=2]
+"t220" -> "t226"
+"t226" -> "t227"[color=red weight=2]
+"t226" -> "t227"
+"t227" -> "t228"[color=red weight=2]
+"t227" -> "t228"
+"i32 256" -> "t228"
+"t228" -> "_7"[color=red weight=2]
+"t228" -> "_7"
+"_7" -> ""[color=red]
+"_7" -> ""[color=red]
+
+"t229" [label="  %t229 = load i16* %t221, align 2"]
+"t230" [label="  %t230 = zext i16 %t229 to i32"]
+"t231" [label="  %t231 = icmp sle i32 %t230, 256"]
+"_8" [label="  br i1 %t231, label %2, label %3"]
+"unk_block_2" -> "t229"[color=red]
+"t221" -> "t229"
+"t229" -> "t230"[color=red weight=2]
+"t229" -> "t230"
+"t230" -> "t231"[color=red weight=2]
+"t230" -> "t231"
+"i32 256" -> "t231"
+"t231" -> "_8"[color=red weight=2]
+"t231" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"_9" [label="  br label %5"]
+"unk_block_3" -> "_9"[color=red]
+"_9" -> ""[color=red]
+
+"_10" [label="  call void @__assert_fail(i8* getelementptr inbounds ([99 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0), i32 301, i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)) noreturn nounwind"]
+"_11" [label="  unreachable"]
+"unk_block_4" -> "_10"[color=red]
+"i8* getelementptr inbounds ([99 x i8]* @.str, i32 0, i32 0)" -> "_10"
+"i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0)" -> "_10"
+"i32 301" -> "_10"
+"i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)" -> "_10"
+"__assert_fail" -> "_10"
+"_10" -> "_11"[color=red weight=2]
+
+"_12" [label="  br label %5"]
+"unk_block_5" -> "_12"[color=red]
+"_12" -> ""[color=red]
+
+"t232" [label="  %t232 = bitcast %class.ap_uint.0* %t222 to i8*"]
+"t233" [label="  %t233 = bitcast %class.ap_uint.0* %win_size to i8*"]
+"_13" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t232, i8* %t233, i64 1, i32 1, i1 false)"]
+"t234" [label="  %t234 = getelementptr %class.ap_uint.0* %t222, i32 0, i32 0"]
+"t235" [label="  %t235 = bitcast [1 x i8]* %t234 to i8*"]
+"t236" [label="  %t236 = load i8* %t235, align 1"]
+"t237" [label="  %t237 = call zeroext i1 @_ZleILi8EEb7ap_uintIXT_EEi(i8 %t236, i32 5)"]
+"_14" [label="  br i1 %t237, label %6, label %7"]
+"unk_block_6" -> "t232"[color=red]
+"t222" -> "t232"
+"t232" -> "t233"[color=red weight=2]
+"win_size" -> "t233"
+"t233" -> "_13"[color=red weight=2]
+"t232" -> "_13"
+"t233" -> "_13"
+"i64 1" -> "_13"
+"i32 1" -> "_13"
+"i1 false" -> "_13"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_13"
+"_13" -> "t234"[color=red weight=2]
+"t222" -> "t234"
+"i32 0" -> "t234"
+"i32 0" -> "t234"
+"t234" -> "t235"[color=red weight=2]
+"t234" -> "t235"
+"t235" -> "t236"[color=red weight=2]
+"t235" -> "t236"
+"t236" -> "t237"[color=red weight=2]
+"t236" -> "t237"
+"i32 5" -> "t237"
+"_ZleILi8EEb7ap_uintIXT_EEi" -> "t237"
+"t237" -> "_14"[color=red weight=2]
+"t237" -> "_14"
+"_14" -> ""[color=red]
+"_14" -> ""[color=red]
+
+"_15" [label="  br label %9"]
+"unk_block_7" -> "_15"[color=red]
+"_15" -> ""[color=red]
+
+"_16" [label="  call void @__assert_fail(i8* getelementptr inbounds ([67 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0), i32 303, i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)) noreturn nounwind"]
+"_17" [label="  unreachable"]
+"unk_block_8" -> "_16"[color=red]
+"i8* getelementptr inbounds ([67 x i8]* @.str2, i32 0, i32 0)" -> "_16"
+"i8* getelementptr inbounds ([30 x i8]* @.str1, i32 0, i32 0)" -> "_16"
+"i32 303" -> "_16"
+"i8* getelementptr inbounds ([267 x i8]* @__PRETTY_FUNCTION__._ZL136p_Z21xFPyrDownGaussianBlurILi256ELi256ELi0ELi1ELi1ELi0ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEitt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_itt, i32 0, i32 0)" -> "_16"
+"__assert_fail" -> "_16"
+"_16" -> "_17"[color=red weight=2]
+
+"_18" [label="  br label %9"]
+"unk_block_9" -> "_18"[color=red]
+"_18" -> ""[color=red]
+
+"t238" [label="  %t238 = load i16* %t221, align 2"]
+"t239" [label="  %t239 = zext i16 %t238 to i32"]
+"t240" [label="  %t240 = ashr i32 %t239, 0"]
+"t241" [label="  %t241 = trunc i32 %t240 to i16"]
+"_19" [label="  store i16 %t241, i16* %t221, align 2"]
+"t242" [label="  %t242 = load %\"class.hls::stream.1\"** %t217, align 8"]
+"t243" [label="  %t243 = load %\"class.hls::stream.1\"** %t218, align 8"]
+"_20" [label="  call void @_ZN7ap_uintILi8EEC1Ei(%class.ap_uint.0* %t223, i32 5)"]
+"t244" [label="  %t244 = load i16* %t220, align 2"]
+"t245" [label="  %t245 = load i16* %t221, align 2"]
+"t246" [label="  %t246 = getelementptr %class.ap_uint.0* %t223, i32 0, i32 0"]
+"t247" [label="  %t247 = bitcast [1 x i8]* %t246 to i8*"]
+"t248" [label="  %t248 = load i8* %t247, align 1"]
+"_21" [label="  call void @_ZL139p_Z23xf_pyrdown_gaussian_nxnILi256ELi256ELi0ELi1ELi1ELi258ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEtt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_tt(%\"class.hls::stream.1\"* %t242, %\"class.hls::stream.1\"* %t243, i8 %t248, i16 zeroext %t244, i16 zeroext %t245)"]
+"_22" [label="  ret void"]
+"unk_block_10" -> "t238"[color=red]
+"t221" -> "t238"
+"t238" -> "t239"[color=red weight=2]
+"t238" -> "t239"
+"t239" -> "t240"[color=red weight=2]
+"t239" -> "t240"
+"i32 0" -> "t240"
+"t240" -> "t241"[color=red weight=2]
+"t240" -> "t241"
+"t241" -> "_19"[color=red weight=2]
+"t241" -> "_19"
+"t221" -> "_19"
+"_19" -> "t242"[color=red weight=2]
+"t217" -> "t242"
+"t242" -> "t243"[color=red weight=2]
+"t218" -> "t243"
+"t243" -> "_20"[color=red weight=2]
+"t223" -> "_20"
+"i32 5" -> "_20"
+"_ZN7ap_uintILi8EEC1Ei" -> "_20"
+"_20" -> "t244"[color=red weight=2]
+"t220" -> "t244"
+"t244" -> "t245"[color=red weight=2]
+"t221" -> "t245"
+"t245" -> "t246"[color=red weight=2]
+"t223" -> "t246"
+"i32 0" -> "t246"
+"i32 0" -> "t246"
+"t246" -> "t247"[color=red weight=2]
+"t246" -> "t247"
+"t247" -> "t248"[color=red weight=2]
+"t247" -> "t248"
+"t248" -> "_21"[color=red weight=2]
+"t242" -> "_21"
+"t243" -> "_21"
+"t248" -> "_21"
+"t244" -> "_21"
+"t245" -> "_21"
+"_ZL139p_Z23xf_pyrdown_gaussian_nxnILi256ELi256ELi0ELi1ELi1ELi258ELi5ELi25ELi1EER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEE7ap_uintILi8EEtt_1RN3hls6streamI7ap_uintILi8EEEES4_S2_tt" -> "_21"
+"_21" -> "_22"[color=red weight=2]
+
+}

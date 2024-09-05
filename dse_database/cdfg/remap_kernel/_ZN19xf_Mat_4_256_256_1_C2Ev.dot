@@ -1,0 +1,57 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1153" [label="  %t1153 = alloca %struct.xf_Mat_4_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_4_256_256_1_* %this, %struct.xf_Mat_4_256_256_1_** %t1153, align 8"]
+"t1154" [label="  %t1154 = load %struct.xf_Mat_4_256_256_1_** %t1153"]
+"t1155" [label="  %t1155 = getelementptr inbounds %struct.xf_Mat_4_256_256_1_* %t1154, i32 0, i32 4"]
+"t1156" [label="  %t1156 = getelementptr inbounds [65536 x %class.ap_uint.1]* %t1155, i32 0, i32 0"]
+"t1157" [label="  %t1157 = getelementptr inbounds %class.ap_uint.1* %t1156, i64 65536"]
+"_2" [label="  br label %1"]
+"unk_block_1" -> "t1153"[color=red]
+"i32 1" -> "t1153"
+"t1153" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t1153" -> "_1"
+"_1" -> "t1154"[color=red weight=2]
+"t1153" -> "t1154"
+"t1154" -> "t1155"[color=red weight=2]
+"t1154" -> "t1155"
+"i32 0" -> "t1155"
+"i32 4" -> "t1155"
+"t1155" -> "t1156"[color=red weight=2]
+"t1155" -> "t1156"
+"i32 0" -> "t1156"
+"i32 0" -> "t1156"
+"t1156" -> "t1157"[color=red weight=2]
+"t1156" -> "t1157"
+"i64 65536" -> "t1157"
+"t1157" -> "_2"[color=red weight=2]
+"_2" -> ""[color=red]
+
+"t1158" [label="  %t1158 = phi %class.ap_uint.1* [ %t1156, %0 ], [ %t1159, %1 ]"]
+"_3" [label="  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %t1158)"]
+"t1159" [label="  %t1159 = getelementptr inbounds %class.ap_uint.1* %t1158, i64 1"]
+"t1160" [label="  %t1160 = icmp eq %class.ap_uint.1* %t1159, %t1157"]
+"_4" [label="  br i1 %t1160, label %2, label %1"]
+"unk_block_2" -> "t1158"[color=red]
+"t1156" -> "t1158"
+"t1159" -> "t1158"
+"t1158" -> "_3"[color=red weight=2]
+"t1158" -> "_3"
+"_ZN7ap_uintILi32EEC1Ev" -> "_3"
+"_3" -> "t1159"[color=red weight=2]
+"t1158" -> "t1159"
+"i64 1" -> "t1159"
+"t1159" -> "t1160"[color=red weight=2]
+"t1159" -> "t1160"
+"t1157" -> "t1160"
+"t1160" -> "_4"[color=red weight=2]
+"t1160" -> "_4"
+"_4" -> ""[color=red]
+"_4" -> ""[color=red]
+
+"_5" [label="  ret void"]
+"unk_block_3" -> "_5"[color=red]
+
+}

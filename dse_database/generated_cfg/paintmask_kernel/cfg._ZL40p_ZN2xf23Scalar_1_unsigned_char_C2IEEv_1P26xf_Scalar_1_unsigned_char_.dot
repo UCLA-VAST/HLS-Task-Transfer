@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL40p_ZN2xf23Scalar_1_unsigned_char_C2IEEv_1P26xf_Scalar_1_unsigned_char_' function" {
+	label="CFG for '_ZL40p_ZN2xf23Scalar_1_unsigned_char_C2IEEv_1P26xf_Scalar_1_unsigned_char_' function";
+
+	Node0x181c620 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Scalar_1_unsigned_char_*, align 8\l  store %struct.xf_Scalar_1_unsigned_char_* %this_, %struct.xf_Scalar_1_unsigned_char_** %1, align 8\l  ret void\l}"];
+}

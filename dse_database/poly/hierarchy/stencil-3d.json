@@ -1,0 +1,470 @@
+[
+    {
+        "src_line": 3,
+        "src_col": 1,
+        "src_filename": "stencil-3d.c",
+        "src_topo_id": "F_0_1_0_1",
+        "type": "kernel",
+        "name": "stencil3d",
+        "global_variables": [],
+        "interfaces": [
+            {
+                "src_line": 3,
+                "src_col": 21,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_0_0",
+                "type": "interface",
+                "name": "C0",
+                "interface_bitwidth": "64",
+                "var_type": "scalar"
+            },
+            {
+                "src_line": 3,
+                "src_col": 29,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_0_1",
+                "type": "interface",
+                "name": "C1",
+                "interface_bitwidth": "64",
+                "var_type": "scalar"
+            },
+            {
+                "src_line": 3,
+                "src_col": 37,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_0_2",
+                "type": "interface",
+                "name": "orig",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 54,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_0_3",
+                "type": "interface",
+                "name": "sol",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            }
+        ],
+        "arrays": [],
+        "var_refs": [
+            {
+                "src_line": 22,
+                "src_col": 16,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_1_0_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 16,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_0_0_0_0_0_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 69,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_0_0_0_0_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 122,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_0_0_0_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 173,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_0_0_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 224,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_0_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 23,
+                "src_col": 275,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2_0_1_1_0",
+                "type": "var_ref",
+                "name": "orig"
+            },
+            {
+                "src_line": 26,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_5_0_0_0",
+                "type": "var_ref",
+                "name": "sol"
+            }
+        ],
+        "var_defs": [
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_0_1",
+                "type": "var_def",
+                "name": "sum0"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_1_1",
+                "type": "var_def",
+                "name": "sum1"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_2_1",
+                "type": "var_def",
+                "name": "mul0"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_3_1",
+                "type": "var_def",
+                "name": "mul1"
+            },
+            {
+                "src_line": 13,
+                "src_col": 8,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_0_0_1",
+                "type": "var_def",
+                "name": "i"
+            },
+            {
+                "src_line": 18,
+                "src_col": 10,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_0_0_1",
+                "type": "var_def",
+                "name": "j"
+            },
+            {
+                "src_line": 20,
+                "src_col": 12,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_0_0_1",
+                "type": "var_def",
+                "name": "ko"
+            },
+            {
+                "src_line": 21,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_0_1",
+                "type": "var_def",
+                "name": "_in_ko"
+            }
+        ],
+        "stmts": [
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "F_0_1_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "F_0_1_0_1_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 10,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 12,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_5",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "L_0_1_0_1_2_0_6",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 8,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 8,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_6_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 20,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 13,
+                "src_col": 33,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_6"
+            },
+            {
+                "src_line": 15,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 17,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 5,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "L_0_1_0_1_2_0_6_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 10,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 10,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_6_3_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 22,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 35,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_6_3_2"
+            },
+            {
+                "src_line": 19,
+                "src_col": 1,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 7,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "L_0_1_0_1_2_0_6_3_2_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 12,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 12,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_6_3_2_3_1_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 25,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 41,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_6_3_2_3_1"
+            },
+            {
+                "src_line": 21,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "V_0_1_0_1_2_0_6_3_2_3_1_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 23,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 24,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 25,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 9,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6_3_2_3_1_3_5",
+                "type": "stmt"
+            }
+        ],
+        "childs": [
+            {
+                "src_line": 13,
+                "src_col": 3,
+                "src_filename": "stencil-3d.c",
+                "src_topo_id": "L_0_1_0_1_2_0_6",
+                "type": "loop",
+                "name": "i",
+                "trip-count": "32",
+                "src_func_name": "stencil3d",
+                "childs": [
+                    {
+                        "src_line": 18,
+                        "src_col": 5,
+                        "src_filename": "stencil-3d.c",
+                        "src_topo_id": "L_0_1_0_1_2_0_6_3_2",
+                        "type": "loop",
+                        "name": "j",
+                        "trip-count": "32",
+                        "parent_loop": "L_0_1_0_1_2_0_6",
+                        "src_func_name": "stencil3d",
+                        "childs": [
+                            {
+                                "src_line": 20,
+                                "src_col": 7,
+                                "src_filename": "stencil-3d.c",
+                                "src_topo_id": "L_0_1_0_1_2_0_6_3_2_3_1",
+                                "type": "loop",
+                                "name": "ko",
+                                "trip-count": "32",
+                                "parent_loop": "L_0_1_0_1_2_0_6_3_2",
+                                "src_func_name": "stencil3d",
+                                "childs": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "sub_functions": [],
+        "call_functions": []
+    }
+]

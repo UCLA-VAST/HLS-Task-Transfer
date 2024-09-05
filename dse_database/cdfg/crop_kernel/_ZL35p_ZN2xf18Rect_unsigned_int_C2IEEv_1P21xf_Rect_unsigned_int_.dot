@@ -1,0 +1,14 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t108" [label="  %t108 = alloca %struct.xf_Rect_unsigned_int_*, align 8"]
+"_1" [label="  store %struct.xf_Rect_unsigned_int_* %this_, %struct.xf_Rect_unsigned_int_** %t108, align 8"]
+"_2" [label="  ret void"]
+"unk_block_1" -> "t108"[color=red]
+"i32 1" -> "t108"
+"t108" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t108" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+
+}

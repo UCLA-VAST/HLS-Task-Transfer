@@ -1,0 +1,69 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t470" [label="  %t470 = alloca %class.ap_uint.0, align 1"]
+"t471" [label="  %t471 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t472" [label="  %t472 = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t471, align 8"]
+"_2" [label="  store i32 %index, i32* %t472, align 4"]
+"t473" [label="  %t473 = load i32* %t472, align 4"]
+"t474" [label="  %t474 = sext i32 %t473 to i64"]
+"t475" [label="  %t475 = load %struct.xf_Mat_0_256_256_1_** %t471, align 8"]
+"t476" [label="  %t476 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t475, i32 0, i32 4"]
+"t477" [label="  %t477 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t476, i32 0, i64 %t474"]
+"t478" [label="  %t478 = bitcast %class.ap_uint.0* %t470 to i8*"]
+"t479" [label="  %t479 = bitcast %class.ap_uint.0* %t477 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t478, i8* %t479, i64 1, i32 1, i1 false)"]
+"t480" [label="  %t480 = getelementptr %class.ap_uint.0* %t470, i32 0, i32 0"]
+"t481" [label="  %t481 = bitcast [1 x i8]* %t480 to i8*"]
+"t482" [label="  %t482 = load i8* %t481, align 1"]
+"_4" [label="  ret i8 %t482"]
+"unk_block_1" -> "t470"[color=red]
+"i32 1" -> "t470"
+"t470" -> "t471"[color=red weight=2]
+"i32 1" -> "t471"
+"t471" -> "t472"[color=red weight=2]
+"i32 1" -> "t472"
+"t472" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t471" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t472" -> "_2"
+"_2" -> "t473"[color=red weight=2]
+"t472" -> "t473"
+"t473" -> "t474"[color=red weight=2]
+"t473" -> "t474"
+"t474" -> "t475"[color=red weight=2]
+"t471" -> "t475"
+"t475" -> "t476"[color=red weight=2]
+"t475" -> "t476"
+"i32 0" -> "t476"
+"i32 4" -> "t476"
+"t476" -> "t477"[color=red weight=2]
+"t476" -> "t477"
+"i32 0" -> "t477"
+"t474" -> "t477"
+"t477" -> "t478"[color=red weight=2]
+"t470" -> "t478"
+"t478" -> "t479"[color=red weight=2]
+"t477" -> "t479"
+"t479" -> "_3"[color=red weight=2]
+"t478" -> "_3"
+"t479" -> "_3"
+"i64 1" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t480"[color=red weight=2]
+"t470" -> "t480"
+"i32 0" -> "t480"
+"i32 0" -> "t480"
+"t480" -> "t481"[color=red weight=2]
+"t480" -> "t481"
+"t481" -> "t482"[color=red weight=2]
+"t481" -> "t482"
+"t482" -> "_4"[color=red weight=2]
+"t482" -> "_4"
+
+}

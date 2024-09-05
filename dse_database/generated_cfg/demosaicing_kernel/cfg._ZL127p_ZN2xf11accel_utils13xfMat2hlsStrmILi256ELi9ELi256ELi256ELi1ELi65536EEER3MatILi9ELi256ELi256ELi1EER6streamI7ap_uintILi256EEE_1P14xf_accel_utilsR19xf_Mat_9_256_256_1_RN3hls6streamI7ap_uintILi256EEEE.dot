@@ -1,0 +1,33 @@
+digraph "CFG for '_ZL127p_ZN2xf11accel_utils13xfMat2hlsStrmILi256ELi9ELi256ELi256ELi1ELi65536EEER3MatILi9ELi256ELi256ELi1EER6streamI7ap_uintILi256EEE_1P14xf_accel_utilsR19xf_Mat_9_256_256_1_RN3hls6streamI7ap_uintILi256EEEE' function" {
+	label="CFG for '_ZL127p_ZN2xf11accel_utils13xfMat2hlsStrmILi256ELi9ELi256ELi256ELi1ELi65536EEER3MatILi9ELi256ELi256ELi1EER6streamI7ap_uintILi256EEE_1P14xf_accel_utilsR19xf_Mat_9_256_256_1_RN3hls6streamI7ap_uintILi256EEEE' function";
+
+	Node0x2960b00 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_accel_utils*, align 8\l  %2 = alloca %struct.xf_Mat_9_256_256_1_*, align 8\l  %3 = alloca %\"class.hls::stream\"*, align 8\l  %rows = alloca i32, align 4\l  %cols = alloca i32, align 4\l  %loop_count = alloca i32, align 4\l  %bits_to_add = alloca i32, align 4\l  %N_size = alloca i32, align 4\l  %r = alloca %class.ap_uint, align 1\l  %in = alloca %class.ap_uint.1, align 1\l  %i = alloca i32, align 4\l  %4 = alloca %class.ap_uint.1, align 1\l  %5 = alloca i24\l  store %struct.xf_accel_utils* %this_, %struct.xf_accel_utils** %1, align 8\l  store %struct.xf_Mat_9_256_256_1_* %srcMat, %struct.xf_Mat_9_256_256_1_** %2, align 8\l  store %\"class.hls::stream\"* %dstStrm, %\"class.hls::stream\"** %3, align 8\l  %6 = load %struct.xf_Mat_9_256_256_1_** %2, align 8\l  %7 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %6, i32 0, i32 1\l  %8 = load i32* %7, align 4\l  store i32 %8, i32* %rows, align 4\l  %9 = load %struct.xf_Mat_9_256_256_1_** %2, align 8\l  %10 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %9, i32 0, i32 2\l  %11 = load i32* %10, align 4\l  store i32 %11, i32* %cols, align 4\l  %12 = load i32* %rows, align 4\l  %13 = load i32* %cols, align 4\l  %14 = mul nsw i32 %12, %13\l  %15 = sdiv i32 %14, 1\l  store i32 %15, i32* %loop_count, align 4\l  store i32 256, i32* %bits_to_add, align 4\l  store i32 24, i32* %N_size, align 4\l  call void @_ZN7ap_uintILi256EEC1Ev(%class.ap_uint* %r)\l  call void @_ZN7ap_uintILi24EEC1Ev(%class.ap_uint.1* %in)\l  br label %16\l}"];
+	Node0x2960b00 -> Node0x2961f80;
+	Node0x2961f80 [shape=record,label="{%16:\l\l  store i32 0, i32* %i, align 4\l  br label %17\l}"];
+	Node0x2961f80 -> Node0x2962060;
+	Node0x2962060 [shape=record,label="{%17:\l\l  %18 = load i32* %i, align 4\l  %19 = load i32* %loop_count, align 4\l  %20 = icmp slt i32 %18, %19\l  br i1 %20, label %21, label %69\l|{<s0>T|<s1>F}}"];
+	Node0x2962060:s0 -> Node0x29622d0;
+	Node0x2962060:s1 -> Node0x2962330;
+	Node0x29622d0 [shape=record,label="{%21:\l\l  %22 = load %struct.xf_Mat_9_256_256_1_** %2, align 8\l  %23 = load i32* %i, align 4\l  %24 = call i24 @_ZL36p_ZN2xf16Mat_9_256_256_1_4readIEEi_1P19xf_Mat_9_256_256_1_i(%struct.xf_Mat_9_256_256_1_* %22, i32 %23)\l  %25 = getelementptr %class.ap_uint.1* %4, i32 0, i32 0\l  store i24 %24, i24* %5\l  %26 = bitcast i24* %5 to [3 x i8]*\l  %27 = load [3 x i8]* %26, align 1\l  store [3 x i8] %27, [3 x i8]* %25\l  %28 = call %class.ap_uint.1* @_ZN7ap_uintILi24EEaSERKS0_(%class.ap_uint.1* %in, %class.ap_uint.1* %4)\l  %29 = load i32* %bits_to_add, align 4\l  %30 = icmp sle i32 %29, 24\l  br i1 %30, label %31, label %54\l|{<s0>T|<s1>F}}"];
+	Node0x29622d0:s0 -> Node0x2962dc0;
+	Node0x29622d0:s1 -> Node0x2962e60;
+	Node0x2962dc0 [shape=record,label="{%31:\l\l  %32 = load i32* %bits_to_add, align 4\l  %33 = sub nsw i32 %32, 1\l  %34 = call i64* @_ZN7ap_uintILi24EE5rangeEii(%class.ap_uint.1* %in, i32 %33, i32 0)\l  %35 = load i64* %34\l  %36 = load i32* %bits_to_add, align 4\l  %37 = sub nsw i32 256, %36\l  %38 = call i64* @_ZN7ap_uintILi256EE5rangeEii(%class.ap_uint* %r, i32 255, i32 %37)\l  store i64 %35, i64* %38\l  %39 = load %\"class.hls::stream\"** %3, align 8\l  call void @_ZN3hls6streamI7ap_uintILi256EEE5writeERKS2_(%\"class.hls::stream\"* %39, %class.ap_uint* %r)\l  %40 = load i32* %bits_to_add, align 4\l  %41 = icmp ne i32 %40, 24\l  br i1 %41, label %42, label %50\l|{<s0>T|<s1>F}}"];
+	Node0x2962dc0:s0 -> Node0x29639c0;
+	Node0x2962dc0:s1 -> Node0x2963a60;
+	Node0x29639c0 [shape=record,label="{%42:\l\l  %43 = load i32* %bits_to_add, align 4\l  %44 = call i64* @_ZN7ap_uintILi24EE5rangeEii(%class.ap_uint.1* %in, i32 23, i32 %43)\l  %45 = load i64* %44\l  %46 = load i32* %bits_to_add, align 4\l  %47 = sub nsw i32 24, %46\l  %48 = sub nsw i32 %47, 1\l  %49 = call i64* @_ZN7ap_uintILi256EE5rangeEii(%class.ap_uint* %r, i32 %48, i32 0)\l  store i64 %45, i64* %49\l  br label %50\l}"];
+	Node0x29639c0 -> Node0x2963a60;
+	Node0x2963a60 [shape=record,label="{%50:\l\l  %51 = load i32* %bits_to_add, align 4\l  %52 = sub nsw i32 24, %51\l  %53 = sub nsw i32 256, %52\l  store i32 %53, i32* %bits_to_add, align 4\l  br label %65\l}"];
+	Node0x2963a60 -> Node0x2964430;
+	Node0x2962e60 [shape=record,label="{%54:\l\l  %55 = call i64 @_ZNK7ap_uintILi24EEcvmEv(%class.ap_uint.1* %in)\l  %56 = load i32* %bits_to_add, align 4\l  %57 = sub nsw i32 256, %56\l  %58 = add nsw i32 %57, 24\l  %59 = sub nsw i32 %58, 1\l  %60 = load i32* %bits_to_add, align 4\l  %61 = sub nsw i32 256, %60\l  %62 = call i64* @_ZN7ap_uintILi256EE5rangeEii(%class.ap_uint* %r, i32 %59, i32 %61)\l  store i64 %55, i64* %62\l  %63 = load i32* %bits_to_add, align 4\l  %64 = sub nsw i32 %63, 24\l  store i32 %64, i32* %bits_to_add, align 4\l  br label %65\l}"];
+	Node0x2962e60 -> Node0x2964430;
+	Node0x2964430 [shape=record,label="{%65:\l\l  br label %66\l}"];
+	Node0x2964430 -> Node0x2964c70;
+	Node0x2964c70 [shape=record,label="{%66:\l\l  %67 = load i32* %i, align 4\l  %68 = add nsw i32 %67, 1\l  store i32 %68, i32* %i, align 4\l  br label %17\l}"];
+	Node0x2964c70 -> Node0x2962060;
+	Node0x2962330 [shape=record,label="{%69:\l\l  %70 = load i32* %bits_to_add, align 4\l  %71 = icmp ne i32 %70, 256\l  br i1 %71, label %72, label %74\l|{<s0>T|<s1>F}}"];
+	Node0x2962330:s0 -> Node0x2965080;
+	Node0x2962330:s1 -> Node0x29650e0;
+	Node0x2965080 [shape=record,label="{%72:\l\l  %73 = load %\"class.hls::stream\"** %3, align 8\l  call void @_ZN3hls6streamI7ap_uintILi256EEE5writeERKS2_(%\"class.hls::stream\"* %73, %class.ap_uint* %r)\l  br label %74\l}"];
+	Node0x2965080 -> Node0x29650e0;
+	Node0x29650e0 [shape=record,label="{%74:\l\l  ret void\l}"];
+}

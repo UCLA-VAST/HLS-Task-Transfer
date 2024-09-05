@@ -1,0 +1,147 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1" [label="  %t1 = alloca %class.ap_uint*, align 8"]
+"t2" [label="  %t2 = alloca %class.ap_uint*, align 8"]
+"t3" [label="  %t3 = alloca i32, align 4"]
+"t4" [label="  %t4 = alloca i32, align 4"]
+"pROWS" [label="  %pROWS = alloca i32, align 4"]
+"pCOLS" [label="  %pCOLS = alloca i32, align 4"]
+"pNPC1" [label="  %pNPC1 = alloca i32, align 4"]
+"in_mat" [label="  %in_mat = alloca %struct.xf_Mat_0_256_256_1_, align 4"]
+"out_mat" [label="  %out_mat = alloca %struct.xf_Mat_9_256_256_1_, align 4"]
+"_1" [label="  store %class.ap_uint* %in_img, %class.ap_uint** %t1, align 8"]
+"_2" [label="  store %class.ap_uint* %out_img, %class.ap_uint** %t2, align 8"]
+"_3" [label="  store i32 %rows, i32* %t3, align 4"]
+"_4" [label="  store i32 %cols, i32* %t4, align 4"]
+"_5" [label="  store i32 256, i32* %pROWS, align 4"]
+"_6" [label="  store i32 256, i32* %pCOLS, align 4"]
+"_7" [label="  store i32 1, i32* %pNPC1, align 4"]
+"_8" [label="  call void @_ZN19xf_Mat_0_256_256_1_C1Ev(%struct.xf_Mat_0_256_256_1_* %in_mat)"]
+"_9" [label="  call void @_ZL33p_ZN2xf16Mat_0_256_256_1_C2IEEv_1P19xf_Mat_0_256_256_1_(%struct.xf_Mat_0_256_256_1_* %in_mat)"]
+"t5" [label="  %t5 = load i32* %t3, align 4"]
+"t6" [label="  %t6 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %in_mat, i32 0, i32 1"]
+"_10" [label="  store i32 %t5, i32* %t6, align 4"]
+"t7" [label="  %t7 = load i32* %t4, align 4"]
+"t8" [label="  %t8 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %in_mat, i32 0, i32 2"]
+"_11" [label="  store i32 %t7, i32* %t8, align 4"]
+"_12" [label="  call void @_ZN19xf_Mat_9_256_256_1_C1Ev(%struct.xf_Mat_9_256_256_1_* %out_mat)"]
+"_13" [label="  call void @_ZL33p_ZN2xf16Mat_9_256_256_1_C2IEEv_1P19xf_Mat_9_256_256_1_(%struct.xf_Mat_9_256_256_1_* %out_mat)"]
+"t9" [label="  %t9 = load i32* %t3, align 4"]
+"t10" [label="  %t10 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %out_mat, i32 0, i32 1"]
+"_14" [label="  store i32 %t9, i32* %t10, align 4"]
+"t11" [label="  %t11 = load i32* %t4, align 4"]
+"t12" [label="  %t12 = getelementptr inbounds %struct.xf_Mat_9_256_256_1_* %out_mat, i32 0, i32 2"]
+"_15" [label="  store i32 %t11, i32* %t12, align 4"]
+"t13" [label="  %t13 = load %class.ap_uint** %t1, align 8"]
+"_16" [label="  call void @_ZL95p_ZN2xf11Array2xfMatILi256ELi0ELi256ELi256ELi1EEEP7ap_uintILi256EER3MatILi0ELi256ELi256ELi1EE_1P7ap_uintILi256EER19xf_Mat_0_256_256_1_(%class.ap_uint* %t13, %struct.xf_Mat_0_256_256_1_* %in_mat)"]
+"_17" [label="  call void @_ZL111p_ZN2xf11demosaicingILi3ELi0ELi9ELi256ELi256ELi1ELb0EEER3MatILi0ELi256ELi256ELi1EER3MatILi9ELi256ELi256ELi1EE_1R19xf_Mat_0_256_256_1_R19xf_Mat_9_256_256_1_(%struct.xf_Mat_0_256_256_1_* %in_mat, %struct.xf_Mat_9_256_256_1_* %out_mat)"]
+"t14" [label="  %t14 = load %class.ap_uint** %t2, align 8"]
+"_18" [label="  call void @_ZL95p_ZN2xf11xfMat2ArrayILi256ELi9ELi256ELi256ELi1EEER3MatILi9ELi256ELi256ELi1EEP7ap_uintILi256EE_1R19xf_Mat_9_256_256_1_P7ap_uintILi256EE(%struct.xf_Mat_9_256_256_1_* %out_mat, %class.ap_uint* %t14)"]
+"_19" [label="  ret void"]
+"unk_block_1" -> "t1"[color=red]
+"i32 1" -> "t1"
+"t1" -> "t2"[color=red weight=2]
+"i32 1" -> "t2"
+"t2" -> "t3"[color=red weight=2]
+"i32 1" -> "t3"
+"t3" -> "t4"[color=red weight=2]
+"i32 1" -> "t4"
+"t4" -> "pROWS"[color=red weight=2]
+"i32 1" -> "pROWS"
+"pROWS" -> "pCOLS"[color=red weight=2]
+"i32 1" -> "pCOLS"
+"pCOLS" -> "pNPC1"[color=red weight=2]
+"i32 1" -> "pNPC1"
+"pNPC1" -> "in_mat"[color=red weight=2]
+"i32 1" -> "in_mat"
+"in_mat" -> "out_mat"[color=red weight=2]
+"i32 1" -> "out_mat"
+"out_mat" -> "_1"[color=red weight=2]
+"in_img" -> "_1"
+"t1" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"out_img" -> "_2"
+"t2" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"rows" -> "_3"
+"t3" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"cols" -> "_4"
+"t4" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"i32 256" -> "_5"
+"pROWS" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"i32 256" -> "_6"
+"pCOLS" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"i32 1" -> "_7"
+"pNPC1" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"in_mat" -> "_8"
+"_ZN19xf_Mat_0_256_256_1_C1Ev" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"in_mat" -> "_9"
+"_ZL33p_ZN2xf16Mat_0_256_256_1_C2IEEv_1P19xf_Mat_0_256_256_1_" -> "_9"
+"_9" -> "t5"[color=red weight=2]
+"t3" -> "t5"
+"t5" -> "t6"[color=red weight=2]
+"in_mat" -> "t6"
+"i32 0" -> "t6"
+"i32 1" -> "t6"
+"t6" -> "_10"[color=red weight=2]
+"t5" -> "_10"
+"t6" -> "_10"
+"_10" -> "t7"[color=red weight=2]
+"t4" -> "t7"
+"t7" -> "t8"[color=red weight=2]
+"in_mat" -> "t8"
+"i32 0" -> "t8"
+"i32 2" -> "t8"
+"t8" -> "_11"[color=red weight=2]
+"t7" -> "_11"
+"t8" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+"out_mat" -> "_12"
+"_ZN19xf_Mat_9_256_256_1_C1Ev" -> "_12"
+"_12" -> "_13"[color=red weight=2]
+"out_mat" -> "_13"
+"_ZL33p_ZN2xf16Mat_9_256_256_1_C2IEEv_1P19xf_Mat_9_256_256_1_" -> "_13"
+"_13" -> "t9"[color=red weight=2]
+"t3" -> "t9"
+"t9" -> "t10"[color=red weight=2]
+"out_mat" -> "t10"
+"i32 0" -> "t10"
+"i32 1" -> "t10"
+"t10" -> "_14"[color=red weight=2]
+"t9" -> "_14"
+"t10" -> "_14"
+"_14" -> "t11"[color=red weight=2]
+"t4" -> "t11"
+"t11" -> "t12"[color=red weight=2]
+"out_mat" -> "t12"
+"i32 0" -> "t12"
+"i32 2" -> "t12"
+"t12" -> "_15"[color=red weight=2]
+"t11" -> "_15"
+"t12" -> "_15"
+"_15" -> "t13"[color=red weight=2]
+"t1" -> "t13"
+"t13" -> "_16"[color=red weight=2]
+"t13" -> "_16"
+"in_mat" -> "_16"
+"_ZL95p_ZN2xf11Array2xfMatILi256ELi0ELi256ELi256ELi1EEEP7ap_uintILi256EER3MatILi0ELi256ELi256ELi1EE_1P7ap_uintILi256EER19xf_Mat_0_256_256_1_" -> "_16"
+"_16" -> "_17"[color=red weight=2]
+"in_mat" -> "_17"
+"out_mat" -> "_17"
+"_ZL111p_ZN2xf11demosaicingILi3ELi0ELi9ELi256ELi256ELi1ELb0EEER3MatILi0ELi256ELi256ELi1EER3MatILi9ELi256ELi256ELi1EE_1R19xf_Mat_0_256_256_1_R19xf_Mat_9_256_256_1_" -> "_17"
+"_17" -> "t14"[color=red weight=2]
+"t2" -> "t14"
+"t14" -> "_18"[color=red weight=2]
+"out_mat" -> "_18"
+"t14" -> "_18"
+"_ZL95p_ZN2xf11xfMat2ArrayILi256ELi9ELi256ELi256ELi1EEER3MatILi9ELi256ELi256ELi1EEP7ap_uintILi256EE_1R19xf_Mat_9_256_256_1_P7ap_uintILi256EE" -> "_18"
+"_18" -> "_19"[color=red weight=2]
+
+}

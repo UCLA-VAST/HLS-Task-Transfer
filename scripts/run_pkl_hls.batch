@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=pkl_hls
+#SBATCH -o %x.%J.out
+#SBATCH -e %x.%J.err
+#SBATCH -N1 --ntasks 1
+#SBATCH --cpus-per-task 32
+#SBATCH --mem 200G
+#SBATCH -p batch
+#SBATCH --qos low
+#SBATCH --gpus 1
+
+srun -N1 -n1 bash /home/zijd/dse/software-gnn/scripts/run_multi_pkl_hls.sh
+
+wait

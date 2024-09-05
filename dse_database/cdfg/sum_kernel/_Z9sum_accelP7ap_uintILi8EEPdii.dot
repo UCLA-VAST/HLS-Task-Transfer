@@ -1,0 +1,107 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1" [label="  %t1 = alloca %class.ap_uint*, align 8"]
+"t2" [label="  %t2 = alloca double*, align 8"]
+"t3" [label="  %t3 = alloca i32, align 4"]
+"t4" [label="  %t4 = alloca i32, align 4"]
+"pROLS" [label="  %pROLS = alloca i32, align 4"]
+"pCOLS" [label="  %pCOLS = alloca i32, align 4"]
+"pNPC1" [label="  %pNPC1 = alloca i32, align 4"]
+"_src" [label="  %_src = alloca %struct.xf_Mat_0_256_256_1_, align 4"]
+"_1" [label="  store %class.ap_uint* %img_inp1, %class.ap_uint** %t1, align 8"]
+"_2" [label="  store double* %scl, double** %t2, align 8"]
+"_3" [label="  store i32 %rows, i32* %t3, align 4"]
+"_4" [label="  store i32 %cols, i32* %t4, align 4"]
+"_5" [label="  store i32 256, i32* %pROLS, align 4"]
+"_6" [label="  store i32 256, i32* %pCOLS, align 4"]
+"_7" [label="  store i32 1, i32* %pNPC1, align 4"]
+"_8" [label="  call void @_ZN19xf_Mat_0_256_256_1_C1Ev(%struct.xf_Mat_0_256_256_1_* %_src)"]
+"_9" [label="  call void @_ZL33p_ZN2xf16Mat_0_256_256_1_C2IEEv_1P19xf_Mat_0_256_256_1_(%struct.xf_Mat_0_256_256_1_* %_src)"]
+"t5" [label="  %t5 = load i32* %t3, align 4"]
+"t6" [label="  %t6 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %_src, i32 0, i32 1"]
+"_10" [label="  store i32 %t5, i32* %t6, align 4"]
+"t7" [label="  %t7 = load i32* %t4, align 4"]
+"t8" [label="  %t8 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %_src, i32 0, i32 2"]
+"_11" [label="  store i32 %t7, i32* %t8, align 4"]
+"t9" [label="  %t9 = load %class.ap_uint** %t1, align 8"]
+"_12" [label="  call void @_ZL91p_ZN2xf11Array2xfMatILi8ELi0ELi256ELi256ELi1EEEP7ap_uintILi8EER3MatILi0ELi256ELi256ELi1EE_1P7ap_uintILi8EER19xf_Mat_0_256_256_1_(%class.ap_uint* %t9, %struct.xf_Mat_0_256_256_1_* %_src)"]
+"t10" [label="  %t10 = load double** %t2, align 8"]
+"_13" [label="  call void @_ZL65p_ZN2xf3sumILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPd_1R19xf_Mat_0_256_256_1_Pd(%struct.xf_Mat_0_256_256_1_* %_src, double* %t10)"]
+"_14" [label="  ret void"]
+"unk_block_1" -> "t1"[color=red]
+"i32 1" -> "t1"
+"t1" -> "t2"[color=red weight=2]
+"i32 1" -> "t2"
+"t2" -> "t3"[color=red weight=2]
+"i32 1" -> "t3"
+"t3" -> "t4"[color=red weight=2]
+"i32 1" -> "t4"
+"t4" -> "pROLS"[color=red weight=2]
+"i32 1" -> "pROLS"
+"pROLS" -> "pCOLS"[color=red weight=2]
+"i32 1" -> "pCOLS"
+"pCOLS" -> "pNPC1"[color=red weight=2]
+"i32 1" -> "pNPC1"
+"pNPC1" -> "_src"[color=red weight=2]
+"i32 1" -> "_src"
+"_src" -> "_1"[color=red weight=2]
+"img_inp1" -> "_1"
+"t1" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"scl" -> "_2"
+"t2" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"rows" -> "_3"
+"t3" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"cols" -> "_4"
+"t4" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"i32 256" -> "_5"
+"pROLS" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"i32 256" -> "_6"
+"pCOLS" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"i32 1" -> "_7"
+"pNPC1" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"_src" -> "_8"
+"_ZN19xf_Mat_0_256_256_1_C1Ev" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"_src" -> "_9"
+"_ZL33p_ZN2xf16Mat_0_256_256_1_C2IEEv_1P19xf_Mat_0_256_256_1_" -> "_9"
+"_9" -> "t5"[color=red weight=2]
+"t3" -> "t5"
+"t5" -> "t6"[color=red weight=2]
+"_src" -> "t6"
+"i32 0" -> "t6"
+"i32 1" -> "t6"
+"t6" -> "_10"[color=red weight=2]
+"t5" -> "_10"
+"t6" -> "_10"
+"_10" -> "t7"[color=red weight=2]
+"t4" -> "t7"
+"t7" -> "t8"[color=red weight=2]
+"_src" -> "t8"
+"i32 0" -> "t8"
+"i32 2" -> "t8"
+"t8" -> "_11"[color=red weight=2]
+"t7" -> "_11"
+"t8" -> "_11"
+"_11" -> "t9"[color=red weight=2]
+"t1" -> "t9"
+"t9" -> "_12"[color=red weight=2]
+"t9" -> "_12"
+"_src" -> "_12"
+"_ZL91p_ZN2xf11Array2xfMatILi8ELi0ELi256ELi256ELi1EEEP7ap_uintILi8EER3MatILi0ELi256ELi256ELi1EE_1P7ap_uintILi8EER19xf_Mat_0_256_256_1_" -> "_12"
+"_12" -> "t10"[color=red weight=2]
+"t2" -> "t10"
+"t10" -> "_13"[color=red weight=2]
+"_src" -> "_13"
+"t10" -> "_13"
+"_ZL65p_ZN2xf3sumILi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEPd_1R19xf_Mat_0_256_256_1_Pd" -> "_13"
+"_13" -> "_14"[color=red weight=2]
+
+}

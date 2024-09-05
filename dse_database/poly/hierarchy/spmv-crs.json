@@ -1,0 +1,408 @@
+[
+    {
+        "src_line": 3,
+        "src_col": 1,
+        "src_filename": "spmv-crs.c",
+        "src_topo_id": "F_0_1_0_1",
+        "type": "kernel",
+        "name": "spmv",
+        "global_variables": [],
+        "interfaces": [
+            {
+                "src_line": 3,
+                "src_col": 18,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0_0",
+                "type": "interface",
+                "name": "val",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 32,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0_1",
+                "type": "interface",
+                "name": "cols",
+                "interface_bitwidth": "32",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 47,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0_2",
+                "type": "interface",
+                "name": "rowDelimiters",
+                "interface_bitwidth": "32",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 73,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0_3",
+                "type": "interface",
+                "name": "vec",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            },
+            {
+                "src_line": 3,
+                "src_col": 89,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0_4",
+                "type": "interface",
+                "name": "out",
+                "interface_bitwidth": "64",
+                "var_type": "array"
+            }
+        ],
+        "arrays": [],
+        "var_refs": [
+            {
+                "src_line": 19,
+                "src_col": 21,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_2_1_0_0_0",
+                "type": "var_ref",
+                "name": "rowDelimiters"
+            },
+            {
+                "src_line": 20,
+                "src_col": 19,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_3_1_0_0_0",
+                "type": "var_ref",
+                "name": "rowDelimiters"
+            },
+            {
+                "src_line": 23,
+                "src_col": 12,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3_0_0_1_0_0",
+                "type": "var_ref",
+                "name": "val"
+            },
+            {
+                "src_line": 23,
+                "src_col": 21,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3_0_0_1_1_0",
+                "type": "var_ref",
+                "name": "vec"
+            },
+            {
+                "src_line": 23,
+                "src_col": 25,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3_0_0_1_1_1_0",
+                "type": "var_ref",
+                "name": "cols"
+            },
+            {
+                "src_line": 26,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_5_0_0_0",
+                "type": "var_ref",
+                "name": "out"
+            }
+        ],
+        "var_defs": [
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_0_1",
+                "type": "var_def",
+                "name": "i"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_1_1",
+                "type": "var_def",
+                "name": "j"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_2_1",
+                "type": "var_def",
+                "name": "sum"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_3_1",
+                "type": "var_def",
+                "name": "Si"
+            },
+            {
+                "src_line": 19,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_2_1",
+                "type": "var_def",
+                "name": "tmp_begin"
+            },
+            {
+                "src_line": 20,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_3_1",
+                "type": "var_def",
+                "name": "tmp_end"
+            }
+        ],
+        "stmts": [
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "F_0_1_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 3,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "F_0_1_0_1_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 4,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 5,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 6,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 7,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 8,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 10,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 12,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_5",
+                "type": "stmt"
+            },
+            {
+                "src_line": 14,
+                "src_col": 1,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_6",
+                "type": "stmt"
+            },
+            {
+                "src_line": 15,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "L_0_1_0_1_2_0_7_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 8,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 8,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 15,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 16,
+                "src_col": 29,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_7_0"
+            },
+            {
+                "src_line": 17,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 18,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 19,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_7_0_3_2",
+                "type": "stmt"
+            },
+            {
+                "src_line": 20,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "V_0_1_0_1_2_0_7_0_3_3",
+                "type": "stmt"
+            },
+            {
+                "src_line": 21,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "L_0_1_0_1_2_0_7_0_3_4_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 10,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 10,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_0_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 25,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 22,
+                "src_col": 43,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3",
+                "type": "stmt",
+                "map_to_id": "L_0_1_0_1_2_0_7_0_3_4_0"
+            },
+            {
+                "src_line": 23,
+                "src_col": 7,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3_0",
+                "type": "stmt"
+            },
+            {
+                "src_line": 24,
+                "src_col": 7,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_4_0_3_1",
+                "type": "stmt"
+            },
+            {
+                "src_line": 26,
+                "src_col": 5,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "X_0_1_0_1_2_0_7_0_3_5",
+                "type": "stmt"
+            }
+        ],
+        "childs": [
+            {
+                "src_line": 16,
+                "src_col": 3,
+                "src_filename": "spmv-crs.c",
+                "src_topo_id": "L_0_1_0_1_2_0_7_0",
+                "type": "loop",
+                "name": "spmv_1",
+                "trip-count": "494",
+                "loop_label": "spmv_1",
+                "src_func_name": "spmv",
+                "childs": [
+                    {
+                        "src_line": 22,
+                        "src_col": 5,
+                        "src_filename": "spmv-crs.c",
+                        "src_topo_id": "L_0_1_0_1_2_0_7_0_3_4_0",
+                        "type": "loop",
+                        "name": "spmv_2",
+                        "trip-count": "?",
+                        "parent_loop": "L_0_1_0_1_2_0_7_0",
+                        "loop_label": "spmv_2",
+                        "src_func_name": "spmv",
+                        "childs": []
+                    }
+                ]
+            }
+        ],
+        "sub_functions": [],
+        "call_functions": []
+    }
+]

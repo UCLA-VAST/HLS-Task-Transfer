@@ -1,0 +1,91 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"tmp_nf_sq24" [label="  %tmp_nf_sq24 = alloca %class.ap_uint.13, align 4"]
+"t940" [label="  %t940 = alloca i32*, align 8"]
+"t941" [label="  %t941 = alloca i8*, align 8"]
+"m" [label="  %m = alloca i32, align 4"]
+"t942" [label="  %t942 = alloca %class.ap_uint.20, align 1"]
+"t943" [label="  %t943 = alloca i24"]
+"t944" [label="  %t944 = getelementptr %class.ap_uint.13* %tmp_nf_sq24, i32 0, i32 0"]
+"t945" [label="  %t945 = bitcast [4 x i8]* %t944 to i32*"]
+"_1" [label="  store i32 %tmp_nf_sq24.coerce, i32* %t945, align 1"]
+"_2" [label="  store i32* %nf, i32** %t940, align 8"]
+"_3" [label="  store i8* %n, i8** %t941, align 8"]
+"_4" [label="  store i32 16, i32* %m, align 4"]
+"_5" [label="  call void @_ZN7ap_uintILi24EEC1ILi26EEERKS_IXT_EE(%class.ap_uint.20* %t942, %class.ap_uint.13* %tmp_nf_sq24)"]
+"t946" [label="  %t946 = load i32* %m, align 4"]
+"t947" [label="  %t947 = load i8** %t941, align 8"]
+"t948" [label="  %t948 = getelementptr %class.ap_uint.20* %t942, i32 0, i32 0"]
+"t949" [label="  %t949 = bitcast i24* %t943 to [3 x i8]*"]
+"t950" [label="  %t950 = load [3 x i8]* %t948"]
+"_6" [label="  store [3 x i8] %t950, [3 x i8]* %t949, align 1"]
+"t951" [label="  %t951 = load i24* %t943"]
+"t952" [label="  %t952 = call i32 @_ZL11xFInverse247ap_uintILi24EEiPc(i24 %t951, i32 %t946, i8* %t947)"]
+"t953" [label="  %t953 = load i32** %t940, align 8"]
+"_7" [label="  store i32 %t952, i32* %t953, align 4"]
+"_8" [label="  ret void"]
+"unk_block_1" -> "tmp_nf_sq24"[color=red]
+"i32 1" -> "tmp_nf_sq24"
+"tmp_nf_sq24" -> "t940"[color=red weight=2]
+"i32 1" -> "t940"
+"t940" -> "t941"[color=red weight=2]
+"i32 1" -> "t941"
+"t941" -> "m"[color=red weight=2]
+"i32 1" -> "m"
+"m" -> "t942"[color=red weight=2]
+"i32 1" -> "t942"
+"t942" -> "t943"[color=red weight=2]
+"i32 1" -> "t943"
+"t943" -> "t944"[color=red weight=2]
+"tmp_nf_sq24" -> "t944"
+"i32 0" -> "t944"
+"i32 0" -> "t944"
+"t944" -> "t945"[color=red weight=2]
+"t944" -> "t945"
+"t945" -> "_1"[color=red weight=2]
+"tmp_nf_sq24.coerce" -> "_1"
+"t945" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"nf" -> "_2"
+"t940" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"n" -> "_3"
+"t941" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"i32 16" -> "_4"
+"m" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"t942" -> "_5"
+"tmp_nf_sq24" -> "_5"
+"_ZN7ap_uintILi24EEC1ILi26EEERKS_IXT_EE" -> "_5"
+"_5" -> "t946"[color=red weight=2]
+"m" -> "t946"
+"t946" -> "t947"[color=red weight=2]
+"t941" -> "t947"
+"t947" -> "t948"[color=red weight=2]
+"t942" -> "t948"
+"i32 0" -> "t948"
+"i32 0" -> "t948"
+"t948" -> "t949"[color=red weight=2]
+"t943" -> "t949"
+"t949" -> "t950"[color=red weight=2]
+"t948" -> "t950"
+"t950" -> "_6"[color=red weight=2]
+"t950" -> "_6"
+"t949" -> "_6"
+"_6" -> "t951"[color=red weight=2]
+"t943" -> "t951"
+"t951" -> "t952"[color=red weight=2]
+"t951" -> "t952"
+"t946" -> "t952"
+"t947" -> "t952"
+"_ZL11xFInverse247ap_uintILi24EEiPc" -> "t952"
+"t952" -> "t953"[color=red weight=2]
+"t940" -> "t953"
+"t953" -> "_7"[color=red weight=2]
+"t952" -> "_7"
+"t953" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+
+}

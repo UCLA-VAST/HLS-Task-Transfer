@@ -1,0 +1,16 @@
+digraph "CFG for '_ZL112p_ZN2xf6reduceILi1ELi0ELi5ELi256ELi256ELi1ELi3840ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi5ELi1ELi3840ELi1EEh_1R19xf_Mat_0_256_256_1_R18xf_Mat_5_1_3840_1_h' function" {
+	label="CFG for '_ZL112p_ZN2xf6reduceILi1ELi0ELi5ELi256ELi256ELi1ELi3840ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi5ELi1ELi3840ELi1EEh_1R19xf_Mat_0_256_256_1_R18xf_Mat_5_1_3840_1_h' function";
+
+	Node0x25b44f0 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  %2 = alloca %struct.xf_Mat_5_1_3840_1_*, align 8\l  %3 = alloca i8, align 1\l  %width = alloca i16, align 2\l  %height = alloca i16, align 2\l  store %struct.xf_Mat_0_256_256_1_* %_src_mat, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  store %struct.xf_Mat_5_1_3840_1_* %_dst_mat, %struct.xf_Mat_5_1_3840_1_** %2, align 8\l  store i8 %dim, i8* %3, align 1\l  %4 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %5 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %4, i32 0, i32 2\l  %6 = load i32* %5, align 4\l  %7 = ashr i32 %6, 0\l  %8 = trunc i32 %7 to i16\l  store i16 %8, i16* %width, align 2\l  %9 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %10 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %9, i32 0, i32 1\l  %11 = load i32* %10, align 4\l  %12 = trunc i32 %11 to i16\l  store i16 %12, i16* %height, align 2\l  %13 = load i16* %height, align 2\l  %14 = zext i16 %13 to i32\l  %15 = icmp sle i32 %14, 256\l  br i1 %15, label %16, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x25b44f0:s0 -> Node0x25b50f0;
+	Node0x25b44f0:s1 -> Node0x25b5150;
+	Node0x25b50f0 [shape=record,label="{%16:\l\l  %17 = load i16* %width, align 2\l  %18 = zext i16 %17 to i32\l  %19 = icmp sle i32 %18, 256\l  br i1 %19, label %20, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x25b50f0:s0 -> Node0x25b5360;
+	Node0x25b50f0:s1 -> Node0x25b5150;
+	Node0x25b5360 [shape=record,label="{%20:\l\l  br label %23\l}"];
+	Node0x25b5360 -> Node0x25b5470;
+	Node0x25b5150 [shape=record,label="{%21:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([93 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0), i32 208, i8* getelementptr inbounds ([192 x i8]* @__PRETTY_FUNCTION__._ZL112p_ZN2xf6reduceILi1ELi0ELi5ELi256ELi256ELi1ELi3840ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi5ELi1ELi3840ELi1EEh_1R19xf_Mat_0_256_256_1_R18xf_Mat_5_1_3840_1_h, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x25b5b00 [shape=record,label="{%22:                                                  \l  br label %23\l}"];
+	Node0x25b5b00 -> Node0x25b5470;
+	Node0x25b5470 [shape=record,label="{%23:\l\l  %24 = load %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %25 = load %struct.xf_Mat_5_1_3840_1_** %2, align 8\l  %26 = load i8* %3, align 1\l  %27 = load i16* %height, align 2\l  %28 = load i16* %width, align 2\l  call void @_ZL142p_ZN2xf14xFreduceKernelILi0ELi5ELi256ELi256ELi1ELi3840ELi0ELi1ELi1ELi12ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EER3MatILi5ELi1ELi3840ELi1EEhtt_1R19xf_Mat_0_256_256_1_R18xf_Mat_5_1_3840_1_htt(%struct.xf_Mat_0_256_256_1_* %24, %struct.xf_Mat_5_1_3840_1_* %25, i8 zeroext %26, i16 zeroext %27, i16 zeroext %28)\l  ret void\l}"];
+}

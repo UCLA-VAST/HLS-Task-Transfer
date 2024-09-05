@@ -1,0 +1,152 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t393" [label="  %t393 = alloca %struct.xf_accel_utils*, align 8"]
+"t394" [label="  %t394 = alloca %class.ap_uint*, align 8"]
+"t395" [label="  %t395 = alloca %\"class.hls::stream\"*, align 8"]
+"t396" [label="  %t396 = alloca i32, align 4"]
+"t397" [label="  %t397 = alloca i32, align 4"]
+"pixel_width" [label="  %pixel_width = alloca i32, align 4"]
+"loop_count" [label="  %loop_count = alloca i32, align 4"]
+"i" [label="  %i = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_accel_utils* %this_, %struct.xf_accel_utils** %t393, align 8"]
+"_2" [label="  store %class.ap_uint* %srcPtr, %class.ap_uint** %t394, align 8"]
+"_3" [label="  store %\"class.hls::stream\"* %dstStrm, %\"class.hls::stream\"** %t395, align 8"]
+"_4" [label="  store i32 %rows, i32* %t396, align 4"]
+"_5" [label="  store i32 %cols, i32* %t397, align 4"]
+"_6" [label="  store i32 8, i32* %pixel_width, align 4"]
+"t398" [label="  %t398 = load i32* %t396, align 4"]
+"t399" [label="  %t399 = load i32* %t397, align 4"]
+"t400" [label="  %t400 = mul nsw i32 %t398, %t399"]
+"t401" [label="  %t401 = load i32* %pixel_width, align 4"]
+"t402" [label="  %t402 = mul nsw i32 %t400, %t401"]
+"t403" [label="  %t403 = add nsw i32 %t402, 64"]
+"t404" [label="  %t404 = sub nsw i32 %t403, 1"]
+"t405" [label="  %t405 = sdiv i32 %t404, 64"]
+"_7" [label="  store i32 %t405, i32* %loop_count, align 4"]
+"_8" [label="  store i32 0, i32* %i, align 4"]
+"_9" [label="  br label %1"]
+"unk_block_1" -> "t393"[color=red]
+"i32 1" -> "t393"
+"t393" -> "t394"[color=red weight=2]
+"i32 1" -> "t394"
+"t394" -> "t395"[color=red weight=2]
+"i32 1" -> "t395"
+"t395" -> "t396"[color=red weight=2]
+"i32 1" -> "t396"
+"t396" -> "t397"[color=red weight=2]
+"i32 1" -> "t397"
+"t397" -> "pixel_width"[color=red weight=2]
+"i32 1" -> "pixel_width"
+"pixel_width" -> "loop_count"[color=red weight=2]
+"i32 1" -> "loop_count"
+"loop_count" -> "i"[color=red weight=2]
+"i32 1" -> "i"
+"i" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t393" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"srcPtr" -> "_2"
+"t394" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"dstStrm" -> "_3"
+"t395" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"rows" -> "_4"
+"t396" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"cols" -> "_5"
+"t397" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"i32 8" -> "_6"
+"pixel_width" -> "_6"
+"_6" -> "t398"[color=red weight=2]
+"t396" -> "t398"
+"t398" -> "t399"[color=red weight=2]
+"t397" -> "t399"
+"t399" -> "t400"[color=red weight=2]
+"t398" -> "t400"
+"t399" -> "t400"
+"t400" -> "t401"[color=red weight=2]
+"pixel_width" -> "t401"
+"t401" -> "t402"[color=red weight=2]
+"t400" -> "t402"
+"t401" -> "t402"
+"t402" -> "t403"[color=red weight=2]
+"t402" -> "t403"
+"i32 64" -> "t403"
+"t403" -> "t404"[color=red weight=2]
+"t403" -> "t404"
+"i32 1" -> "t404"
+"t404" -> "t405"[color=red weight=2]
+"t404" -> "t405"
+"i32 64" -> "t405"
+"t405" -> "_7"[color=red weight=2]
+"t405" -> "_7"
+"loop_count" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"i32 0" -> "_8"
+"i" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"_9" -> ""[color=red]
+
+"t406" [label="  %t406 = load i32* %i, align 4"]
+"t407" [label="  %t407 = load i32* %loop_count, align 4"]
+"t408" [label="  %t408 = icmp slt i32 %t406, %t407"]
+"_10" [label="  br i1 %t408, label %2, label %4"]
+"unk_block_2" -> "t406"[color=red]
+"i" -> "t406"
+"t406" -> "t407"[color=red weight=2]
+"loop_count" -> "t407"
+"t407" -> "t408"[color=red weight=2]
+"t406" -> "t408"
+"t407" -> "t408"
+"t408" -> "_10"[color=red weight=2]
+"t408" -> "_10"
+"_10" -> ""[color=red]
+"_10" -> ""[color=red]
+
+"t409" [label="  %t409 = load %\"class.hls::stream\"** %t395, align 8"]
+"t410" [label="  %t410 = load i32* %i, align 4"]
+"t411" [label="  %t411 = sext i32 %t410 to i64"]
+"t412" [label="  %t412 = load %class.ap_uint** %t394, align 8"]
+"t413" [label="  %t413 = getelementptr inbounds %class.ap_uint* %t412, i64 %t411"]
+"_11" [label="  call void @_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_(%\"class.hls::stream\"* %t409, %class.ap_uint* %t413)"]
+"_12" [label="  br label %3"]
+"unk_block_3" -> "t409"[color=red]
+"t395" -> "t409"
+"t409" -> "t410"[color=red weight=2]
+"i" -> "t410"
+"t410" -> "t411"[color=red weight=2]
+"t410" -> "t411"
+"t411" -> "t412"[color=red weight=2]
+"t394" -> "t412"
+"t412" -> "t413"[color=red weight=2]
+"t412" -> "t413"
+"t411" -> "t413"
+"t413" -> "_11"[color=red weight=2]
+"t409" -> "_11"
+"t413" -> "_11"
+"_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+"_12" -> ""[color=red]
+
+"t414" [label="  %t414 = load i32* %i, align 4"]
+"t415" [label="  %t415 = add nsw i32 %t414, 1"]
+"_13" [label="  store i32 %t415, i32* %i, align 4"]
+"_14" [label="  br label %1"]
+"unk_block_4" -> "t414"[color=red]
+"i" -> "t414"
+"t414" -> "t415"[color=red weight=2]
+"t414" -> "t415"
+"i32 1" -> "t415"
+"t415" -> "_13"[color=red weight=2]
+"t415" -> "_13"
+"i" -> "_13"
+"_13" -> "_14"[color=red weight=2]
+"_14" -> ""[color=red]
+
+"_15" [label="  ret void"]
+"unk_block_5" -> "_15"[color=red]
+
+}

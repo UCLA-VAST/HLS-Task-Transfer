@@ -1,0 +1,21 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t31" [label="  %t31 = alloca %struct.xf_Mat_9_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_9_256_256_1_* %this, %struct.xf_Mat_9_256_256_1_** %t31, align 8"]
+"t32" [label="  %t32 = load %struct.xf_Mat_9_256_256_1_** %t31"]
+"_2" [label="  call void @_ZN19xf_Mat_9_256_256_1_C2Ev(%struct.xf_Mat_9_256_256_1_* %t32)"]
+"_3" [label="  ret void"]
+"unk_block_1" -> "t31"[color=red]
+"i32 1" -> "t31"
+"t31" -> "_1"[color=red weight=2]
+"this" -> "_1"
+"t31" -> "_1"
+"_1" -> "t32"[color=red weight=2]
+"t31" -> "t32"
+"t32" -> "_2"[color=red weight=2]
+"t32" -> "_2"
+"_ZN19xf_Mat_9_256_256_1_C2Ev" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+
+}

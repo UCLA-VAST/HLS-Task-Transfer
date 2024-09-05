@@ -1,0 +1,60 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1777" [label="  %t1777 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t1778" [label="  %t1778 = alloca i32, align 4"]
+"val" [label="  %val = alloca %class.ap_uint.0, align 1"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t1777, align 8"]
+"_2" [label="  store i32 %index, i32* %t1778, align 4"]
+"t1779" [label="  %t1779 = getelementptr %class.ap_uint.0* %val, i32 0, i32 0"]
+"t1780" [label="  %t1780 = bitcast [1 x i8]* %t1779 to i8*"]
+"_3" [label="  store i8 %val.coerce, i8* %t1780, align 1"]
+"t1781" [label="  %t1781 = load i32* %t1778, align 4"]
+"t1782" [label="  %t1782 = sext i32 %t1781 to i64"]
+"t1783" [label="  %t1783 = load %struct.xf_Mat_0_256_256_1_** %t1777, align 8"]
+"t1784" [label="  %t1784 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t1783, i32 0, i32 4"]
+"t1785" [label="  %t1785 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t1784, i32 0, i64 %t1782"]
+"t1786" [label="  %t1786 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSERKS0_(%class.ap_uint.0* %t1785, %class.ap_uint.0* %val)"]
+"_4" [label="  ret void"]
+"unk_block_1" -> "t1777"[color=red]
+"i32 1" -> "t1777"
+"t1777" -> "t1778"[color=red weight=2]
+"i32 1" -> "t1778"
+"t1778" -> "val"[color=red weight=2]
+"i32 1" -> "val"
+"val" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t1777" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t1778" -> "_2"
+"_2" -> "t1779"[color=red weight=2]
+"val" -> "t1779"
+"i32 0" -> "t1779"
+"i32 0" -> "t1779"
+"t1779" -> "t1780"[color=red weight=2]
+"t1779" -> "t1780"
+"t1780" -> "_3"[color=red weight=2]
+"val.coerce" -> "_3"
+"t1780" -> "_3"
+"_3" -> "t1781"[color=red weight=2]
+"t1778" -> "t1781"
+"t1781" -> "t1782"[color=red weight=2]
+"t1781" -> "t1782"
+"t1782" -> "t1783"[color=red weight=2]
+"t1777" -> "t1783"
+"t1783" -> "t1784"[color=red weight=2]
+"t1783" -> "t1784"
+"i32 0" -> "t1784"
+"i32 4" -> "t1784"
+"t1784" -> "t1785"[color=red weight=2]
+"t1784" -> "t1785"
+"i32 0" -> "t1785"
+"t1782" -> "t1785"
+"t1785" -> "t1786"[color=red weight=2]
+"t1785" -> "t1786"
+"val" -> "t1786"
+"_ZN7ap_uintILi8EEaSERKS0_" -> "t1786"
+"t1786" -> "_4"[color=red weight=2]
+
+}

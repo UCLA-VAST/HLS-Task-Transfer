@@ -1,0 +1,102 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t249" [label="  %t249 = alloca %\"class.hls::stream.3\"*, align 8"]
+"t250" [label="  %t250 = alloca %\"class.hls::stream.5\"*, align 8"]
+"t251" [label="  %t251 = alloca i16, align 2"]
+"t252" [label="  %t252 = alloca i16, align 2"]
+"novb" [label="  %novb = alloca i32, align 4"]
+"nohb" [label="  %nohb = alloca i32, align 4"]
+"_1" [label="  store %\"class.hls::stream.3\"* %_block_strm, %\"class.hls::stream.3\"** %t249, align 8"]
+"_2" [label="  store %\"class.hls::stream.5\"* %_desc_strm, %\"class.hls::stream.5\"** %t250, align 8"]
+"_3" [label="  store i16 %height, i16* %t251, align 2"]
+"_4" [label="  store i16 %width, i16* %t252, align 2"]
+"t253" [label="  %t253 = load i16* %t251, align 2"]
+"t254" [label="  %t254 = zext i16 %t253 to i32"]
+"t255" [label="  %t255 = sdiv i32 %t254, 8"]
+"t256" [label="  %t256 = sub nsw i32 %t255, 1"]
+"_5" [label="  store i32 %t256, i32* %novb, align 4"]
+"t257" [label="  %t257 = load i16* %t252, align 2"]
+"t258" [label="  %t258 = zext i16 %t257 to i32"]
+"t259" [label="  %t259 = sdiv i32 %t258, 8"]
+"t260" [label="  %t260 = sub nsw i32 %t259, 1"]
+"_6" [label="  store i32 %t260, i32* %nohb, align 4"]
+"t261" [label="  %t261 = load %\"class.hls::stream.3\"** %t249, align 8"]
+"t262" [label="  %t262 = load %\"class.hls::stream.5\"** %t250, align 8"]
+"t263" [label="  %t263 = load i32* %novb, align 4"]
+"t264" [label="  %t264 = trunc i32 %t263 to i16"]
+"t265" [label="  %t265 = load i32* %nohb, align 4"]
+"t266" [label="  %t266 = trunc i32 %t265 to i16"]
+"_7" [label="  call void @_ZL162p_Z23xFWriteHOGDescKernelNRBILi2160ELi3840ELi2ELi1ELi45E7ap_uintILi32EELi269ELi479ELi32ELi18ELi4ELi128851EER6streamI7ap_uintILi576EEER6streamI7ap_uintILi32EEEtt_1RN3hls6streamI7ap_uintILi576EEEERNS0_IS1_ILi32EEEEtt(%\"class.hls::stream.3\"* %t261, %\"class.hls::stream.5\"* %t262, i16 zeroext %t264, i16 zeroext %t266)"]
+"_8" [label="  ret void"]
+"unk_block_1" -> "t249"[color=red]
+"i32 1" -> "t249"
+"t249" -> "t250"[color=red weight=2]
+"i32 1" -> "t250"
+"t250" -> "t251"[color=red weight=2]
+"i32 1" -> "t251"
+"t251" -> "t252"[color=red weight=2]
+"i32 1" -> "t252"
+"t252" -> "novb"[color=red weight=2]
+"i32 1" -> "novb"
+"novb" -> "nohb"[color=red weight=2]
+"i32 1" -> "nohb"
+"nohb" -> "_1"[color=red weight=2]
+"_block_strm" -> "_1"
+"t249" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_desc_strm" -> "_2"
+"t250" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"height" -> "_3"
+"t251" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"width" -> "_4"
+"t252" -> "_4"
+"_4" -> "t253"[color=red weight=2]
+"t251" -> "t253"
+"t253" -> "t254"[color=red weight=2]
+"t253" -> "t254"
+"t254" -> "t255"[color=red weight=2]
+"t254" -> "t255"
+"i32 8" -> "t255"
+"t255" -> "t256"[color=red weight=2]
+"t255" -> "t256"
+"i32 1" -> "t256"
+"t256" -> "_5"[color=red weight=2]
+"t256" -> "_5"
+"novb" -> "_5"
+"_5" -> "t257"[color=red weight=2]
+"t252" -> "t257"
+"t257" -> "t258"[color=red weight=2]
+"t257" -> "t258"
+"t258" -> "t259"[color=red weight=2]
+"t258" -> "t259"
+"i32 8" -> "t259"
+"t259" -> "t260"[color=red weight=2]
+"t259" -> "t260"
+"i32 1" -> "t260"
+"t260" -> "_6"[color=red weight=2]
+"t260" -> "_6"
+"nohb" -> "_6"
+"_6" -> "t261"[color=red weight=2]
+"t249" -> "t261"
+"t261" -> "t262"[color=red weight=2]
+"t250" -> "t262"
+"t262" -> "t263"[color=red weight=2]
+"novb" -> "t263"
+"t263" -> "t264"[color=red weight=2]
+"t263" -> "t264"
+"t264" -> "t265"[color=red weight=2]
+"nohb" -> "t265"
+"t265" -> "t266"[color=red weight=2]
+"t265" -> "t266"
+"t266" -> "_7"[color=red weight=2]
+"t261" -> "_7"
+"t262" -> "_7"
+"t264" -> "_7"
+"t266" -> "_7"
+"_ZL162p_Z23xFWriteHOGDescKernelNRBILi2160ELi3840ELi2ELi1ELi45E7ap_uintILi32EELi269ELi479ELi32ELi18ELi4ELi128851EER6streamI7ap_uintILi576EEER6streamI7ap_uintILi32EEEtt_1RN3hls6streamI7ap_uintILi576EEEERNS0_IS1_ILi32EEEEtt" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+
+}

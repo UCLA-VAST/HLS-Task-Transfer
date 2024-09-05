@@ -1,0 +1,5 @@
+digraph "CFG for '_ZN19xf_Mat_0_256_256_1_C1Ev' function" {
+	label="CFG for '_ZN19xf_Mat_0_256_256_1_C1Ev' function";
+
+	Node0x192a120 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_256_256_1_*, align 8\l  store %struct.xf_Mat_0_256_256_1_* %this, %struct.xf_Mat_0_256_256_1_** %1, align 8\l  %2 = load %struct.xf_Mat_0_256_256_1_** %1\l  call void @_ZN19xf_Mat_0_256_256_1_C2Ev(%struct.xf_Mat_0_256_256_1_* %2)\l  ret void\l}"];
+}

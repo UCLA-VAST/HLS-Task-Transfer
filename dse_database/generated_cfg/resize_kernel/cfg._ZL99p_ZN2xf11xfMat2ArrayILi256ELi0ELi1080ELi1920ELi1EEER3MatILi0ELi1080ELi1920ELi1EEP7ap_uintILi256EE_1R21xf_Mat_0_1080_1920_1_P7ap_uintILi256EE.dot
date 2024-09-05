@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL99p_ZN2xf11xfMat2ArrayILi256ELi0ELi1080ELi1920ELi1EEER3MatILi0ELi1080ELi1920ELi1EEP7ap_uintILi256EE_1R21xf_Mat_0_1080_1920_1_P7ap_uintILi256EE' function" {
+	label="CFG for '_ZL99p_ZN2xf11xfMat2ArrayILi256ELi0ELi1080ELi1920ELi1EEER3MatILi0ELi1080ELi1920ELi1EEP7ap_uintILi256EE_1R21xf_Mat_0_1080_1920_1_P7ap_uintILi256EE' function";
+
+	Node0x18b7c10 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_0_1080_1920_1_*, align 8\l  %2 = alloca %class.ap_uint*, align 8\l  %au = alloca %struct.xf_accel_utils, align 1\l  store %struct.xf_Mat_0_1080_1920_1_* %srcMat, %struct.xf_Mat_0_1080_1920_1_** %1, align 8\l  store %class.ap_uint* %dstPtr, %class.ap_uint** %2, align 8\l  %3 = load %struct.xf_Mat_0_1080_1920_1_** %1, align 8\l  %4 = load %class.ap_uint** %2, align 8\l  call void @_ZL112p_ZN2xf11accel_utils11xfMat2ArrayILi256ELi0ELi1080ELi1920ELi1EEER3MatILi0ELi1080ELi1920ELi1EEP7ap_uintILi256EE_1P14xf_accel_utilsR21xf_Mat_0_1080_1920_1_P7ap_uintILi256EE(%struct.xf_accel_utils* %au, %struct.xf_Mat_0_1080_1920_1_* %3, %class.ap_uint* %4)\l  ret void\l}"];
+}

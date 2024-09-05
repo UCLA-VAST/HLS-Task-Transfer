@@ -1,0 +1,1 @@
+//kernel_jacobi_1d=__merlinkernel_kernel_jacobi_1d.c

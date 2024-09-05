@@ -1,0 +1,16 @@
+digraph "CFG for '_ZL146p_Z6xFDHOGILi128ELi64ELi8ELi16ELi16ELi8ELi8ELi9ELi2160ELi3840ELi0ELi2ELi1ELi1ELi45ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi576EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi576EEEEtt' function" {
+	label="CFG for '_ZL146p_Z6xFDHOGILi128ELi64ELi8ELi16ELi16ELi8ELi8ELi9ELi2160ELi3840ELi0ELi2ELi1ELi1ELi45ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi576EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi576EEEEtt' function";
+
+	Node0x3315dc0 [shape=record,label="{%0:\l  %1 = alloca %\"class.hls::stream.2\"*, align 8\l  %2 = alloca %\"class.hls::stream.3\"*, align 8\l  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  store %\"class.hls::stream.2\"* %_in_stream, %\"class.hls::stream.2\"** %1, align 8\l  store %\"class.hls::stream.3\"* %_block_stream, %\"class.hls::stream.3\"** %2, align 8\l  store i16 %_height, i16* %3, align 2\l  store i16 %_width, i16* %4, align 2\l  %5 = load i16* %4, align 2\l  %6 = zext i16 %5 to i32\l  %7 = ashr i32 %6, 0\l  %8 = trunc i32 %7 to i16\l  store i16 %8, i16* %4, align 2\l  %9 = load i16* %3, align 2\l  %10 = zext i16 %9 to i32\l  %11 = icmp sle i32 %10, 2160\l  br i1 %11, label %12, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x3315dc0:s0 -> Node0x3316010;
+	Node0x3315dc0:s1 -> Node0x3319c80;
+	Node0x3316010 [shape=record,label="{%12:\l\l  %13 = load i16* %4, align 2\l  %14 = zext i16 %13 to i32\l  %15 = icmp sle i32 %14, 3840\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x3316010:s0 -> Node0x3319f20;
+	Node0x3316010:s1 -> Node0x3319c80;
+	Node0x3319f20 [shape=record,label="{%16:\l\l  br label %19\l}"];
+	Node0x3319f20 -> Node0x331a030;
+	Node0x3319c80 [shape=record,label="{%17:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([95 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([29 x i8]* @.str1, i32 0, i32 0), i32 107, i8* getelementptr inbounds ([255 x i8]* @__PRETTY_FUNCTION__._ZL146p_Z6xFDHOGILi128ELi64ELi8ELi16ELi16ELi8ELi8ELi9ELi2160ELi3840ELi0ELi2ELi1ELi1ELi45ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi576EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi576EEEEtt, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x331a680 [shape=record,label="{%18:                                                  \l  br label %19\l}"];
+	Node0x331a680 -> Node0x331a030;
+	Node0x331a030 [shape=record,label="{%19:\l\l  %20 = load %\"class.hls::stream.2\"** %1, align 8\l  %21 = load %\"class.hls::stream.3\"** %2, align 8\l  %22 = load i16* %3, align 2\l  %23 = load i16* %4, align 2\l  call void @_ZL155p_Z12xFDHOGKernelILi128ELi64ELi8ELi8ELi8ELi9ELi2ELi2ELi2ELi2160ELi3840ELi0ELi2ELi1ELi1ELi45ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi576EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi576EEEEtt(%\"class.hls::stream.2\"* %20, %\"class.hls::stream.3\"* %21, i16 zeroext %22, i16 zeroext %23)\l  ret void\l}"];
+}

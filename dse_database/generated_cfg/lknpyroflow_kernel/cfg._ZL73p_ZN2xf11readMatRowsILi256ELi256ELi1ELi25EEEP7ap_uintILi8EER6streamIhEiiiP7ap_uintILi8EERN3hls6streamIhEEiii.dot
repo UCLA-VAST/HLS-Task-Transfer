@@ -1,0 +1,23 @@
+digraph "CFG for '_ZL73p_ZN2xf11readMatRowsILi256ELi256ELi1ELi25EEEP7ap_uintILi8EER6streamIhEiiiP7ap_uintILi8EERN3hls6streamIhEEiii' function" {
+	label="CFG for '_ZL73p_ZN2xf11readMatRowsILi256ELi256ELi1ELi25EEEP7ap_uintILi8EER6streamIhEiiiP7ap_uintILi8EERN3hls6streamIhEEiii' function";
+
+	Node0x26f2980 [shape=record,label="{%0:\l  %1 = alloca %class.ap_uint.1*, align 8\l  %2 = alloca %\"class.hls::stream.2\"*, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %WORD_SIZE = alloca i32, align 4\l  %i = alloca i32, align 4\l  %tmpData = alloca %struct.mywide_t_1_, align 1\l  %k = alloca i32, align 4\l  store %class.ap_uint.1* %matB, %class.ap_uint.1** %1, align 8\l  store %\"class.hls::stream.2\"* %pixStream, %\"class.hls::stream.2\"** %2, align 8\l  store i32 %rows, i32* %3, align 4\l  store i32 %cols, i32* %4, align 4\l  store i32 %size, i32* %5, align 4\l  store i32 1, i32* %WORD_SIZE, align 4\l  store i32 0, i32* %i, align 4\l  br label %6\l}"];
+	Node0x26f2980 -> Node0x26f32c0;
+	Node0x26f32c0 [shape=record,label="{%6:\l\l  %7 = load i32* %i, align 4\l  %8 = load i32* %5, align 4\l  %9 = icmp slt i32 %7, %8\l  br i1 %9, label %10, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x26f32c0:s0 -> Node0x26f35c0;
+	Node0x26f32c0:s1 -> Node0x26f3620;
+	Node0x26f35c0 [shape=record,label="{%10:\l\l  %11 = load %class.ap_uint.1** %1, align 8\l  %12 = load i32* %i, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds %class.ap_uint.1* %11, i64 %13\l  %15 = call i64 @_ZNK7ap_uintILi8EEcvmEv(%class.ap_uint.1* %14)\l  %16 = trunc i64 %15 to i8\l  %17 = getelementptr inbounds %struct.mywide_t_1_* %tmpData, i32 0, i32 0\l  %18 = getelementptr inbounds [1 x i8]* %17, i32 0, i64 0\l  store i8 %16, i8* %18, align 1\l  store i32 0, i32* %k, align 4\l  br label %19\l}"];
+	Node0x26f35c0 -> Node0x26f3c60;
+	Node0x26f3c60 [shape=record,label="{%19:\l\l  %20 = load i32* %k, align 4\l  %21 = icmp slt i32 %20, 1\l  br i1 %21, label %22, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x26f3c60:s0 -> Node0x26f3e50;
+	Node0x26f3c60:s1 -> Node0x26f3eb0;
+	Node0x26f3e50 [shape=record,label="{%22:\l\l  %23 = load %\"class.hls::stream.2\"** %2, align 8\l  %24 = load i32* %k, align 4\l  %25 = sext i32 %24 to i64\l  %26 = getelementptr inbounds %struct.mywide_t_1_* %tmpData, i32 0, i32 0\l  %27 = getelementptr inbounds [1 x i8]* %26, i32 0, i64 %25\l  call void @_ZN3hls6streamIhE5writeERKh(%\"class.hls::stream.2\"* %23, i8* %27)\l  br label %28\l}"];
+	Node0x26f3e50 -> Node0x26f4440;
+	Node0x26f4440 [shape=record,label="{%28:\l\l  %29 = load i32* %k, align 4\l  %30 = add nsw i32 %29, 1\l  store i32 %30, i32* %k, align 4\l  br label %19\l}"];
+	Node0x26f4440 -> Node0x26f3c60;
+	Node0x26f3eb0 [shape=record,label="{%31:\l\l  br label %32\l}"];
+	Node0x26f3eb0 -> Node0x26f4780;
+	Node0x26f4780 [shape=record,label="{%32:\l\l  %33 = load i32* %i, align 4\l  %34 = add nsw i32 %33, 1\l  store i32 %34, i32* %i, align 4\l  br label %6\l}"];
+	Node0x26f4780 -> Node0x26f32c0;
+	Node0x26f3620 [shape=record,label="{%35:\l\l  ret void\l}"];
+}

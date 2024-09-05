@@ -1,0 +1,48 @@
+===============================================================================
+Version:    v++ v2020.2 (64-bit)
+Build:      SW Build (by xbuild) on 2020-11-18-05:13:29
+Copyright:  Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Created:    Sun Jun  6 17:28:06 2021
+===============================================================================
+
+-------------------------------------------------------------------------------
+Design Name:             bbgemm
+Target Device:           xilinx:u200:xdma:201830.2
+Target Clock:            250MHz
+Total number of kernels: 1
+-------------------------------------------------------------------------------
+
+Kernel Summary
+Kernel Name  Type  Target              OpenCL Library  Compute Units
+-----------  ----  ------------------  --------------  -------------
+bbgemm       c     fpga0:OCL_REGION_0  bbgemm          1
+
+
+-------------------------------------------------------------------------------
+OpenCL Binary:     bbgemm
+Kernels mapped to: clc_region
+
+Timing Information (MHz)
+Compute Unit  Kernel Name  Module Name                     Target Frequency  Estimated Frequency
+------------  -----------  ------------------------------  ----------------  -------------------
+bbgemm_1      bbgemm       mars_kernel_0_2_node_0_stage_0  250               4405.28662
+bbgemm_1      bbgemm       mars_kernel_0_2_node_1_stage_1  250               172.651932
+bbgemm_1      bbgemm       mars_kernel_0_2                 250               172.651932
+bbgemm_1      bbgemm       bbgemm                          250               172.651932
+
+Latency Information
+Compute Unit  Kernel Name  Module Name                     Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
+------------  -----------  ------------------------------  --------------  -------------  ------------  --------------  ---------------  --------------  ----------------
+bbgemm_1      bbgemm       mars_kernel_0_2_node_0_stage_0  0               0              0             0               0 ns             0 ns            0 ns
+bbgemm_1      bbgemm       mars_kernel_0_2_node_1_stage_1  1 ~ 3074        1              1538          3074            5.792 ns         8.908 us        17.805 us
+bbgemm_1      bbgemm       mars_kernel_0_2                 2 ~ 3075        2              1539          3075            11.584 ns        8.914 us        17.810 us
+bbgemm_1      bbgemm       bbgemm                          2642 ~ 223898   2641           113305        223897          15.297 us        0.656 ms        1.297 ms
+
+Area Information
+Compute Unit  Kernel Name  Module Name                     FF     LUT    DSP  BRAM  URAM
+------------  -----------  ------------------------------  -----  -----  ---  ----  ----
+bbgemm_1      bbgemm       mars_kernel_0_2_node_0_stage_0  0      32     0    0     0
+bbgemm_1      bbgemm       mars_kernel_0_2_node_1_stage_1  5114   2541   0    0     0
+bbgemm_1      bbgemm       mars_kernel_0_2                 5347   2655   0    0     0
+bbgemm_1      bbgemm       bbgemm                          13044  11573  0    138   0
+-------------------------------------------------------------------------------

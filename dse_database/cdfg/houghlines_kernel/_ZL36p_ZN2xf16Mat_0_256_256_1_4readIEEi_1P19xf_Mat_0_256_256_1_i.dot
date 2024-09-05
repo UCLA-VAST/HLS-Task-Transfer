@@ -1,0 +1,69 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1103" [label="  %t1103 = alloca %class.ap_uint.0, align 1"]
+"t1104" [label="  %t1104 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t1105" [label="  %t1105 = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t1104, align 8"]
+"_2" [label="  store i32 %index, i32* %t1105, align 4"]
+"t1106" [label="  %t1106 = load i32* %t1105, align 4"]
+"t1107" [label="  %t1107 = sext i32 %t1106 to i64"]
+"t1108" [label="  %t1108 = load %struct.xf_Mat_0_256_256_1_** %t1104, align 8"]
+"t1109" [label="  %t1109 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t1108, i32 0, i32 4"]
+"t1110" [label="  %t1110 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t1109, i32 0, i64 %t1107"]
+"t1111" [label="  %t1111 = bitcast %class.ap_uint.0* %t1103 to i8*"]
+"t1112" [label="  %t1112 = bitcast %class.ap_uint.0* %t1110 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t1111, i8* %t1112, i64 1, i32 1, i1 false)"]
+"t1113" [label="  %t1113 = getelementptr %class.ap_uint.0* %t1103, i32 0, i32 0"]
+"t1114" [label="  %t1114 = bitcast [1 x i8]* %t1113 to i8*"]
+"t1115" [label="  %t1115 = load i8* %t1114, align 1"]
+"_4" [label="  ret i8 %t1115"]
+"unk_block_1" -> "t1103"[color=red]
+"i32 1" -> "t1103"
+"t1103" -> "t1104"[color=red weight=2]
+"i32 1" -> "t1104"
+"t1104" -> "t1105"[color=red weight=2]
+"i32 1" -> "t1105"
+"t1105" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t1104" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t1105" -> "_2"
+"_2" -> "t1106"[color=red weight=2]
+"t1105" -> "t1106"
+"t1106" -> "t1107"[color=red weight=2]
+"t1106" -> "t1107"
+"t1107" -> "t1108"[color=red weight=2]
+"t1104" -> "t1108"
+"t1108" -> "t1109"[color=red weight=2]
+"t1108" -> "t1109"
+"i32 0" -> "t1109"
+"i32 4" -> "t1109"
+"t1109" -> "t1110"[color=red weight=2]
+"t1109" -> "t1110"
+"i32 0" -> "t1110"
+"t1107" -> "t1110"
+"t1110" -> "t1111"[color=red weight=2]
+"t1103" -> "t1111"
+"t1111" -> "t1112"[color=red weight=2]
+"t1110" -> "t1112"
+"t1112" -> "_3"[color=red weight=2]
+"t1111" -> "_3"
+"t1112" -> "_3"
+"i64 1" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t1113"[color=red weight=2]
+"t1103" -> "t1113"
+"i32 0" -> "t1113"
+"i32 0" -> "t1113"
+"t1113" -> "t1114"[color=red weight=2]
+"t1113" -> "t1114"
+"t1114" -> "t1115"[color=red weight=2]
+"t1114" -> "t1115"
+"t1115" -> "_4"[color=red weight=2]
+"t1115" -> "_4"
+
+}

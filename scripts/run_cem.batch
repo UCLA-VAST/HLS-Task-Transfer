@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=active_batch
+#SBATCH -o %x.%J.out
+#SBATCH -e %x.%J.err
+#SBATCH -N1 --ntasks 1
+#SBATCH --cpus-per-task 31
+#SBATCH --gpus 1
+#SBATCH --mem 300G
+#SBATCH -p batch
+#SBATCH --qos low
+
+srun -N1 -n1 --gpus 1 bash /home/zijd/dse/software-gnn/scripts/run_multi_active.sh
+
+wait

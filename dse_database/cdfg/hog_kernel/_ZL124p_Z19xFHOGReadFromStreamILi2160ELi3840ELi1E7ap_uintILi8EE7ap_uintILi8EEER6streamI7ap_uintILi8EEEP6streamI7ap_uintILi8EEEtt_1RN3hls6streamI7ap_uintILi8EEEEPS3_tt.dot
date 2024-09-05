@@ -1,0 +1,54 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t223" [label="  %t223 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t224" [label="  %t224 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t225" [label="  %t225 = alloca i16, align 2"]
+"t226" [label="  %t226 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.2\"* %in_stream, %\"class.hls::stream.2\"** %t223, align 8"]
+"_2" [label="  store %\"class.hls::stream.2\"* %out_stream, %\"class.hls::stream.2\"** %t224, align 8"]
+"_3" [label="  store i16 %height, i16* %t225, align 2"]
+"_4" [label="  store i16 %width, i16* %t226, align 2"]
+"t227" [label="  %t227 = load %\"class.hls::stream.2\"** %t223, align 8"]
+"t228" [label="  %t228 = load %\"class.hls::stream.2\"** %t224, align 8"]
+"t229" [label="  %t229 = load i16* %t225, align 2"]
+"t230" [label="  %t230 = load i16* %t226, align 2"]
+"_5" [label="  call void @_ZL130p_Z25xFHOGReadFromStreamKernelILi2160ELi3840ELi1E7ap_uintILi8EE7ap_uintILi8EEER6streamI7ap_uintILi8EEEP6streamI7ap_uintILi8EEEtt_1RN3hls6streamI7ap_uintILi8EEEEPS3_tt(%\"class.hls::stream.2\"* %t227, %\"class.hls::stream.2\"* %t228, i16 zeroext %t229, i16 zeroext %t230)"]
+"_6" [label="  ret void"]
+"unk_block_1" -> "t223"[color=red]
+"i32 1" -> "t223"
+"t223" -> "t224"[color=red weight=2]
+"i32 1" -> "t224"
+"t224" -> "t225"[color=red weight=2]
+"i32 1" -> "t225"
+"t225" -> "t226"[color=red weight=2]
+"i32 1" -> "t226"
+"t226" -> "_1"[color=red weight=2]
+"in_stream" -> "_1"
+"t223" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"out_stream" -> "_2"
+"t224" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"height" -> "_3"
+"t225" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"width" -> "_4"
+"t226" -> "_4"
+"_4" -> "t227"[color=red weight=2]
+"t223" -> "t227"
+"t227" -> "t228"[color=red weight=2]
+"t224" -> "t228"
+"t228" -> "t229"[color=red weight=2]
+"t225" -> "t229"
+"t229" -> "t230"[color=red weight=2]
+"t226" -> "t230"
+"t230" -> "_5"[color=red weight=2]
+"t227" -> "_5"
+"t228" -> "_5"
+"t229" -> "_5"
+"t230" -> "_5"
+"_ZL130p_Z25xFHOGReadFromStreamKernelILi2160ELi3840ELi1E7ap_uintILi8EE7ap_uintILi8EEER6streamI7ap_uintILi8EEEP6streamI7ap_uintILi8EEEtt_1RN3hls6streamI7ap_uintILi8EEEEPS3_tt" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+
+}

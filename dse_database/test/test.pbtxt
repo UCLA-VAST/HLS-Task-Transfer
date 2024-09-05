@@ -1,0 +1,1213 @@
+node {
+  text: "[external]"
+}
+node {
+  text: "alloca"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%array.addr = alloca i32*, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "alloca"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%x.addr = alloca i32*, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "alloca"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%i = alloca i32, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "store"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "store i32* %array, i32** %array.addr, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32**"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32** %array.addr"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "store"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "store i32* %x, i32** %x.addr, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32**"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32** %x.addr"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "store"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "store i32 0, i32* %i, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %i"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "br"
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "br label %for.cond"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%0 = load i32, i32* %i, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %i"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "icmp"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%cmp = icmp slt i32 %0, 10"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %0"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "br"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "br i1 %cmp, label %for.body, label %for.end"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i1"
+  block: 1
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i1 %cmp"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%1 = load i32*, i32** %array.addr, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32**"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32** %array.addr"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%2 = load i32, i32* %i, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %i"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "sext"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%idxprom = sext i32 %2 to i64"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %2"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "getelementptr"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%arrayidx = getelementptr inbounds i32, i32* %1, i64 %idxprom"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %1"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i64"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i64 %idxprom"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%3 = load i32, i32* %arrayidx, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %arrayidx"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%4 = load i32*, i32** %x.addr, align 8"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32**"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32** %x.addr"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "getelementptr"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%arrayidx1 = getelementptr inbounds i32, i32* %4, i64 0"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %4"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%5 = load i32, i32* %arrayidx1, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %arrayidx1"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "add"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%add = add nsw i32 %5, %3"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %5"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %3"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "store"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "store i32 %add, i32* %arrayidx1, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %add"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %arrayidx1"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "br"
+  block: 2
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "br label %for.inc"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "load"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%6 = load i32, i32* %i, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %i"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "add"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "%inc = add nsw i32 %6, 1"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %6"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "store"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "store i32 %inc, i32* %i, align 4"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 %inc"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %i"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "br"
+  block: 3
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "br label %for.cond, !llvm.loop !2"
+        }
+      }
+    }
+  }
+}
+node {
+  text: "ret"
+  block: 4
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "ret void"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %x"
+        }
+      }
+    }
+  }
+}
+node {
+  type: VARIABLE
+  text: "i32*"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32* %array"
+        }
+      }
+    }
+  }
+}
+node {
+  type: CONSTANT
+  text: "i32"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 0"
+        }
+      }
+    }
+  }
+}
+node {
+  type: CONSTANT
+  text: "i32"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 10"
+        }
+      }
+    }
+  }
+}
+node {
+  type: CONSTANT
+  text: "i64"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i64 0"
+        }
+      }
+    }
+  }
+}
+node {
+  type: CONSTANT
+  text: "i32"
+  block: 5
+  features {
+    feature {
+      key: "full_text"
+      value {
+        bytes_list {
+          value: "i32 1"
+        }
+      }
+    }
+  }
+}
+edge {
+  source: 1
+  target: 2
+}
+edge {
+  source: 2
+  target: 3
+}
+edge {
+  source: 3
+  target: 4
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 5
+  target: 4
+}
+edge {
+  source: 4
+  target: 6
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 7
+  target: 6
+}
+edge {
+  source: 6
+  target: 8
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 9
+  target: 8
+}
+edge {
+  source: 8
+  target: 10
+}
+edge {
+  flow: DATA
+  source: 12
+  target: 11
+}
+edge {
+  source: 11
+  target: 13
+}
+edge {
+  flow: DATA
+  source: 14
+  target: 13
+}
+edge {
+  source: 13
+  target: 15
+}
+edge {
+  flow: DATA
+  source: 16
+  target: 15
+}
+edge {
+  flow: DATA
+  source: 18
+  target: 17
+}
+edge {
+  source: 17
+  target: 19
+}
+edge {
+  flow: DATA
+  source: 20
+  target: 19
+}
+edge {
+  source: 19
+  target: 21
+}
+edge {
+  flow: DATA
+  source: 22
+  target: 21
+}
+edge {
+  source: 21
+  target: 23
+}
+edge {
+  flow: DATA
+  source: 24
+  target: 23
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 25
+  target: 23
+}
+edge {
+  source: 23
+  target: 26
+}
+edge {
+  flow: DATA
+  source: 27
+  target: 26
+}
+edge {
+  source: 26
+  target: 28
+}
+edge {
+  flow: DATA
+  source: 29
+  target: 28
+}
+edge {
+  source: 28
+  target: 30
+}
+edge {
+  flow: DATA
+  source: 31
+  target: 30
+}
+edge {
+  source: 30
+  target: 32
+}
+edge {
+  flow: DATA
+  source: 33
+  target: 32
+}
+edge {
+  source: 32
+  target: 34
+}
+edge {
+  flow: DATA
+  source: 35
+  target: 34
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 36
+  target: 34
+}
+edge {
+  source: 34
+  target: 37
+}
+edge {
+  flow: DATA
+  source: 38
+  target: 37
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 39
+  target: 37
+}
+edge {
+  source: 37
+  target: 40
+}
+edge {
+  flow: DATA
+  source: 42
+  target: 41
+}
+edge {
+  source: 41
+  target: 43
+}
+edge {
+  flow: DATA
+  source: 44
+  target: 43
+}
+edge {
+  source: 43
+  target: 45
+}
+edge {
+  flow: DATA
+  source: 46
+  target: 45
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 47
+  target: 45
+}
+edge {
+  source: 45
+  target: 48
+}
+edge {
+  flow: DATA
+  source: 50
+  target: 6
+}
+edge {
+  flow: DATA
+  source: 51
+  target: 4
+}
+edge {
+  flow: DATA
+  source: 1
+  target: 5
+}
+edge {
+  flow: DATA
+  source: 2
+  target: 7
+}
+edge {
+  flow: DATA
+  source: 3
+  target: 9
+}
+edge {
+  flow: DATA
+  source: 3
+  target: 12
+}
+edge {
+  flow: DATA
+  source: 11
+  target: 14
+}
+edge {
+  flow: DATA
+  source: 13
+  target: 16
+}
+edge {
+  flow: DATA
+  source: 1
+  target: 18
+}
+edge {
+  flow: DATA
+  source: 3
+  target: 20
+}
+edge {
+  flow: DATA
+  source: 19
+  target: 22
+}
+edge {
+  flow: DATA
+  source: 17
+  target: 24
+}
+edge {
+  flow: DATA
+  source: 21
+  target: 25
+}
+edge {
+  flow: DATA
+  source: 23
+  target: 27
+}
+edge {
+  flow: DATA
+  source: 2
+  target: 29
+}
+edge {
+  flow: DATA
+  source: 28
+  target: 31
+}
+edge {
+  flow: DATA
+  source: 30
+  target: 33
+}
+edge {
+  flow: DATA
+  source: 32
+  target: 35
+}
+edge {
+  flow: DATA
+  source: 26
+  target: 36
+}
+edge {
+  flow: DATA
+  source: 34
+  target: 38
+}
+edge {
+  flow: DATA
+  source: 30
+  target: 39
+}
+edge {
+  flow: DATA
+  source: 3
+  target: 42
+}
+edge {
+  flow: DATA
+  source: 41
+  target: 44
+}
+edge {
+  flow: DATA
+  source: 43
+  target: 46
+}
+edge {
+  flow: DATA
+  source: 3
+  target: 47
+}
+edge {
+  source: 10
+  target: 11
+}
+edge {
+  source: 15
+  target: 17
+}
+edge {
+  source: 15
+  target: 49
+}
+edge {
+  source: 40
+  target: 41
+}
+edge {
+  source: 48
+  target: 11
+}
+edge {
+  flow: CALL
+  target: 1
+}
+edge {
+  flow: CALL
+  source: 49
+}
+edge {
+  flow: DATA
+  source: 52
+  target: 8
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 53
+  target: 13
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 54
+  target: 30
+}
+edge {
+  flow: DATA
+  source: 55
+  target: 1
+}
+edge {
+  flow: DATA
+  source: 55
+  target: 2
+}
+edge {
+  flow: DATA
+  source: 55
+  target: 3
+}
+edge {
+  flow: DATA
+  position: 1
+  source: 55
+  target: 43
+}
+function {
+  name: "reduction"
+}
+module {
+  name: "test.c"
+  features {
+    feature {
+      key: "llvm_data_layout"
+      value {
+        bytes_list {
+          value: "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+        }
+      }
+    }
+    feature {
+      key: "llvm_target_triple"
+      value {
+        bytes_list {
+          value: "x86_64-unknown-linux-gnu"
+        }
+      }
+    }
+  }
+}

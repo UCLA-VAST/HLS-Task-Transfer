@@ -1,0 +1,22 @@
+digraph "CFG for '_ZL21p_ZN2xf8Inverse8EhiPchiPc' function" {
+	label="CFG for '_ZL21p_ZN2xf8Inverse8EhiPchiPc' function";
+
+	Node0x33bb520 [shape=record,label="{%0:\l  %1 = alloca i16, align 2\l  %2 = alloca i8, align 1\l  %3 = alloca i32, align 4\l  %4 = alloca i8*, align 8\l  %val = alloca i32, align 4\l  %index = alloca i32, align 4\l  store i8 %x, i8* %2, align 1\l  store i32 %M, i32* %3, align 4\l  store i8* %N, i8** %4, align 8\l  %5 = load i32* %3, align 4\l  %6 = icmp eq i32 %5, 8\l  br i1 %6, label %7, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x33bb520:s0 -> Node0x33c8190;
+	Node0x33bb520:s1 -> Node0x33c81f0;
+	Node0x33c8190 [shape=record,label="{%7:\l\l  br label %10\l}"];
+	Node0x33c8190 -> Node0x33c8300;
+	Node0x33c81f0 [shape=record,label="{%8:\l\l  call void @__assert_fail(i8* getelementptr inbounds ([40 x i8]* @.str11, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str8, i32 0, i32 0), i32 356, i8* getelementptr inbounds ([65 x i8]* @__PRETTY_FUNCTION__._ZL21p_ZN2xf8Inverse8EhiPchiPc, i32 0, i32 0)) noreturn nounwind\l  unreachable\l}"];
+	Node0x33c8750 [shape=record,label="{%9:                                                  \l  br label %10\l}"];
+	Node0x33c8750 -> Node0x33c8300;
+	Node0x33c8300 [shape=record,label="{%10:\l\l  store i32 0, i32* %val, align 4\l  %11 = load i8* %2, align 1\l  %12 = zext i8 %11 to i32\l  %13 = icmp eq i32 %12, 0\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x33c8300:s0 -> Node0x33c8a50;
+	Node0x33c8300:s1 -> Node0x33c8ab0;
+	Node0x33c8a50 [shape=record,label="{%14:\l\l  %15 = load i16* getelementptr inbounds ([256 x i16]* @_ZN2xf13division_lut8E, i32 0, i64 0), align 2\l  store i16 %15, i16* %1\l  br label %26\l}"];
+	Node0x33c8a50 -> Node0x33c8de0;
+	Node0x33c8ab0 [shape=record,label="{%16:\l\l  %17 = load i8* %2, align 1\l  %18 = zext i8 %17 to i64\l  %19 = getelementptr inbounds [256 x i16]* @_ZN2xf13division_lut8E, i32 0, i64 %18\l  %20 = load i16* %19, align 2\l  %21 = zext i16 %20 to i32\l  store i32 %21, i32* %val, align 4\l  %22 = load i8** %4, align 8\l  store i8 15, i8* %22, align 1\l  br label %23\l}"];
+	Node0x33c8ab0 -> Node0x33c92d0;
+	Node0x33c92d0 [shape=record,label="{%23:\l\l  %24 = load i32* %val, align 4\l  %25 = trunc i32 %24 to i16\l  store i16 %25, i16* %1\l  br label %26\l}"];
+	Node0x33c92d0 -> Node0x33c8de0;
+	Node0x33c8de0 [shape=record,label="{%26:\l\l  %27 = load i16* %1\l  ret i16 %27\l}"];
+}

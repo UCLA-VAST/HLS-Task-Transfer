@@ -1,0 +1,28 @@
+digraph "CFG for '_ZL14p_ZN2xf4SqrtEjj' function" {
+	label="CFG for '_ZL14p_ZN2xf4SqrtEjj' function";
+
+	Node0x1953ef0 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  %i = alloca i32, align 4\l  %Q = alloca i16, align 2\l  %R = alloca i32, align 4\l  %tmp = alloca i32, align 4\l  %tmpQ = alloca i32, align 4\l  %tmpR = alloca i32, align 4\l  %_in_i = alloca i32, align 4\l  store i32 %D, i32* %1, align 4\l  store i32 0, i32* %R, align 4\l  store i16 0, i16* %Q, align 2\l  store i32 0, i32* %tmp, align 4\l  store i32 0, i32* %i, align 4\l  br label %2\l}"];
+	Node0x1953ef0 -> Node0x194bb80;
+	Node0x194bb80 [shape=record,label="{%2:\l\l  %3 = load i32* %i, align 4\l  %4 = icmp sle i32 %3, 15\l  br i1 %4, label %5, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x194bb80:s0 -> Node0x1954eb0;
+	Node0x194bb80:s1 -> Node0x1954f10;
+	Node0x1954eb0 [shape=record,label="{%5:\l\l  %6 = load i32* %i, align 4\l  %7 = mul nsw i32 -1, %6\l  %8 = add nsw i32 15, %7\l  store i32 %8, i32* %_in_i, align 4\l  %9 = load i32* %R, align 4\l  %10 = icmp sge i32 %9, 0\l  br i1 %10, label %11, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x1954eb0:s0 -> Node0x1955440;
+	Node0x1954eb0:s1 -> Node0x19554a0;
+	Node0x1955440 [shape=record,label="{%11:\l\l  %12 = load i32* %1, align 4\l  %13 = load i32* %_in_i, align 4\l  %14 = load i32* %_in_i, align 4\l  %15 = add nsw i32 %13, %14\l  %16 = lshr i32 %12, %15\l  store i32 %16, i32* %tmp, align 4\l  %17 = load i32* %tmp, align 4\l  %18 = and i32 %17, 3\l  store i32 %18, i32* %tmp, align 4\l  %19 = load i32* %R, align 4\l  %20 = shl i32 %19, 2\l  store i32 %20, i32* %tmpR, align 4\l  %21 = load i32* %tmpR, align 4\l  %22 = load i32* %tmp, align 4\l  %23 = or i32 %21, %22\l  store i32 %23, i32* %R, align 4\l  %24 = load i16* %Q, align 2\l  %25 = sext i16 %24 to i32\l  %26 = shl i32 %25, 2\l  store i32 %26, i32* %tmpQ, align 4\l  %27 = load i32* %tmpQ, align 4\l  %28 = or i32 %27, 1\l  store i32 %28, i32* %tmpQ, align 4\l  %29 = load i32* %R, align 4\l  %30 = load i32* %tmpQ, align 4\l  %31 = sub nsw i32 %29, %30\l  store i32 %31, i32* %R, align 4\l  br label %53\l}"];
+	Node0x1955440 -> Node0x1956390;
+	Node0x19554a0 [shape=record,label="{%32:\l\l  %33 = load i32* %1, align 4\l  %34 = load i32* %_in_i, align 4\l  %35 = load i32* %_in_i, align 4\l  %36 = add nsw i32 %34, %35\l  %37 = lshr i32 %33, %36\l  store i32 %37, i32* %tmp, align 4\l  %38 = load i32* %tmp, align 4\l  %39 = and i32 %38, 3\l  store i32 %39, i32* %tmp, align 4\l  %40 = load i32* %R, align 4\l  %41 = shl i32 %40, 2\l  store i32 %41, i32* %tmpR, align 4\l  %42 = load i32* %tmpR, align 4\l  %43 = load i32* %tmp, align 4\l  %44 = or i32 %42, %43\l  store i32 %44, i32* %R, align 4\l  %45 = load i16* %Q, align 2\l  %46 = sext i16 %45 to i32\l  %47 = shl i32 %46, 2\l  store i32 %47, i32* %tmpQ, align 4\l  %48 = load i32* %tmpQ, align 4\l  %49 = or i32 %48, 3\l  store i32 %49, i32* %tmpQ, align 4\l  %50 = load i32* %R, align 4\l  %51 = load i32* %tmpQ, align 4\l  %52 = add nsw i32 %50, %51\l  store i32 %52, i32* %R, align 4\l  br label %53\l}"];
+	Node0x19554a0 -> Node0x1956390;
+	Node0x1956390 [shape=record,label="{%53:\l\l  %54 = load i32* %R, align 4\l  %55 = icmp sge i32 %54, 0\l  br i1 %55, label %56, label %65\l|{<s0>T|<s1>F}}"];
+	Node0x1956390:s0 -> Node0x1957470;
+	Node0x1956390:s1 -> Node0x19574d0;
+	Node0x1957470 [shape=record,label="{%56:\l\l  %57 = load i16* %Q, align 2\l  %58 = sext i16 %57 to i32\l  %59 = shl i32 %58, 1\l  %60 = trunc i32 %59 to i16\l  store i16 %60, i16* %Q, align 2\l  %61 = load i16* %Q, align 2\l  %62 = sext i16 %61 to i32\l  %63 = or i32 %62, 1\l  %64 = trunc i32 %63 to i16\l  store i16 %64, i16* %Q, align 2\l  br label %73\l}"];
+	Node0x1957470 -> Node0x1957b20;
+	Node0x19574d0 [shape=record,label="{%65:\l\l  %66 = load i16* %Q, align 2\l  %67 = sext i16 %66 to i32\l  %68 = shl i32 %67, 1\l  %69 = trunc i32 %68 to i16\l  store i16 %69, i16* %Q, align 2\l  %70 = load i16* %Q, align 2\l  %71 = sext i16 %70 to i32\l  %72 = trunc i32 %71 to i16\l  store i16 %72, i16* %Q, align 2\l  br label %73\l}"];
+	Node0x19574d0 -> Node0x1957b20;
+	Node0x1957b20 [shape=record,label="{%73:\l\l  br label %74\l}"];
+	Node0x1957b20 -> Node0x1958130;
+	Node0x1958130 [shape=record,label="{%74:\l\l  %75 = load i32* %i, align 4\l  %76 = add nsw i32 %75, 1\l  store i32 %76, i32* %i, align 4\l  br label %2\l}"];
+	Node0x1958130 -> Node0x194bb80;
+	Node0x1954f10 [shape=record,label="{%77:\l\l  store i32 -1, i32* %i, align 4\l  %78 = load i16* %Q, align 2\l  %79 = sext i16 %78 to i32\l  ret i32 %79\l}"];
+}

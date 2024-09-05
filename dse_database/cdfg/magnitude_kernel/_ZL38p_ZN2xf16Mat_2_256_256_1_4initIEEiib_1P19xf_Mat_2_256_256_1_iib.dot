@@ -1,0 +1,180 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t524" [label="  %t524 = alloca %struct.xf_Mat_2_256_256_1_*, align 8"]
+"t525" [label="  %t525 = alloca i32, align 4"]
+"t526" [label="  %t526 = alloca i32, align 4"]
+"t527" [label="  %t527 = alloca i8, align 1"]
+"_1" [label="  store %struct.xf_Mat_2_256_256_1_* %this_, %struct.xf_Mat_2_256_256_1_** %t524, align 8"]
+"_2" [label="  store i32 %_rows, i32* %t525, align 4"]
+"_3" [label="  store i32 %_cols, i32* %t526, align 4"]
+"t528" [label="  %t528 = zext i1 %allocate to i8"]
+"_4" [label="  store i8 %t528, i8* %t527, align 1"]
+"t529" [label="  %t529 = load i32* %t525, align 4"]
+"t530" [label="  %t530 = icmp sgt i32 %t529, 0"]
+"_5" [label="  br i1 %t530, label %1, label %5"]
+"unk_block_1" -> "t524"[color=red]
+"i32 1" -> "t524"
+"t524" -> "t525"[color=red weight=2]
+"i32 1" -> "t525"
+"t525" -> "t526"[color=red weight=2]
+"i32 1" -> "t526"
+"t526" -> "t527"[color=red weight=2]
+"i32 1" -> "t527"
+"t527" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t524" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_rows" -> "_2"
+"t525" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_cols" -> "_3"
+"t526" -> "_3"
+"_3" -> "t528"[color=red weight=2]
+"allocate" -> "t528"
+"t528" -> "_4"[color=red weight=2]
+"t528" -> "_4"
+"t527" -> "_4"
+"_4" -> "t529"[color=red weight=2]
+"t525" -> "t529"
+"t529" -> "t530"[color=red weight=2]
+"t529" -> "t530"
+"i32 0" -> "t530"
+"t530" -> "_5"[color=red weight=2]
+"t530" -> "_5"
+"_5" -> ""[color=red]
+"_5" -> ""[color=red]
+
+"t531" [label="  %t531 = load i32* %t525, align 4"]
+"t532" [label="  %t532 = icmp sle i32 %t531, 256"]
+"_6" [label="  br i1 %t532, label %2, label %5"]
+"unk_block_2" -> "t531"[color=red]
+"t525" -> "t531"
+"t531" -> "t532"[color=red weight=2]
+"t531" -> "t532"
+"i32 256" -> "t532"
+"t532" -> "_6"[color=red weight=2]
+"t532" -> "_6"
+"_6" -> ""[color=red]
+"_6" -> ""[color=red]
+
+"t533" [label="  %t533 = load i32* %t526, align 4"]
+"t534" [label="  %t534 = icmp sgt i32 %t533, 0"]
+"_7" [label="  br i1 %t534, label %3, label %5"]
+"unk_block_3" -> "t533"[color=red]
+"t526" -> "t533"
+"t533" -> "t534"[color=red weight=2]
+"t533" -> "t534"
+"i32 0" -> "t534"
+"t534" -> "_7"[color=red weight=2]
+"t534" -> "_7"
+"_7" -> ""[color=red]
+"_7" -> ""[color=red]
+
+"t535" [label="  %t535 = load i32* %t526, align 4"]
+"t536" [label="  %t536 = icmp sle i32 %t535, 256"]
+"_8" [label="  br i1 %t536, label %4, label %5"]
+"unk_block_4" -> "t535"[color=red]
+"t526" -> "t535"
+"t535" -> "t536"[color=red weight=2]
+"t535" -> "t536"
+"i32 256" -> "t536"
+"t536" -> "_8"[color=red weight=2]
+"t536" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"_9" [label="  br label %7"]
+"unk_block_5" -> "_9"[color=red]
+"_9" -> ""[color=red]
+
+"_10" [label="  call void @__assert_fail(i8* getelementptr inbounds ([143 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([13 x i8]* @.str6, i32 0, i32 0), i32 517, i8* getelementptr inbounds ([90 x i8]* @__PRETTY_FUNCTION__._ZL38p_ZN2xf16Mat_2_256_256_1_4initIEEiib_1P19xf_Mat_2_256_256_1_iib, i32 0, i32 0)) noreturn nounwind"]
+"_11" [label="  unreachable"]
+"unk_block_6" -> "_10"[color=red]
+"i8* getelementptr inbounds ([143 x i8]* @.str5, i32 0, i32 0)" -> "_10"
+"i8* getelementptr inbounds ([13 x i8]* @.str6, i32 0, i32 0)" -> "_10"
+"i32 517" -> "_10"
+"i8* getelementptr inbounds ([90 x i8]* @__PRETTY_FUNCTION__._ZL38p_ZN2xf16Mat_2_256_256_1_4initIEEiib_1P19xf_Mat_2_256_256_1_iib, i32 0, i32 0)" -> "_10"
+"__assert_fail" -> "_10"
+"_10" -> "_11"[color=red weight=2]
+
+"_12" [label="  br label %7"]
+"unk_block_7" -> "_12"[color=red]
+"_12" -> ""[color=red]
+
+"t537" [label="  %t537 = load i32* %t525, align 4"]
+"t538" [label="  %t538 = load %struct.xf_Mat_2_256_256_1_** %t524, align 8"]
+"t539" [label="  %t539 = getelementptr inbounds %struct.xf_Mat_2_256_256_1_* %t538, i32 0, i32 1"]
+"_13" [label="  store i32 %t537, i32* %t539, align 4"]
+"t540" [label="  %t540 = load i32* %t526, align 4"]
+"t541" [label="  %t541 = load %struct.xf_Mat_2_256_256_1_** %t524, align 8"]
+"t542" [label="  %t542 = getelementptr inbounds %struct.xf_Mat_2_256_256_1_* %t541, i32 0, i32 2"]
+"_14" [label="  store i32 %t540, i32* %t542, align 4"]
+"t543" [label="  %t543 = load i32* %t525, align 4"]
+"t544" [label="  %t544 = load i32* %t526, align 4"]
+"t545" [label="  %t545 = ashr i32 %t544, 0"]
+"t546" [label="  %t546 = mul nsw i32 %t543, %t545"]
+"t547" [label="  %t547 = load %struct.xf_Mat_2_256_256_1_** %t524, align 8"]
+"t548" [label="  %t548 = getelementptr inbounds %struct.xf_Mat_2_256_256_1_* %t547, i32 0, i32 3"]
+"_15" [label="  store i32 %t546, i32* %t548, align 4"]
+"t549" [label="  %t549 = load i8* %t527, align 1"]
+"t550" [label="  %t550 = trunc i8 %t549 to i1"]
+"_16" [label="  br i1 %t550, label %8, label %9"]
+"unk_block_8" -> "t537"[color=red]
+"t525" -> "t537"
+"t537" -> "t538"[color=red weight=2]
+"t524" -> "t538"
+"t538" -> "t539"[color=red weight=2]
+"t538" -> "t539"
+"i32 0" -> "t539"
+"i32 1" -> "t539"
+"t539" -> "_13"[color=red weight=2]
+"t537" -> "_13"
+"t539" -> "_13"
+"_13" -> "t540"[color=red weight=2]
+"t526" -> "t540"
+"t540" -> "t541"[color=red weight=2]
+"t524" -> "t541"
+"t541" -> "t542"[color=red weight=2]
+"t541" -> "t542"
+"i32 0" -> "t542"
+"i32 2" -> "t542"
+"t542" -> "_14"[color=red weight=2]
+"t540" -> "_14"
+"t542" -> "_14"
+"_14" -> "t543"[color=red weight=2]
+"t525" -> "t543"
+"t543" -> "t544"[color=red weight=2]
+"t526" -> "t544"
+"t544" -> "t545"[color=red weight=2]
+"t544" -> "t545"
+"i32 0" -> "t545"
+"t545" -> "t546"[color=red weight=2]
+"t543" -> "t546"
+"t545" -> "t546"
+"t546" -> "t547"[color=red weight=2]
+"t524" -> "t547"
+"t547" -> "t548"[color=red weight=2]
+"t547" -> "t548"
+"i32 0" -> "t548"
+"i32 3" -> "t548"
+"t548" -> "_15"[color=red weight=2]
+"t546" -> "_15"
+"t548" -> "_15"
+"_15" -> "t549"[color=red weight=2]
+"t527" -> "t549"
+"t549" -> "t550"[color=red weight=2]
+"t549" -> "t550"
+"t550" -> "_16"[color=red weight=2]
+"t550" -> "_16"
+"_16" -> ""[color=red]
+"_16" -> ""[color=red]
+
+"_17" [label="  br label %9"]
+"unk_block_9" -> "_17"[color=red]
+"_17" -> ""[color=red]
+
+"_18" [label="  ret void"]
+"unk_block_10" -> "_18"[color=red]
+
+}

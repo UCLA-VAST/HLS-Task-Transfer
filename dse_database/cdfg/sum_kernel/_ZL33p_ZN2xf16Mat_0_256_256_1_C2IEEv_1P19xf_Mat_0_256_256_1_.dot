@@ -1,0 +1,24 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t13" [label="  %t13 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t13, align 8"]
+"t14" [label="  %t14 = load %struct.xf_Mat_0_256_256_1_** %t13, align 8"]
+"_2" [label="  call void @_ZL38p_ZN2xf16Mat_0_256_256_1_4initIEEiib_1P19xf_Mat_0_256_256_1_iib(%struct.xf_Mat_0_256_256_1_* %t14, i32 256, i32 256, i1 zeroext true)"]
+"_3" [label="  ret void"]
+"unk_block_1" -> "t13"[color=red]
+"i32 1" -> "t13"
+"t13" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t13" -> "_1"
+"_1" -> "t14"[color=red weight=2]
+"t13" -> "t14"
+"t14" -> "_2"[color=red weight=2]
+"t14" -> "_2"
+"i32 256" -> "_2"
+"i32 256" -> "_2"
+"i1 true" -> "_2"
+"_ZL38p_ZN2xf16Mat_0_256_256_1_4initIEEiib_1P19xf_Mat_0_256_256_1_iib" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '_GLOBAL__I_a' function" {
+	label="CFG for '_GLOBAL__I_a' function";
+
+	Node0x188c160 [shape=record,label="{%0:\l  call void @__cxx_global_var_init()\l  call void @__cxx_global_var_init1()\l  ret void\l}"];
+}

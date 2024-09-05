@@ -1,0 +1,174 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t3467" [label="  %t3467 = alloca %class.ap_uint.0*, align 8"]
+"t3468" [label="  %t3468 = alloca %class.ap_uint.0*, align 8"]
+"t3469" [label="  %t3469 = alloca i32, align 4"]
+"v" [label="  %v = alloca %class.ap_uint.0, align 1"]
+"shift" [label="  %shift = alloca i32, align 4"]
+"STEP" [label="  %STEP = alloca i32, align 4"]
+"i" [label="  %i = alloca i32, align 4"]
+"_1" [label="  store %class.ap_uint.0* %tmp_buf, %class.ap_uint.0** %t3467, align 8"]
+"_2" [label="  store %class.ap_uint.0* %val1, %class.ap_uint.0** %t3468, align 8"]
+"_3" [label="  store i32 %pos, i32* %t3469, align 4"]
+"t3470" [label="  %t3470 = load %class.ap_uint.0** %t3468, align 8"]
+"t3471" [label="  %t3471 = bitcast %class.ap_uint.0* %v to i8*"]
+"t3472" [label="  %t3472 = bitcast %class.ap_uint.0* %t3470 to i8*"]
+"_4" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t3471, i8* %t3472, i64 1, i32 1, i1 false)"]
+"_5" [label="  store i32 0, i32* %shift, align 4"]
+"_6" [label="  store i32 8, i32* %STEP, align 4"]
+"_7" [label="  br label %1"]
+"unk_block_1" -> "t3467"[color=red]
+"i32 1" -> "t3467"
+"t3467" -> "t3468"[color=red weight=2]
+"i32 1" -> "t3468"
+"t3468" -> "t3469"[color=red weight=2]
+"i32 1" -> "t3469"
+"t3469" -> "v"[color=red weight=2]
+"i32 1" -> "v"
+"v" -> "shift"[color=red weight=2]
+"i32 1" -> "shift"
+"shift" -> "STEP"[color=red weight=2]
+"i32 1" -> "STEP"
+"STEP" -> "i"[color=red weight=2]
+"i32 1" -> "i"
+"i" -> "_1"[color=red weight=2]
+"tmp_buf" -> "_1"
+"t3467" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"val1" -> "_2"
+"t3468" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"pos" -> "_3"
+"t3469" -> "_3"
+"_3" -> "t3470"[color=red weight=2]
+"t3468" -> "t3470"
+"t3470" -> "t3471"[color=red weight=2]
+"v" -> "t3471"
+"t3471" -> "t3472"[color=red weight=2]
+"t3470" -> "t3472"
+"t3472" -> "_4"[color=red weight=2]
+"t3471" -> "_4"
+"t3472" -> "_4"
+"i64 1" -> "_4"
+"i32 1" -> "_4"
+"i1 false" -> "_4"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"i32 0" -> "_5"
+"shift" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"i32 8" -> "_6"
+"STEP" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"_7" -> ""[color=red]
+
+"_8" [label="  store i32 0, i32* %i, align 4"]
+"_9" [label="  br label %2"]
+"unk_block_2" -> "_8"[color=red]
+"i32 0" -> "_8"
+"i" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"_9" -> ""[color=red]
+
+"t3473" [label="  %t3473 = load i32* %i, align 4"]
+"t3474" [label="  %t3474 = icmp slt i32 %t3473, 1"]
+"_10" [label="  br i1 %t3474, label %3, label %5"]
+"unk_block_3" -> "t3473"[color=red]
+"i" -> "t3473"
+"t3473" -> "t3474"[color=red weight=2]
+"t3473" -> "t3474"
+"i32 1" -> "t3474"
+"t3474" -> "_10"[color=red weight=2]
+"t3474" -> "_10"
+"_10" -> ""[color=red]
+"_10" -> ""[color=red]
+
+"t3475" [label="  %t3475 = load i32* %t3469, align 4"]
+"t3476" [label="  %t3476 = load i32* %i, align 4"]
+"t3477" [label="  %t3477 = add nsw i32 %t3475, %t3476"]
+"t3478" [label="  %t3478 = sext i32 %t3477 to i64"]
+"t3479" [label="  %t3479 = load %class.ap_uint.0** %t3467, align 8"]
+"t3480" [label="  %t3480 = getelementptr inbounds %class.ap_uint.0* %t3479, i64 %t3478"]
+"t3481" [label="  %t3481 = load i32* %shift, align 4"]
+"t3482" [label="  %t3482 = load i32* %STEP, align 4"]
+"t3483" [label="  %t3483 = add nsw i32 %t3481, %t3482"]
+"t3484" [label="  %t3484 = sub nsw i32 %t3483, 1"]
+"t3485" [label="  %t3485 = load i32* %shift, align 4"]
+"t3486" [label="  %t3486 = call i64* @_ZN7ap_uintILi8EE5rangeEii(%class.ap_uint.0* %v, i32 %t3484, i32 %t3485)"]
+"t3487" [label="  %t3487 = load i64* %t3486"]
+"t3488" [label="  %t3488 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSEm(%class.ap_uint.0* %t3480, i64 %t3487)"]
+"t3489" [label="  %t3489 = load i32* %shift, align 4"]
+"t3490" [label="  %t3490 = load i32* %STEP, align 4"]
+"t3491" [label="  %t3491 = add nsw i32 %t3489, %t3490"]
+"_11" [label="  store i32 %t3491, i32* %shift, align 4"]
+"_12" [label="  br label %4"]
+"unk_block_4" -> "t3475"[color=red]
+"t3469" -> "t3475"
+"t3475" -> "t3476"[color=red weight=2]
+"i" -> "t3476"
+"t3476" -> "t3477"[color=red weight=2]
+"t3475" -> "t3477"
+"t3476" -> "t3477"
+"t3477" -> "t3478"[color=red weight=2]
+"t3477" -> "t3478"
+"t3478" -> "t3479"[color=red weight=2]
+"t3467" -> "t3479"
+"t3479" -> "t3480"[color=red weight=2]
+"t3479" -> "t3480"
+"t3478" -> "t3480"
+"t3480" -> "t3481"[color=red weight=2]
+"shift" -> "t3481"
+"t3481" -> "t3482"[color=red weight=2]
+"STEP" -> "t3482"
+"t3482" -> "t3483"[color=red weight=2]
+"t3481" -> "t3483"
+"t3482" -> "t3483"
+"t3483" -> "t3484"[color=red weight=2]
+"t3483" -> "t3484"
+"i32 1" -> "t3484"
+"t3484" -> "t3485"[color=red weight=2]
+"shift" -> "t3485"
+"t3485" -> "t3486"[color=red weight=2]
+"v" -> "t3486"
+"t3484" -> "t3486"
+"t3485" -> "t3486"
+"_ZN7ap_uintILi8EE5rangeEii" -> "t3486"
+"t3486" -> "t3487"[color=red weight=2]
+"t3486" -> "t3487"
+"t3487" -> "t3488"[color=red weight=2]
+"t3480" -> "t3488"
+"t3487" -> "t3488"
+"_ZN7ap_uintILi8EEaSEm" -> "t3488"
+"t3488" -> "t3489"[color=red weight=2]
+"shift" -> "t3489"
+"t3489" -> "t3490"[color=red weight=2]
+"STEP" -> "t3490"
+"t3490" -> "t3491"[color=red weight=2]
+"t3489" -> "t3491"
+"t3490" -> "t3491"
+"t3491" -> "_11"[color=red weight=2]
+"t3491" -> "_11"
+"shift" -> "_11"
+"_11" -> "_12"[color=red weight=2]
+"_12" -> ""[color=red]
+
+"t3492" [label="  %t3492 = load i32* %i, align 4"]
+"t3493" [label="  %t3493 = add nsw i32 %t3492, 1"]
+"_13" [label="  store i32 %t3493, i32* %i, align 4"]
+"_14" [label="  br label %2"]
+"unk_block_5" -> "t3492"[color=red]
+"i" -> "t3492"
+"t3492" -> "t3493"[color=red weight=2]
+"t3492" -> "t3493"
+"i32 1" -> "t3493"
+"t3493" -> "_13"[color=red weight=2]
+"t3493" -> "_13"
+"i" -> "_13"
+"_13" -> "_14"[color=red weight=2]
+"_14" -> ""[color=red]
+
+"_15" [label="  ret void"]
+"unk_block_6" -> "_15"[color=red]
+
+}

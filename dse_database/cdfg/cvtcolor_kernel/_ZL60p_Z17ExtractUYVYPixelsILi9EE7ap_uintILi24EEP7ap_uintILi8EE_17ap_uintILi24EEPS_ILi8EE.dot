@@ -1,0 +1,187 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"pix" [label="  %pix = alloca %class.ap_uint.0, align 4"]
+"t354" [label="  %t354 = alloca i24"]
+"t355" [label="  %t355 = alloca %class.ap_uint.1*, align 8"]
+"k" [label="  %k = alloca i32, align 4"]
+"val" [label="  %val = alloca %class.ap_uint.0, align 1"]
+"pos" [label="  %pos = alloca i32, align 4"]
+"_in_k" [label="  %_in_k = alloca i32, align 4"]
+"p" [label="  %p = alloca i8, align 1"]
+"t356" [label="  %t356 = getelementptr %class.ap_uint.0* %pix, i32 0, i32 0"]
+"_1" [label="  store i24 %pix.coerce, i24* %t354"]
+"t357" [label="  %t357 = bitcast i24* %t354 to [3 x i8]*"]
+"t358" [label="  %t358 = load [3 x i8]* %t357, align 1"]
+"_2" [label="  store [3 x i8] %t358, [3 x i8]* %t356"]
+"_3" [label="  store %class.ap_uint.1* %buf, %class.ap_uint.1** %t355, align 8"]
+"_4" [label="  call void @_ZN7ap_uintILi24EEC1Ev(%class.ap_uint.0* %val)"]
+"_5" [label="  store i32 0, i32* %pos, align 4"]
+"t359" [label="  %t359 = call %class.ap_uint.0* @_ZN7ap_uintILi24EEaSERKS0_(%class.ap_uint.0* %val, %class.ap_uint.0* %pix)"]
+"_6" [label="  store i32 0, i32* %k, align 4"]
+"_7" [label="  br label %1"]
+"unk_block_1" -> "pix"[color=red]
+"i32 1" -> "pix"
+"pix" -> "t354"[color=red weight=2]
+"i32 1" -> "t354"
+"t354" -> "t355"[color=red weight=2]
+"i32 1" -> "t355"
+"t355" -> "k"[color=red weight=2]
+"i32 1" -> "k"
+"k" -> "val"[color=red weight=2]
+"i32 1" -> "val"
+"val" -> "pos"[color=red weight=2]
+"i32 1" -> "pos"
+"pos" -> "_in_k"[color=red weight=2]
+"i32 1" -> "_in_k"
+"_in_k" -> "p"[color=red weight=2]
+"i32 1" -> "p"
+"p" -> "t356"[color=red weight=2]
+"pix" -> "t356"
+"i32 0" -> "t356"
+"i32 0" -> "t356"
+"t356" -> "_1"[color=red weight=2]
+"pix.coerce" -> "_1"
+"t354" -> "_1"
+"_1" -> "t357"[color=red weight=2]
+"t354" -> "t357"
+"t357" -> "t358"[color=red weight=2]
+"t357" -> "t358"
+"t358" -> "_2"[color=red weight=2]
+"t358" -> "_2"
+"t356" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"buf" -> "_3"
+"t355" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"val" -> "_4"
+"_ZN7ap_uintILi24EEC1Ev" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"i32 0" -> "_5"
+"pos" -> "_5"
+"_5" -> "t359"[color=red weight=2]
+"val" -> "t359"
+"pix" -> "t359"
+"_ZN7ap_uintILi24EEaSERKS0_" -> "t359"
+"t359" -> "_6"[color=red weight=2]
+"i32 0" -> "_6"
+"k" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"_7" -> ""[color=red]
+
+"t360" [label="  %t360 = load i32* %k, align 4"]
+"t361" [label="  %t361 = icmp sle i32 %t360, 2"]
+"_8" [label="  br i1 %t361, label %2, label %4"]
+"unk_block_2" -> "t360"[color=red]
+"k" -> "t360"
+"t360" -> "t361"[color=red weight=2]
+"t360" -> "t361"
+"i32 2" -> "t361"
+"t361" -> "_8"[color=red weight=2]
+"t361" -> "_8"
+"_8" -> ""[color=red]
+"_8" -> ""[color=red]
+
+"t362" [label="  %t362 = load i32* %k, align 4"]
+"t363" [label="  %t363 = sext i32 %t362 to i64"]
+"t364" [label="  %t364 = mul nsw i64 8, %t363"]
+"t365" [label="  %t365 = add nsw i64 0, %t364"]
+"t366" [label="  %t366 = trunc i64 %t365 to i32"]
+"_9" [label="  store i32 %t366, i32* %_in_k, align 4"]
+"t367" [label="  %t367 = load i32* %_in_k, align 4"]
+"t368" [label="  %t368 = add nsw i32 %t367, 7"]
+"t369" [label="  %t369 = load i32* %_in_k, align 4"]
+"t370" [label="  %t370 = call i64* @_ZN7ap_uintILi24EE5rangeEii(%class.ap_uint.0* %val, i32 %t368, i32 %t369)"]
+"t371" [label="  %t371 = load i64* %t370"]
+"t372" [label="  %t372 = trunc i64 %t371 to i8"]
+"_10" [label="  store i8 %t372, i8* %p, align 1"]
+"t373" [label="  %t373 = load i32* %pos, align 4"]
+"t374" [label="  %t374 = add nsw i32 %t373, 1"]
+"_11" [label="  store i32 %t374, i32* %pos, align 4"]
+"t375" [label="  %t375 = sext i32 %t373 to i64"]
+"t376" [label="  %t376 = load %class.ap_uint.1** %t355, align 8"]
+"t377" [label="  %t377 = getelementptr inbounds %class.ap_uint.1* %t376, i64 %t375"]
+"t378" [label="  %t378 = load i8* %p, align 1"]
+"t379" [label="  %t379 = call %class.ap_uint.1* @_ZN7ap_uintILi8EEaSEh(%class.ap_uint.1* %t377, i8 zeroext %t378)"]
+"_12" [label="  br label %3"]
+"unk_block_3" -> "t362"[color=red]
+"k" -> "t362"
+"t362" -> "t363"[color=red weight=2]
+"t362" -> "t363"
+"t363" -> "t364"[color=red weight=2]
+"i64 8" -> "t364"
+"t363" -> "t364"
+"t364" -> "t365"[color=red weight=2]
+"i64 0" -> "t365"
+"t364" -> "t365"
+"t365" -> "t366"[color=red weight=2]
+"t365" -> "t366"
+"t366" -> "_9"[color=red weight=2]
+"t366" -> "_9"
+"_in_k" -> "_9"
+"_9" -> "t367"[color=red weight=2]
+"_in_k" -> "t367"
+"t367" -> "t368"[color=red weight=2]
+"t367" -> "t368"
+"i32 7" -> "t368"
+"t368" -> "t369"[color=red weight=2]
+"_in_k" -> "t369"
+"t369" -> "t370"[color=red weight=2]
+"val" -> "t370"
+"t368" -> "t370"
+"t369" -> "t370"
+"_ZN7ap_uintILi24EE5rangeEii" -> "t370"
+"t370" -> "t371"[color=red weight=2]
+"t370" -> "t371"
+"t371" -> "t372"[color=red weight=2]
+"t371" -> "t372"
+"t372" -> "_10"[color=red weight=2]
+"t372" -> "_10"
+"p" -> "_10"
+"_10" -> "t373"[color=red weight=2]
+"pos" -> "t373"
+"t373" -> "t374"[color=red weight=2]
+"t373" -> "t374"
+"i32 1" -> "t374"
+"t374" -> "_11"[color=red weight=2]
+"t374" -> "_11"
+"pos" -> "_11"
+"_11" -> "t375"[color=red weight=2]
+"t373" -> "t375"
+"t375" -> "t376"[color=red weight=2]
+"t355" -> "t376"
+"t376" -> "t377"[color=red weight=2]
+"t376" -> "t377"
+"t375" -> "t377"
+"t377" -> "t378"[color=red weight=2]
+"p" -> "t378"
+"t378" -> "t379"[color=red weight=2]
+"t377" -> "t379"
+"t378" -> "t379"
+"_ZN7ap_uintILi8EEaSEh" -> "t379"
+"t379" -> "_12"[color=red weight=2]
+"_12" -> ""[color=red]
+
+"t380" [label="  %t380 = load i32* %k, align 4"]
+"t381" [label="  %t381 = add nsw i32 %t380, 1"]
+"_13" [label="  store i32 %t381, i32* %k, align 4"]
+"_14" [label="  br label %1"]
+"unk_block_4" -> "t380"[color=red]
+"k" -> "t380"
+"t380" -> "t381"[color=red weight=2]
+"t380" -> "t381"
+"i32 1" -> "t381"
+"t381" -> "_13"[color=red weight=2]
+"t381" -> "_13"
+"k" -> "_13"
+"_13" -> "_14"[color=red weight=2]
+"_14" -> ""[color=red]
+
+"_15" [label="  store i32 24, i32* %k, align 4"]
+"_16" [label="  ret void"]
+"unk_block_5" -> "_15"[color=red]
+"i32 24" -> "_15"
+"k" -> "_15"
+"_15" -> "_16"[color=red weight=2]
+
+}

@@ -1,0 +1,69 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t175" [label="  %t175 = alloca %class.ap_uint.0, align 1"]
+"t176" [label="  %t176 = alloca %struct.xf_Mat_0_1080_1920_1_*, align 8"]
+"t177" [label="  %t177 = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_Mat_0_1080_1920_1_* %this_, %struct.xf_Mat_0_1080_1920_1_** %t176, align 8"]
+"_2" [label="  store i32 %index, i32* %t177, align 4"]
+"t178" [label="  %t178 = load i32* %t177, align 4"]
+"t179" [label="  %t179 = sext i32 %t178 to i64"]
+"t180" [label="  %t180 = load %struct.xf_Mat_0_1080_1920_1_** %t176, align 8"]
+"t181" [label="  %t181 = getelementptr inbounds %struct.xf_Mat_0_1080_1920_1_* %t180, i32 0, i32 4"]
+"t182" [label="  %t182 = getelementptr inbounds [2073600 x %class.ap_uint.0]* %t181, i32 0, i64 %t179"]
+"t183" [label="  %t183 = bitcast %class.ap_uint.0* %t175 to i8*"]
+"t184" [label="  %t184 = bitcast %class.ap_uint.0* %t182 to i8*"]
+"_3" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t183, i8* %t184, i64 1, i32 1, i1 false)"]
+"t185" [label="  %t185 = getelementptr %class.ap_uint.0* %t175, i32 0, i32 0"]
+"t186" [label="  %t186 = bitcast [1 x i8]* %t185 to i8*"]
+"t187" [label="  %t187 = load i8* %t186, align 1"]
+"_4" [label="  ret i8 %t187"]
+"unk_block_1" -> "t175"[color=red]
+"i32 1" -> "t175"
+"t175" -> "t176"[color=red weight=2]
+"i32 1" -> "t176"
+"t176" -> "t177"[color=red weight=2]
+"i32 1" -> "t177"
+"t177" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t176" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t177" -> "_2"
+"_2" -> "t178"[color=red weight=2]
+"t177" -> "t178"
+"t178" -> "t179"[color=red weight=2]
+"t178" -> "t179"
+"t179" -> "t180"[color=red weight=2]
+"t176" -> "t180"
+"t180" -> "t181"[color=red weight=2]
+"t180" -> "t181"
+"i32 0" -> "t181"
+"i32 4" -> "t181"
+"t181" -> "t182"[color=red weight=2]
+"t181" -> "t182"
+"i32 0" -> "t182"
+"t179" -> "t182"
+"t182" -> "t183"[color=red weight=2]
+"t175" -> "t183"
+"t183" -> "t184"[color=red weight=2]
+"t182" -> "t184"
+"t184" -> "_3"[color=red weight=2]
+"t183" -> "_3"
+"t184" -> "_3"
+"i64 1" -> "_3"
+"i32 1" -> "_3"
+"i1 false" -> "_3"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_3"
+"_3" -> "t185"[color=red weight=2]
+"t175" -> "t185"
+"i32 0" -> "t185"
+"i32 0" -> "t185"
+"t185" -> "t186"[color=red weight=2]
+"t185" -> "t186"
+"t186" -> "t187"[color=red weight=2]
+"t186" -> "t187"
+"t187" -> "_4"[color=red weight=2]
+"t187" -> "_4"
+
+}

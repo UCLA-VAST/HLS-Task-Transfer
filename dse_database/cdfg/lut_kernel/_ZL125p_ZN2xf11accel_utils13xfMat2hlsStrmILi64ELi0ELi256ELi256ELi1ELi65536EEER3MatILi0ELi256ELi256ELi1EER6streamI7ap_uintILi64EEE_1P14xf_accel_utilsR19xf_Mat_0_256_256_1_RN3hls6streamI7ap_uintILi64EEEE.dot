@@ -1,0 +1,393 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t118" [label="  %t118 = alloca %struct.xf_accel_utils*, align 8"]
+"t119" [label="  %t119 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t120" [label="  %t120 = alloca %\"class.hls::stream\"*, align 8"]
+"rows" [label="  %rows = alloca i32, align 4"]
+"cols" [label="  %cols = alloca i32, align 4"]
+"loop_count" [label="  %loop_count = alloca i32, align 4"]
+"bits_to_add" [label="  %bits_to_add = alloca i32, align 4"]
+"N_size" [label="  %N_size = alloca i32, align 4"]
+"r" [label="  %r = alloca %class.ap_uint, align 1"]
+"in" [label="  %in = alloca %class.ap_uint.0, align 1"]
+"i" [label="  %i = alloca i32, align 4"]
+"t121" [label="  %t121 = alloca %class.ap_uint.0, align 1"]
+"_1" [label="  store %struct.xf_accel_utils* %this_, %struct.xf_accel_utils** %t118, align 8"]
+"_2" [label="  store %struct.xf_Mat_0_256_256_1_* %srcMat, %struct.xf_Mat_0_256_256_1_** %t119, align 8"]
+"_3" [label="  store %\"class.hls::stream\"* %dstStrm, %\"class.hls::stream\"** %t120, align 8"]
+"t122" [label="  %t122 = load %struct.xf_Mat_0_256_256_1_** %t119, align 8"]
+"t123" [label="  %t123 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t122, i32 0, i32 1"]
+"t124" [label="  %t124 = load i32* %t123, align 4"]
+"_4" [label="  store i32 %t124, i32* %rows, align 4"]
+"t125" [label="  %t125 = load %struct.xf_Mat_0_256_256_1_** %t119, align 8"]
+"t126" [label="  %t126 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t125, i32 0, i32 2"]
+"t127" [label="  %t127 = load i32* %t126, align 4"]
+"_5" [label="  store i32 %t127, i32* %cols, align 4"]
+"t128" [label="  %t128 = load i32* %rows, align 4"]
+"t129" [label="  %t129 = load i32* %cols, align 4"]
+"t130" [label="  %t130 = mul nsw i32 %t128, %t129"]
+"t131" [label="  %t131 = sdiv i32 %t130, 1"]
+"_6" [label="  store i32 %t131, i32* %loop_count, align 4"]
+"_7" [label="  store i32 64, i32* %bits_to_add, align 4"]
+"_8" [label="  store i32 8, i32* %N_size, align 4"]
+"_9" [label="  call void @_ZN7ap_uintILi64EEC1Ev(%class.ap_uint* %r)"]
+"_10" [label="  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %in)"]
+"_11" [label="  br label %1"]
+"unk_block_1" -> "t118"[color=red]
+"i32 1" -> "t118"
+"t118" -> "t119"[color=red weight=2]
+"i32 1" -> "t119"
+"t119" -> "t120"[color=red weight=2]
+"i32 1" -> "t120"
+"t120" -> "rows"[color=red weight=2]
+"i32 1" -> "rows"
+"rows" -> "cols"[color=red weight=2]
+"i32 1" -> "cols"
+"cols" -> "loop_count"[color=red weight=2]
+"i32 1" -> "loop_count"
+"loop_count" -> "bits_to_add"[color=red weight=2]
+"i32 1" -> "bits_to_add"
+"bits_to_add" -> "N_size"[color=red weight=2]
+"i32 1" -> "N_size"
+"N_size" -> "r"[color=red weight=2]
+"i32 1" -> "r"
+"r" -> "in"[color=red weight=2]
+"i32 1" -> "in"
+"in" -> "i"[color=red weight=2]
+"i32 1" -> "i"
+"i" -> "t121"[color=red weight=2]
+"i32 1" -> "t121"
+"t121" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t118" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"srcMat" -> "_2"
+"t119" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"dstStrm" -> "_3"
+"t120" -> "_3"
+"_3" -> "t122"[color=red weight=2]
+"t119" -> "t122"
+"t122" -> "t123"[color=red weight=2]
+"t122" -> "t123"
+"i32 0" -> "t123"
+"i32 1" -> "t123"
+"t123" -> "t124"[color=red weight=2]
+"t123" -> "t124"
+"t124" -> "_4"[color=red weight=2]
+"t124" -> "_4"
+"rows" -> "_4"
+"_4" -> "t125"[color=red weight=2]
+"t119" -> "t125"
+"t125" -> "t126"[color=red weight=2]
+"t125" -> "t126"
+"i32 0" -> "t126"
+"i32 2" -> "t126"
+"t126" -> "t127"[color=red weight=2]
+"t126" -> "t127"
+"t127" -> "_5"[color=red weight=2]
+"t127" -> "_5"
+"cols" -> "_5"
+"_5" -> "t128"[color=red weight=2]
+"rows" -> "t128"
+"t128" -> "t129"[color=red weight=2]
+"cols" -> "t129"
+"t129" -> "t130"[color=red weight=2]
+"t128" -> "t130"
+"t129" -> "t130"
+"t130" -> "t131"[color=red weight=2]
+"t130" -> "t131"
+"i32 1" -> "t131"
+"t131" -> "_6"[color=red weight=2]
+"t131" -> "_6"
+"loop_count" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"i32 64" -> "_7"
+"bits_to_add" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"i32 8" -> "_8"
+"N_size" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+"r" -> "_9"
+"_ZN7ap_uintILi64EEC1Ev" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+"in" -> "_10"
+"_ZN7ap_uintILi8EEC1Ev" -> "_10"
+"_10" -> "_11"[color=red weight=2]
+"_11" -> ""[color=red]
+
+"_12" [label="  store i32 0, i32* %i, align 4"]
+"_13" [label="  br label %2"]
+"unk_block_2" -> "_12"[color=red]
+"i32 0" -> "_12"
+"i" -> "_12"
+"_12" -> "_13"[color=red weight=2]
+"_13" -> ""[color=red]
+
+"t132" [label="  %t132 = load i32* %i, align 4"]
+"t133" [label="  %t133 = load i32* %loop_count, align 4"]
+"t134" [label="  %t134 = icmp slt i32 %t132, %t133"]
+"_14" [label="  br i1 %t134, label %3, label %10"]
+"unk_block_3" -> "t132"[color=red]
+"i" -> "t132"
+"t132" -> "t133"[color=red weight=2]
+"loop_count" -> "t133"
+"t133" -> "t134"[color=red weight=2]
+"t132" -> "t134"
+"t133" -> "t134"
+"t134" -> "_14"[color=red weight=2]
+"t134" -> "_14"
+"_14" -> ""[color=red]
+"_14" -> ""[color=red]
+
+"t135" [label="  %t135 = load %struct.xf_Mat_0_256_256_1_** %t119, align 8"]
+"t136" [label="  %t136 = load i32* %i, align 4"]
+"t137" [label="  %t137 = call i8 @_ZL36p_ZN2xf16Mat_0_256_256_1_4readIEEi_1P19xf_Mat_0_256_256_1_i(%struct.xf_Mat_0_256_256_1_* %t135, i32 %t136)"]
+"t138" [label="  %t138 = getelementptr %class.ap_uint.0* %t121, i32 0, i32 0"]
+"t139" [label="  %t139 = bitcast [1 x i8]* %t138 to i8*"]
+"_15" [label="  store i8 %t137, i8* %t139, align 1"]
+"t140" [label="  %t140 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSERKS0_(%class.ap_uint.0* %in, %class.ap_uint.0* %t121)"]
+"t141" [label="  %t141 = load i32* %bits_to_add, align 4"]
+"t142" [label="  %t142 = icmp sle i32 %t141, 8"]
+"_16" [label="  br i1 %t142, label %4, label %7"]
+"unk_block_4" -> "t135"[color=red]
+"t119" -> "t135"
+"t135" -> "t136"[color=red weight=2]
+"i" -> "t136"
+"t136" -> "t137"[color=red weight=2]
+"t135" -> "t137"
+"t136" -> "t137"
+"_ZL36p_ZN2xf16Mat_0_256_256_1_4readIEEi_1P19xf_Mat_0_256_256_1_i" -> "t137"
+"t137" -> "t138"[color=red weight=2]
+"t121" -> "t138"
+"i32 0" -> "t138"
+"i32 0" -> "t138"
+"t138" -> "t139"[color=red weight=2]
+"t138" -> "t139"
+"t139" -> "_15"[color=red weight=2]
+"t137" -> "_15"
+"t139" -> "_15"
+"_15" -> "t140"[color=red weight=2]
+"in" -> "t140"
+"t121" -> "t140"
+"_ZN7ap_uintILi8EEaSERKS0_" -> "t140"
+"t140" -> "t141"[color=red weight=2]
+"bits_to_add" -> "t141"
+"t141" -> "t142"[color=red weight=2]
+"t141" -> "t142"
+"i32 8" -> "t142"
+"t142" -> "_16"[color=red weight=2]
+"t142" -> "_16"
+"_16" -> ""[color=red]
+"_16" -> ""[color=red]
+
+"t143" [label="  %t143 = load i32* %bits_to_add, align 4"]
+"t144" [label="  %t144 = sub nsw i32 %t143, 1"]
+"t145" [label="  %t145 = call i64* @_ZN7ap_uintILi8EE5rangeEii(%class.ap_uint.0* %in, i32 %t144, i32 0)"]
+"t146" [label="  %t146 = load i64* %t145"]
+"t147" [label="  %t147 = load i32* %bits_to_add, align 4"]
+"t148" [label="  %t148 = sub nsw i32 64, %t147"]
+"t149" [label="  %t149 = call i64* @_ZN7ap_uintILi64EE5rangeEii(%class.ap_uint* %r, i32 63, i32 %t148)"]
+"_17" [label="  store i64 %t146, i64* %t149"]
+"t150" [label="  %t150 = load %\"class.hls::stream\"** %t120, align 8"]
+"_18" [label="  call void @_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_(%\"class.hls::stream\"* %t150, %class.ap_uint* %r)"]
+"t151" [label="  %t151 = load i32* %bits_to_add, align 4"]
+"t152" [label="  %t152 = icmp ne i32 %t151, 8"]
+"_19" [label="  br i1 %t152, label %5, label %6"]
+"unk_block_5" -> "t143"[color=red]
+"bits_to_add" -> "t143"
+"t143" -> "t144"[color=red weight=2]
+"t143" -> "t144"
+"i32 1" -> "t144"
+"t144" -> "t145"[color=red weight=2]
+"in" -> "t145"
+"t144" -> "t145"
+"i32 0" -> "t145"
+"_ZN7ap_uintILi8EE5rangeEii" -> "t145"
+"t145" -> "t146"[color=red weight=2]
+"t145" -> "t146"
+"t146" -> "t147"[color=red weight=2]
+"bits_to_add" -> "t147"
+"t147" -> "t148"[color=red weight=2]
+"i32 64" -> "t148"
+"t147" -> "t148"
+"t148" -> "t149"[color=red weight=2]
+"r" -> "t149"
+"i32 63" -> "t149"
+"t148" -> "t149"
+"_ZN7ap_uintILi64EE5rangeEii" -> "t149"
+"t149" -> "_17"[color=red weight=2]
+"t146" -> "_17"
+"t149" -> "_17"
+"_17" -> "t150"[color=red weight=2]
+"t120" -> "t150"
+"t150" -> "_18"[color=red weight=2]
+"t150" -> "_18"
+"r" -> "_18"
+"_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_" -> "_18"
+"_18" -> "t151"[color=red weight=2]
+"bits_to_add" -> "t151"
+"t151" -> "t152"[color=red weight=2]
+"t151" -> "t152"
+"i32 8" -> "t152"
+"t152" -> "_19"[color=red weight=2]
+"t152" -> "_19"
+"_19" -> ""[color=red]
+"_19" -> ""[color=red]
+
+"t153" [label="  %t153 = load i32* %bits_to_add, align 4"]
+"t154" [label="  %t154 = call i64* @_ZN7ap_uintILi8EE5rangeEii(%class.ap_uint.0* %in, i32 7, i32 %t153)"]
+"t155" [label="  %t155 = load i64* %t154"]
+"t156" [label="  %t156 = load i32* %bits_to_add, align 4"]
+"t157" [label="  %t157 = sub nsw i32 8, %t156"]
+"t158" [label="  %t158 = sub nsw i32 %t157, 1"]
+"t159" [label="  %t159 = call i64* @_ZN7ap_uintILi64EE5rangeEii(%class.ap_uint* %r, i32 %t158, i32 0)"]
+"_20" [label="  store i64 %t155, i64* %t159"]
+"_21" [label="  br label %6"]
+"unk_block_6" -> "t153"[color=red]
+"bits_to_add" -> "t153"
+"t153" -> "t154"[color=red weight=2]
+"in" -> "t154"
+"i32 7" -> "t154"
+"t153" -> "t154"
+"_ZN7ap_uintILi8EE5rangeEii" -> "t154"
+"t154" -> "t155"[color=red weight=2]
+"t154" -> "t155"
+"t155" -> "t156"[color=red weight=2]
+"bits_to_add" -> "t156"
+"t156" -> "t157"[color=red weight=2]
+"i32 8" -> "t157"
+"t156" -> "t157"
+"t157" -> "t158"[color=red weight=2]
+"t157" -> "t158"
+"i32 1" -> "t158"
+"t158" -> "t159"[color=red weight=2]
+"r" -> "t159"
+"t158" -> "t159"
+"i32 0" -> "t159"
+"_ZN7ap_uintILi64EE5rangeEii" -> "t159"
+"t159" -> "_20"[color=red weight=2]
+"t155" -> "_20"
+"t159" -> "_20"
+"_20" -> "_21"[color=red weight=2]
+"_21" -> ""[color=red]
+
+"t160" [label="  %t160 = load i32* %bits_to_add, align 4"]
+"t161" [label="  %t161 = sub nsw i32 8, %t160"]
+"t162" [label="  %t162 = sub nsw i32 64, %t161"]
+"_22" [label="  store i32 %t162, i32* %bits_to_add, align 4"]
+"_23" [label="  br label %8"]
+"unk_block_7" -> "t160"[color=red]
+"bits_to_add" -> "t160"
+"t160" -> "t161"[color=red weight=2]
+"i32 8" -> "t161"
+"t160" -> "t161"
+"t161" -> "t162"[color=red weight=2]
+"i32 64" -> "t162"
+"t161" -> "t162"
+"t162" -> "_22"[color=red weight=2]
+"t162" -> "_22"
+"bits_to_add" -> "_22"
+"_22" -> "_23"[color=red weight=2]
+"_23" -> ""[color=red]
+
+"t163" [label="  %t163 = call i64 @_ZNK7ap_uintILi8EEcvmEv(%class.ap_uint.0* %in)"]
+"t164" [label="  %t164 = load i32* %bits_to_add, align 4"]
+"t165" [label="  %t165 = sub nsw i32 64, %t164"]
+"t166" [label="  %t166 = add nsw i32 %t165, 8"]
+"t167" [label="  %t167 = sub nsw i32 %t166, 1"]
+"t168" [label="  %t168 = load i32* %bits_to_add, align 4"]
+"t169" [label="  %t169 = sub nsw i32 64, %t168"]
+"t170" [label="  %t170 = call i64* @_ZN7ap_uintILi64EE5rangeEii(%class.ap_uint* %r, i32 %t167, i32 %t169)"]
+"_24" [label="  store i64 %t163, i64* %t170"]
+"t171" [label="  %t171 = load i32* %bits_to_add, align 4"]
+"t172" [label="  %t172 = sub nsw i32 %t171, 8"]
+"_25" [label="  store i32 %t172, i32* %bits_to_add, align 4"]
+"_26" [label="  br label %8"]
+"unk_block_8" -> "t163"[color=red]
+"in" -> "t163"
+"_ZNK7ap_uintILi8EEcvmEv" -> "t163"
+"t163" -> "t164"[color=red weight=2]
+"bits_to_add" -> "t164"
+"t164" -> "t165"[color=red weight=2]
+"i32 64" -> "t165"
+"t164" -> "t165"
+"t165" -> "t166"[color=red weight=2]
+"t165" -> "t166"
+"i32 8" -> "t166"
+"t166" -> "t167"[color=red weight=2]
+"t166" -> "t167"
+"i32 1" -> "t167"
+"t167" -> "t168"[color=red weight=2]
+"bits_to_add" -> "t168"
+"t168" -> "t169"[color=red weight=2]
+"i32 64" -> "t169"
+"t168" -> "t169"
+"t169" -> "t170"[color=red weight=2]
+"r" -> "t170"
+"t167" -> "t170"
+"t169" -> "t170"
+"_ZN7ap_uintILi64EE5rangeEii" -> "t170"
+"t170" -> "_24"[color=red weight=2]
+"t163" -> "_24"
+"t170" -> "_24"
+"_24" -> "t171"[color=red weight=2]
+"bits_to_add" -> "t171"
+"t171" -> "t172"[color=red weight=2]
+"t171" -> "t172"
+"i32 8" -> "t172"
+"t172" -> "_25"[color=red weight=2]
+"t172" -> "_25"
+"bits_to_add" -> "_25"
+"_25" -> "_26"[color=red weight=2]
+"_26" -> ""[color=red]
+
+"_27" [label="  br label %9"]
+"unk_block_9" -> "_27"[color=red]
+"_27" -> ""[color=red]
+
+"t173" [label="  %t173 = load i32* %i, align 4"]
+"t174" [label="  %t174 = add nsw i32 %t173, 1"]
+"_28" [label="  store i32 %t174, i32* %i, align 4"]
+"_29" [label="  br label %2"]
+"unk_block_10" -> "t173"[color=red]
+"i" -> "t173"
+"t173" -> "t174"[color=red weight=2]
+"t173" -> "t174"
+"i32 1" -> "t174"
+"t174" -> "_28"[color=red weight=2]
+"t174" -> "_28"
+"i" -> "_28"
+"_28" -> "_29"[color=red weight=2]
+"_29" -> ""[color=red]
+
+"t175" [label="  %t175 = load i32* %bits_to_add, align 4"]
+"t176" [label="  %t176 = icmp ne i32 %t175, 64"]
+"_30" [label="  br i1 %t176, label %11, label %12"]
+"unk_block_11" -> "t175"[color=red]
+"bits_to_add" -> "t175"
+"t175" -> "t176"[color=red weight=2]
+"t175" -> "t176"
+"i32 64" -> "t176"
+"t176" -> "_30"[color=red weight=2]
+"t176" -> "_30"
+"_30" -> ""[color=red]
+"_30" -> ""[color=red]
+
+"t177" [label="  %t177 = load %\"class.hls::stream\"** %t120, align 8"]
+"_31" [label="  call void @_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_(%\"class.hls::stream\"* %t177, %class.ap_uint* %r)"]
+"_32" [label="  br label %12"]
+"unk_block_12" -> "t177"[color=red]
+"t120" -> "t177"
+"t177" -> "_31"[color=red weight=2]
+"t177" -> "_31"
+"r" -> "_31"
+"_ZN3hls6streamI7ap_uintILi64EEE5writeERKS2_" -> "_31"
+"_31" -> "_32"[color=red weight=2]
+"_32" -> ""[color=red]
+
+"_33" [label="  ret void"]
+"unk_block_13" -> "_33"[color=red]
+
+}

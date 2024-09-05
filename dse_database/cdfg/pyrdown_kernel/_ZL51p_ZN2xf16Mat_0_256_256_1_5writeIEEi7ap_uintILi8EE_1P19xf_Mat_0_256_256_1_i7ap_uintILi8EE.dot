@@ -1,0 +1,60 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t249" [label="  %t249 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t250" [label="  %t250 = alloca i32, align 4"]
+"val" [label="  %val = alloca %class.ap_uint.0, align 1"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %this_, %struct.xf_Mat_0_256_256_1_** %t249, align 8"]
+"_2" [label="  store i32 %index, i32* %t250, align 4"]
+"t251" [label="  %t251 = getelementptr %class.ap_uint.0* %val, i32 0, i32 0"]
+"t252" [label="  %t252 = bitcast [1 x i8]* %t251 to i8*"]
+"_3" [label="  store i8 %val.coerce, i8* %t252, align 1"]
+"t253" [label="  %t253 = load i32* %t250, align 4"]
+"t254" [label="  %t254 = sext i32 %t253 to i64"]
+"t255" [label="  %t255 = load %struct.xf_Mat_0_256_256_1_** %t249, align 8"]
+"t256" [label="  %t256 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t255, i32 0, i32 4"]
+"t257" [label="  %t257 = getelementptr inbounds [65536 x %class.ap_uint.0]* %t256, i32 0, i64 %t254"]
+"t258" [label="  %t258 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSERKS0_(%class.ap_uint.0* %t257, %class.ap_uint.0* %val)"]
+"_4" [label="  ret void"]
+"unk_block_1" -> "t249"[color=red]
+"i32 1" -> "t249"
+"t249" -> "t250"[color=red weight=2]
+"i32 1" -> "t250"
+"t250" -> "val"[color=red weight=2]
+"i32 1" -> "val"
+"val" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t249" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t250" -> "_2"
+"_2" -> "t251"[color=red weight=2]
+"val" -> "t251"
+"i32 0" -> "t251"
+"i32 0" -> "t251"
+"t251" -> "t252"[color=red weight=2]
+"t251" -> "t252"
+"t252" -> "_3"[color=red weight=2]
+"val.coerce" -> "_3"
+"t252" -> "_3"
+"_3" -> "t253"[color=red weight=2]
+"t250" -> "t253"
+"t253" -> "t254"[color=red weight=2]
+"t253" -> "t254"
+"t254" -> "t255"[color=red weight=2]
+"t249" -> "t255"
+"t255" -> "t256"[color=red weight=2]
+"t255" -> "t256"
+"i32 0" -> "t256"
+"i32 4" -> "t256"
+"t256" -> "t257"[color=red weight=2]
+"t256" -> "t257"
+"i32 0" -> "t257"
+"t254" -> "t257"
+"t257" -> "t258"[color=red weight=2]
+"t257" -> "t258"
+"val" -> "t258"
+"_ZN7ap_uintILi8EEaSERKS0_" -> "t258"
+"t258" -> "_4"[color=red weight=2]
+
+}

@@ -1,0 +1,62 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t844" [label="  %t844 = alloca %class.ap_uint.0, align 1"]
+"t845" [label="  %t845 = alloca i32, align 4"]
+"_1" [label="  store i32 %v, i32* %t845, align 4"]
+"t846" [label="  %t846 = load i32* %t845, align 4"]
+"t847" [label="  %t847 = icmp sgt i32 %t846, 255"]
+"_2" [label="  br i1 %t847, label %1, label %2"]
+"unk_block_1" -> "t844"[color=red]
+"i32 1" -> "t844"
+"t844" -> "t845"[color=red weight=2]
+"i32 1" -> "t845"
+"t845" -> "_1"[color=red weight=2]
+"v" -> "_1"
+"t845" -> "_1"
+"_1" -> "t846"[color=red weight=2]
+"t845" -> "t846"
+"t846" -> "t847"[color=red weight=2]
+"t846" -> "t847"
+"i32 255" -> "t847"
+"t847" -> "_2"[color=red weight=2]
+"t847" -> "_2"
+"_2" -> ""[color=red]
+"_2" -> ""[color=red]
+
+"_3" [label="  br label %3"]
+"unk_block_2" -> "_3"[color=red]
+"_3" -> ""[color=red]
+
+"t848" [label="  %t848 = load i32* %t845, align 4"]
+"_4" [label="  br label %3"]
+"unk_block_3" -> "t848"[color=red]
+"t845" -> "t848"
+"t848" -> "_4"[color=red weight=2]
+"_4" -> ""[color=red]
+
+"t849" [label="  %t849 = phi i32 [ 255, %1 ], [ %t848, %2 ]"]
+"_5" [label="  call void @_ZN7ap_uintILi8EEC1Ei(%class.ap_uint.0* %t844, i32 %t849)"]
+"t850" [label="  %t850 = getelementptr %class.ap_uint.0* %t844, i32 0, i32 0"]
+"t851" [label="  %t851 = bitcast [1 x i8]* %t850 to i8*"]
+"t852" [label="  %t852 = load i8* %t851, align 1"]
+"_6" [label="  ret i8 %t852"]
+"unk_block_4" -> "t849"[color=red]
+"i32 255" -> "t849"
+"t848" -> "t849"
+"t849" -> "_5"[color=red weight=2]
+"t844" -> "_5"
+"t849" -> "_5"
+"_ZN7ap_uintILi8EEC1Ei" -> "_5"
+"_5" -> "t850"[color=red weight=2]
+"t844" -> "t850"
+"i32 0" -> "t850"
+"i32 0" -> "t850"
+"t850" -> "t851"[color=red weight=2]
+"t850" -> "t851"
+"t851" -> "t852"[color=red weight=2]
+"t851" -> "t852"
+"t852" -> "_6"[color=red weight=2]
+"t852" -> "_6"
+
+}

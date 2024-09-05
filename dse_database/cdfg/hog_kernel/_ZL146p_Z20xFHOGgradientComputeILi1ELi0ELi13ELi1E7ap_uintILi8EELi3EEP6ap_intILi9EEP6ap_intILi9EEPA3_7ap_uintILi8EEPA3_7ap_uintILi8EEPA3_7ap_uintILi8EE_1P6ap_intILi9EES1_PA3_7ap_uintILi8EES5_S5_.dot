@@ -1,0 +1,372 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t3368" [label="  %t3368 = alloca %class.ap_int.35*, align 8"]
+"t3369" [label="  %t3369 = alloca %class.ap_int.35*, align 8"]
+"t3370" [label="  %t3370 = alloca [3 x %class.ap_uint.0]*, align 8"]
+"t3371" [label="  %t3371 = alloca [3 x %class.ap_uint.0]*, align 8"]
+"t3372" [label="  %t3372 = alloca [3 x %class.ap_uint.0]*, align 8"]
+"_s_j" [label="  %_s_j = alloca i32, align 4"]
+"_l_j" [label="  %_l_j = alloca i8, align 1"]
+"t3373" [label="  %t3373 = alloca %class.ap_int.35, align 1"]
+"t3374" [label="  %t3374 = alloca %class.ap_uint.0, align 1"]
+"t3375" [label="  %t3375 = alloca %class.ap_uint.0, align 1"]
+"t3376" [label="  %t3376 = alloca %class.ap_int.35, align 1"]
+"t3377" [label="  %t3377 = alloca %class.ap_uint.0, align 1"]
+"t3378" [label="  %t3378 = alloca %class.ap_uint.0, align 1"]
+"_1" [label="  store %class.ap_int.35* %GradientvaluesX, %class.ap_int.35** %t3368, align 8"]
+"_2" [label="  store %class.ap_int.35* %GradientvaluesY, %class.ap_int.35** %t3369, align 8"]
+"_3" [label="  store [3 x %class.ap_uint.0]* %src_buf0, [3 x %class.ap_uint.0]** %t3370, align 8"]
+"_4" [label="  store [3 x %class.ap_uint.0]* %src_buf1, [3 x %class.ap_uint.0]** %t3371, align 8"]
+"_5" [label="  store [3 x %class.ap_uint.0]* %src_buf2, [3 x %class.ap_uint.0]** %t3372, align 8"]
+"_6" [label="  store i32 0, i32* %_s_j, align 4"]
+"_7" [label="  store i8 0, i8* %_l_j, align 1"]
+"_8" [label="  br label %1"]
+"unk_block_1" -> "t3368"[color=red]
+"i32 1" -> "t3368"
+"t3368" -> "t3369"[color=red weight=2]
+"i32 1" -> "t3369"
+"t3369" -> "t3370"[color=red weight=2]
+"i32 1" -> "t3370"
+"t3370" -> "t3371"[color=red weight=2]
+"i32 1" -> "t3371"
+"t3371" -> "t3372"[color=red weight=2]
+"i32 1" -> "t3372"
+"t3372" -> "_s_j"[color=red weight=2]
+"i32 1" -> "_s_j"
+"_s_j" -> "_l_j"[color=red weight=2]
+"i32 1" -> "_l_j"
+"_l_j" -> "t3373"[color=red weight=2]
+"i32 1" -> "t3373"
+"t3373" -> "t3374"[color=red weight=2]
+"i32 1" -> "t3374"
+"t3374" -> "t3375"[color=red weight=2]
+"i32 1" -> "t3375"
+"t3375" -> "t3376"[color=red weight=2]
+"i32 1" -> "t3376"
+"t3376" -> "t3377"[color=red weight=2]
+"i32 1" -> "t3377"
+"t3377" -> "t3378"[color=red weight=2]
+"i32 1" -> "t3378"
+"t3378" -> "_1"[color=red weight=2]
+"GradientvaluesX" -> "_1"
+"t3368" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"GradientvaluesY" -> "_2"
+"t3369" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"src_buf0" -> "_3"
+"t3370" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"src_buf1" -> "_4"
+"t3371" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"src_buf2" -> "_5"
+"t3372" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"i32 0" -> "_6"
+"_s_j" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"i8 0" -> "_7"
+"_l_j" -> "_7"
+"_7" -> "_8"[color=red weight=2]
+"_8" -> ""[color=red]
+
+"_9" [label="  store i32 0, i32* %_s_j, align 4"]
+"_10" [label="  br label %2"]
+"unk_block_2" -> "_9"[color=red]
+"i32 0" -> "_9"
+"_s_j" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+"_10" -> ""[color=red]
+
+"t3379" [label="  %t3379 = load i32* %_s_j, align 4"]
+"t3380" [label="  %t3380 = icmp sle i32 %t3379, 0"]
+"_11" [label="  br i1 %t3380, label %3, label %5"]
+"unk_block_3" -> "t3379"[color=red]
+"_s_j" -> "t3379"
+"t3379" -> "t3380"[color=red weight=2]
+"t3379" -> "t3380"
+"i32 0" -> "t3380"
+"t3380" -> "_11"[color=red weight=2]
+"t3380" -> "_11"
+"_11" -> ""[color=red]
+"_11" -> ""[color=red]
+
+"t3381" [label="  %t3381 = load i32* %_s_j, align 4"]
+"t3382" [label="  %t3382 = sext i32 %t3381 to i64"]
+"t3383" [label="  %t3383 = load %class.ap_int.35** %t3368, align 8"]
+"t3384" [label="  %t3384 = getelementptr inbounds %class.ap_int.35* %t3383, i64 %t3382"]
+"t3385" [label="  %t3385 = load i32* %_s_j, align 4"]
+"t3386" [label="  %t3386 = sext i32 %t3385 to i64"]
+"t3387" [label="  %t3387 = load [3 x %class.ap_uint.0]** %t3371, align 8"]
+"t3388" [label="  %t3388 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3387, i64 0"]
+"t3389" [label="  %t3389 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3388, i32 0, i64 %t3386"]
+"t3390" [label="  %t3390 = bitcast %class.ap_uint.0* %t3374 to i8*"]
+"t3391" [label="  %t3391 = bitcast %class.ap_uint.0* %t3389 to i8*"]
+"_12" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t3390, i8* %t3391, i64 1, i32 1, i1 false)"]
+"t3392" [label="  %t3392 = load i32* %_s_j, align 4"]
+"t3393" [label="  %t3393 = add nsw i32 %t3392, 2"]
+"t3394" [label="  %t3394 = sext i32 %t3393 to i64"]
+"t3395" [label="  %t3395 = load [3 x %class.ap_uint.0]** %t3371, align 8"]
+"t3396" [label="  %t3396 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3395, i64 0"]
+"t3397" [label="  %t3397 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3396, i32 0, i64 %t3394"]
+"t3398" [label="  %t3398 = bitcast %class.ap_uint.0* %t3375 to i8*"]
+"t3399" [label="  %t3399 = bitcast %class.ap_uint.0* %t3397 to i8*"]
+"_13" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t3398, i8* %t3399, i64 1, i32 1, i1 false)"]
+"t3400" [label="  %t3400 = getelementptr %class.ap_uint.0* %t3374, i32 0, i32 0"]
+"t3401" [label="  %t3401 = bitcast [1 x i8]* %t3400 to i8*"]
+"t3402" [label="  %t3402 = load i8* %t3401, align 1"]
+"t3403" [label="  %t3403 = getelementptr %class.ap_uint.0* %t3375, i32 0, i32 0"]
+"t3404" [label="  %t3404 = bitcast [1 x i8]* %t3403 to i8*"]
+"t3405" [label="  %t3405 = load i8* %t3404, align 1"]
+"t3406" [label="  %t3406 = call i16 @_ZL65p_Z15xFHOGgradientXYILi0ELi13ELi1EE7ap_uintILi8EE7ap_uintILi8EE_17ap_uintILi8EES0_(i8 %t3402, i8 %t3405)"]
+"t3407" [label="  %t3407 = getelementptr %class.ap_int.35* %t3373, i32 0, i32 0"]
+"t3408" [label="  %t3408 = bitcast [2 x i8]* %t3407 to i16*"]
+"_14" [label="  store i16 %t3406, i16* %t3408, align 1"]
+"t3409" [label="  %t3409 = call %class.ap_int.35* @_ZN6ap_intILi9EEaSERKS0_(%class.ap_int.35* %t3384, %class.ap_int.35* %t3373)"]
+"t3410" [label="  %t3410 = load i32* %_s_j, align 4"]
+"t3411" [label="  %t3411 = sext i32 %t3410 to i64"]
+"t3412" [label="  %t3412 = load %class.ap_int.35** %t3369, align 8"]
+"t3413" [label="  %t3413 = getelementptr inbounds %class.ap_int.35* %t3412, i64 %t3411"]
+"t3414" [label="  %t3414 = load i32* %_s_j, align 4"]
+"t3415" [label="  %t3415 = add nsw i32 %t3414, 1"]
+"t3416" [label="  %t3416 = sext i32 %t3415 to i64"]
+"t3417" [label="  %t3417 = load [3 x %class.ap_uint.0]** %t3370, align 8"]
+"t3418" [label="  %t3418 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3417, i64 0"]
+"t3419" [label="  %t3419 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3418, i32 0, i64 %t3416"]
+"t3420" [label="  %t3420 = bitcast %class.ap_uint.0* %t3377 to i8*"]
+"t3421" [label="  %t3421 = bitcast %class.ap_uint.0* %t3419 to i8*"]
+"_15" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t3420, i8* %t3421, i64 1, i32 1, i1 false)"]
+"t3422" [label="  %t3422 = load i32* %_s_j, align 4"]
+"t3423" [label="  %t3423 = add nsw i32 %t3422, 1"]
+"t3424" [label="  %t3424 = sext i32 %t3423 to i64"]
+"t3425" [label="  %t3425 = load [3 x %class.ap_uint.0]** %t3372, align 8"]
+"t3426" [label="  %t3426 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3425, i64 0"]
+"t3427" [label="  %t3427 = getelementptr inbounds [3 x %class.ap_uint.0]* %t3426, i32 0, i64 %t3424"]
+"t3428" [label="  %t3428 = bitcast %class.ap_uint.0* %t3378 to i8*"]
+"t3429" [label="  %t3429 = bitcast %class.ap_uint.0* %t3427 to i8*"]
+"_16" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t3428, i8* %t3429, i64 1, i32 1, i1 false)"]
+"t3430" [label="  %t3430 = getelementptr %class.ap_uint.0* %t3377, i32 0, i32 0"]
+"t3431" [label="  %t3431 = bitcast [1 x i8]* %t3430 to i8*"]
+"t3432" [label="  %t3432 = load i8* %t3431, align 1"]
+"t3433" [label="  %t3433 = getelementptr %class.ap_uint.0* %t3378, i32 0, i32 0"]
+"t3434" [label="  %t3434 = bitcast [1 x i8]* %t3433 to i8*"]
+"t3435" [label="  %t3435 = load i8* %t3434, align 1"]
+"t3436" [label="  %t3436 = call i16 @_ZL65p_Z15xFHOGgradientXYILi0ELi13ELi1EE7ap_uintILi8EE7ap_uintILi8EE_17ap_uintILi8EES0_(i8 %t3432, i8 %t3435)"]
+"t3437" [label="  %t3437 = getelementptr %class.ap_int.35* %t3376, i32 0, i32 0"]
+"t3438" [label="  %t3438 = bitcast [2 x i8]* %t3437 to i16*"]
+"_17" [label="  store i16 %t3436, i16* %t3438, align 1"]
+"t3439" [label="  %t3439 = call %class.ap_int.35* @_ZN6ap_intILi9EEaSERKS0_(%class.ap_int.35* %t3413, %class.ap_int.35* %t3376)"]
+"_18" [label="  br label %4"]
+"unk_block_4" -> "t3381"[color=red]
+"_s_j" -> "t3381"
+"t3381" -> "t3382"[color=red weight=2]
+"t3381" -> "t3382"
+"t3382" -> "t3383"[color=red weight=2]
+"t3368" -> "t3383"
+"t3383" -> "t3384"[color=red weight=2]
+"t3383" -> "t3384"
+"t3382" -> "t3384"
+"t3384" -> "t3385"[color=red weight=2]
+"_s_j" -> "t3385"
+"t3385" -> "t3386"[color=red weight=2]
+"t3385" -> "t3386"
+"t3386" -> "t3387"[color=red weight=2]
+"t3371" -> "t3387"
+"t3387" -> "t3388"[color=red weight=2]
+"t3387" -> "t3388"
+"i64 0" -> "t3388"
+"t3388" -> "t3389"[color=red weight=2]
+"t3388" -> "t3389"
+"i32 0" -> "t3389"
+"t3386" -> "t3389"
+"t3389" -> "t3390"[color=red weight=2]
+"t3374" -> "t3390"
+"t3390" -> "t3391"[color=red weight=2]
+"t3389" -> "t3391"
+"t3391" -> "_12"[color=red weight=2]
+"t3390" -> "_12"
+"t3391" -> "_12"
+"i64 1" -> "_12"
+"i32 1" -> "_12"
+"i1 false" -> "_12"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_12"
+"_12" -> "t3392"[color=red weight=2]
+"_s_j" -> "t3392"
+"t3392" -> "t3393"[color=red weight=2]
+"t3392" -> "t3393"
+"i32 2" -> "t3393"
+"t3393" -> "t3394"[color=red weight=2]
+"t3393" -> "t3394"
+"t3394" -> "t3395"[color=red weight=2]
+"t3371" -> "t3395"
+"t3395" -> "t3396"[color=red weight=2]
+"t3395" -> "t3396"
+"i64 0" -> "t3396"
+"t3396" -> "t3397"[color=red weight=2]
+"t3396" -> "t3397"
+"i32 0" -> "t3397"
+"t3394" -> "t3397"
+"t3397" -> "t3398"[color=red weight=2]
+"t3375" -> "t3398"
+"t3398" -> "t3399"[color=red weight=2]
+"t3397" -> "t3399"
+"t3399" -> "_13"[color=red weight=2]
+"t3398" -> "_13"
+"t3399" -> "_13"
+"i64 1" -> "_13"
+"i32 1" -> "_13"
+"i1 false" -> "_13"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_13"
+"_13" -> "t3400"[color=red weight=2]
+"t3374" -> "t3400"
+"i32 0" -> "t3400"
+"i32 0" -> "t3400"
+"t3400" -> "t3401"[color=red weight=2]
+"t3400" -> "t3401"
+"t3401" -> "t3402"[color=red weight=2]
+"t3401" -> "t3402"
+"t3402" -> "t3403"[color=red weight=2]
+"t3375" -> "t3403"
+"i32 0" -> "t3403"
+"i32 0" -> "t3403"
+"t3403" -> "t3404"[color=red weight=2]
+"t3403" -> "t3404"
+"t3404" -> "t3405"[color=red weight=2]
+"t3404" -> "t3405"
+"t3405" -> "t3406"[color=red weight=2]
+"t3402" -> "t3406"
+"t3405" -> "t3406"
+"_ZL65p_Z15xFHOGgradientXYILi0ELi13ELi1EE7ap_uintILi8EE7ap_uintILi8EE_17ap_uintILi8EES0_" -> "t3406"
+"t3406" -> "t3407"[color=red weight=2]
+"t3373" -> "t3407"
+"i32 0" -> "t3407"
+"i32 0" -> "t3407"
+"t3407" -> "t3408"[color=red weight=2]
+"t3407" -> "t3408"
+"t3408" -> "_14"[color=red weight=2]
+"t3406" -> "_14"
+"t3408" -> "_14"
+"_14" -> "t3409"[color=red weight=2]
+"t3384" -> "t3409"
+"t3373" -> "t3409"
+"_ZN6ap_intILi9EEaSERKS0_" -> "t3409"
+"t3409" -> "t3410"[color=red weight=2]
+"_s_j" -> "t3410"
+"t3410" -> "t3411"[color=red weight=2]
+"t3410" -> "t3411"
+"t3411" -> "t3412"[color=red weight=2]
+"t3369" -> "t3412"
+"t3412" -> "t3413"[color=red weight=2]
+"t3412" -> "t3413"
+"t3411" -> "t3413"
+"t3413" -> "t3414"[color=red weight=2]
+"_s_j" -> "t3414"
+"t3414" -> "t3415"[color=red weight=2]
+"t3414" -> "t3415"
+"i32 1" -> "t3415"
+"t3415" -> "t3416"[color=red weight=2]
+"t3415" -> "t3416"
+"t3416" -> "t3417"[color=red weight=2]
+"t3370" -> "t3417"
+"t3417" -> "t3418"[color=red weight=2]
+"t3417" -> "t3418"
+"i64 0" -> "t3418"
+"t3418" -> "t3419"[color=red weight=2]
+"t3418" -> "t3419"
+"i32 0" -> "t3419"
+"t3416" -> "t3419"
+"t3419" -> "t3420"[color=red weight=2]
+"t3377" -> "t3420"
+"t3420" -> "t3421"[color=red weight=2]
+"t3419" -> "t3421"
+"t3421" -> "_15"[color=red weight=2]
+"t3420" -> "_15"
+"t3421" -> "_15"
+"i64 1" -> "_15"
+"i32 1" -> "_15"
+"i1 false" -> "_15"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_15"
+"_15" -> "t3422"[color=red weight=2]
+"_s_j" -> "t3422"
+"t3422" -> "t3423"[color=red weight=2]
+"t3422" -> "t3423"
+"i32 1" -> "t3423"
+"t3423" -> "t3424"[color=red weight=2]
+"t3423" -> "t3424"
+"t3424" -> "t3425"[color=red weight=2]
+"t3372" -> "t3425"
+"t3425" -> "t3426"[color=red weight=2]
+"t3425" -> "t3426"
+"i64 0" -> "t3426"
+"t3426" -> "t3427"[color=red weight=2]
+"t3426" -> "t3427"
+"i32 0" -> "t3427"
+"t3424" -> "t3427"
+"t3427" -> "t3428"[color=red weight=2]
+"t3378" -> "t3428"
+"t3428" -> "t3429"[color=red weight=2]
+"t3427" -> "t3429"
+"t3429" -> "_16"[color=red weight=2]
+"t3428" -> "_16"
+"t3429" -> "_16"
+"i64 1" -> "_16"
+"i32 1" -> "_16"
+"i1 false" -> "_16"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_16"
+"_16" -> "t3430"[color=red weight=2]
+"t3377" -> "t3430"
+"i32 0" -> "t3430"
+"i32 0" -> "t3430"
+"t3430" -> "t3431"[color=red weight=2]
+"t3430" -> "t3431"
+"t3431" -> "t3432"[color=red weight=2]
+"t3431" -> "t3432"
+"t3432" -> "t3433"[color=red weight=2]
+"t3378" -> "t3433"
+"i32 0" -> "t3433"
+"i32 0" -> "t3433"
+"t3433" -> "t3434"[color=red weight=2]
+"t3433" -> "t3434"
+"t3434" -> "t3435"[color=red weight=2]
+"t3434" -> "t3435"
+"t3435" -> "t3436"[color=red weight=2]
+"t3432" -> "t3436"
+"t3435" -> "t3436"
+"_ZL65p_Z15xFHOGgradientXYILi0ELi13ELi1EE7ap_uintILi8EE7ap_uintILi8EE_17ap_uintILi8EES0_" -> "t3436"
+"t3436" -> "t3437"[color=red weight=2]
+"t3376" -> "t3437"
+"i32 0" -> "t3437"
+"i32 0" -> "t3437"
+"t3437" -> "t3438"[color=red weight=2]
+"t3437" -> "t3438"
+"t3438" -> "_17"[color=red weight=2]
+"t3436" -> "_17"
+"t3438" -> "_17"
+"_17" -> "t3439"[color=red weight=2]
+"t3413" -> "t3439"
+"t3376" -> "t3439"
+"_ZN6ap_intILi9EEaSERKS0_" -> "t3439"
+"t3439" -> "_18"[color=red weight=2]
+"_18" -> ""[color=red]
+
+"t3440" [label="  %t3440 = load i32* %_s_j, align 4"]
+"t3441" [label="  %t3441 = add nsw i32 %t3440, 1"]
+"_19" [label="  store i32 %t3441, i32* %_s_j, align 4"]
+"_20" [label="  br label %2"]
+"unk_block_5" -> "t3440"[color=red]
+"_s_j" -> "t3440"
+"t3440" -> "t3441"[color=red weight=2]
+"t3440" -> "t3441"
+"i32 1" -> "t3441"
+"t3441" -> "_19"[color=red weight=2]
+"t3441" -> "_19"
+"_s_j" -> "_19"
+"_19" -> "_20"[color=red weight=2]
+"_20" -> ""[color=red]
+
+"_21" [label="  ret void"]
+"unk_block_6" -> "_21"[color=red]
+
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL33p_ZN2xf16Mat_2_256_256_1_C2IEEv_1P19xf_Mat_2_256_256_1_' function" {
+	label="CFG for '_ZL33p_ZN2xf16Mat_2_256_256_1_C2IEEv_1P19xf_Mat_2_256_256_1_' function";
+
+	Node0x22bcc60 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Mat_2_256_256_1_*, align 8\l  store %struct.xf_Mat_2_256_256_1_* %this_, %struct.xf_Mat_2_256_256_1_** %1, align 8\l  %2 = load %struct.xf_Mat_2_256_256_1_** %1, align 8\l  call void @_ZL38p_ZN2xf16Mat_2_256_256_1_4initIEEiib_1P19xf_Mat_2_256_256_1_iib(%struct.xf_Mat_2_256_256_1_* %2, i32 256, i32 256, i1 zeroext true)\l  ret void\l}"];
+}

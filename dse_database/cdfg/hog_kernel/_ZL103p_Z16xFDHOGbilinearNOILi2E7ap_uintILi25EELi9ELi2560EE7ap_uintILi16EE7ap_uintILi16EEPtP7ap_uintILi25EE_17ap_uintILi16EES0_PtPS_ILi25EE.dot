@@ -1,0 +1,845 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"p" [label="  %p = alloca %class.ap_uint.9, align 2"]
+"m" [label="  %m = alloca %class.ap_uint.9, align 2"]
+"t1971" [label="  %t1971 = alloca i16*, align 8"]
+"t1972" [label="  %t1972 = alloca %class.ap_uint.10*, align 8"]
+"tmp_bin_idx" [label="  %tmp_bin_idx = alloca i32, align 4"]
+"t1973" [label="  %t1973 = alloca %class.ap_uint.9, align 1"]
+"bin_idx" [label="  %bin_idx = alloca i8, align 1"]
+"index_1" [label="  %index_1 = alloca i8, align 1"]
+"index_2" [label="  %index_2 = alloca i8, align 1"]
+"mag_factor" [label="  %mag_factor = alloca i32, align 4"]
+"t1974" [label="  %t1974 = alloca %class.ap_uint.9, align 1"]
+"frac" [label="  %frac = alloca i16, align 2"]
+"t1975" [label="  %t1975 = alloca %class.ap_uint.9, align 1"]
+"t1976" [label="  %t1976 = alloca %class.ap_uint.9, align 1"]
+"t1977" [label="  %t1977 = alloca %class.ap_uint.9, align 1"]
+"t1978" [label="  %t1978 = alloca %class.ap_uint.9, align 1"]
+"t1979" [label="  %t1979 = alloca %class.ap_uint.9, align 1"]
+"part_1" [label="  %part_1 = alloca %class.ap_uint.10, align 1"]
+"t1980" [label="  %t1980 = alloca %class.ap_int.33, align 1"]
+"t1981" [label="  %t1981 = alloca %class.ap_int.33, align 1"]
+"t1982" [label="  %t1982 = alloca %class.ap_uint.34, align 1"]
+"t1983" [label="  %t1983 = alloca %class.ap_uint.34, align 1"]
+"t1984" [label="  %t1984 = alloca i40"]
+"t1985" [label="  %t1985 = alloca i40"]
+"t1986" [label="  %t1986 = alloca { i64, i16 }"]
+"t1987" [label="  %t1987 = alloca { i64, i16 }"]
+"t1988" [label="  %t1988 = alloca { i64, i16 }"]
+"m_shifted" [label="  %m_shifted = alloca i32, align 4"]
+"part_2" [label="  %part_2 = alloca %class.ap_uint.10, align 1"]
+"t1989" [label="  %t1989 = alloca %class.ap_uint.10, align 1"]
+"t1990" [label="  %t1990 = alloca %class.ap_uint.10, align 1"]
+"t1991" [label="  %t1991 = getelementptr %class.ap_uint.9* %p, i32 0, i32 0"]
+"t1992" [label="  %t1992 = bitcast [2 x i8]* %t1991 to i16*"]
+"_1" [label="  store i16 %p.coerce, i16* %t1992, align 1"]
+"t1993" [label="  %t1993 = getelementptr %class.ap_uint.9* %m, i32 0, i32 0"]
+"t1994" [label="  %t1994 = bitcast [2 x i8]* %t1993 to i16*"]
+"_2" [label="  store i16 %m.coerce, i16* %t1994, align 1"]
+"_3" [label="  store i16* %bin_center, i16** %t1971, align 8"]
+"_4" [label="  store %class.ap_uint.10* %bin, %class.ap_uint.10** %t1972, align 8"]
+"t1995" [label="  %t1995 = call i16 @_ZmlILi16EE7ap_uintIXT_EERKS1_i(%class.ap_uint.9* %p, i32 3276)"]
+"t1996" [label="  %t1996 = getelementptr %class.ap_uint.9* %t1973, i32 0, i32 0"]
+"t1997" [label="  %t1997 = bitcast [2 x i8]* %t1996 to i16*"]
+"_5" [label="  store i16 %t1995, i16* %t1997, align 1"]
+"t1998" [label="  %t1998 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1973)"]
+"t1999" [label="  %t1999 = trunc i64 %t1998 to i32"]
+"_6" [label="  store i32 %t1999, i32* %tmp_bin_idx, align 4"]
+"t2000" [label="  %t2000 = load i32* %tmp_bin_idx, align 4"]
+"t2001" [label="  %t2001 = lshr i32 %t2000, 23"]
+"t2002" [label="  %t2002 = trunc i32 %t2001 to i8"]
+"_7" [label="  store i8 %t2002, i8* %bin_idx, align 1"]
+"t2003" [label="  %t2003 = call i16 @_ZmlILi16EE7ap_uintIXT_EERKS1_i(%class.ap_uint.9* %m, i32 3276)"]
+"t2004" [label="  %t2004 = getelementptr %class.ap_uint.9* %t1974, i32 0, i32 0"]
+"t2005" [label="  %t2005 = bitcast [2 x i8]* %t2004 to i16*"]
+"_8" [label="  store i16 %t2003, i16* %t2005, align 1"]
+"t2006" [label="  %t2006 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1974)"]
+"t2007" [label="  %t2007 = trunc i64 %t2006 to i32"]
+"_9" [label="  store i32 %t2007, i32* %mag_factor, align 4"]
+"_10" [label="  store i16 0, i16* %frac, align 2"]
+"t2008" [label="  %t2008 = bitcast %class.ap_uint.9* %t1975 to i8*"]
+"t2009" [label="  %t2009 = bitcast %class.ap_uint.9* %p to i8*"]
+"_11" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t2008, i8* %t2009, i64 2, i32 1, i1 false)"]
+"t2010" [label="  %t2010 = load i8* %bin_idx, align 1"]
+"t2011" [label="  %t2011 = zext i8 %t2010 to i64"]
+"t2012" [label="  %t2012 = load i16** %t1971, align 8"]
+"t2013" [label="  %t2013 = getelementptr inbounds i16* %t2012, i64 %t2011"]
+"t2014" [label="  %t2014 = load i16* %t2013, align 2"]
+"t2015" [label="  %t2015 = getelementptr %class.ap_uint.9* %t1975, i32 0, i32 0"]
+"t2016" [label="  %t2016 = bitcast [2 x i8]* %t2015 to i16*"]
+"t2017" [label="  %t2017 = load i16* %t2016, align 1"]
+"t2018" [label="  %t2018 = call zeroext i1 @_ZltILi16EEb7ap_uintIXT_EEt(i16 %t2017, i16 zeroext %t2014)"]
+"_12" [label="  br i1 %t2018, label %1, label %5"]
+"unk_block_1" -> "p"[color=red]
+"i32 1" -> "p"
+"p" -> "m"[color=red weight=2]
+"i32 1" -> "m"
+"m" -> "t1971"[color=red weight=2]
+"i32 1" -> "t1971"
+"t1971" -> "t1972"[color=red weight=2]
+"i32 1" -> "t1972"
+"t1972" -> "tmp_bin_idx"[color=red weight=2]
+"i32 1" -> "tmp_bin_idx"
+"tmp_bin_idx" -> "t1973"[color=red weight=2]
+"i32 1" -> "t1973"
+"t1973" -> "bin_idx"[color=red weight=2]
+"i32 1" -> "bin_idx"
+"bin_idx" -> "index_1"[color=red weight=2]
+"i32 1" -> "index_1"
+"index_1" -> "index_2"[color=red weight=2]
+"i32 1" -> "index_2"
+"index_2" -> "mag_factor"[color=red weight=2]
+"i32 1" -> "mag_factor"
+"mag_factor" -> "t1974"[color=red weight=2]
+"i32 1" -> "t1974"
+"t1974" -> "frac"[color=red weight=2]
+"i32 1" -> "frac"
+"frac" -> "t1975"[color=red weight=2]
+"i32 1" -> "t1975"
+"t1975" -> "t1976"[color=red weight=2]
+"i32 1" -> "t1976"
+"t1976" -> "t1977"[color=red weight=2]
+"i32 1" -> "t1977"
+"t1977" -> "t1978"[color=red weight=2]
+"i32 1" -> "t1978"
+"t1978" -> "t1979"[color=red weight=2]
+"i32 1" -> "t1979"
+"t1979" -> "part_1"[color=red weight=2]
+"i32 1" -> "part_1"
+"part_1" -> "t1980"[color=red weight=2]
+"i32 1" -> "t1980"
+"t1980" -> "t1981"[color=red weight=2]
+"i32 1" -> "t1981"
+"t1981" -> "t1982"[color=red weight=2]
+"i32 1" -> "t1982"
+"t1982" -> "t1983"[color=red weight=2]
+"i32 1" -> "t1983"
+"t1983" -> "t1984"[color=red weight=2]
+"i32 1" -> "t1984"
+"t1984" -> "t1985"[color=red weight=2]
+"i32 1" -> "t1985"
+"t1985" -> "t1986"[color=red weight=2]
+"i32 1" -> "t1986"
+"t1986" -> "t1987"[color=red weight=2]
+"i32 1" -> "t1987"
+"t1987" -> "t1988"[color=red weight=2]
+"i32 1" -> "t1988"
+"t1988" -> "m_shifted"[color=red weight=2]
+"i32 1" -> "m_shifted"
+"m_shifted" -> "part_2"[color=red weight=2]
+"i32 1" -> "part_2"
+"part_2" -> "t1989"[color=red weight=2]
+"i32 1" -> "t1989"
+"t1989" -> "t1990"[color=red weight=2]
+"i32 1" -> "t1990"
+"t1990" -> "t1991"[color=red weight=2]
+"p" -> "t1991"
+"i32 0" -> "t1991"
+"i32 0" -> "t1991"
+"t1991" -> "t1992"[color=red weight=2]
+"t1991" -> "t1992"
+"t1992" -> "_1"[color=red weight=2]
+"p.coerce" -> "_1"
+"t1992" -> "_1"
+"_1" -> "t1993"[color=red weight=2]
+"m" -> "t1993"
+"i32 0" -> "t1993"
+"i32 0" -> "t1993"
+"t1993" -> "t1994"[color=red weight=2]
+"t1993" -> "t1994"
+"t1994" -> "_2"[color=red weight=2]
+"m.coerce" -> "_2"
+"t1994" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"bin_center" -> "_3"
+"t1971" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"bin" -> "_4"
+"t1972" -> "_4"
+"_4" -> "t1995"[color=red weight=2]
+"p" -> "t1995"
+"i32 3276" -> "t1995"
+"_ZmlILi16EE7ap_uintIXT_EERKS1_i" -> "t1995"
+"t1995" -> "t1996"[color=red weight=2]
+"t1973" -> "t1996"
+"i32 0" -> "t1996"
+"i32 0" -> "t1996"
+"t1996" -> "t1997"[color=red weight=2]
+"t1996" -> "t1997"
+"t1997" -> "_5"[color=red weight=2]
+"t1995" -> "_5"
+"t1997" -> "_5"
+"_5" -> "t1998"[color=red weight=2]
+"t1973" -> "t1998"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t1998"
+"t1998" -> "t1999"[color=red weight=2]
+"t1998" -> "t1999"
+"t1999" -> "_6"[color=red weight=2]
+"t1999" -> "_6"
+"tmp_bin_idx" -> "_6"
+"_6" -> "t2000"[color=red weight=2]
+"tmp_bin_idx" -> "t2000"
+"t2000" -> "t2001"[color=red weight=2]
+"t2000" -> "t2001"
+"i32 23" -> "t2001"
+"t2001" -> "t2002"[color=red weight=2]
+"t2001" -> "t2002"
+"t2002" -> "_7"[color=red weight=2]
+"t2002" -> "_7"
+"bin_idx" -> "_7"
+"_7" -> "t2003"[color=red weight=2]
+"m" -> "t2003"
+"i32 3276" -> "t2003"
+"_ZmlILi16EE7ap_uintIXT_EERKS1_i" -> "t2003"
+"t2003" -> "t2004"[color=red weight=2]
+"t1974" -> "t2004"
+"i32 0" -> "t2004"
+"i32 0" -> "t2004"
+"t2004" -> "t2005"[color=red weight=2]
+"t2004" -> "t2005"
+"t2005" -> "_8"[color=red weight=2]
+"t2003" -> "_8"
+"t2005" -> "_8"
+"_8" -> "t2006"[color=red weight=2]
+"t1974" -> "t2006"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2006"
+"t2006" -> "t2007"[color=red weight=2]
+"t2006" -> "t2007"
+"t2007" -> "_9"[color=red weight=2]
+"t2007" -> "_9"
+"mag_factor" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+"i16 0" -> "_10"
+"frac" -> "_10"
+"_10" -> "t2008"[color=red weight=2]
+"t1975" -> "t2008"
+"t2008" -> "t2009"[color=red weight=2]
+"p" -> "t2009"
+"t2009" -> "_11"[color=red weight=2]
+"t2008" -> "_11"
+"t2009" -> "_11"
+"i64 2" -> "_11"
+"i32 1" -> "_11"
+"i1 false" -> "_11"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_11"
+"_11" -> "t2010"[color=red weight=2]
+"bin_idx" -> "t2010"
+"t2010" -> "t2011"[color=red weight=2]
+"t2010" -> "t2011"
+"t2011" -> "t2012"[color=red weight=2]
+"t1971" -> "t2012"
+"t2012" -> "t2013"[color=red weight=2]
+"t2012" -> "t2013"
+"t2011" -> "t2013"
+"t2013" -> "t2014"[color=red weight=2]
+"t2013" -> "t2014"
+"t2014" -> "t2015"[color=red weight=2]
+"t1975" -> "t2015"
+"i32 0" -> "t2015"
+"i32 0" -> "t2015"
+"t2015" -> "t2016"[color=red weight=2]
+"t2015" -> "t2016"
+"t2016" -> "t2017"[color=red weight=2]
+"t2016" -> "t2017"
+"t2017" -> "t2018"[color=red weight=2]
+"t2017" -> "t2018"
+"t2014" -> "t2018"
+"_ZltILi16EEb7ap_uintIXT_EEt" -> "t2018"
+"t2018" -> "_12"[color=red weight=2]
+"t2018" -> "_12"
+"_12" -> ""[color=red]
+"_12" -> ""[color=red]
+
+"t2019" [label="  %t2019 = load i8* %bin_idx, align 1"]
+"t2020" [label="  %t2020 = zext i8 %t2019 to i32"]
+"t2021" [label="  %t2021 = icmp eq i32 %t2020, 0"]
+"_13" [label="  br i1 %t2021, label %2, label %3"]
+"unk_block_2" -> "t2019"[color=red]
+"bin_idx" -> "t2019"
+"t2019" -> "t2020"[color=red weight=2]
+"t2019" -> "t2020"
+"t2020" -> "t2021"[color=red weight=2]
+"t2020" -> "t2021"
+"i32 0" -> "t2021"
+"t2021" -> "_13"[color=red weight=2]
+"t2021" -> "_13"
+"_13" -> ""[color=red]
+"_13" -> ""[color=red]
+
+"t2022" [label="  %t2022 = load i8* %bin_idx, align 1"]
+"t2023" [label="  %t2023 = zext i8 %t2022 to i64"]
+"t2024" [label="  %t2024 = load i16** %t1971, align 8"]
+"t2025" [label="  %t2025 = getelementptr inbounds i16* %t2024, i64 %t2023"]
+"t2026" [label="  %t2026 = load i16* %t2025, align 2"]
+"t2027" [label="  %t2027 = zext i16 %t2026 to i32"]
+"t2028" [label="  %t2028 = sub nsw i32 %t2027, 2560"]
+"t2029" [label="  %t2029 = call i16 @_ZmiILi16EE7ap_uintIXT_EERKS1_i(%class.ap_uint.9* %p, i32 %t2028)"]
+"t2030" [label="  %t2030 = getelementptr %class.ap_uint.9* %t1976, i32 0, i32 0"]
+"t2031" [label="  %t2031 = bitcast [2 x i8]* %t2030 to i16*"]
+"_14" [label="  store i16 %t2029, i16* %t2031, align 1"]
+"t2032" [label="  %t2032 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1976)"]
+"t2033" [label="  %t2033 = trunc i64 %t2032 to i16"]
+"_15" [label="  store i16 %t2033, i16* %frac, align 2"]
+"t2034" [label="  %t2034 = load i8* %bin_idx, align 1"]
+"_16" [label="  store i8 %t2034, i8* %index_1, align 1"]
+"_17" [label="  store i8 8, i8* %index_2, align 1"]
+"_18" [label="  br label %4"]
+"unk_block_3" -> "t2022"[color=red]
+"bin_idx" -> "t2022"
+"t2022" -> "t2023"[color=red weight=2]
+"t2022" -> "t2023"
+"t2023" -> "t2024"[color=red weight=2]
+"t1971" -> "t2024"
+"t2024" -> "t2025"[color=red weight=2]
+"t2024" -> "t2025"
+"t2023" -> "t2025"
+"t2025" -> "t2026"[color=red weight=2]
+"t2025" -> "t2026"
+"t2026" -> "t2027"[color=red weight=2]
+"t2026" -> "t2027"
+"t2027" -> "t2028"[color=red weight=2]
+"t2027" -> "t2028"
+"i32 2560" -> "t2028"
+"t2028" -> "t2029"[color=red weight=2]
+"p" -> "t2029"
+"t2028" -> "t2029"
+"_ZmiILi16EE7ap_uintIXT_EERKS1_i" -> "t2029"
+"t2029" -> "t2030"[color=red weight=2]
+"t1976" -> "t2030"
+"i32 0" -> "t2030"
+"i32 0" -> "t2030"
+"t2030" -> "t2031"[color=red weight=2]
+"t2030" -> "t2031"
+"t2031" -> "_14"[color=red weight=2]
+"t2029" -> "_14"
+"t2031" -> "_14"
+"_14" -> "t2032"[color=red weight=2]
+"t1976" -> "t2032"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2032"
+"t2032" -> "t2033"[color=red weight=2]
+"t2032" -> "t2033"
+"t2033" -> "_15"[color=red weight=2]
+"t2033" -> "_15"
+"frac" -> "_15"
+"_15" -> "t2034"[color=red weight=2]
+"bin_idx" -> "t2034"
+"t2034" -> "_16"[color=red weight=2]
+"t2034" -> "_16"
+"index_1" -> "_16"
+"_16" -> "_17"[color=red weight=2]
+"i8 8" -> "_17"
+"index_2" -> "_17"
+"_17" -> "_18"[color=red weight=2]
+"_18" -> ""[color=red]
+
+"t2035" [label="  %t2035 = load i8* %bin_idx, align 1"]
+"t2036" [label="  %t2036 = zext i8 %t2035 to i32"]
+"t2037" [label="  %t2037 = sub nsw i32 %t2036, 1"]
+"t2038" [label="  %t2038 = sext i32 %t2037 to i64"]
+"t2039" [label="  %t2039 = load i16** %t1971, align 8"]
+"t2040" [label="  %t2040 = getelementptr inbounds i16* %t2039, i64 %t2038"]
+"t2041" [label="  %t2041 = load i16* %t2040, align 2"]
+"t2042" [label="  %t2042 = call i16 @_ZmiILi16EE7ap_uintIXT_EERKS1_t(%class.ap_uint.9* %p, i16 zeroext %t2041)"]
+"t2043" [label="  %t2043 = getelementptr %class.ap_uint.9* %t1977, i32 0, i32 0"]
+"t2044" [label="  %t2044 = bitcast [2 x i8]* %t2043 to i16*"]
+"_19" [label="  store i16 %t2042, i16* %t2044, align 1"]
+"t2045" [label="  %t2045 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1977)"]
+"t2046" [label="  %t2046 = trunc i64 %t2045 to i16"]
+"_20" [label="  store i16 %t2046, i16* %frac, align 2"]
+"t2047" [label="  %t2047 = load i8* %bin_idx, align 1"]
+"_21" [label="  store i8 %t2047, i8* %index_1, align 1"]
+"t2048" [label="  %t2048 = load i8* %bin_idx, align 1"]
+"t2049" [label="  %t2049 = zext i8 %t2048 to i32"]
+"t2050" [label="  %t2050 = sub nsw i32 %t2049, 1"]
+"t2051" [label="  %t2051 = trunc i32 %t2050 to i8"]
+"_22" [label="  store i8 %t2051, i8* %index_2, align 1"]
+"_23" [label="  br label %4"]
+"unk_block_4" -> "t2035"[color=red]
+"bin_idx" -> "t2035"
+"t2035" -> "t2036"[color=red weight=2]
+"t2035" -> "t2036"
+"t2036" -> "t2037"[color=red weight=2]
+"t2036" -> "t2037"
+"i32 1" -> "t2037"
+"t2037" -> "t2038"[color=red weight=2]
+"t2037" -> "t2038"
+"t2038" -> "t2039"[color=red weight=2]
+"t1971" -> "t2039"
+"t2039" -> "t2040"[color=red weight=2]
+"t2039" -> "t2040"
+"t2038" -> "t2040"
+"t2040" -> "t2041"[color=red weight=2]
+"t2040" -> "t2041"
+"t2041" -> "t2042"[color=red weight=2]
+"p" -> "t2042"
+"t2041" -> "t2042"
+"_ZmiILi16EE7ap_uintIXT_EERKS1_t" -> "t2042"
+"t2042" -> "t2043"[color=red weight=2]
+"t1977" -> "t2043"
+"i32 0" -> "t2043"
+"i32 0" -> "t2043"
+"t2043" -> "t2044"[color=red weight=2]
+"t2043" -> "t2044"
+"t2044" -> "_19"[color=red weight=2]
+"t2042" -> "_19"
+"t2044" -> "_19"
+"_19" -> "t2045"[color=red weight=2]
+"t1977" -> "t2045"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2045"
+"t2045" -> "t2046"[color=red weight=2]
+"t2045" -> "t2046"
+"t2046" -> "_20"[color=red weight=2]
+"t2046" -> "_20"
+"frac" -> "_20"
+"_20" -> "t2047"[color=red weight=2]
+"bin_idx" -> "t2047"
+"t2047" -> "_21"[color=red weight=2]
+"t2047" -> "_21"
+"index_1" -> "_21"
+"_21" -> "t2048"[color=red weight=2]
+"bin_idx" -> "t2048"
+"t2048" -> "t2049"[color=red weight=2]
+"t2048" -> "t2049"
+"t2049" -> "t2050"[color=red weight=2]
+"t2049" -> "t2050"
+"i32 1" -> "t2050"
+"t2050" -> "t2051"[color=red weight=2]
+"t2050" -> "t2051"
+"t2051" -> "_22"[color=red weight=2]
+"t2051" -> "_22"
+"index_2" -> "_22"
+"_22" -> "_23"[color=red weight=2]
+"_23" -> ""[color=red]
+
+"_24" [label="  br label %9"]
+"unk_block_5" -> "_24"[color=red]
+"_24" -> ""[color=red]
+
+"t2052" [label="  %t2052 = load i8* %bin_idx, align 1"]
+"t2053" [label="  %t2053 = zext i8 %t2052 to i32"]
+"t2054" [label="  %t2054 = icmp eq i32 %t2053, 8"]
+"_25" [label="  br i1 %t2054, label %6, label %7"]
+"unk_block_6" -> "t2052"[color=red]
+"bin_idx" -> "t2052"
+"t2052" -> "t2053"[color=red weight=2]
+"t2052" -> "t2053"
+"t2053" -> "t2054"[color=red weight=2]
+"t2053" -> "t2054"
+"i32 8" -> "t2054"
+"t2054" -> "_25"[color=red weight=2]
+"t2054" -> "_25"
+"_25" -> ""[color=red]
+"_25" -> ""[color=red]
+
+"t2055" [label="  %t2055 = load i8* %bin_idx, align 1"]
+"t2056" [label="  %t2056 = zext i8 %t2055 to i64"]
+"t2057" [label="  %t2057 = load i16** %t1971, align 8"]
+"t2058" [label="  %t2058 = getelementptr inbounds i16* %t2057, i64 %t2056"]
+"t2059" [label="  %t2059 = load i16* %t2058, align 2"]
+"t2060" [label="  %t2060 = zext i16 %t2059 to i32"]
+"t2061" [label="  %t2061 = add nsw i32 %t2060, 2560"]
+"t2062" [label="  %t2062 = call i16 @_ZmiILi16EE7ap_uintIXT_EEiRKS1_(i32 %t2061, %class.ap_uint.9* %p)"]
+"t2063" [label="  %t2063 = getelementptr %class.ap_uint.9* %t1978, i32 0, i32 0"]
+"t2064" [label="  %t2064 = bitcast [2 x i8]* %t2063 to i16*"]
+"_26" [label="  store i16 %t2062, i16* %t2064, align 1"]
+"t2065" [label="  %t2065 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1978)"]
+"t2066" [label="  %t2066 = trunc i64 %t2065 to i16"]
+"_27" [label="  store i16 %t2066, i16* %frac, align 2"]
+"t2067" [label="  %t2067 = load i8* %bin_idx, align 1"]
+"_28" [label="  store i8 %t2067, i8* %index_1, align 1"]
+"_29" [label="  store i8 0, i8* %index_2, align 1"]
+"_30" [label="  br label %8"]
+"unk_block_7" -> "t2055"[color=red]
+"bin_idx" -> "t2055"
+"t2055" -> "t2056"[color=red weight=2]
+"t2055" -> "t2056"
+"t2056" -> "t2057"[color=red weight=2]
+"t1971" -> "t2057"
+"t2057" -> "t2058"[color=red weight=2]
+"t2057" -> "t2058"
+"t2056" -> "t2058"
+"t2058" -> "t2059"[color=red weight=2]
+"t2058" -> "t2059"
+"t2059" -> "t2060"[color=red weight=2]
+"t2059" -> "t2060"
+"t2060" -> "t2061"[color=red weight=2]
+"t2060" -> "t2061"
+"i32 2560" -> "t2061"
+"t2061" -> "t2062"[color=red weight=2]
+"t2061" -> "t2062"
+"p" -> "t2062"
+"_ZmiILi16EE7ap_uintIXT_EEiRKS1_" -> "t2062"
+"t2062" -> "t2063"[color=red weight=2]
+"t1978" -> "t2063"
+"i32 0" -> "t2063"
+"i32 0" -> "t2063"
+"t2063" -> "t2064"[color=red weight=2]
+"t2063" -> "t2064"
+"t2064" -> "_26"[color=red weight=2]
+"t2062" -> "_26"
+"t2064" -> "_26"
+"_26" -> "t2065"[color=red weight=2]
+"t1978" -> "t2065"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2065"
+"t2065" -> "t2066"[color=red weight=2]
+"t2065" -> "t2066"
+"t2066" -> "_27"[color=red weight=2]
+"t2066" -> "_27"
+"frac" -> "_27"
+"_27" -> "t2067"[color=red weight=2]
+"bin_idx" -> "t2067"
+"t2067" -> "_28"[color=red weight=2]
+"t2067" -> "_28"
+"index_1" -> "_28"
+"_28" -> "_29"[color=red weight=2]
+"i8 0" -> "_29"
+"index_2" -> "_29"
+"_29" -> "_30"[color=red weight=2]
+"_30" -> ""[color=red]
+
+"t2068" [label="  %t2068 = load i8* %bin_idx, align 1"]
+"t2069" [label="  %t2069 = zext i8 %t2068 to i32"]
+"t2070" [label="  %t2070 = add nsw i32 %t2069, 1"]
+"t2071" [label="  %t2071 = sext i32 %t2070 to i64"]
+"t2072" [label="  %t2072 = load i16** %t1971, align 8"]
+"t2073" [label="  %t2073 = getelementptr inbounds i16* %t2072, i64 %t2071"]
+"t2074" [label="  %t2074 = load i16* %t2073, align 2"]
+"t2075" [label="  %t2075 = call i16 @_ZmiILi16EE7ap_uintIXT_EEtRKS1_(i16 zeroext %t2074, %class.ap_uint.9* %p)"]
+"t2076" [label="  %t2076 = getelementptr %class.ap_uint.9* %t1979, i32 0, i32 0"]
+"t2077" [label="  %t2077 = bitcast [2 x i8]* %t2076 to i16*"]
+"_31" [label="  store i16 %t2075, i16* %t2077, align 1"]
+"t2078" [label="  %t2078 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %t1979)"]
+"t2079" [label="  %t2079 = trunc i64 %t2078 to i16"]
+"_32" [label="  store i16 %t2079, i16* %frac, align 2"]
+"t2080" [label="  %t2080 = load i8* %bin_idx, align 1"]
+"_33" [label="  store i8 %t2080, i8* %index_1, align 1"]
+"t2081" [label="  %t2081 = load i8* %bin_idx, align 1"]
+"t2082" [label="  %t2082 = zext i8 %t2081 to i32"]
+"t2083" [label="  %t2083 = add nsw i32 %t2082, 1"]
+"t2084" [label="  %t2084 = trunc i32 %t2083 to i8"]
+"_34" [label="  store i8 %t2084, i8* %index_2, align 1"]
+"_35" [label="  br label %8"]
+"unk_block_8" -> "t2068"[color=red]
+"bin_idx" -> "t2068"
+"t2068" -> "t2069"[color=red weight=2]
+"t2068" -> "t2069"
+"t2069" -> "t2070"[color=red weight=2]
+"t2069" -> "t2070"
+"i32 1" -> "t2070"
+"t2070" -> "t2071"[color=red weight=2]
+"t2070" -> "t2071"
+"t2071" -> "t2072"[color=red weight=2]
+"t1971" -> "t2072"
+"t2072" -> "t2073"[color=red weight=2]
+"t2072" -> "t2073"
+"t2071" -> "t2073"
+"t2073" -> "t2074"[color=red weight=2]
+"t2073" -> "t2074"
+"t2074" -> "t2075"[color=red weight=2]
+"t2074" -> "t2075"
+"p" -> "t2075"
+"_ZmiILi16EE7ap_uintIXT_EEtRKS1_" -> "t2075"
+"t2075" -> "t2076"[color=red weight=2]
+"t1979" -> "t2076"
+"i32 0" -> "t2076"
+"i32 0" -> "t2076"
+"t2076" -> "t2077"[color=red weight=2]
+"t2076" -> "t2077"
+"t2077" -> "_31"[color=red weight=2]
+"t2075" -> "_31"
+"t2077" -> "_31"
+"_31" -> "t2078"[color=red weight=2]
+"t1979" -> "t2078"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2078"
+"t2078" -> "t2079"[color=red weight=2]
+"t2078" -> "t2079"
+"t2079" -> "_32"[color=red weight=2]
+"t2079" -> "_32"
+"frac" -> "_32"
+"_32" -> "t2080"[color=red weight=2]
+"bin_idx" -> "t2080"
+"t2080" -> "_33"[color=red weight=2]
+"t2080" -> "_33"
+"index_1" -> "_33"
+"_33" -> "t2081"[color=red weight=2]
+"bin_idx" -> "t2081"
+"t2081" -> "t2082"[color=red weight=2]
+"t2081" -> "t2082"
+"t2082" -> "t2083"[color=red weight=2]
+"t2082" -> "t2083"
+"i32 1" -> "t2083"
+"t2083" -> "t2084"[color=red weight=2]
+"t2083" -> "t2084"
+"t2084" -> "_34"[color=red weight=2]
+"t2084" -> "_34"
+"index_2" -> "_34"
+"_34" -> "_35"[color=red weight=2]
+"_35" -> ""[color=red]
+
+"_36" [label="  br label %9"]
+"unk_block_9" -> "_36"[color=red]
+"_36" -> ""[color=red]
+
+"t2085" [label="  %t2085 = load i16* %frac, align 2"]
+"_37" [label="  call void @_ZN7ap_uintILi40EEC1Et(%class.ap_uint.34* %t1982, i16 zeroext %t2085)"]
+"t2086" [label="  %t2086 = load i32* %mag_factor, align 4"]
+"_38" [label="  call void @_ZN7ap_uintILi40EEC1Ej(%class.ap_uint.34* %t1983, i32 %t2086)"]
+"t2087" [label="  %t2087 = getelementptr %class.ap_uint.34* %t1982, i32 0, i32 0"]
+"t2088" [label="  %t2088 = bitcast i40* %t1984 to [5 x i8]*"]
+"t2089" [label="  %t2089 = load [5 x i8]* %t2087"]
+"_39" [label="  store [5 x i8] %t2089, [5 x i8]* %t2088, align 1"]
+"t2090" [label="  %t2090 = load i40* %t1984"]
+"t2091" [label="  %t2091 = getelementptr %class.ap_uint.34* %t1983, i32 0, i32 0"]
+"t2092" [label="  %t2092 = bitcast i40* %t1985 to [5 x i8]*"]
+"t2093" [label="  %t2093 = load [5 x i8]* %t2091"]
+"_40" [label="  store [5 x i8] %t2093, [5 x i8]* %t2092, align 1"]
+"t2094" [label="  %t2094 = load i40* %t1985"]
+"t2095" [label="  %t2095 = call { i64, i16 } @_ZmlILi40ELi40EE6ap_intIXplT_T0_EE7ap_uintIXT_EES2_IXT0_EE(i40 %t2090, i40 %t2094)"]
+"t2096" [label="  %t2096 = getelementptr %class.ap_int.33* %t1981, i32 0, i32 0"]
+"_41" [label="  store { i64, i16 } %t2095, { i64, i16 }* %t1986"]
+"t2097" [label="  %t2097 = bitcast { i64, i16 }* %t1986 to [10 x i8]*"]
+"t2098" [label="  %t2098 = load [10 x i8]* %t2097, align 1"]
+"_42" [label="  store [10 x i8] %t2098, [10 x i8]* %t2096"]
+"t2099" [label="  %t2099 = bitcast { i64, i16 }* %t1987 to i8*"]
+"t2100" [label="  %t2100 = bitcast %class.ap_int.33* %t1981 to i8*"]
+"_43" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t2099, i8* %t2100, i64 10, i32 0, i1 false)"]
+"t2101" [label="  %t2101 = getelementptr { i64, i16 }* %t1987, i32 0, i32 0"]
+"t2102" [label="  %t2102 = load i64* %t2101, align 1"]
+"t2103" [label="  %t2103 = getelementptr { i64, i16 }* %t1987, i32 0, i32 1"]
+"t2104" [label="  %t2104 = load i16* %t2103, align 1"]
+"t2105" [label="  %t2105 = call { i64, i16 } @_ZrsILi80EE6ap_intIXT_EES1_i(i64 %t2102, i16 %t2104, i32 22)"]
+"t2106" [label="  %t2106 = getelementptr %class.ap_int.33* %t1980, i32 0, i32 0"]
+"_44" [label="  store { i64, i16 } %t2105, { i64, i16 }* %t1988"]
+"t2107" [label="  %t2107 = bitcast { i64, i16 }* %t1988 to [10 x i8]*"]
+"t2108" [label="  %t2108 = load [10 x i8]* %t2107, align 1"]
+"_45" [label="  store [10 x i8] %t2108, [10 x i8]* %t2106"]
+"_46" [label="  call void @_ZN7ap_uintILi25EEC1ILi80EEERK6ap_intIXT_EE(%class.ap_uint.10* %part_1, %class.ap_int.33* %t1980)"]
+"t2109" [label="  %t2109 = call i64 @_ZNK7ap_uintILi16EEcvmEv(%class.ap_uint.9* %m)"]
+"t2110" [label="  %t2110 = trunc i64 %t2109 to i32"]
+"t2111" [label="  %t2111 = shl i32 %t2110, 1"]
+"_47" [label="  store i32 %t2111, i32* %m_shifted, align 4"]
+"t2112" [label="  %t2112 = load i32* %m_shifted, align 4"]
+"t2113" [label="  %t2113 = call i32 @_ZmiILi25EE7ap_uintIXT_EEjRKS1_(i32 %t2112, %class.ap_uint.10* %part_1)"]
+"t2114" [label="  %t2114 = getelementptr %class.ap_uint.10* %part_2, i32 0, i32 0"]
+"t2115" [label="  %t2115 = bitcast [4 x i8]* %t2114 to i32*"]
+"_48" [label="  store i32 %t2113, i32* %t2115, align 1"]
+"t2116" [label="  %t2116 = load i8* %index_1, align 1"]
+"t2117" [label="  %t2117 = zext i8 %t2116 to i64"]
+"t2118" [label="  %t2118 = load %class.ap_uint.10** %t1972, align 8"]
+"t2119" [label="  %t2119 = getelementptr inbounds %class.ap_uint.10* %t2118, i64 %t2117"]
+"t2120" [label="  %t2120 = bitcast %class.ap_uint.10* %t1989 to i8*"]
+"t2121" [label="  %t2121 = bitcast %class.ap_uint.10* %part_1 to i8*"]
+"_49" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t2120, i8* %t2121, i64 4, i32 1, i1 false)"]
+"t2122" [label="  %t2122 = getelementptr %class.ap_uint.10* %t1989, i32 0, i32 0"]
+"t2123" [label="  %t2123 = bitcast [4 x i8]* %t2122 to i32*"]
+"t2124" [label="  %t2124 = load i32* %t2123, align 1"]
+"t2125" [label="  %t2125 = call %class.ap_uint.10* @_ZpLILi25ELi25EER7ap_uintIXT_EES2_S0_IXT0_EE(%class.ap_uint.10* %t2119, i32 %t2124)"]
+"t2126" [label="  %t2126 = load i8* %index_2, align 1"]
+"t2127" [label="  %t2127 = zext i8 %t2126 to i64"]
+"t2128" [label="  %t2128 = load %class.ap_uint.10** %t1972, align 8"]
+"t2129" [label="  %t2129 = getelementptr inbounds %class.ap_uint.10* %t2128, i64 %t2127"]
+"t2130" [label="  %t2130 = bitcast %class.ap_uint.10* %t1990 to i8*"]
+"t2131" [label="  %t2131 = bitcast %class.ap_uint.10* %part_2 to i8*"]
+"_50" [label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %t2130, i8* %t2131, i64 4, i32 1, i1 false)"]
+"t2132" [label="  %t2132 = getelementptr %class.ap_uint.10* %t1990, i32 0, i32 0"]
+"t2133" [label="  %t2133 = bitcast [4 x i8]* %t2132 to i32*"]
+"t2134" [label="  %t2134 = load i32* %t2133, align 1"]
+"t2135" [label="  %t2135 = call %class.ap_uint.10* @_ZpLILi25ELi25EER7ap_uintIXT_EES2_S0_IXT0_EE(%class.ap_uint.10* %t2129, i32 %t2134)"]
+"_51" [label="  ret void"]
+"unk_block_10" -> "t2085"[color=red]
+"frac" -> "t2085"
+"t2085" -> "_37"[color=red weight=2]
+"t1982" -> "_37"
+"t2085" -> "_37"
+"_ZN7ap_uintILi40EEC1Et" -> "_37"
+"_37" -> "t2086"[color=red weight=2]
+"mag_factor" -> "t2086"
+"t2086" -> "_38"[color=red weight=2]
+"t1983" -> "_38"
+"t2086" -> "_38"
+"_ZN7ap_uintILi40EEC1Ej" -> "_38"
+"_38" -> "t2087"[color=red weight=2]
+"t1982" -> "t2087"
+"i32 0" -> "t2087"
+"i32 0" -> "t2087"
+"t2087" -> "t2088"[color=red weight=2]
+"t1984" -> "t2088"
+"t2088" -> "t2089"[color=red weight=2]
+"t2087" -> "t2089"
+"t2089" -> "_39"[color=red weight=2]
+"t2089" -> "_39"
+"t2088" -> "_39"
+"_39" -> "t2090"[color=red weight=2]
+"t1984" -> "t2090"
+"t2090" -> "t2091"[color=red weight=2]
+"t1983" -> "t2091"
+"i32 0" -> "t2091"
+"i32 0" -> "t2091"
+"t2091" -> "t2092"[color=red weight=2]
+"t1985" -> "t2092"
+"t2092" -> "t2093"[color=red weight=2]
+"t2091" -> "t2093"
+"t2093" -> "_40"[color=red weight=2]
+"t2093" -> "_40"
+"t2092" -> "_40"
+"_40" -> "t2094"[color=red weight=2]
+"t1985" -> "t2094"
+"t2094" -> "t2095"[color=red weight=2]
+"t2090" -> "t2095"
+"t2094" -> "t2095"
+"_ZmlILi40ELi40EE6ap_intIXplT_T0_EE7ap_uintIXT_EES2_IXT0_EE" -> "t2095"
+"t2095" -> "t2096"[color=red weight=2]
+"t1981" -> "t2096"
+"i32 0" -> "t2096"
+"i32 0" -> "t2096"
+"t2096" -> "_41"[color=red weight=2]
+"t2095" -> "_41"
+"t1986" -> "_41"
+"_41" -> "t2097"[color=red weight=2]
+"t1986" -> "t2097"
+"t2097" -> "t2098"[color=red weight=2]
+"t2097" -> "t2098"
+"t2098" -> "_42"[color=red weight=2]
+"t2098" -> "_42"
+"t2096" -> "_42"
+"_42" -> "t2099"[color=red weight=2]
+"t1987" -> "t2099"
+"t2099" -> "t2100"[color=red weight=2]
+"t1981" -> "t2100"
+"t2100" -> "_43"[color=red weight=2]
+"t2099" -> "_43"
+"t2100" -> "_43"
+"i64 10" -> "_43"
+"i32 0" -> "_43"
+"i1 false" -> "_43"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_43"
+"_43" -> "t2101"[color=red weight=2]
+"t1987" -> "t2101"
+"i32 0" -> "t2101"
+"i32 0" -> "t2101"
+"t2101" -> "t2102"[color=red weight=2]
+"t2101" -> "t2102"
+"t2102" -> "t2103"[color=red weight=2]
+"t1987" -> "t2103"
+"i32 0" -> "t2103"
+"i32 1" -> "t2103"
+"t2103" -> "t2104"[color=red weight=2]
+"t2103" -> "t2104"
+"t2104" -> "t2105"[color=red weight=2]
+"t2102" -> "t2105"
+"t2104" -> "t2105"
+"i32 22" -> "t2105"
+"_ZrsILi80EE6ap_intIXT_EES1_i" -> "t2105"
+"t2105" -> "t2106"[color=red weight=2]
+"t1980" -> "t2106"
+"i32 0" -> "t2106"
+"i32 0" -> "t2106"
+"t2106" -> "_44"[color=red weight=2]
+"t2105" -> "_44"
+"t1988" -> "_44"
+"_44" -> "t2107"[color=red weight=2]
+"t1988" -> "t2107"
+"t2107" -> "t2108"[color=red weight=2]
+"t2107" -> "t2108"
+"t2108" -> "_45"[color=red weight=2]
+"t2108" -> "_45"
+"t2106" -> "_45"
+"_45" -> "_46"[color=red weight=2]
+"part_1" -> "_46"
+"t1980" -> "_46"
+"_ZN7ap_uintILi25EEC1ILi80EEERK6ap_intIXT_EE" -> "_46"
+"_46" -> "t2109"[color=red weight=2]
+"m" -> "t2109"
+"_ZNK7ap_uintILi16EEcvmEv" -> "t2109"
+"t2109" -> "t2110"[color=red weight=2]
+"t2109" -> "t2110"
+"t2110" -> "t2111"[color=red weight=2]
+"t2110" -> "t2111"
+"i32 1" -> "t2111"
+"t2111" -> "_47"[color=red weight=2]
+"t2111" -> "_47"
+"m_shifted" -> "_47"
+"_47" -> "t2112"[color=red weight=2]
+"m_shifted" -> "t2112"
+"t2112" -> "t2113"[color=red weight=2]
+"t2112" -> "t2113"
+"part_1" -> "t2113"
+"_ZmiILi25EE7ap_uintIXT_EEjRKS1_" -> "t2113"
+"t2113" -> "t2114"[color=red weight=2]
+"part_2" -> "t2114"
+"i32 0" -> "t2114"
+"i32 0" -> "t2114"
+"t2114" -> "t2115"[color=red weight=2]
+"t2114" -> "t2115"
+"t2115" -> "_48"[color=red weight=2]
+"t2113" -> "_48"
+"t2115" -> "_48"
+"_48" -> "t2116"[color=red weight=2]
+"index_1" -> "t2116"
+"t2116" -> "t2117"[color=red weight=2]
+"t2116" -> "t2117"
+"t2117" -> "t2118"[color=red weight=2]
+"t1972" -> "t2118"
+"t2118" -> "t2119"[color=red weight=2]
+"t2118" -> "t2119"
+"t2117" -> "t2119"
+"t2119" -> "t2120"[color=red weight=2]
+"t1989" -> "t2120"
+"t2120" -> "t2121"[color=red weight=2]
+"part_1" -> "t2121"
+"t2121" -> "_49"[color=red weight=2]
+"t2120" -> "_49"
+"t2121" -> "_49"
+"i64 4" -> "_49"
+"i32 1" -> "_49"
+"i1 false" -> "_49"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_49"
+"_49" -> "t2122"[color=red weight=2]
+"t1989" -> "t2122"
+"i32 0" -> "t2122"
+"i32 0" -> "t2122"
+"t2122" -> "t2123"[color=red weight=2]
+"t2122" -> "t2123"
+"t2123" -> "t2124"[color=red weight=2]
+"t2123" -> "t2124"
+"t2124" -> "t2125"[color=red weight=2]
+"t2119" -> "t2125"
+"t2124" -> "t2125"
+"_ZpLILi25ELi25EER7ap_uintIXT_EES2_S0_IXT0_EE" -> "t2125"
+"t2125" -> "t2126"[color=red weight=2]
+"index_2" -> "t2126"
+"t2126" -> "t2127"[color=red weight=2]
+"t2126" -> "t2127"
+"t2127" -> "t2128"[color=red weight=2]
+"t1972" -> "t2128"
+"t2128" -> "t2129"[color=red weight=2]
+"t2128" -> "t2129"
+"t2127" -> "t2129"
+"t2129" -> "t2130"[color=red weight=2]
+"t1990" -> "t2130"
+"t2130" -> "t2131"[color=red weight=2]
+"part_2" -> "t2131"
+"t2131" -> "_50"[color=red weight=2]
+"t2130" -> "_50"
+"t2131" -> "_50"
+"i64 4" -> "_50"
+"i32 1" -> "_50"
+"i1 false" -> "_50"
+"llvm.memcpy.p0i8.p0i8.i64" -> "_50"
+"_50" -> "t2132"[color=red weight=2]
+"t1990" -> "t2132"
+"i32 0" -> "t2132"
+"i32 0" -> "t2132"
+"t2132" -> "t2133"[color=red weight=2]
+"t2132" -> "t2133"
+"t2133" -> "t2134"[color=red weight=2]
+"t2133" -> "t2134"
+"t2134" -> "t2135"[color=red weight=2]
+"t2129" -> "t2135"
+"t2134" -> "t2135"
+"_ZpLILi25ELi25EER7ap_uintIXT_EES2_S0_IXT0_EE" -> "t2135"
+"t2135" -> "_51"[color=red weight=2]
+
+}

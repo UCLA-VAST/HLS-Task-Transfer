@@ -1,0 +1,48 @@
+<pragmas>
+<pragma file="./__merlinkernel_bbgemm.c" line="106" pragmaType="pipeline" parentfunction="bbgemm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="120" pragmaType="unroll" parentfunction="bbgemm" factor="-1" skip_exit_check="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="132" pragmaType="unroll" parentfunction="bbgemm" factor="-1" skip_exit_check="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="146" pragmaType="unroll" parentfunction="bbgemm" factor="-1" skip_exit_check="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="29" pragmaType="interface" parentfunction="bbgemm" mode="m_axi" port="m1" bundle="merlin_gmem_bbgemm_512_0" offset="slave" name="" depth="512" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="31" pragmaType="interface" parentfunction="bbgemm" mode="m_axi" port="m2" bundle="merlin_gmem_bbgemm_512_1" offset="slave" name="" depth="512" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="33" pragmaType="interface" parentfunction="bbgemm" mode="m_axi" port="prod" bundle="merlin_gmem_bbgemm_512_prod" offset="slave" name="" depth="512" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="35" pragmaType="interface" parentfunction="bbgemm" mode="s_axilite" port="m1" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="37" pragmaType="interface" parentfunction="bbgemm" mode="s_axilite" port="m2" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="39" pragmaType="interface" parentfunction="bbgemm" mode="s_axilite" port="prod" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="41" pragmaType="interface" parentfunction="bbgemm" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="./__merlinkernel_bbgemm.c" line="56" pragmaType="array_partition" parentfunction="bbgemm" dim="3" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="58" pragmaType="array_partition" parentfunction="bbgemm" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="61" pragmaType="array_partition" parentfunction="bbgemm" dim="4" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="63" pragmaType="array_partition" parentfunction="bbgemm" dim="2" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="66" pragmaType="array_partition" parentfunction="bbgemm" dim="3" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="./__merlinkernel_bbgemm.c" line="68" pragmaType="array_partition" parentfunction="bbgemm" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="././mars_wide_bus_3d.h" line="1898" pragmaType="inline" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" off="0" region="0" recursive="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="1943" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="1956" pragmaType="pipeline" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="././mars_wide_bus_3d.h" line="2006" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="1977" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="1966" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_4d.h" line="2322" pragmaType="inline" parentfunction="memcpy_wide_bus_read_double_4d_8_8_8_512" off="0" region="0" recursive="0"/>
+<pragma file="././mars_wide_bus_4d.h" line="2376" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_4d_8_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_4d.h" line="2391" pragmaType="pipeline" parentfunction="memcpy_wide_bus_read_double_4d_8_8_8_512" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="././mars_wide_bus_4d.h" line="2461" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_4d_8_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_4d.h" line="2401" pragmaType="unroll" parentfunction="memcpy_wide_bus_read_double_4d_8_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2021" pragmaType="inline" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" off="0" region="0" recursive="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2062" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2160" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2099" pragmaType="pipeline" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="././mars_wide_bus_3d.h" line="2145" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2119" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2109" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././mars_wide_bus_3d.h" line="2079" pragmaType="unroll" parentfunction="memcpy_wide_bus_write_double_3d_8_8_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="51" pragmaType="inline" parentfunction="merlin_set_range_512" off="0" region="0" recursive="0"/>
+<pragma file="././memcpy_512.h" line="58" pragmaType="unroll" parentfunction="merlin_set_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="65" pragmaType="unroll" parentfunction="merlin_set_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="72" pragmaType="unroll" parentfunction="merlin_set_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="79" pragmaType="unroll" parentfunction="merlin_set_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="11" pragmaType="inline" parentfunction="merlin_get_range_512" off="0" region="0" recursive="0"/>
+<pragma file="././memcpy_512.h" line="18" pragmaType="unroll" parentfunction="merlin_get_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="25" pragmaType="unroll" parentfunction="merlin_get_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="32" pragmaType="unroll" parentfunction="merlin_get_range_512" factor="-1" skip_exit_check="0"/>
+<pragma file="././memcpy_512.h" line="39" pragmaType="unroll" parentfunction="merlin_get_range_512" factor="-1" skip_exit_check="0"/>
+</pragmas>

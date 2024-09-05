@@ -1,0 +1,12 @@
+digraph "CFG for '_ZL34p_Z10xf_satcastI7ap_uintILi8EEEi_1i' function" {
+	label="CFG for '_ZL34p_Z10xf_satcastI7ap_uintILi8EEEi_1i' function";
+
+	Node0x296ebd0 [shape=record,label="{%0:\l  %1 = alloca %class.ap_uint.0, align 1\l  %2 = alloca i32, align 4\l  store i32 %v, i32* %2, align 4\l  %3 = load i32* %2, align 4\l  %4 = icmp sgt i32 %3, 255\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x296ebd0:s0 -> Node0x296eed0;
+	Node0x296ebd0:s1 -> Node0x296ef30;
+	Node0x296eed0 [shape=record,label="{%5:\l\l  br label %8\l}"];
+	Node0x296eed0 -> Node0x296f040;
+	Node0x296ef30 [shape=record,label="{%6:\l\l  %7 = load i32* %2, align 4\l  br label %8\l}"];
+	Node0x296ef30 -> Node0x296f040;
+	Node0x296f040 [shape=record,label="{%8:\l\l  %9 = phi i32 [ 255, %5 ], [ %7, %6 ]\l  call void @_ZN7ap_uintILi8EEC1Ei(%class.ap_uint.0* %1, i32 %9)\l  %10 = getelementptr %class.ap_uint.0* %1, i32 0, i32 0\l  %11 = bitcast [1 x i8]* %10 to i8*\l  %12 = load i8* %11, align 1\l  ret i8 %12\l}"];
+}

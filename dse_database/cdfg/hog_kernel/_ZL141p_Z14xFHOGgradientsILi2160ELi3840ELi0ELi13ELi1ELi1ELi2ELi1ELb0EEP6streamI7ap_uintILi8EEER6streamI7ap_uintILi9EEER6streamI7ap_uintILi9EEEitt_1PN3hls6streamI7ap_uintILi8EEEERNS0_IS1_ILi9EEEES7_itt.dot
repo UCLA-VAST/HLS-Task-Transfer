@@ -1,0 +1,103 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t331" [label="  %t331 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t332" [label="  %t332 = alloca %\"class.hls::stream.6\"*, align 8"]
+"t333" [label="  %t333 = alloca %\"class.hls::stream.6\"*, align 8"]
+"t334" [label="  %t334 = alloca i32, align 4"]
+"t335" [label="  %t335 = alloca i16, align 2"]
+"t336" [label="  %t336 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.2\"* %_src, %\"class.hls::stream.2\"** %t331, align 8"]
+"_2" [label="  store %\"class.hls::stream.6\"* %_gradx, %\"class.hls::stream.6\"** %t332, align 8"]
+"_3" [label="  store %\"class.hls::stream.6\"* %_grady, %\"class.hls::stream.6\"** %t333, align 8"]
+"_4" [label="  store i32 %_border_type, i32* %t334, align 4"]
+"_5" [label="  store i16 %_height, i16* %t335, align 2"]
+"_6" [label="  store i16 %_width, i16* %t336, align 2"]
+"t337" [label="  %t337 = load i32* %t334, align 4"]
+"t338" [label="  %t338 = icmp eq i32 %t337, 0"]
+"_7" [label="  br i1 %t338, label %1, label %2"]
+"unk_block_1" -> "t331"[color=red]
+"i32 1" -> "t331"
+"t331" -> "t332"[color=red weight=2]
+"i32 1" -> "t332"
+"t332" -> "t333"[color=red weight=2]
+"i32 1" -> "t333"
+"t333" -> "t334"[color=red weight=2]
+"i32 1" -> "t334"
+"t334" -> "t335"[color=red weight=2]
+"i32 1" -> "t335"
+"t335" -> "t336"[color=red weight=2]
+"i32 1" -> "t336"
+"t336" -> "_1"[color=red weight=2]
+"_src" -> "_1"
+"t331" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_gradx" -> "_2"
+"t332" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_grady" -> "_3"
+"t333" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_border_type" -> "_4"
+"t334" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"_height" -> "_5"
+"t335" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"_width" -> "_6"
+"t336" -> "_6"
+"_6" -> "t337"[color=red weight=2]
+"t334" -> "t337"
+"t337" -> "t338"[color=red weight=2]
+"t337" -> "t338"
+"i32 0" -> "t338"
+"t338" -> "_7"[color=red weight=2]
+"t338" -> "_7"
+"_7" -> ""[color=red]
+"_7" -> ""[color=red]
+
+"_8" [label="  br label %4"]
+"unk_block_2" -> "_8"[color=red]
+"_8" -> ""[color=red]
+
+"_9" [label="  call void @__assert_fail(i8* getelementptr inbounds ([82 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([32 x i8]* @.str13, i32 0, i32 0), i32 505, i8* getelementptr inbounds ([289 x i8]* @__PRETTY_FUNCTION__._ZL141p_Z14xFHOGgradientsILi2160ELi3840ELi0ELi13ELi1ELi1ELi2ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEEitt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi9EEEES7_itt, i32 0, i32 0)) noreturn nounwind"]
+"_10" [label="  unreachable"]
+"unk_block_3" -> "_9"[color=red]
+"i8* getelementptr inbounds ([82 x i8]* @.str12, i32 0, i32 0)" -> "_9"
+"i8* getelementptr inbounds ([32 x i8]* @.str13, i32 0, i32 0)" -> "_9"
+"i32 505" -> "_9"
+"i8* getelementptr inbounds ([289 x i8]* @__PRETTY_FUNCTION__._ZL141p_Z14xFHOGgradientsILi2160ELi3840ELi0ELi13ELi1ELi1ELi2ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEEitt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi9EEEES7_itt, i32 0, i32 0)" -> "_9"
+"__assert_fail" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+
+"_11" [label="  br label %4"]
+"unk_block_4" -> "_11"[color=red]
+"_11" -> ""[color=red]
+
+"t339" [label="  %t339 = load %\"class.hls::stream.2\"** %t331, align 8"]
+"t340" [label="  %t340 = load %\"class.hls::stream.6\"** %t332, align 8"]
+"t341" [label="  %t341 = load %\"class.hls::stream.6\"** %t333, align 8"]
+"t342" [label="  %t342 = load i16* %t335, align 2"]
+"t343" [label="  %t343 = load i16* %t336, align 2"]
+"_12" [label="  call void @_ZL157p_Z20xFHOGgradientsKernelILi2160ELi3840ELi0ELi13ELi1ELi1ELi2ELi1ELi3840ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi9EEEES7_tt(%\"class.hls::stream.2\"* %t339, %\"class.hls::stream.6\"* %t340, %\"class.hls::stream.6\"* %t341, i16 zeroext %t342, i16 zeroext %t343)"]
+"_13" [label="  ret void"]
+"unk_block_5" -> "t339"[color=red]
+"t331" -> "t339"
+"t339" -> "t340"[color=red weight=2]
+"t332" -> "t340"
+"t340" -> "t341"[color=red weight=2]
+"t333" -> "t341"
+"t341" -> "t342"[color=red weight=2]
+"t335" -> "t342"
+"t342" -> "t343"[color=red weight=2]
+"t336" -> "t343"
+"t343" -> "_12"[color=red weight=2]
+"t339" -> "_12"
+"t340" -> "_12"
+"t341" -> "_12"
+"t342" -> "_12"
+"t343" -> "_12"
+"_ZL157p_Z20xFHOGgradientsKernelILi2160ELi3840ELi0ELi13ELi1ELi1ELi2ELi1ELi3840ELi1ELb0EEP6streamI7ap_uintILi8EEER6streamI7ap_uintILi9EEER6streamI7ap_uintILi9EEEtt_1PN3hls6streamI7ap_uintILi8EEEERNS0_IS1_ILi9EEEES7_tt" -> "_12"
+"_12" -> "_13"[color=red weight=2]
+
+}

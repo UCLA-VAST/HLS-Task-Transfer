@@ -1,0 +1,113 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t109" [label="  %t109 = alloca %struct.xf_Rect_unsigned_int_*, align 8"]
+"t110" [label="  %t110 = alloca %struct.xf_Rect_unsigned_int_*, align 8"]
+"_1" [label="  store %struct.xf_Rect_unsigned_int_* %this_, %struct.xf_Rect_unsigned_int_** %t109, align 8"]
+"_2" [label="  store %struct.xf_Rect_unsigned_int_* %rect, %struct.xf_Rect_unsigned_int_** %t110, align 8"]
+"t111" [label="  %t111 = load %struct.xf_Rect_unsigned_int_** %t110, align 8"]
+"t112" [label="  %t112 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t111, i32 0, i32 0"]
+"t113" [label="  %t113 = load i32* %t112, align 4"]
+"t114" [label="  %t114 = load %struct.xf_Rect_unsigned_int_** %t109, align 8"]
+"t115" [label="  %t115 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t114, i32 0, i32 0"]
+"_3" [label="  store i32 %t113, i32* %t115, align 4"]
+"t116" [label="  %t116 = load %struct.xf_Rect_unsigned_int_** %t110, align 8"]
+"t117" [label="  %t117 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t116, i32 0, i32 1"]
+"t118" [label="  %t118 = load i32* %t117, align 4"]
+"t119" [label="  %t119 = load %struct.xf_Rect_unsigned_int_** %t109, align 8"]
+"t120" [label="  %t120 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t119, i32 0, i32 1"]
+"_4" [label="  store i32 %t118, i32* %t120, align 4"]
+"t121" [label="  %t121 = load %struct.xf_Rect_unsigned_int_** %t110, align 8"]
+"t122" [label="  %t122 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t121, i32 0, i32 2"]
+"t123" [label="  %t123 = load i32* %t122, align 4"]
+"t124" [label="  %t124 = load %struct.xf_Rect_unsigned_int_** %t109, align 8"]
+"t125" [label="  %t125 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t124, i32 0, i32 2"]
+"_5" [label="  store i32 %t123, i32* %t125, align 4"]
+"t126" [label="  %t126 = load %struct.xf_Rect_unsigned_int_** %t110, align 8"]
+"t127" [label="  %t127 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t126, i32 0, i32 3"]
+"t128" [label="  %t128 = load i32* %t127, align 4"]
+"t129" [label="  %t129 = load %struct.xf_Rect_unsigned_int_** %t109, align 8"]
+"t130" [label="  %t130 = getelementptr inbounds %struct.xf_Rect_unsigned_int_* %t129, i32 0, i32 3"]
+"_6" [label="  store i32 %t128, i32* %t130, align 4"]
+"_7" [label="  ret void"]
+"unk_block_1" -> "t109"[color=red]
+"i32 1" -> "t109"
+"t109" -> "t110"[color=red weight=2]
+"i32 1" -> "t110"
+"t110" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t109" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"rect" -> "_2"
+"t110" -> "_2"
+"_2" -> "t111"[color=red weight=2]
+"t110" -> "t111"
+"t111" -> "t112"[color=red weight=2]
+"t111" -> "t112"
+"i32 0" -> "t112"
+"i32 0" -> "t112"
+"t112" -> "t113"[color=red weight=2]
+"t112" -> "t113"
+"t113" -> "t114"[color=red weight=2]
+"t109" -> "t114"
+"t114" -> "t115"[color=red weight=2]
+"t114" -> "t115"
+"i32 0" -> "t115"
+"i32 0" -> "t115"
+"t115" -> "_3"[color=red weight=2]
+"t113" -> "_3"
+"t115" -> "_3"
+"_3" -> "t116"[color=red weight=2]
+"t110" -> "t116"
+"t116" -> "t117"[color=red weight=2]
+"t116" -> "t117"
+"i32 0" -> "t117"
+"i32 1" -> "t117"
+"t117" -> "t118"[color=red weight=2]
+"t117" -> "t118"
+"t118" -> "t119"[color=red weight=2]
+"t109" -> "t119"
+"t119" -> "t120"[color=red weight=2]
+"t119" -> "t120"
+"i32 0" -> "t120"
+"i32 1" -> "t120"
+"t120" -> "_4"[color=red weight=2]
+"t118" -> "_4"
+"t120" -> "_4"
+"_4" -> "t121"[color=red weight=2]
+"t110" -> "t121"
+"t121" -> "t122"[color=red weight=2]
+"t121" -> "t122"
+"i32 0" -> "t122"
+"i32 2" -> "t122"
+"t122" -> "t123"[color=red weight=2]
+"t122" -> "t123"
+"t123" -> "t124"[color=red weight=2]
+"t109" -> "t124"
+"t124" -> "t125"[color=red weight=2]
+"t124" -> "t125"
+"i32 0" -> "t125"
+"i32 2" -> "t125"
+"t125" -> "_5"[color=red weight=2]
+"t123" -> "_5"
+"t125" -> "_5"
+"_5" -> "t126"[color=red weight=2]
+"t110" -> "t126"
+"t126" -> "t127"[color=red weight=2]
+"t126" -> "t127"
+"i32 0" -> "t127"
+"i32 3" -> "t127"
+"t127" -> "t128"[color=red weight=2]
+"t127" -> "t128"
+"t128" -> "t129"[color=red weight=2]
+"t109" -> "t129"
+"t129" -> "t130"[color=red weight=2]
+"t129" -> "t130"
+"i32 0" -> "t130"
+"i32 3" -> "t130"
+"t130" -> "_6"[color=red weight=2]
+"t128" -> "_6"
+"t130" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+
+}

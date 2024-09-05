@@ -1,0 +1,45 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1341" [label="  %t1341 = alloca i64, align 8"]
+"t1342" [label="  %t1342 = alloca i16, align 2"]
+"out_res" [label="  %out_res = alloca i64, align 8"]
+"_1" [label="  store i64 %in_n, i64* %t1341, align 8"]
+"_2" [label="  store i16 %in_d, i16* %t1342, align 2"]
+"t1343" [label="  %t1343 = load i64* %t1341, align 8"]
+"t1344" [label="  %t1344 = load i16* %t1342, align 2"]
+"t1345" [label="  %t1345 = zext i16 %t1344 to i64"]
+"t1346" [label="  %t1346 = udiv i64 %t1343, %t1345"]
+"_3" [label="  store i64 %t1346, i64* %out_res, align 8"]
+"t1347" [label="  %t1347 = load i64* %out_res, align 8"]
+"_4" [label="  ret i64 %t1347"]
+"unk_block_1" -> "t1341"[color=red]
+"i32 1" -> "t1341"
+"t1341" -> "t1342"[color=red weight=2]
+"i32 1" -> "t1342"
+"t1342" -> "out_res"[color=red weight=2]
+"i32 1" -> "out_res"
+"out_res" -> "_1"[color=red weight=2]
+"in_n" -> "_1"
+"t1341" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"in_d" -> "_2"
+"t1342" -> "_2"
+"_2" -> "t1343"[color=red weight=2]
+"t1341" -> "t1343"
+"t1343" -> "t1344"[color=red weight=2]
+"t1342" -> "t1344"
+"t1344" -> "t1345"[color=red weight=2]
+"t1344" -> "t1345"
+"t1345" -> "t1346"[color=red weight=2]
+"t1343" -> "t1346"
+"t1345" -> "t1346"
+"t1346" -> "_3"[color=red weight=2]
+"t1346" -> "_3"
+"out_res" -> "_3"
+"_3" -> "t1347"[color=red weight=2]
+"out_res" -> "t1347"
+"t1347" -> "_4"[color=red weight=2]
+"t1347" -> "_4"
+
+}

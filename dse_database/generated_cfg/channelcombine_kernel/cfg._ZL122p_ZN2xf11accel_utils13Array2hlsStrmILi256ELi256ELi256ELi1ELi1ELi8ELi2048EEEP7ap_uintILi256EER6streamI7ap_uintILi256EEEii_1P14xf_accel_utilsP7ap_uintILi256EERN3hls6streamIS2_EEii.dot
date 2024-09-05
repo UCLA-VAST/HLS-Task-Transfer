@@ -1,0 +1,14 @@
+digraph "CFG for '_ZL122p_ZN2xf11accel_utils13Array2hlsStrmILi256ELi256ELi256ELi1ELi1ELi8ELi2048EEEP7ap_uintILi256EER6streamI7ap_uintILi256EEEii_1P14xf_accel_utilsP7ap_uintILi256EERN3hls6streamIS2_EEii' function" {
+	label="CFG for '_ZL122p_ZN2xf11accel_utils13Array2hlsStrmILi256ELi256ELi256ELi1ELi1ELi8ELi2048EEEP7ap_uintILi256EER6streamI7ap_uintILi256EEEii_1P14xf_accel_utilsP7ap_uintILi256EERN3hls6streamIS2_EEii' function";
+
+	Node0x2fe9040 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_accel_utils*, align 8\l  %2 = alloca %class.ap_uint*, align 8\l  %3 = alloca %\"class.hls::stream\"*, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %pixel_width = alloca i32, align 4\l  %loop_count = alloca i32, align 4\l  %i = alloca i32, align 4\l  store %struct.xf_accel_utils* %this_, %struct.xf_accel_utils** %1, align 8\l  store %class.ap_uint* %srcPtr, %class.ap_uint** %2, align 8\l  store %\"class.hls::stream\"* %dstStrm, %\"class.hls::stream\"** %3, align 8\l  store i32 %rows, i32* %4, align 4\l  store i32 %cols, i32* %5, align 4\l  store i32 8, i32* %pixel_width, align 4\l  %6 = load i32* %4, align 4\l  %7 = load i32* %5, align 4\l  %8 = mul nsw i32 %6, %7\l  %9 = load i32* %pixel_width, align 4\l  %10 = mul nsw i32 %8, %9\l  %11 = add nsw i32 %10, 256\l  %12 = sub nsw i32 %11, 1\l  %13 = sdiv i32 %12, 256\l  store i32 %13, i32* %loop_count, align 4\l  store i32 0, i32* %i, align 4\l  br label %14\l}"];
+	Node0x2fe9040 -> Node0x2fe9db0;
+	Node0x2fe9db0 [shape=record,label="{%14:\l\l  %15 = load i32* %i, align 4\l  %16 = load i32* %loop_count, align 4\l  %17 = icmp slt i32 %15, %16\l  br i1 %17, label %18, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x2fe9db0:s0 -> Node0x2fe9f90;
+	Node0x2fe9db0:s1 -> Node0x2fe9ff0;
+	Node0x2fe9f90 [shape=record,label="{%18:\l\l  %19 = load %\"class.hls::stream\"** %3, align 8\l  %20 = load i32* %i, align 4\l  %21 = sext i32 %20 to i64\l  %22 = load %class.ap_uint** %2, align 8\l  %23 = getelementptr inbounds %class.ap_uint* %22, i64 %21\l  call void @_ZN3hls6streamI7ap_uintILi256EEE5writeERKS2_(%\"class.hls::stream\"* %19, %class.ap_uint* %23)\l  br label %24\l}"];
+	Node0x2fe9f90 -> Node0x2fea460;
+	Node0x2fea460 [shape=record,label="{%24:\l\l  %25 = load i32* %i, align 4\l  %26 = add nsw i32 %25, 1\l  store i32 %26, i32* %i, align 4\l  br label %14\l}"];
+	Node0x2fea460 -> Node0x2fe9db0;
+	Node0x2fe9ff0 [shape=record,label="{%27:\l\l  ret void\l}"];
+}

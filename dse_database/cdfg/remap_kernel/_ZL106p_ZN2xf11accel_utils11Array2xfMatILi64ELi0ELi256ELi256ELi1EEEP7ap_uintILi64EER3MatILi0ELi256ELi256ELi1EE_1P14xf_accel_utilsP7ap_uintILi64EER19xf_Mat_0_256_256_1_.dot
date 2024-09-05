@@ -1,0 +1,110 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1024" [label="  %t1024 = alloca %struct.xf_accel_utils*, align 8"]
+"t1025" [label="  %t1025 = alloca %class.ap_uint*, align 8"]
+"t1026" [label="  %t1026 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"ch_width" [label="  %ch_width = alloca i32, align 4"]
+"strm" [label="  %strm = alloca %\"class.hls::stream\", align 1"]
+"rows" [label="  %rows = alloca i32, align 4"]
+"cols" [label="  %cols = alloca i32, align 4"]
+"_1" [label="  store %struct.xf_accel_utils* %this_, %struct.xf_accel_utils** %t1024, align 8"]
+"_2" [label="  store %class.ap_uint* %srcPtr, %class.ap_uint** %t1025, align 8"]
+"_3" [label="  store %struct.xf_Mat_0_256_256_1_* %dstMat, %struct.xf_Mat_0_256_256_1_** %t1026, align 8"]
+"_4" [label="  store i32 8, i32* %ch_width, align 4"]
+"_5" [label="  call void @_ZN3hls6streamI7ap_uintILi64EEEC1Ev(%\"class.hls::stream\"* %strm)"]
+"t1027" [label="  %t1027 = load %struct.xf_Mat_0_256_256_1_** %t1026, align 8"]
+"t1028" [label="  %t1028 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t1027, i32 0, i32 1"]
+"t1029" [label="  %t1029 = load i32* %t1028, align 4"]
+"_6" [label="  store i32 %t1029, i32* %rows, align 4"]
+"t1030" [label="  %t1030 = load %struct.xf_Mat_0_256_256_1_** %t1026, align 8"]
+"t1031" [label="  %t1031 = getelementptr inbounds %struct.xf_Mat_0_256_256_1_* %t1030, i32 0, i32 2"]
+"t1032" [label="  %t1032 = load i32* %t1031, align 4"]
+"_7" [label="  store i32 %t1032, i32* %cols, align 4"]
+"t1033" [label="  %t1033 = load %struct.xf_accel_utils** %t1024, align 8"]
+"t1034" [label="  %t1034 = load %class.ap_uint** %t1025, align 8"]
+"t1035" [label="  %t1035 = load i32* %rows, align 4"]
+"t1036" [label="  %t1036 = load i32* %cols, align 4"]
+"_8" [label="  call void @_ZL119p_ZN2xf11accel_utils13Array2hlsStrmILi64ELi256ELi256ELi1ELi1ELi8ELi8192EEEP7ap_uintILi64EER6streamI7ap_uintILi64EEEii_1P14xf_accel_utilsP7ap_uintILi64EERN3hls6streamIS2_EEii(%struct.xf_accel_utils* %t1033, %class.ap_uint* %t1034, %\"class.hls::stream\"* %strm, i32 %t1035, i32 %t1036)"]
+"t1037" [label="  %t1037 = load %struct.xf_accel_utils** %t1024, align 8"]
+"t1038" [label="  %t1038 = load %struct.xf_Mat_0_256_256_1_** %t1026, align 8"]
+"_9" [label="  call void @_ZL125p_ZN2xf11accel_utils13hlsStrm2xfMatILi64ELi0ELi256ELi256ELi1ELi65536EEER6streamI7ap_uintILi64EEER3MatILi0ELi256ELi256ELi1EE_1P14xf_accel_utilsRN3hls6streamI7ap_uintILi64EEEER19xf_Mat_0_256_256_1_(%struct.xf_accel_utils* %t1037, %\"class.hls::stream\"* %strm, %struct.xf_Mat_0_256_256_1_* %t1038)"]
+"_10" [label="  ret void"]
+"unk_block_1" -> "t1024"[color=red]
+"i32 1" -> "t1024"
+"t1024" -> "t1025"[color=red weight=2]
+"i32 1" -> "t1025"
+"t1025" -> "t1026"[color=red weight=2]
+"i32 1" -> "t1026"
+"t1026" -> "ch_width"[color=red weight=2]
+"i32 1" -> "ch_width"
+"ch_width" -> "strm"[color=red weight=2]
+"i32 1" -> "strm"
+"strm" -> "rows"[color=red weight=2]
+"i32 1" -> "rows"
+"rows" -> "cols"[color=red weight=2]
+"i32 1" -> "cols"
+"cols" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t1024" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"srcPtr" -> "_2"
+"t1025" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"dstMat" -> "_3"
+"t1026" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"i32 8" -> "_4"
+"ch_width" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"strm" -> "_5"
+"_ZN3hls6streamI7ap_uintILi64EEEC1Ev" -> "_5"
+"_5" -> "t1027"[color=red weight=2]
+"t1026" -> "t1027"
+"t1027" -> "t1028"[color=red weight=2]
+"t1027" -> "t1028"
+"i32 0" -> "t1028"
+"i32 1" -> "t1028"
+"t1028" -> "t1029"[color=red weight=2]
+"t1028" -> "t1029"
+"t1029" -> "_6"[color=red weight=2]
+"t1029" -> "_6"
+"rows" -> "_6"
+"_6" -> "t1030"[color=red weight=2]
+"t1026" -> "t1030"
+"t1030" -> "t1031"[color=red weight=2]
+"t1030" -> "t1031"
+"i32 0" -> "t1031"
+"i32 2" -> "t1031"
+"t1031" -> "t1032"[color=red weight=2]
+"t1031" -> "t1032"
+"t1032" -> "_7"[color=red weight=2]
+"t1032" -> "_7"
+"cols" -> "_7"
+"_7" -> "t1033"[color=red weight=2]
+"t1024" -> "t1033"
+"t1033" -> "t1034"[color=red weight=2]
+"t1025" -> "t1034"
+"t1034" -> "t1035"[color=red weight=2]
+"rows" -> "t1035"
+"t1035" -> "t1036"[color=red weight=2]
+"cols" -> "t1036"
+"t1036" -> "_8"[color=red weight=2]
+"t1033" -> "_8"
+"t1034" -> "_8"
+"strm" -> "_8"
+"t1035" -> "_8"
+"t1036" -> "_8"
+"_ZL119p_ZN2xf11accel_utils13Array2hlsStrmILi64ELi256ELi256ELi1ELi1ELi8ELi8192EEEP7ap_uintILi64EER6streamI7ap_uintILi64EEEii_1P14xf_accel_utilsP7ap_uintILi64EERN3hls6streamIS2_EEii" -> "_8"
+"_8" -> "t1037"[color=red weight=2]
+"t1024" -> "t1037"
+"t1037" -> "t1038"[color=red weight=2]
+"t1026" -> "t1038"
+"t1038" -> "_9"[color=red weight=2]
+"t1037" -> "_9"
+"strm" -> "_9"
+"t1038" -> "_9"
+"_ZL125p_ZN2xf11accel_utils13hlsStrm2xfMatILi64ELi0ELi256ELi256ELi1ELi65536EEER6streamI7ap_uintILi64EEER3MatILi0ELi256ELi256ELi1EE_1P14xf_accel_utilsRN3hls6streamI7ap_uintILi64EEEER19xf_Mat_0_256_256_1_" -> "_9"
+"_9" -> "_10"[color=red weight=2]
+
+}

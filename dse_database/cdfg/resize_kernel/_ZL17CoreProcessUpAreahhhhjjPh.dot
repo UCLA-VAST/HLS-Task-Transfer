@@ -1,0 +1,308 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t1521" [label="  %t1521 = alloca i8, align 1"]
+"t1522" [label="  %t1522 = alloca i8, align 1"]
+"t1523" [label="  %t1523 = alloca i8, align 1"]
+"t1524" [label="  %t1524 = alloca i8, align 1"]
+"t1525" [label="  %t1525 = alloca i32, align 4"]
+"t1526" [label="  %t1526 = alloca i32, align 4"]
+"t1527" [label="  %t1527 = alloca i8*, align 8"]
+"Wxy" [label="  %Wxy = alloca i32, align 4"]
+"val0" [label="  %val0 = alloca i16, align 2"]
+"val1" [label="  %val1 = alloca i16, align 2"]
+"val2" [label="  %val2 = alloca i16, align 2"]
+"P1" [label="  %P1 = alloca i64, align 8"]
+"P2" [label="  %P2 = alloca i64, align 8"]
+"P3" [label="  %P3 = alloca i64, align 8"]
+"P4" [label="  %P4 = alloca i64, align 8"]
+"_1" [label="  store i8 %A0, i8* %t1521, align 1"]
+"_2" [label="  store i8 %B0, i8* %t1522, align 1"]
+"_3" [label="  store i8 %A1, i8* %t1523, align 1"]
+"_4" [label="  store i8 %B1, i8* %t1524, align 1"]
+"_5" [label="  store i32 %Wx, i32* %t1525, align 4"]
+"_6" [label="  store i32 %Wy, i32* %t1526, align 4"]
+"_7" [label="  store i8* %pixel, i8** %t1527, align 8"]
+"t1528" [label="  %t1528 = load i32* %t1525, align 4"]
+"t1529" [label="  %t1529 = zext i32 %t1528 to i64"]
+"t1530" [label="  %t1530 = load i32* %t1526, align 4"]
+"t1531" [label="  %t1531 = zext i32 %t1530 to i64"]
+"t1532" [label="  %t1532 = mul i64 %t1529, %t1531"]
+"t1533" [label="  %t1533 = lshr i64 %t1532, 32"]
+"t1534" [label="  %t1534 = trunc i64 %t1533 to i32"]
+"_8" [label="  store i32 %t1534, i32* %Wxy, align 4"]
+"t1535" [label="  %t1535 = load i8* %t1521, align 1"]
+"t1536" [label="  %t1536 = zext i8 %t1535 to i32"]
+"t1537" [label="  %t1537 = load i8* %t1524, align 1"]
+"t1538" [label="  %t1538 = zext i8 %t1537 to i32"]
+"t1539" [label="  %t1539 = add nsw i32 %t1536, %t1538"]
+"t1540" [label="  %t1540 = load i8* %t1522, align 1"]
+"t1541" [label="  %t1541 = zext i8 %t1540 to i32"]
+"t1542" [label="  %t1542 = load i8* %t1523, align 1"]
+"t1543" [label="  %t1543 = zext i8 %t1542 to i32"]
+"t1544" [label="  %t1544 = add nsw i32 %t1541, %t1543"]
+"t1545" [label="  %t1545 = sub nsw i32 %t1539, %t1544"]
+"t1546" [label="  %t1546 = trunc i32 %t1545 to i16"]
+"_9" [label="  store i16 %t1546, i16* %val0, align 2"]
+"t1547" [label="  %t1547 = load i8* %t1522, align 1"]
+"t1548" [label="  %t1548 = zext i8 %t1547 to i32"]
+"t1549" [label="  %t1549 = load i8* %t1521, align 1"]
+"t1550" [label="  %t1550 = zext i8 %t1549 to i32"]
+"t1551" [label="  %t1551 = sub nsw i32 %t1548, %t1550"]
+"t1552" [label="  %t1552 = trunc i32 %t1551 to i16"]
+"_10" [label="  store i16 %t1552, i16* %val1, align 2"]
+"t1553" [label="  %t1553 = load i8* %t1523, align 1"]
+"t1554" [label="  %t1554 = zext i8 %t1553 to i32"]
+"t1555" [label="  %t1555 = load i8* %t1521, align 1"]
+"t1556" [label="  %t1556 = zext i8 %t1555 to i32"]
+"t1557" [label="  %t1557 = sub nsw i32 %t1554, %t1556"]
+"t1558" [label="  %t1558 = trunc i32 %t1557 to i16"]
+"_11" [label="  store i16 %t1558, i16* %val2, align 2"]
+"t1559" [label="  %t1559 = load i16* %val0, align 2"]
+"t1560" [label="  %t1560 = sext i16 %t1559 to i64"]
+"t1561" [label="  %t1561 = load i32* %Wxy, align 4"]
+"t1562" [label="  %t1562 = zext i32 %t1561 to i64"]
+"t1563" [label="  %t1563 = mul nsw i64 %t1560, %t1562"]
+"_12" [label="  store i64 %t1563, i64* %P1, align 8"]
+"t1564" [label="  %t1564 = load i16* %val1, align 2"]
+"t1565" [label="  %t1565 = sext i16 %t1564 to i64"]
+"t1566" [label="  %t1566 = load i32* %t1525, align 4"]
+"t1567" [label="  %t1567 = zext i32 %t1566 to i64"]
+"t1568" [label="  %t1568 = mul nsw i64 %t1565, %t1567"]
+"_13" [label="  store i64 %t1568, i64* %P2, align 8"]
+"t1569" [label="  %t1569 = load i16* %val2, align 2"]
+"t1570" [label="  %t1570 = sext i16 %t1569 to i64"]
+"t1571" [label="  %t1571 = load i32* %t1526, align 4"]
+"t1572" [label="  %t1572 = zext i32 %t1571 to i64"]
+"t1573" [label="  %t1573 = mul nsw i64 %t1570, %t1572"]
+"_14" [label="  store i64 %t1573, i64* %P3, align 8"]
+"t1574" [label="  %t1574 = load i8* %t1521, align 1"]
+"t1575" [label="  %t1575 = zext i8 %t1574 to i64"]
+"t1576" [label="  %t1576 = shl i64 %t1575, 32"]
+"_15" [label="  store i64 %t1576, i64* %P4, align 8"]
+"t1577" [label="  %t1577 = load i64* %P1, align 8"]
+"t1578" [label="  %t1578 = load i64* %P2, align 8"]
+"t1579" [label="  %t1579 = add nsw i64 %t1577, %t1578"]
+"t1580" [label="  %t1580 = load i64* %P3, align 8"]
+"t1581" [label="  %t1581 = add nsw i64 %t1579, %t1580"]
+"t1582" [label="  %t1582 = load i64* %P4, align 8"]
+"t1583" [label="  %t1583 = add nsw i64 %t1581, %t1582"]
+"t1584" [label="  %t1584 = ashr i64 %t1583, 32"]
+"t1585" [label="  %t1585 = trunc i64 %t1584 to i8"]
+"t1586" [label="  %t1586 = load i8** %t1527, align 8"]
+"_16" [label="  store i8 %t1585, i8* %t1586, align 1"]
+"_17" [label="  ret void"]
+"unk_block_1" -> "t1521"[color=red]
+"i32 1" -> "t1521"
+"t1521" -> "t1522"[color=red weight=2]
+"i32 1" -> "t1522"
+"t1522" -> "t1523"[color=red weight=2]
+"i32 1" -> "t1523"
+"t1523" -> "t1524"[color=red weight=2]
+"i32 1" -> "t1524"
+"t1524" -> "t1525"[color=red weight=2]
+"i32 1" -> "t1525"
+"t1525" -> "t1526"[color=red weight=2]
+"i32 1" -> "t1526"
+"t1526" -> "t1527"[color=red weight=2]
+"i32 1" -> "t1527"
+"t1527" -> "Wxy"[color=red weight=2]
+"i32 1" -> "Wxy"
+"Wxy" -> "val0"[color=red weight=2]
+"i32 1" -> "val0"
+"val0" -> "val1"[color=red weight=2]
+"i32 1" -> "val1"
+"val1" -> "val2"[color=red weight=2]
+"i32 1" -> "val2"
+"val2" -> "P1"[color=red weight=2]
+"i32 1" -> "P1"
+"P1" -> "P2"[color=red weight=2]
+"i32 1" -> "P2"
+"P2" -> "P3"[color=red weight=2]
+"i32 1" -> "P3"
+"P3" -> "P4"[color=red weight=2]
+"i32 1" -> "P4"
+"P4" -> "_1"[color=red weight=2]
+"A0" -> "_1"
+"t1521" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"B0" -> "_2"
+"t1522" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"A1" -> "_3"
+"t1523" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"B1" -> "_4"
+"t1524" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"Wx" -> "_5"
+"t1525" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"Wy" -> "_6"
+"t1526" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+"pixel" -> "_7"
+"t1527" -> "_7"
+"_7" -> "t1528"[color=red weight=2]
+"t1525" -> "t1528"
+"t1528" -> "t1529"[color=red weight=2]
+"t1528" -> "t1529"
+"t1529" -> "t1530"[color=red weight=2]
+"t1526" -> "t1530"
+"t1530" -> "t1531"[color=red weight=2]
+"t1530" -> "t1531"
+"t1531" -> "t1532"[color=red weight=2]
+"t1529" -> "t1532"
+"t1531" -> "t1532"
+"t1532" -> "t1533"[color=red weight=2]
+"t1532" -> "t1533"
+"i64 32" -> "t1533"
+"t1533" -> "t1534"[color=red weight=2]
+"t1533" -> "t1534"
+"t1534" -> "_8"[color=red weight=2]
+"t1534" -> "_8"
+"Wxy" -> "_8"
+"_8" -> "t1535"[color=red weight=2]
+"t1521" -> "t1535"
+"t1535" -> "t1536"[color=red weight=2]
+"t1535" -> "t1536"
+"t1536" -> "t1537"[color=red weight=2]
+"t1524" -> "t1537"
+"t1537" -> "t1538"[color=red weight=2]
+"t1537" -> "t1538"
+"t1538" -> "t1539"[color=red weight=2]
+"t1536" -> "t1539"
+"t1538" -> "t1539"
+"t1539" -> "t1540"[color=red weight=2]
+"t1522" -> "t1540"
+"t1540" -> "t1541"[color=red weight=2]
+"t1540" -> "t1541"
+"t1541" -> "t1542"[color=red weight=2]
+"t1523" -> "t1542"
+"t1542" -> "t1543"[color=red weight=2]
+"t1542" -> "t1543"
+"t1543" -> "t1544"[color=red weight=2]
+"t1541" -> "t1544"
+"t1543" -> "t1544"
+"t1544" -> "t1545"[color=red weight=2]
+"t1539" -> "t1545"
+"t1544" -> "t1545"
+"t1545" -> "t1546"[color=red weight=2]
+"t1545" -> "t1546"
+"t1546" -> "_9"[color=red weight=2]
+"t1546" -> "_9"
+"val0" -> "_9"
+"_9" -> "t1547"[color=red weight=2]
+"t1522" -> "t1547"
+"t1547" -> "t1548"[color=red weight=2]
+"t1547" -> "t1548"
+"t1548" -> "t1549"[color=red weight=2]
+"t1521" -> "t1549"
+"t1549" -> "t1550"[color=red weight=2]
+"t1549" -> "t1550"
+"t1550" -> "t1551"[color=red weight=2]
+"t1548" -> "t1551"
+"t1550" -> "t1551"
+"t1551" -> "t1552"[color=red weight=2]
+"t1551" -> "t1552"
+"t1552" -> "_10"[color=red weight=2]
+"t1552" -> "_10"
+"val1" -> "_10"
+"_10" -> "t1553"[color=red weight=2]
+"t1523" -> "t1553"
+"t1553" -> "t1554"[color=red weight=2]
+"t1553" -> "t1554"
+"t1554" -> "t1555"[color=red weight=2]
+"t1521" -> "t1555"
+"t1555" -> "t1556"[color=red weight=2]
+"t1555" -> "t1556"
+"t1556" -> "t1557"[color=red weight=2]
+"t1554" -> "t1557"
+"t1556" -> "t1557"
+"t1557" -> "t1558"[color=red weight=2]
+"t1557" -> "t1558"
+"t1558" -> "_11"[color=red weight=2]
+"t1558" -> "_11"
+"val2" -> "_11"
+"_11" -> "t1559"[color=red weight=2]
+"val0" -> "t1559"
+"t1559" -> "t1560"[color=red weight=2]
+"t1559" -> "t1560"
+"t1560" -> "t1561"[color=red weight=2]
+"Wxy" -> "t1561"
+"t1561" -> "t1562"[color=red weight=2]
+"t1561" -> "t1562"
+"t1562" -> "t1563"[color=red weight=2]
+"t1560" -> "t1563"
+"t1562" -> "t1563"
+"t1563" -> "_12"[color=red weight=2]
+"t1563" -> "_12"
+"P1" -> "_12"
+"_12" -> "t1564"[color=red weight=2]
+"val1" -> "t1564"
+"t1564" -> "t1565"[color=red weight=2]
+"t1564" -> "t1565"
+"t1565" -> "t1566"[color=red weight=2]
+"t1525" -> "t1566"
+"t1566" -> "t1567"[color=red weight=2]
+"t1566" -> "t1567"
+"t1567" -> "t1568"[color=red weight=2]
+"t1565" -> "t1568"
+"t1567" -> "t1568"
+"t1568" -> "_13"[color=red weight=2]
+"t1568" -> "_13"
+"P2" -> "_13"
+"_13" -> "t1569"[color=red weight=2]
+"val2" -> "t1569"
+"t1569" -> "t1570"[color=red weight=2]
+"t1569" -> "t1570"
+"t1570" -> "t1571"[color=red weight=2]
+"t1526" -> "t1571"
+"t1571" -> "t1572"[color=red weight=2]
+"t1571" -> "t1572"
+"t1572" -> "t1573"[color=red weight=2]
+"t1570" -> "t1573"
+"t1572" -> "t1573"
+"t1573" -> "_14"[color=red weight=2]
+"t1573" -> "_14"
+"P3" -> "_14"
+"_14" -> "t1574"[color=red weight=2]
+"t1521" -> "t1574"
+"t1574" -> "t1575"[color=red weight=2]
+"t1574" -> "t1575"
+"t1575" -> "t1576"[color=red weight=2]
+"t1575" -> "t1576"
+"i64 32" -> "t1576"
+"t1576" -> "_15"[color=red weight=2]
+"t1576" -> "_15"
+"P4" -> "_15"
+"_15" -> "t1577"[color=red weight=2]
+"P1" -> "t1577"
+"t1577" -> "t1578"[color=red weight=2]
+"P2" -> "t1578"
+"t1578" -> "t1579"[color=red weight=2]
+"t1577" -> "t1579"
+"t1578" -> "t1579"
+"t1579" -> "t1580"[color=red weight=2]
+"P3" -> "t1580"
+"t1580" -> "t1581"[color=red weight=2]
+"t1579" -> "t1581"
+"t1580" -> "t1581"
+"t1581" -> "t1582"[color=red weight=2]
+"P4" -> "t1582"
+"t1582" -> "t1583"[color=red weight=2]
+"t1581" -> "t1583"
+"t1582" -> "t1583"
+"t1583" -> "t1584"[color=red weight=2]
+"t1583" -> "t1584"
+"i64 32" -> "t1584"
+"t1584" -> "t1585"[color=red weight=2]
+"t1584" -> "t1585"
+"t1585" -> "t1586"[color=red weight=2]
+"t1527" -> "t1586"
+"t1586" -> "_16"[color=red weight=2]
+"t1585" -> "_16"
+"t1586" -> "_16"
+"_16" -> "_17"[color=red weight=2]
+
+}

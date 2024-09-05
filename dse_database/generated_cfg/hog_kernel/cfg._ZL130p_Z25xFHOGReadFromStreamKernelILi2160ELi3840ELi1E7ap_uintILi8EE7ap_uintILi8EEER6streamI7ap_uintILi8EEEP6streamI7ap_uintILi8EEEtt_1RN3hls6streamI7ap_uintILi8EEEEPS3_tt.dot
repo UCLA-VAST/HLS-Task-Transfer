@@ -1,0 +1,38 @@
+digraph "CFG for '_ZL130p_Z25xFHOGReadFromStreamKernelILi2160ELi3840ELi1E7ap_uintILi8EE7ap_uintILi8EEER6streamI7ap_uintILi8EEEP6streamI7ap_uintILi8EEEtt_1RN3hls6streamI7ap_uintILi8EEEEPS3_tt' function" {
+	label="CFG for '_ZL130p_Z25xFHOGReadFromStreamKernelILi2160ELi3840ELi1E7ap_uintILi8EE7ap_uintILi8EEER6streamI7ap_uintILi8EEEP6streamI7ap_uintILi8EEEtt_1RN3hls6streamI7ap_uintILi8EEEEPS3_tt' function";
+
+	Node0x33fa910 [shape=record,label="{%0:\l  %1 = alloca %\"class.hls::stream.2\"*, align 8\l  %2 = alloca %\"class.hls::stream.2\"*, align 8\l  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %input_data = alloca %class.ap_uint.1, align 1\l  %i = alloca %class.ap_uint.1, align 1\l  %j = alloca %class.ap_uint.1, align 1\l  %upper_limit = alloca %class.ap_uint.22, align 1\l  %lower_limit = alloca %class.ap_uint.22, align 1\l  %k = alloca %class.ap_uint.44, align 1\l  %5 = alloca %class.ap_uint.1, align 1\l  %6 = alloca %class.ap_uint.1, align 1\l  %7 = alloca %class.ap_uint.0, align 1\l  %in_data = alloca [3 x i8], align 1\l  %8 = alloca %class.ap_uint.44, align 1\l  %9 = alloca %class.ap_uint.0, align 1\l  %10 = alloca %class.ap_uint.44, align 1\l  %11 = alloca %class.ap_uint.1, align 1\l  %12 = alloca %class.ap_uint.1, align 1\l  store %\"class.hls::stream.2\"* %in_stream, %\"class.hls::stream.2\"** %1, align 8\l  store %\"class.hls::stream.2\"* %out_stream, %\"class.hls::stream.2\"** %2, align 8\l  store i16 %height, i16* %3, align 2\l  store i16 %width, i16* %4, align 2\l  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %input_data)\l  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %i)\l  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %j)\l  call void @_ZN7ap_uintILi5EEC1Ev(%class.ap_uint.22* %upper_limit)\l  call void @_ZN7ap_uintILi5EEC1Ev(%class.ap_uint.22* %lower_limit)\l  call void @_ZN7ap_uintILi3EEC1Ev(%class.ap_uint.44* %k)\l  br label %13\l}"];
+	Node0x33fa910 -> Node0x33fbb10;
+	Node0x33fbb10 [shape=record,label="{%13:\l\l  %14 = call %class.ap_uint.1* @_ZN7ap_uintILi32EEaSEi(%class.ap_uint.1* %i, i32 0)\l  br label %15\l}"];
+	Node0x33fbb10 -> Node0x33fbcc0;
+	Node0x33fbcc0 [shape=record,label="{%15:\l\l  %16 = bitcast %class.ap_uint.1* %5 to i8*\l  %17 = bitcast %class.ap_uint.1* %i to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %16, i8* %17, i64 4, i32 1, i1 false)\l  %18 = load i16* %3, align 2\l  %19 = getelementptr %class.ap_uint.1* %5, i32 0, i32 0\l  %20 = bitcast [4 x i8]* %19 to i32*\l  %21 = load i32* %20, align 1\l  %22 = call zeroext i1 @_ZltILi32EEb7ap_uintIXT_EEt(i32 %21, i16 zeroext %18)\l  br i1 %22, label %23, label %79\l|{<s0>T|<s1>F}}"];
+	Node0x33fbcc0:s0 -> Node0x33fc280;
+	Node0x33fbcc0:s1 -> Node0x33fc2e0;
+	Node0x33fc280 [shape=record,label="{%23:\l\l  br label %24\l}"];
+	Node0x33fc280 -> Node0x33fc3f0;
+	Node0x33fc3f0 [shape=record,label="{%24:\l\l  %25 = call %class.ap_uint.1* @_ZN7ap_uintILi32EEaSEi(%class.ap_uint.1* %j, i32 0)\l  br label %26\l}"];
+	Node0x33fc3f0 -> Node0x33fc5b0;
+	Node0x33fc5b0 [shape=record,label="{%26:\l\l  %27 = bitcast %class.ap_uint.1* %6 to i8*\l  %28 = bitcast %class.ap_uint.1* %j to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %27, i8* %28, i64 4, i32 1, i1 false)\l  %29 = load i16* %4, align 2\l  %30 = getelementptr %class.ap_uint.1* %6, i32 0, i32 0\l  %31 = bitcast [4 x i8]* %30 to i32*\l  %32 = load i32* %31, align 1\l  %33 = call zeroext i1 @_ZltILi32EEb7ap_uintIXT_EEt(i32 %32, i16 zeroext %29)\l  br i1 %33, label %34, label %74\l|{<s0>T|<s1>F}}"];
+	Node0x33fc5b0:s0 -> Node0x33fcb70;
+	Node0x33fc5b0:s1 -> Node0x33fcbd0;
+	Node0x33fcb70 [shape=record,label="{%34:\l\l  %35 = load %\"class.hls::stream.2\"** %1, align 8\l  %36 = call i8 @_ZN3hls6streamI7ap_uintILi8EEE4readEv(%\"class.hls::stream.2\"* %35)\l  %37 = getelementptr %class.ap_uint.0* %7, i32 0, i32 0\l  %38 = bitcast [1 x i8]* %37 to i8*\l  store i8 %36, i8* %38, align 1\l  %39 = call %class.ap_uint.1* @_ZN7ap_uintILi32EEaSILi8EEERS0_RKS_IXT_EE(%class.ap_uint.1* %input_data, %class.ap_uint.0* %7)\l  %40 = call %class.ap_uint.22* @_ZN7ap_uintILi5EEaSEi(%class.ap_uint.22* %upper_limit, i32 7)\l  %41 = call %class.ap_uint.22* @_ZN7ap_uintILi5EEaSEi(%class.ap_uint.22* %lower_limit, i32 0)\l  %42 = call i64* @_ZN7ap_uintILi5EEcmILi5EEERmRS_IXT_EE(%class.ap_uint.22* %40, %class.ap_uint.22* %41)\l  br label %43\l}"];
+	Node0x33fcb70 -> Node0x33fcd60;
+	Node0x33fcd60 [shape=record,label="{%43:\l\l  %44 = call %class.ap_uint.44* @_ZN7ap_uintILi3EEaSEi(%class.ap_uint.44* %k, i32 0)\l  br label %45\l}"];
+	Node0x33fcd60 -> Node0x33fd800;
+	Node0x33fd800 [shape=record,label="{%45:\l\l  %46 = bitcast %class.ap_uint.44* %8 to i8*\l  %47 = bitcast %class.ap_uint.44* %k to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %46, i8* %47, i64 1, i32 1, i1 false)\l  %48 = getelementptr %class.ap_uint.44* %8, i32 0, i32 0\l  %49 = bitcast [1 x i8]* %48 to i8*\l  %50 = load i8* %49, align 1\l  %51 = call zeroext i1 @_ZltILi3EEb7ap_uintIXT_EEi(i8 %50, i32 1)\l  br i1 %51, label %52, label %69\l|{<s0>T|<s1>F}}"];
+	Node0x33fd800:s0 -> Node0x33fddc0;
+	Node0x33fd800:s1 -> Node0x33fde20;
+	Node0x33fddc0 [shape=record,label="{%52:\l\l  %53 = call i64 @_ZNK7ap_uintILi3EEcvmEv(%class.ap_uint.44* %k)\l  %54 = load %\"class.hls::stream.2\"** %2, align 8\l  %55 = getelementptr inbounds %\"class.hls::stream.2\"* %54, i64 %53\l  %56 = call i64* @_ZN7ap_uintILi32EE5rangeILi5ELi5EEERmRKS_IXT_EERKS_IXT0_EE(%class.ap_uint.1* %input_data, %class.ap_uint.22* %upper_limit, %class.ap_uint.22* %lower_limit)\l  %57 = load i64* %56\l  call void @_ZN7ap_uintILi8EEC1Em(%class.ap_uint.0* %9, i64 %57)\l  call void @_ZN3hls6streamI7ap_uintILi8EEE5writeERKS2_(%\"class.hls::stream.2\"* %55, %class.ap_uint.0* %9)\l  %58 = call i64* @_ZN7ap_uintILi32EE5rangeILi5ELi5EEERmRKS_IXT_EERKS_IXT0_EE(%class.ap_uint.1* %input_data, %class.ap_uint.22* %upper_limit, %class.ap_uint.22* %lower_limit)\l  %59 = load i64* %58\l  %60 = trunc i64 %59 to i8\l  %61 = call i64 @_ZNK7ap_uintILi3EEcvmEv(%class.ap_uint.44* %k)\l  %62 = getelementptr inbounds [3 x i8]* %in_data, i32 0, i64 %61\l  store i8 %60, i8* %62, align 1\l  %63 = call %class.ap_uint.22* @_ZpLILi5EER7ap_uintIXT_EES2_i(%class.ap_uint.22* %upper_limit, i32 8)\l  %64 = call %class.ap_uint.22* @_ZpLILi5EER7ap_uintIXT_EES2_i(%class.ap_uint.22* %lower_limit, i32 8)\l  br label %65\l}"];
+	Node0x33fddc0 -> Node0x33fe600;
+	Node0x33fe600 [shape=record,label="{%65:\l\l  %66 = call i8 @_ZN7ap_uintILi3EEppEi(%class.ap_uint.44* %k, i32 0)\l  %67 = getelementptr %class.ap_uint.44* %10, i32 0, i32 0\l  %68 = bitcast [1 x i8]* %67 to i8*\l  store i8 %66, i8* %68, align 1\l  br label %45\l}"];
+	Node0x33fe600 -> Node0x33fd800;
+	Node0x33fde20 [shape=record,label="{%69:\l\l  br label %70\l}"];
+	Node0x33fde20 -> Node0x33fef60;
+	Node0x33fef60 [shape=record,label="{%70:\l\l  %71 = call i32 @_ZN7ap_uintILi32EEppEi(%class.ap_uint.1* %j, i32 0)\l  %72 = getelementptr %class.ap_uint.1* %11, i32 0, i32 0\l  %73 = bitcast [4 x i8]* %72 to i32*\l  store i32 %71, i32* %73, align 1\l  br label %26\l}"];
+	Node0x33fef60 -> Node0x33fc5b0;
+	Node0x33fcbd0 [shape=record,label="{%74:\l\l  br label %75\l}"];
+	Node0x33fcbd0 -> Node0x3400460;
+	Node0x3400460 [shape=record,label="{%75:\l\l  %76 = call i32 @_ZN7ap_uintILi32EEppEi(%class.ap_uint.1* %i, i32 0)\l  %77 = getelementptr %class.ap_uint.1* %12, i32 0, i32 0\l  %78 = bitcast [4 x i8]* %77 to i32*\l  store i32 %76, i32* %78, align 1\l  br label %15\l}"];
+	Node0x3400460 -> Node0x33fbcc0;
+	Node0x33fc2e0 [shape=record,label="{%79:\l\l  ret void\l}"];
+}

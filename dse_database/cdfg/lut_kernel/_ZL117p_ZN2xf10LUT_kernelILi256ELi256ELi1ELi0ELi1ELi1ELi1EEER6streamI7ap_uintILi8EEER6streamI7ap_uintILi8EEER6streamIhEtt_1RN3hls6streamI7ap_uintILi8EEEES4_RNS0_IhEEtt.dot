@@ -1,0 +1,65 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t219" [label="  %t219 = alloca %\"class.hls::stream.1\"*, align 8"]
+"t220" [label="  %t220 = alloca %\"class.hls::stream.1\"*, align 8"]
+"t221" [label="  %t221 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t222" [label="  %t222 = alloca i16, align 2"]
+"t223" [label="  %t223 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.1\"* %_src, %\"class.hls::stream.1\"** %t219, align 8"]
+"_2" [label="  store %\"class.hls::stream.1\"* %_dst, %\"class.hls::stream.1\"** %t220, align 8"]
+"_3" [label="  store %\"class.hls::stream.2\"* %_lut, %\"class.hls::stream.2\"** %t221, align 8"]
+"_4" [label="  store i16 %height, i16* %t222, align 2"]
+"_5" [label="  store i16 %width, i16* %t223, align 2"]
+"t224" [label="  %t224 = load %\"class.hls::stream.1\"** %t219, align 8"]
+"t225" [label="  %t225 = load %\"class.hls::stream.1\"** %t220, align 8"]
+"t226" [label="  %t226 = load %\"class.hls::stream.2\"** %t221, align 8"]
+"t227" [label="  %t227 = load i16* %t222, align 2"]
+"t228" [label="  %t228 = load i16* %t223, align 2"]
+"_6" [label="  call void @_ZL124p_ZN2xf11xFLUTKernelILi256ELi256ELi1ELi0ELi1ELi1ELi1ELi256EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamIhEtt_1RN3hls6streamI7ap_uintILi8EEEES4_RNS0_IhEEtt(%\"class.hls::stream.1\"* %t224, %\"class.hls::stream.1\"* %t225, %\"class.hls::stream.2\"* %t226, i16 zeroext %t227, i16 zeroext %t228)"]
+"_7" [label="  ret void"]
+"unk_block_1" -> "t219"[color=red]
+"i32 1" -> "t219"
+"t219" -> "t220"[color=red weight=2]
+"i32 1" -> "t220"
+"t220" -> "t221"[color=red weight=2]
+"i32 1" -> "t221"
+"t221" -> "t222"[color=red weight=2]
+"i32 1" -> "t222"
+"t222" -> "t223"[color=red weight=2]
+"i32 1" -> "t223"
+"t223" -> "_1"[color=red weight=2]
+"_src" -> "_1"
+"t219" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_dst" -> "_2"
+"t220" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_lut" -> "_3"
+"t221" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"height" -> "_4"
+"t222" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"width" -> "_5"
+"t223" -> "_5"
+"_5" -> "t224"[color=red weight=2]
+"t219" -> "t224"
+"t224" -> "t225"[color=red weight=2]
+"t220" -> "t225"
+"t225" -> "t226"[color=red weight=2]
+"t221" -> "t226"
+"t226" -> "t227"[color=red weight=2]
+"t222" -> "t227"
+"t227" -> "t228"[color=red weight=2]
+"t223" -> "t228"
+"t228" -> "_6"[color=red weight=2]
+"t224" -> "_6"
+"t225" -> "_6"
+"t226" -> "_6"
+"t227" -> "_6"
+"t228" -> "_6"
+"_ZL124p_ZN2xf11xFLUTKernelILi256ELi256ELi1ELi0ELi1ELi1ELi1ELi256EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamIhEtt_1RN3hls6streamI7ap_uintILi8EEEES4_RNS0_IhEEtt" -> "_6"
+"_6" -> "_7"[color=red weight=2]
+
+}

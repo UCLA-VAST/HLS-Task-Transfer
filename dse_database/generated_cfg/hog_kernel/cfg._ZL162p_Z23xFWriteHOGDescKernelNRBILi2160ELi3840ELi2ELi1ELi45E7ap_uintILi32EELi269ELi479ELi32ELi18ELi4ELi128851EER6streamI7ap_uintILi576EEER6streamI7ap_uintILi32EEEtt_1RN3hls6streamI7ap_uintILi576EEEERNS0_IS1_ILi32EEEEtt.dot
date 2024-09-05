@@ -1,0 +1,27 @@
+digraph "CFG for '_ZL162p_Z23xFWriteHOGDescKernelNRBILi2160ELi3840ELi2ELi1ELi45E7ap_uintILi32EELi269ELi479ELi32ELi18ELi4ELi128851EER6streamI7ap_uintILi576EEER6streamI7ap_uintILi32EEEtt_1RN3hls6streamI7ap_uintILi576EEEERNS0_IS1_ILi32EEEEtt' function" {
+	label="CFG for '_ZL162p_Z23xFWriteHOGDescKernelNRBILi2160ELi3840ELi2ELi1ELi45E7ap_uintILi32EELi269ELi479ELi32ELi18ELi4ELi128851EER6streamI7ap_uintILi576EEER6streamI7ap_uintILi32EEEtt_1RN3hls6streamI7ap_uintILi576EEEERNS0_IS1_ILi32EEEEtt' function";
+
+	Node0x331cf40 [shape=record,label="{%0:\l  %1 = alloca %\"class.hls::stream.3\"*, align 8\l  %2 = alloca %\"class.hls::stream.5\"*, align 8\l  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %block_data = alloca %class.ap_uint.4, align 1\l  %block_descriptor = alloca %class.ap_uint.1, align 1\l  %offset = alloca i32, align 4\l  %step = alloca i8, align 1\l  %k = alloca i32, align 4\l  %i = alloca i32, align 4\l  %j = alloca %class.ap_uint.0, align 1\l  %5 = alloca %class.ap_uint.4, align 1\l  %6 = alloca %class.ap_uint.0, align 1\l  %7 = alloca %class.ap_uint.0, align 1\l  store %\"class.hls::stream.3\"* %_block_strm, %\"class.hls::stream.3\"** %1, align 8\l  store %\"class.hls::stream.5\"* %_desc_strm, %\"class.hls::stream.5\"** %2, align 8\l  store i16 %novb, i16* %3, align 2\l  store i16 %nohb, i16* %4, align 2\l  call void @_ZN7ap_uintILi576EEC1Ev(%class.ap_uint.4* %block_data)\l  call void @_ZN7ap_uintILi32EEC1Ev(%class.ap_uint.1* %block_descriptor)\l  store i32 0, i32* %offset, align 4\l  store i8 32, i8* %step, align 1\l  store i32 0, i32* %k, align 4\l  call void @_ZN7ap_uintILi8EEC1Ev(%class.ap_uint.0* %j)\l  br label %8\l}"];
+	Node0x331cf40 -> Node0x331df50;
+	Node0x331df50 [shape=record,label="{%8:\l\l  store i32 0, i32* %i, align 4\l  br label %9\l}"];
+	Node0x331df50 -> Node0x331e150;
+	Node0x331e150 [shape=record,label="{%9:\l\l  %10 = load i32* %i, align 4\l  %11 = load i16* %3, align 2\l  %12 = zext i16 %11 to i32\l  %13 = load i16* %4, align 2\l  %14 = zext i16 %13 to i32\l  %15 = mul nsw i32 %12, %14\l  %16 = icmp slt i32 %10, %15\l  br i1 %16, label %17, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x331e150:s0 -> Node0x331e5d0;
+	Node0x331e150:s1 -> Node0x331e630;
+	Node0x331e5d0 [shape=record,label="{%17:\l\l  %18 = load %\"class.hls::stream.3\"** %1, align 8\l  call void @_ZN3hls6streamI7ap_uintILi576EEE4readEv(%class.ap_uint.4* sret %5, %\"class.hls::stream.3\"* %18)\l  %19 = call %class.ap_uint.4* @_ZN7ap_uintILi576EEaSERKS0_(%class.ap_uint.4* %block_data, %class.ap_uint.4* %5)\l  store i32 0, i32* %offset, align 4\l  br label %20\l}"];
+	Node0x331e5d0 -> Node0x331eaf0;
+	Node0x331eaf0 [shape=record,label="{%20:\l\l  %21 = call %class.ap_uint.0* @_ZN7ap_uintILi8EEaSEi(%class.ap_uint.0* %j, i32 0)\l  br label %22\l}"];
+	Node0x331eaf0 -> Node0x331ed70;
+	Node0x331ed70 [shape=record,label="{%22:\l\l  %23 = bitcast %class.ap_uint.0* %6 to i8*\l  %24 = bitcast %class.ap_uint.0* %j to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* %23, i8* %24, i64 1, i32 1, i1 false)\l  %25 = getelementptr %class.ap_uint.0* %6, i32 0, i32 0\l  %26 = bitcast [1 x i8]* %25 to i8*\l  %27 = load i8* %26, align 1\l  %28 = call zeroext i1 @_ZltILi8EEb7ap_uintIXT_EEi(i8 %27, i32 18)\l  br i1 %28, label %29, label %48\l|{<s0>T|<s1>F}}"];
+	Node0x331ed70:s0 -> Node0x331f2b0;
+	Node0x331ed70:s1 -> Node0x331f310;
+	Node0x331f2b0 [shape=record,label="{%29:\l\l  %30 = load i32* %offset, align 4\l  %31 = load i8* %step, align 1\l  %32 = zext i8 %31 to i32\l  %33 = sub nsw i32 %32, 1\l  %34 = add i32 %30, %33\l  %35 = load i32* %offset, align 4\l  %36 = call i64* @_ZN7ap_uintILi576EE5rangeEii(%class.ap_uint.4* %block_data, i32 %34, i32 %35)\l  %37 = load i64* %36\l  %38 = call %class.ap_uint.1* @_ZN7ap_uintILi32EEaSEm(%class.ap_uint.1* %block_descriptor, i64 %37)\l  %39 = load %\"class.hls::stream.5\"** %2, align 8\l  call void @_ZN3hls6streamI7ap_uintILi32EEE5writeERKS2_(%\"class.hls::stream.5\"* %39, %class.ap_uint.1* %block_descriptor)\l  %40 = load i8* %step, align 1\l  %41 = zext i8 %40 to i32\l  %42 = load i32* %offset, align 4\l  %43 = add i32 %42, %41\l  store i32 %43, i32* %offset, align 4\l  br label %44\l}"];
+	Node0x331f2b0 -> Node0x33071c0;
+	Node0x33071c0 [shape=record,label="{%44:\l\l  %45 = call i8 @_ZN7ap_uintILi8EEppEi(%class.ap_uint.0* %j, i32 0)\l  %46 = getelementptr %class.ap_uint.0* %7, i32 0, i32 0\l  %47 = bitcast [1 x i8]* %46 to i8*\l  store i8 %45, i8* %47, align 1\l  br label %22\l}"];
+	Node0x33071c0 -> Node0x331ed70;
+	Node0x331f310 [shape=record,label="{%48:\l\l  br label %49\l}"];
+	Node0x331f310 -> Node0x3320df0;
+	Node0x3320df0 [shape=record,label="{%49:\l\l  %50 = load i32* %i, align 4\l  %51 = add nsw i32 %50, 1\l  store i32 %51, i32* %i, align 4\l  br label %9\l}"];
+	Node0x3320df0 -> Node0x331e150;
+	Node0x331e630 [shape=record,label="{%52:\l\l  ret void\l}"];
+}

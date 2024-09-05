@@ -1,0 +1,64 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t879" [label="  %t879 = alloca %struct.xf_Mat_4_256_256_1_*, align 8"]
+"t880" [label="  %t880 = alloca i32, align 4"]
+"val" [label="  %val = alloca %class.ap_uint.1, align 1"]
+"val_out" [label="  %val_out = alloca float*, align 8"]
+"_1" [label="  store %struct.xf_Mat_4_256_256_1_* %this_, %struct.xf_Mat_4_256_256_1_** %t879, align 8"]
+"_2" [label="  store i32 %index, i32* %t880, align 4"]
+"t881" [label="  %t881 = load %struct.xf_Mat_4_256_256_1_** %t879, align 8"]
+"t882" [label="  %t882 = load i32* %t880, align 4"]
+"t883" [label="  %t883 = call i32 @_ZL36p_ZN2xf16Mat_4_256_256_1_4readIEEi_1P19xf_Mat_4_256_256_1_i(%struct.xf_Mat_4_256_256_1_* %t881, i32 %t882)"]
+"t884" [label="  %t884 = getelementptr %class.ap_uint.1* %val, i32 0, i32 0"]
+"t885" [label="  %t885 = bitcast [4 x i8]* %t884 to i32*"]
+"_3" [label="  store i32 %t883, i32* %t885, align 1"]
+"t886" [label="  %t886 = bitcast %class.ap_uint.1* %val to float*"]
+"_4" [label="  store float* %t886, float** %val_out, align 8"]
+"t887" [label="  %t887 = load float** %val_out, align 8"]
+"t888" [label="  %t888 = load float* %t887, align 4"]
+"_5" [label="  ret float %t888"]
+"unk_block_1" -> "t879"[color=red]
+"i32 1" -> "t879"
+"t879" -> "t880"[color=red weight=2]
+"i32 1" -> "t880"
+"t880" -> "val"[color=red weight=2]
+"i32 1" -> "val"
+"val" -> "val_out"[color=red weight=2]
+"i32 1" -> "val_out"
+"val_out" -> "_1"[color=red weight=2]
+"this_" -> "_1"
+"t879" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"index" -> "_2"
+"t880" -> "_2"
+"_2" -> "t881"[color=red weight=2]
+"t879" -> "t881"
+"t881" -> "t882"[color=red weight=2]
+"t880" -> "t882"
+"t882" -> "t883"[color=red weight=2]
+"t881" -> "t883"
+"t882" -> "t883"
+"_ZL36p_ZN2xf16Mat_4_256_256_1_4readIEEi_1P19xf_Mat_4_256_256_1_i" -> "t883"
+"t883" -> "t884"[color=red weight=2]
+"val" -> "t884"
+"i32 0" -> "t884"
+"i32 0" -> "t884"
+"t884" -> "t885"[color=red weight=2]
+"t884" -> "t885"
+"t885" -> "_3"[color=red weight=2]
+"t883" -> "_3"
+"t885" -> "_3"
+"_3" -> "t886"[color=red weight=2]
+"val" -> "t886"
+"t886" -> "_4"[color=red weight=2]
+"t886" -> "_4"
+"val_out" -> "_4"
+"_4" -> "t887"[color=red weight=2]
+"val_out" -> "t887"
+"t887" -> "t888"[color=red weight=2]
+"t887" -> "t888"
+"t888" -> "_5"[color=red weight=2]
+"t888" -> "_5"
+
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '_ZL35p_ZN2xf18Rect_unsigned_int_C2IEEv_1P21xf_Rect_unsigned_int_' function" {
+	label="CFG for '_ZL35p_ZN2xf18Rect_unsigned_int_C2IEEv_1P21xf_Rect_unsigned_int_' function";
+
+	Node0x2f82630 [shape=record,label="{%0:\l  %1 = alloca %struct.xf_Rect_unsigned_int_*, align 8\l  store %struct.xf_Rect_unsigned_int_* %this_, %struct.xf_Rect_unsigned_int_** %1, align 8\l  ret void\l}"];
+}

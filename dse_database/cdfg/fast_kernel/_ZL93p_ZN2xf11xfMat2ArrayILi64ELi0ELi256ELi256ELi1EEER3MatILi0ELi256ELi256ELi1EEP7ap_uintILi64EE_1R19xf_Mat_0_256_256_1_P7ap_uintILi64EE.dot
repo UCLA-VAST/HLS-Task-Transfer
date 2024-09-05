@@ -1,0 +1,36 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t95" [label="  %t95 = alloca %struct.xf_Mat_0_256_256_1_*, align 8"]
+"t96" [label="  %t96 = alloca %class.ap_uint*, align 8"]
+"au" [label="  %au = alloca %struct.xf_accel_utils, align 1"]
+"_1" [label="  store %struct.xf_Mat_0_256_256_1_* %srcMat, %struct.xf_Mat_0_256_256_1_** %t95, align 8"]
+"_2" [label="  store %class.ap_uint* %dstPtr, %class.ap_uint** %t96, align 8"]
+"t97" [label="  %t97 = load %struct.xf_Mat_0_256_256_1_** %t95, align 8"]
+"t98" [label="  %t98 = load %class.ap_uint** %t96, align 8"]
+"_3" [label="  call void @_ZL106p_ZN2xf11accel_utils11xfMat2ArrayILi64ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEP7ap_uintILi64EE_1P14xf_accel_utilsR19xf_Mat_0_256_256_1_P7ap_uintILi64EE(%struct.xf_accel_utils* %au, %struct.xf_Mat_0_256_256_1_* %t97, %class.ap_uint* %t98)"]
+"_4" [label="  ret void"]
+"unk_block_1" -> "t95"[color=red]
+"i32 1" -> "t95"
+"t95" -> "t96"[color=red weight=2]
+"i32 1" -> "t96"
+"t96" -> "au"[color=red weight=2]
+"i32 1" -> "au"
+"au" -> "_1"[color=red weight=2]
+"srcMat" -> "_1"
+"t95" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"dstPtr" -> "_2"
+"t96" -> "_2"
+"_2" -> "t97"[color=red weight=2]
+"t95" -> "t97"
+"t97" -> "t98"[color=red weight=2]
+"t96" -> "t98"
+"t98" -> "_3"[color=red weight=2]
+"au" -> "_3"
+"t97" -> "_3"
+"t98" -> "_3"
+"_ZL106p_ZN2xf11accel_utils11xfMat2ArrayILi64ELi0ELi256ELi256ELi1EEER3MatILi0ELi256ELi256ELi1EEP7ap_uintILi64EE_1P14xf_accel_utilsR19xf_Mat_0_256_256_1_P7ap_uintILi64EE" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+
+}

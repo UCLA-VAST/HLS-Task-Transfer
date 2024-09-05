@@ -1,0 +1,17 @@
+digraph "CFG for '_ZL30p_ZN2xf17borderInterpolateEiiiiii' function" {
+	label="CFG for '_ZL30p_ZN2xf17borderInterpolateEiiiiii' function";
+
+	Node0x1b87300 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store i32 %p, i32* %2, align 4\l  store i32 %len, i32* %3, align 4\l  store i32 %borderType, i32* %4, align 4\l  %5 = load i32* %2, align 4\l  %6 = icmp sge i32 %5, 0\l  br i1 %6, label %7, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x1b87300:s0 -> Node0x1b87820;
+	Node0x1b87300:s1 -> Node0x1b87880;
+	Node0x1b87820 [shape=record,label="{%7:\l\l  %8 = load i32* %2, align 4\l  %9 = load i32* %3, align 4\l  %10 = icmp slt i32 %8, %9\l  br i1 %10, label %11, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x1b87820:s0 -> Node0x1b87bb0;
+	Node0x1b87820:s1 -> Node0x1b87880;
+	Node0x1b87bb0 [shape=record,label="{%11:\l\l  %12 = load i32* %2, align 4\l  store i32 %12, i32* %1\l  br label %16\l}"];
+	Node0x1b87bb0 -> Node0x1b87dd0;
+	Node0x1b87880 [shape=record,label="{%13:\l\l  store i32 -1, i32* %2, align 4\l  br label %14\l}"];
+	Node0x1b87880 -> Node0x1b87f40;
+	Node0x1b87f40 [shape=record,label="{%14:\l\l  %15 = load i32* %2, align 4\l  store i32 %15, i32* %1\l  br label %16\l}"];
+	Node0x1b87f40 -> Node0x1b87dd0;
+	Node0x1b87dd0 [shape=record,label="{%16:\l\l  %17 = load i32* %1\l  ret i32 %17\l}"];
+}

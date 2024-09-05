@@ -1,0 +1,93 @@
+digraph G {
+compound=true
+label="Black edges - dataflow, red edges - control flow"
+"t300" [label="  %t300 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t301" [label="  %t301 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t302" [label="  %t302 = alloca %\"class.hls::stream.2\"*, align 8"]
+"t303" [label="  %t303 = alloca %\"class.hls::stream.3\"*, align 8"]
+"t304" [label="  %t304 = alloca i16, align 2"]
+"t305" [label="  %t305 = alloca i16, align 2"]
+"_1" [label="  store %\"class.hls::stream.2\"* %_in1, %\"class.hls::stream.2\"** %t300, align 8"]
+"_2" [label="  store %\"class.hls::stream.2\"* %_in2, %\"class.hls::stream.2\"** %t301, align 8"]
+"_3" [label="  store %\"class.hls::stream.2\"* %_in3, %\"class.hls::stream.2\"** %t302, align 8"]
+"_4" [label="  store %\"class.hls::stream.3\"* %_out, %\"class.hls::stream.3\"** %t303, align 8"]
+"_5" [label="  store i16 %height, i16* %t304, align 2"]
+"_6" [label="  store i16 %width, i16* %t305, align 2"]
+"t306" [label="  %t306 = load i16* %t305, align 2"]
+"t307" [label="  %t307 = zext i16 %t306 to i32"]
+"t308" [label="  %t308 = ashr i32 %t307, 0"]
+"t309" [label="  %t309 = trunc i32 %t308 to i16"]
+"_7" [label="  store i16 %t309, i16* %t305, align 2"]
+"t310" [label="  %t310 = load %\"class.hls::stream.2\"** %t300, align 8"]
+"t311" [label="  %t311 = load %\"class.hls::stream.2\"** %t301, align 8"]
+"t312" [label="  %t312 = load %\"class.hls::stream.2\"** %t302, align 8"]
+"t313" [label="  %t313 = load %\"class.hls::stream.3\"** %t303, align 8"]
+"t314" [label="  %t314 = load i16* %t304, align 2"]
+"t315" [label="  %t315 = load i16* %t305, align 2"]
+"_8" [label="  call void @_ZL165p_ZN2xf22xfChannelCombineKernelILi256ELi256ELi0ELi9ELi1ELi256EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi24EEEtt_1RN3hls6streamI7ap_uintILi8EEEES4_S4_RNS0_IS1_ILi24EEEEtt(%\"class.hls::stream.2\"* %t310, %\"class.hls::stream.2\"* %t311, %\"class.hls::stream.2\"* %t312, %\"class.hls::stream.3\"* %t313, i16 zeroext %t314, i16 zeroext %t315)"]
+"_9" [label="  ret void"]
+"unk_block_1" -> "t300"[color=red]
+"i32 1" -> "t300"
+"t300" -> "t301"[color=red weight=2]
+"i32 1" -> "t301"
+"t301" -> "t302"[color=red weight=2]
+"i32 1" -> "t302"
+"t302" -> "t303"[color=red weight=2]
+"i32 1" -> "t303"
+"t303" -> "t304"[color=red weight=2]
+"i32 1" -> "t304"
+"t304" -> "t305"[color=red weight=2]
+"i32 1" -> "t305"
+"t305" -> "_1"[color=red weight=2]
+"_in1" -> "_1"
+"t300" -> "_1"
+"_1" -> "_2"[color=red weight=2]
+"_in2" -> "_2"
+"t301" -> "_2"
+"_2" -> "_3"[color=red weight=2]
+"_in3" -> "_3"
+"t302" -> "_3"
+"_3" -> "_4"[color=red weight=2]
+"_out" -> "_4"
+"t303" -> "_4"
+"_4" -> "_5"[color=red weight=2]
+"height" -> "_5"
+"t304" -> "_5"
+"_5" -> "_6"[color=red weight=2]
+"width" -> "_6"
+"t305" -> "_6"
+"_6" -> "t306"[color=red weight=2]
+"t305" -> "t306"
+"t306" -> "t307"[color=red weight=2]
+"t306" -> "t307"
+"t307" -> "t308"[color=red weight=2]
+"t307" -> "t308"
+"i32 0" -> "t308"
+"t308" -> "t309"[color=red weight=2]
+"t308" -> "t309"
+"t309" -> "_7"[color=red weight=2]
+"t309" -> "_7"
+"t305" -> "_7"
+"_7" -> "t310"[color=red weight=2]
+"t300" -> "t310"
+"t310" -> "t311"[color=red weight=2]
+"t301" -> "t311"
+"t311" -> "t312"[color=red weight=2]
+"t302" -> "t312"
+"t312" -> "t313"[color=red weight=2]
+"t303" -> "t313"
+"t313" -> "t314"[color=red weight=2]
+"t304" -> "t314"
+"t314" -> "t315"[color=red weight=2]
+"t305" -> "t315"
+"t315" -> "_8"[color=red weight=2]
+"t310" -> "_8"
+"t311" -> "_8"
+"t312" -> "_8"
+"t313" -> "_8"
+"t314" -> "_8"
+"t315" -> "_8"
+"_ZL165p_ZN2xf22xfChannelCombineKernelILi256ELi256ELi0ELi9ELi1ELi256EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi8EEER6streamI7ap_uintILi24EEEtt_1RN3hls6streamI7ap_uintILi8EEEES4_S4_RNS0_IS1_ILi24EEEEtt" -> "_8"
+"_8" -> "_9"[color=red weight=2]
+
+}
